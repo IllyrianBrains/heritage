@@ -1,0 +1,129 @@
+# --- Build paths ---
+docs_dir: !ENV [BUILD_DOCS_DIR, "docs"]
+site_dir: !ENV [BUILD_SITE_DIR, "site"]
+site_url: !ENV [BUILD_SITE_URL, "https://ib-heritage.example.org/"]
+
+site_name: Trashëgimia
+site_description: !ENV [SITE_DESCRIPTION, "Burime për kulturën shqiptare, gjuhën, kujtesën dhe hartëzimin e hapur."]
+
+repo_url: !ENV [BUILD_REPO_URL, ""]
+repo_name: ""
+
+theme:
+  name: material
+  icon:
+    logo: bootstrap/envelope-paper
+  favicon: assets/logo.png
+  language: !ENV [BUILD_THEME_LANGUAGE, "sq"]
+  custom_dir: docs/overrides
+  features:
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.highlight
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
+  - assets/styles/extra.css
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
+  - assets/javascripts/wiki-sliders-api.js
+
+
+plugins:
+  - search
+  - mkdocs-jupyter
+  - i18n:
+      default_language: sq
+      languages:
+        sq:
+          name: Shqip
+          build: true
+  - social
+  - blog:
+      post_date_format: medium
+
+
+# --- Website-like content blocks (hero / CTA / footer) ---
+extra:
+  generator: false
+  context: !ENV [BUILD_CONTEXT, "production"]
+  language_switcher: true
+
+  alternate:
+    - name: Shqip
+      link: /
+      lang: sq
+
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://github.com/pomodoren/heritage
+    - icon: fontawesome/brands/instagram
+      link: https://github.com/pomodoren/heritage
+    - icon: fontawesome/brands/github
+      link: https://github.com/pomodoren/heritage
+    - icon: fontawesome/brands/discourse
+      link: https://github.com/pomodoren/heritage
+  generator: false 
+  footer:
+    copyright: "© 2026 Illyrian Brains Network"
+    custom: true
+
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - tables
+  - toc:
+      toc_depth: 3
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    
+theme:
+  name: material
+  features:
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.footer
+    - toc.integrate 
+
+nav:
+  - Kryefaqja: 
+    - Trashëgimia: index.md
+    - Rreth Nesh: kontributi/about.md
+    - Burimet: kontributi/burimet.md
+    - Metodologjia: kontributi/metodologjia.md
+    - Bashkohu dhe ti!: kontributi/bashkohu.md
+
+  - Gjuha:
+    - Gjuhë & Libra: kultura/gjuha.md
+    
+  - Kultura:
+      - Art & Media: kultura/art.md
+      - Muzikë & Valle: kultura/muzike.md
+      - Gatime & Tradita: kultura/gatime.md
+      - Personalitete: kultura/personalitete.md
+
+  - Historike:
+      - UNESCO: trashegimia/unesco.md
+      - Historike & Monumente: trashegimia/historike.md
+      - Regjistra & Referenca: trashegimia/regjistra.md
+
+  - Natyra:
+      - Parqe & Zona të Mbrojtura: natyra/parqe.md
+      - Peisazhe & Rajone Natyrore: natyra/peisazhe.md
+      - Biodiversitet: natyra/biodiversitet.md
+      - Ujëra & Ekosisteme: natyra/ujera.md
+

@@ -1,0 +1,4 @@
+mkdocs-material
+mkdocs-static-i18n < 1.0
+mkdocs-jupyter
+mkdocs-material[imaging]
