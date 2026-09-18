@@ -1,4 +1,6 @@
 (async () => {
+  const appBase = document.querySelector('meta[name="app-base"]')?.content || '/';
+  const localPath = (path) => `${appBase}${String(path).replace(/^\/+/, '')}`;
   const mapElement = document.getElementById('heritage-map');
   const listElement = document.getElementById('place-list');
   const detailPanel = document.getElementById('place-detail');
@@ -7,7 +9,17 @@
   const search = document.getElementById('place-search');
   const scopeOptions = document.getElementById('scope-options');
   const countryOptions = document.getElementById('country-options');
-  const legend = document.querySelector('.map-key');
+  const noteCategories = {
+    red: { label: 'Ndikim i raportuar', color: '#f3a29c' },
+    yellow: { label: 'Shqetësim për verifikim', color: '#f6df83' },
+    green: { label: 'Përmirësim i dokumentuar', color: '#a5d8b1' },
+  };
+  const noteCategory = (value, legacyColor = '') => {
+    if (Object.hasOwn(noteCategories, value)) return value;
+    if (['#ffb3c0', '#ffd4b8', '#f7d2dd'].includes(String(legacyColor).toLowerCase())) return 'red';
+    if (['#a6e6a1', '#d9e8c2'].includes(String(legacyColor).toLowerCase())) return 'green';
+    return 'yellow';
+  };
   const make = (tag, className, value) => {
     const element = document.createElement(tag);
     if (className) element.className = className;
@@ -52,17 +64,13 @@
       const source = safeLink('Shiko fotografinë dhe licencën ↗', image.source);
       if (source) figure.append(source);
     }
-    if (!compact && image.licenseUrl) {
-      const license = safeLink('Kushtet e licencës ↗', image.licenseUrl);
-      if (license) figure.append(license);
-    }
     return figure;
   };
   if (!window.ol) { showNotice('Harta nuk u ngarkua. Kontrollo lidhjen me internetin dhe rifresko faqen.'); return; }
 
   let manifest;
   try {
-    const response = await fetch('/data/groups.json');
+    const response = await fetch(localPath('data/groups.json'));
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     manifest = await response.json();
     if (!Array.isArray(manifest.groups)) throw new Error('Regjistri i grupeve është i pavlefshëm');
@@ -141,7 +149,7 @@
     groupStates.push({ group, source, layer });
     for (const file of group.files || []) {
       try {
-        const response = await fetch(file);
+        const response = await fetch(localPath(file));
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const collection = await response.json();
         if (collection.type !== 'FeatureCollection' || !Array.isArray(collection.features)) throw new Error('GeoJSON i pavlefshëm');
@@ -165,7 +173,7 @@
   if (!records.length) { showNotice('Nuk ka objekte të vlefshme GeoJSON në grupet e hartës.'); return; }
 
   try {
-    const response = await fetch('/data/status/areas.json');
+    const response = await fetch(localPath('data/status/areas.json'));
     if (response.ok) {
       const payload = await response.json();
       const statusById = new Map((payload.areas || []).map((area) => [area.areaId, area]));
@@ -179,7 +187,7 @@
   } catch { /* statusi është shtesë; harta funksionon edhe pa të */ }
 
   try {
-    const response = await fetch('/data/status/legislation.json');
+    const response = await fetch(localPath('data/status/legislation.json'));
     if (response.ok) {
       const payload = await response.json();
       const legislationById = new Map((payload.legislation || []).map((entry) => [entry.areaId, entry]));
@@ -192,7 +200,7 @@
 
   const map = new ol.Map({
     target: mapElement,
-    layers: [baseLayer, labelsLayer, ...[...groupStates].sort((a, b) => ({ zona: 0, flora: 1, fauna: 2 }[a.group.id] ?? 1) - ({ zona: 0, flora: 1, fauna: 2 }[b.group.id] ?? 1)).map((state) => state.layer)],
+    layers: [baseLayer, labelsLayer, ...[...groupStates].sort((a, b) => ({ parqe: 0, mbrojtura: 0, rezervate: 0, flora: 1, fauna: 2 }[a.group.id] ?? 1) - ({ parqe: 0, mbrojtura: 0, rezervate: 0, flora: 1, fauna: 2 }[b.group.id] ?? 1)).map((state) => state.layer)],
     view: new ol.View({ center: ol.proj.fromLonLat([20.2, 41.2]), zoom: 7.2, minZoom: 5 }),
   });
   const previewElement = document.getElementById('point-preview');
@@ -202,7 +210,7 @@
   const markSelected = (record) => {
     selectedId = record.id;
     groupStates.forEach((state) => state.layer.changed());
-    listElement.querySelectorAll('.place-card').forEach((card) => card.setAttribute('aria-pressed', String(card.dataset.id === selectedId)));
+    listElement.querySelectorAll('.card-open').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.id === selectedId)));
   };
   const showPointPreview = (record, pixel) => {
     markSelected(record);
@@ -335,19 +343,27 @@
     checkbox.type = 'checkbox';
     checkbox.value = group.id;
     checkbox.checked = true;
-    option.append(checkbox, make('span', '', group.label), make('small', '', records.filter((record) => record.group.id === group.id).length));
+    const isArea = ['parqe', 'mbrojtura', 'rezervate'].includes(group.id);
+    const dot = make('i', isArea ? 'key-dot key-area' : 'key-dot');
+    dot.style.backgroundColor = group.color || '#4d6a59';
+    option.append(checkbox, dot, make('span', '', group.label), make('small', '', records.filter((record) => record.group.id === group.id).length));
     scopeOptions.append(option);
     checkbox.addEventListener('change', () => {
       if (checkbox.checked) activeGroups.add(group.id);
       else activeGroups.delete(group.id);
       updateFilters();
     });
-    const entry = make('span');
-    const dot = make('i', group.id === 'zona' ? 'key-dot key-area' : 'key-dot');
-    dot.style.backgroundColor = group.color || '#4d6a59';
-    entry.append(dot, document.createTextNode(group.label));
-    legend.append(entry);
   }
+  const noteLegend = make('div', 'note-legend');
+  noteLegend.append(make('strong', '', 'Shënimet'));
+  for (const category of ['red', 'yellow', 'green']) {
+    const row = make('div', 'note-legend-row');
+    const swatch = make('i', 'note-legend-swatch');
+    swatch.style.background = noteCategories[category].color;
+    row.append(swatch, make('span', '', noteCategories[category].label));
+    noteLegend.append(row);
+  }
+  scopeOptions.append(noteLegend);
   countryOptions.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => checkbox.addEventListener('change', () => {
     if (checkbox.checked) activeCountries.add(checkbox.value);
     else activeCountries.delete(checkbox.value);
@@ -405,10 +421,11 @@
       for (const record of groupRecords) {
       const place = record.properties;
       const observation = record.id.startsWith('gbif-');
-      const card = make('button', `place-card ${observation ? 'observation-card' : 'atlas-area-card'}`);
-      card.type = 'button';
-      card.dataset.id = record.id;
-      card.setAttribute('aria-pressed', String(record.id === selectedId));
+      const card = make('article', `place-card ${observation ? 'observation-card' : 'atlas-area-card'}`);
+      const openCard = make('button', 'card-open');
+      openCard.type = 'button';
+      openCard.dataset.id = record.id;
+      openCard.setAttribute('aria-pressed', String(record.id === selectedId));
       const top = make('span', 'card-top');
       const dot = make('span', 'category-dot');
       dot.style.backgroundColor = record.group.color;
@@ -423,16 +440,24 @@
       const bottom = make('span', 'card-bottom');
       bottom.append(make('span', '', observation ? observationDate(place) || 'Pa datë' : place.location || ''), make('span', '', 'Shiko në hartë ↗'));
       const photo = imageFigure(place.image, true);
-      if (photo) card.append(photo);
-      card.append(top, make('strong', 'card-title', place.name || 'Pa emër'));
-      if (observation) card.append(make('span', 'card-location', place.location || 'Vendndodhje e panjohur'));
+      if (photo) openCard.append(photo);
+      openCard.append(top, make('strong', 'card-title', place.name || 'Pa emër'));
+      if (observation) openCard.append(make('span', 'card-location', place.location || 'Vendndodhje e panjohur'));
       else {
-        card.append(make('span', 'card-summary', place.summary || ''));
+        openCard.append(make('span', 'card-summary', place.summary || ''));
         const counts = [place.extra?.['Vëzhgime flore'] && `${place.extra['Vëzhgime flore']} florë`, place.extra?.['Vëzhgime faune'] && `${place.extra['Vëzhgime faune']} faunë`].filter(Boolean);
-        if (counts.length) card.append(make('span', 'area-observations', `Vëzhgime brenda kufirit · ${counts.join(' · ')}`));
+        if (counts.length) openCard.append(make('span', 'area-observations', `Vëzhgime brenda kufirit · ${counts.join(' · ')}`));
       }
-      card.append(bottom);
-      card.addEventListener('click', () => selectRecord(record));
+      openCard.append(bottom);
+      openCard.addEventListener('click', () => selectRecord(record));
+      card.append(openCard);
+      if (photo && place.image?.source) {
+        const imageLink = safeLink('Burimi i fotografisë ↗', place.image.source);
+        if (imageLink) {
+          imageLink.classList.add('card-image-link');
+          card.append(imageLink);
+        }
+      }
         cards.append(card);
       }
       section.append(heading, cards);
@@ -605,7 +630,7 @@
     selectedId = null;
     detailPanel.hidden = true;
     groupStates.forEach((state) => state.layer.changed());
-    listElement.querySelectorAll('.place-card').forEach((card) => card.setAttribute('aria-pressed', 'false'));
+    listElement.querySelectorAll('.card-open').forEach((button) => button.setAttribute('aria-pressed', 'false'));
   }
   const notesKey = 'heritage-map-notes-v1';
   const noteBanner = document.getElementById('note-banner');
@@ -625,7 +650,7 @@
       element.tabIndex = compact ? 0 : -1;
       if (compact) {
         element.setAttribute('role', 'button');
-        element.setAttribute('aria-label', 'Afro hartën për të lexuar shënimin');
+        element.setAttribute('aria-label', `${noteCategories[note.category].label}. Afro hartën për të lexuar shënimin`);
       } else {
         element.removeAttribute('role');
         element.removeAttribute('aria-label');
@@ -638,15 +663,23 @@
     for (const char of id) hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
     return ((hash % 900) / 100) - 4.5;
   };
-  const createNoteOverlay = (id, text, color) => {
+  const createNoteOverlay = (id, text, category, published = false, source = '') => {
     const element = make('div', 'sticky-note');
-    element.style.setProperty('--note-color', color);
+    if (published) element.classList.add('sticky-note-published');
+    element.style.setProperty('--note-color', noteCategories[category].color);
     element.style.setProperty('--note-rotate', `${noteRotation(id)}deg`);
     const deleteButton = make('button', 'sticky-note-delete', '×');
     deleteButton.type = 'button';
     deleteButton.setAttribute('aria-label', 'Fshi shënimin');
     deleteButton.addEventListener('click', () => deleteNote(id));
-    element.append(make('p', 'sticky-note-text', text), deleteButton);
+    element.append(make('span', 'sticky-note-category', noteCategories[category].label), make('p', 'sticky-note-text', text));
+    if (published) {
+      const sourceLink = source && safeLink('Lexo burimin ↗', source);
+      if (sourceLink) {
+        sourceLink.classList.add('sticky-note-source');
+        element.append(sourceLink);
+      }
+    } else element.append(deleteButton);
     const revealNote = () => {
       if (element.classList.contains('sticky-note-compact')) map.getView().animate({ center: noteState.get(id)?.overlay.getPosition(), zoom: noteReadZoom, duration: 300 });
     };
@@ -661,9 +694,11 @@
   const renderNoteList = () => {
     noteList.replaceChildren();
     for (const [id, note] of noteState) {
+      if (note.published) continue;
       const item = make('div', 'note-item');
       const dot = make('span', 'note-item-dot');
-      dot.style.background = note.color;
+      dot.style.background = noteCategories[note.category].color;
+      dot.title = noteCategories[note.category].label;
       const openButton = make('button', 'note-item-open', note.text.length > 60 ? `${note.text.slice(0, 60)}…` : note.text);
       openButton.type = 'button';
       openButton.addEventListener('click', () => map.getView().animate({ center: ol.proj.fromLonLat(note.coordinate), zoom: Math.max(map.getView().getZoom(), noteReadZoom), duration: 300 }));
@@ -674,30 +709,45 @@
       item.append(dot, openButton, deleteButton);
       noteList.append(item);
     }
-    if (!noteState.size) noteList.append(make('p', 'no-results', 'Ende pa shënime.'));
+    if (![...noteState.values()].some((note) => !note.published)) noteList.append(make('p', 'no-results', 'Ende pa shënime.'));
   };
   const saveNotes = () => {
     const collection = {
       type: 'FeatureCollection',
-      features: [...noteState.entries()].map(([id, note]) => ({ type: 'Feature', id, geometry: { type: 'Point', coordinates: note.coordinate }, properties: { text: note.text, color: note.color } })),
+      features: [...noteState.entries()].filter(([, note]) => !note.published).map(([id, note]) => ({ type: 'Feature', id, geometry: { type: 'Point', coordinates: note.coordinate }, properties: { text: note.text, category: note.category, color: noteCategories[note.category].color } })),
     };
     try { localStorage.setItem(notesKey, JSON.stringify(collection)); }
     catch { showNotice('Shënimet nuk mund të ruhen në këtë shfletues.'); }
   };
-  const addNote = (id, text, color, coordinate) => {
-    const overlay = createNoteOverlay(id, text, color);
+  const addNote = (id, text, category, coordinate, published = false, source = '') => {
+    const overlay = createNoteOverlay(id, text, category, published, source);
     overlay.setPosition(ol.proj.fromLonLat(coordinate));
     map.addOverlay(overlay);
-    noteState.set(id, { text, color, coordinate, overlay });
+    noteState.set(id, { text, category, coordinate, overlay, published });
     updateNoteVisibility();
   };
   const deleteNote = (id) => {
     const note = noteState.get(id);
-    if (!note) return;
+    if (!note || note.published) return;
     map.removeOverlay(note.overlay);
     noteState.delete(id);
     renderNoteList();
     saveNotes();
+  };
+  const loadPublishedNotes = async () => {
+    try {
+      const response = await fetch(localPath('data/manual/notes.geojson'));
+      if (!response.ok) return;
+      const collection = await response.json();
+      for (const feature of collection.features || []) {
+        const coordinates = feature?.geometry?.coordinates;
+        if (feature?.geometry?.type !== 'Point' || !Array.isArray(coordinates) || coordinates.length < 2 || !coordinates.every(Number.isFinite)) continue;
+        const id = String(feature.id || '');
+        const text = String(feature.properties?.text || '').trim();
+        if (!id || !text || noteState.has(id)) continue;
+        addNote(id, text, noteCategory(feature.properties?.category, feature.properties?.color), coordinates, true, feature.properties?.source || '');
+      }
+    } catch { /* Published notes are optional if the data file is unavailable. */ }
   };
   const loadNotes = () => {
     let collection;
@@ -707,7 +757,7 @@
       if (feature?.geometry?.type !== 'Point' || !Array.isArray(feature.geometry.coordinates)) continue;
       const id = String(feature.id ?? newLocalId());
       if (noteState.has(id)) continue;
-      addNote(id, String(feature.properties?.text || ''), feature.properties?.color || '#fdf279', feature.geometry.coordinates);
+      addNote(id, String(feature.properties?.text || ''), noteCategory(feature.properties?.category, feature.properties?.color), feature.geometry.coordinates);
     }
     renderNoteList();
   };
@@ -750,8 +800,8 @@
     event.preventDefault();
     const text = noteText.value.trim();
     if (!text || !pendingCoordinate) return;
-    const color = noteForm.querySelector('input[name="color"]:checked')?.value || '#fdf279';
-    addNote(newLocalId(), text, color, pendingCoordinate);
+    const category = noteForm.querySelector('input[name="category"]:checked')?.value || 'yellow';
+    addNote(newLocalId(), text, noteCategory(category), pendingCoordinate);
     pendingCoordinate = null;
     renderNoteList();
     saveNotes();
@@ -769,7 +819,7 @@
         if (feature?.geometry?.type !== 'Point' || !Array.isArray(feature.geometry.coordinates)) continue;
         let id = String(feature.id ?? newLocalId());
         if (noteState.has(id)) id = newLocalId();
-        addNote(id, String(feature.properties?.text || ''), feature.properties?.color || '#fdf279', feature.geometry.coordinates);
+        addNote(id, String(feature.properties?.text || ''), noteCategory(feature.properties?.category, feature.properties?.color), feature.geometry.coordinates);
         imported += 1;
       }
       renderNoteList();
@@ -781,7 +831,7 @@
   document.getElementById('export-notes').addEventListener('click', () => {
     const collection = {
       type: 'FeatureCollection',
-      features: [...noteState.entries()].map(([id, note]) => ({ type: 'Feature', id, geometry: { type: 'Point', coordinates: note.coordinate }, properties: { text: note.text, color: note.color } })),
+      features: [...noteState.entries()].filter(([, note]) => !note.published).map(([id, note]) => ({ type: 'Feature', id, geometry: { type: 'Point', coordinates: note.coordinate }, properties: { text: note.text, category: note.category, color: noteCategories[note.category].color } })),
     };
     const blob = new Blob([JSON.stringify(collection, null, 2)], { type: 'application/geo+json' });
     const url = URL.createObjectURL(blob);
@@ -792,7 +842,6 @@
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
   search.addEventListener('input', () => { query = search.value.trim().toLocaleLowerCase('sq'); renderCards(); });
-  document.getElementById('fit-map').addEventListener('click', focusVisible);
   document.getElementById('close-detail').addEventListener('click', closeDetail);
   document.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
@@ -828,6 +877,7 @@
     const visible = record && matches(record);
     mapElement.style.cursor = placingNote ? 'crosshair' : visible ? 'pointer' : '';
   });
+  await loadPublishedNotes();
   loadNotes();
   updateFilters();
   focusVisible();

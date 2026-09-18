@@ -1,12 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 <BaseLayout title="Paneli i Statusit · Harta e Natyrës" description="Gjendja e zonave natyrore, kuadri ligjor, ndërhyrjet e planifikuara dhe organizatat partnere.">
-  <header class="app-header">
-    <a class="app-brand" href="/" aria-label="Trashëgimia Natyrore"><span class="brand-symbol" aria-hidden="true">✳</span><span class="brand-title">TRASHËGIMIA<br />NATYRORE</span></a>
-    <div class="header-status"><span class="status-dot" aria-hidden="true"></span><span>Statusi dhe ndërhyrjet · NGO</span></div>
-    <div class="header-actions"><a class="header-data" href="/">Harta <span aria-hidden="true">↗</span></a></div>
-  </header>
+  <SiteHeader page="dashboard" />
   <main class="dashboard-main">
     <section class="dashboard-intro">
       <p class="eyebrow">Shqipëri dhe Kosovë</p>
@@ -40,5 +38,5 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <div id="dashboard-notice" class="map-notice" role="status" hidden></div>
   </main>
-  <script is:inline src="/dashboard.js"></script>
+  <script is:inline src={`${base}dashboard.js`}></script>
 </BaseLayout>

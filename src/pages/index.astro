@@ -1,23 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 <BaseLayout title="Harta e Natyrës" description="Zona të mbrojtura, flora dhe fauna në Shqipëri dhe Kosovë.">
   <div class="app-shell">
-    <header class="app-header atlas-header">
-      <a class="app-brand" href="/" aria-label="Trashëgimia Natyrore"><span class="brand-symbol" aria-hidden="true">✳</span><span class="brand-title">TRASHËGIMIA<br />NATYRORE</span></a>
-      <nav class="header-actions" aria-label="Veprimet kryesore"><a class="header-data" href="/dashboard">Raportet</a><button id="open-notes" class="header-data" type="button">Shto shënim</button><a class="header-data" href="/contribute">Shto të dhëna</a><button id="open-project" class="header-data" type="button">Rreth projektit</button></nav>
-    </header>
+    <SiteHeader page="map">
+      <button id="open-notes" class="header-data" type="button">Shto shënim</button>
+      <button id="open-project" class="header-data" type="button">Rreth projektit</button>
+    </SiteHeader>
     <main class="workspace">
       <aside class="catalog" aria-label="Galeria e vendeve">
-        <div class="catalog-top"><div class="catalog-title"><div><p class="eyebrow">Shqipëri dhe Kosovë</p><h2>Galeria e natyrës</h2></div><span id="place-count" class="count-badge">…</span></div>
+        <div class="catalog-top"><div class="catalog-title"><div><p class="eyebrow">Shqipëri dhe Kosovë</p><h2>Galeria e natyrës</h2></div><span id="place-count" class="count-badge">…</span><button id="catalog-close" class="catalog-close" type="button" aria-label="Mbyll galerinë">Mbyll <span aria-hidden="true">×</span></button></div>
           <p class="atlas-intro">Zona natyrore dhe vëzhgime të florës e faunës.</p>
           <label class="photo-filter"><input id="with-photo" type="checkbox" /> Vetëm me fotografi</label>
         </div>
-        <details class="catalog-legend">
-          <summary>Legjenda <span aria-hidden="true">⌄</span></summary>
-          <div class="map-key" aria-label="Legjenda e hartës"></div>
-        </details>
-        <div class="catalog-list-header"><strong>Eksploro</strong><span id="result-label">Duke ngarkuar…</span><button id="catalog-close" class="catalog-close" type="button" aria-label="Mbyll galerinë">Mbyll ×</button></div>
+        <div class="catalog-list-header"><strong>Eksploro</strong><span id="result-label">Duke ngarkuar…</span></div>
         <div id="place-list" class="place-list" aria-live="polite"></div>
         <details class="catalog-bottom">
           <summary><span class="info-icon" aria-hidden="true">i</span> Rreth të dhënave</summary>
@@ -31,7 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <button id="catalog-toggle" class="catalog-toggle map-floating" type="button" aria-controls="place-list" aria-expanded="true" aria-label="Fshih galerinë" title="Fshih galerinë">‹</button>
         <div class="map-floating map-search"><label class="visually-hidden" for="place-search">Kërko në atlas</label><span aria-hidden="true">⌕</span><input id="place-search" type="search" placeholder="Kërko park, lloj ose vend…" autocomplete="off" /></div>
         <nav class="map-floating map-filter-bar" aria-label="Filtrat e atlasit">
-          <details class="header-filter" id="scope-filter"><summary>Fusha <strong id="scope-label">Të gjitha</strong><span aria-hidden="true">⌄</span></summary><div class="filter-popover" id="scope-options" aria-label="Zgjidh shtresat"></div></details>
+          <details class="header-filter" id="scope-filter"><summary>Legjenda <strong id="scope-label">Të gjitha</strong><span aria-hidden="true">⌄</span></summary><div class="filter-popover" id="scope-options" aria-label="Zgjidh shtresat e hartës"></div></details>
           <details class="header-filter" id="country-filter"><summary>Vendi <strong id="country-label">Të dy</strong><span aria-hidden="true">⌄</span></summary><div class="filter-popover" id="country-options" aria-label="Zgjidh vendet"><label><input type="checkbox" value="AL" checked /> Shqipëri</label><label><input type="checkbox" value="XK" checked /> Kosovë</label></div></details>
         </nav>
         <div class="map-floating basemap-switcher" role="group" aria-label="Zgjidh bazën e hartës">
@@ -44,21 +42,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
           <button id="basemap-toggle" class="basemap-toggle" type="button" aria-controls="basemap-options" aria-expanded="false" aria-label="Harta bazë: OpenStreetMap. Shfaq opsionet"><span id="basemap-current-label" class="basemap-current-label">OpenStreetMap</span><span class="basemap-chevron" aria-hidden="true">⌃</span></button>
         </div>
-        <button id="fit-map" class="map-floating fit-button" type="button" title="Shfaq të gjitha vendet">⌖ <span>Shfaq të gjitha</span></button>
         <div id="note-banner" class="map-floating note-banner" hidden><span>Kliko në hartë ku do ta ngjisësh shënimin.</span><button id="cancel-note" type="button">Anulo</button></div>
         <aside id="notes-editor" class="notes-editor" aria-label="Shto një shënim" hidden>
           <div class="editor-head"><div><p class="eyebrow">Shënime lokale</p><h2>Shënimet e mia</h2></div><button id="close-notes-editor" type="button" aria-label="Mbyll shënimet">×</button></div>
-          <p class="editor-intro">Shto shënime si "sticky notes" direkt në hartë. Teksti shfaqet kur harta afrohet në nivelin 11 ose më shumë. Ruhen vetëm në këtë shfletues.</p>
+          <p class="editor-intro">Shto shënime si "sticky notes" direkt në hartë. Teksti shfaqet kur harta afrohet në nivelin 11 ose më shumë. Shënimet e tua ruhen vetëm në këtë shfletues; shënimet e publikuara kanë burime të lidhura.</p>
           <button id="start-note" class="editor-primary" type="button">Shto shënim të ri ＋</button>
           <form id="note-form" hidden>
             <label for="note-text">Teksti i shënimit *</label><textarea id="note-text" name="text" rows="4" required placeholder="Shkruaj shënimin këtu…"></textarea>
-            <label>Ngjyra</label>
-            <div class="note-color-row" role="radiogroup" aria-label="Ngjyra e shënimit">
-              <label class="color-option"><input type="radio" name="color" value="#fdf279" checked /><span class="color-swatch" style="background:#fdf279"></span></label>
-              <label class="color-option"><input type="radio" name="color" value="#ffb3c0" /><span class="color-swatch" style="background:#ffb3c0"></span></label>
-              <label class="color-option"><input type="radio" name="color" value="#a6e6a1" /><span class="color-swatch" style="background:#a6e6a1"></span></label>
-              <label class="color-option"><input type="radio" name="color" value="#a7d8ff" /><span class="color-swatch" style="background:#a7d8ff"></span></label>
-              <label class="color-option"><input type="radio" name="color" value="#e4c1ff" /><span class="color-swatch" style="background:#e4c1ff"></span></label>
+            <label>Kategoria e shënimit</label>
+            <div class="note-color-row" role="radiogroup" aria-label="Kategoria e shënimit">
+              <label class="color-option"><input type="radio" name="category" value="red" /><span class="color-swatch" style="background:#ee6b65"></span><span>E kuqe · Ndikim i raportuar</span></label>
+              <label class="color-option"><input type="radio" name="category" value="yellow" checked /><span class="color-swatch" style="background:#f3cf56"></span><span>E verdhë · Shqetësim për verifikim</span></label>
+              <label class="color-option"><input type="radio" name="category" value="green" /><span class="color-swatch" style="background:#74be8b"></span><span>E gjelbër · Përmirësim i dokumentuar</span></label>
             </div>
             <div class="note-form-actions"><button id="cancel-note-form" class="editor-secondary" type="button">Anulo</button><button class="editor-primary" type="submit">Ngjit shënimin</button></div>
           </form>
@@ -93,9 +88,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <script is:inline>
     const projectIntro = document.getElementById('project-intro');
     document.getElementById('open-project').addEventListener('click', () => projectIntro.showModal());
-    projectIntro.showModal();
+    const cameFromInternalPage = document.referrer && new URL(document.referrer).origin === location.origin;
+    if (!cameFromInternalPage) projectIntro.showModal();
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.9.0/ol.css" />
   <script is:inline src="https://cdn.jsdelivr.net/npm/ol@10.9.0/dist/ol.js"></script>
-  <script is:inline src="/map.js?v=8"></script>
+  <script is:inline src={`${base}map.js?v=9`}></script>
 </BaseLayout>

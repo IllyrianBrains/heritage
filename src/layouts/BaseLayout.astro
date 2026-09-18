@@ -2,6 +2,7 @@
 import '../styles/site.css';
 const { title = 'Trashëgimia · Një hapësirë bashkëpunimi', description = 'Një hapësirë e përbashkët për organizatat dhe komunitetet që dokumentojnë trashëgiminë kulturore dhe natyrore shqiptare.' } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 <!doctype html>
 <html lang="sq">
@@ -9,7 +10,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <meta name="app-base" content={base} />
+    <link rel="icon" type="image/svg+xml" href={`${base}assets/favicon.svg`} />
     <link rel="canonical" href={canonical} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,5 +22,37 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
   </head>
-  <body><slot /></body>
+  <body>
+    <slot />
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>('.mobile-menu-toggle');
+      const header = toggle?.closest<HTMLElement>('.app-header');
+      const menu = header?.querySelector<HTMLElement>('.header-actions');
+      if (toggle && header && menu) {
+        const closeMenu = () => {
+          header.classList.remove('nav-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.setAttribute('aria-label', 'Hap menunë');
+        };
+        toggle.addEventListener('click', () => {
+          const open = header.classList.toggle('nav-open');
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? 'Mbyll menunë' : 'Hap menunë');
+        });
+        menu.addEventListener('click', (event) => {
+          if ((event.target as HTMLElement).closest('a, button')) closeMenu();
+        });
+        document.addEventListener('click', (event) => {
+          if (!header.contains(event.target as Node)) closeMenu();
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && header.classList.contains('nav-open')) {
+            closeMenu();
+            toggle.focus();
+          }
+        });
+        window.matchMedia('(min-width: 701px)').addEventListener('change', closeMenu);
+      }
+    </script>
+  </body>
 </html>

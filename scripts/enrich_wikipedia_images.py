@@ -61,7 +61,7 @@ def commons_image(page: dict) -> dict | None:
 
 
 def main() -> None:
-    path = DATA_DIR / "groups/zona.geojson"
+    path = DATA_DIR / "groups/parqe.geojson"
     document = json.loads(path.read_text())
     found = 0
     for feature in document["features"]:
@@ -69,6 +69,7 @@ def main() -> None:
         title = TITLES.get(properties.get("name"))
         if not title:
             continue
+        print(f"Wikipedia: duke kërkuar {title}…")
         try:
             page = request_json(f"https://en.wikipedia.org/api/rest_v1/page/summary/{quote(title.replace(' ', '_'))}", timeout=25)
             image = commons_image(page)

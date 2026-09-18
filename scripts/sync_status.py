@@ -53,10 +53,14 @@ def fetch_csv(url: str) -> list[dict]:
 
 def read_rows(*, sheet_id: str | None, tab: str, local_csv: Path | None) -> list[dict]:
     if local_csv:
+        print(f"Duke lexuar {tab} nga skedari lokal {local_csv}…")
         return list(csv.DictReader(io.StringIO(local_csv.read_text(encoding="utf-8-sig"))))
     if not sheet_id:
         raise ValueError("--sheet-id is required unless a local CSV override is given")
-    return fetch_csv(gviz_csv_url(sheet_id, tab))
+    print(f"Google Sheets: duke shkarkuar fletën '{tab}'…")
+    rows = fetch_csv(gviz_csv_url(sheet_id, tab))
+    print(f"Google Sheets: {len(rows)} rreshta nga '{tab}'")
+    return rows
 
 
 def cell(row: dict, key: str) -> str:

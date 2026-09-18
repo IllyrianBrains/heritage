@@ -11,11 +11,25 @@ npm run dev
 
 `npm run build` krijon aplikacionin statik në `dist/`.
 
+## Publikimi në GitHub Pages
+
+Workflow-i [`.github/workflows/pages.yml`](.github/workflows/pages.yml) ndërton dhe publikon faqen pas çdo `push` në `main`; mund të niset edhe nga **Actions → Publish to GitHub Pages → Run workflow**. Në **Settings → Pages**, zgjidhni **GitHub Actions** si burim publikimi. Adresa e projektit është `https://pomodoren.github.io/heritage/`.
+
+Workflow-i përdor Node.js 24 dhe ndërton me `SITE_URL=https://pomodoren.github.io` e `BASE_PATH=/heritage`. Për ta provuar lokalisht me të njëjtën rrugë:
+
+```bash
+SITE_URL=https://pomodoren.github.io BASE_PATH=/heritage npm run build
+```
+
+Nëse përdoret më vonë një domen i personalizuar, përditësoni `SITE_URL` dhe `BASE_PATH` në workflow, konfiguroni domenin në GitHub Pages dhe shtoni `public/CNAME` sipas udhëzimeve të GitHub.
+
 ## Eksplorimi në hartë
 
-Shiriti sipër ka lidhjet **Raportet**, **Shto shënim**, **Shto të dhëna** dhe **Rreth projektit**. Filtrat me zgjedhje të shumëfishtë dhe kërkimi janë mbi hartë. Prezantimi i projektit, i nisur nga Flamingo Revolution me kontribute nga organizata të ndryshme, shfaqet si dritare kur hapet faqja dhe mund të rihapet nga **Rreth projektit**. Faqja **Shto të dhëna** jep hapat për përgatitjen dhe propozimin e GeoJSON. Galeria është shiriti anësor i majtë; mund të fshihet, të rihapet dhe të zgjerohet duke tërhequr skajin e saj në ekran të madh. Filtri i fotografive dhe legjenda gjenden brenda galerisë. Klikimi i një pike e rrethon me të verdhë dhe hap menjëherë një kartë të shkurtër me figurën, kur ka, dhe butonin **Lexo më shumë** për panelin e detajeve. Zonat e zgjedhura marrin kufi të verdhë. Klikimi i kartës së galerisë ose i një zone në hartë hap panelin e djathtë pa lëvizur ose afruar hartën; butoni **Shfaq të gjitha** është kontrolli i qartë për rivendosjen e pamjes.
+Shiriti sipër ka lidhjet **Raportet**, **Shto shënim**, **Shto të dhëna** dhe **Rreth projektit**. Filtrat me zgjedhje të shumëfishtë dhe kërkimi janë mbi hartë; **Legjenda** përmban edhe zgjedhjen e shtresave. Prezantimi i projektit, i nisur nga Flamingo Revolution me kontribute nga organizata të ndryshme, shfaqet si dritare kur hapet faqja dhe mund të rihapet nga **Rreth projektit**. Faqja **Shto të dhëna** jep hapat për përgatitjen dhe propozimin e GeoJSON. Galeria është shiriti anësor i majtë; mund të fshihet, të rihapet dhe të zgjerohet duke tërhequr skajin e saj në ekran të madh. Filtri i fotografive gjendet brenda galerisë. Klikimi i një pike e rrethon me të verdhë dhe hap menjëherë një kartë të shkurtër me figurën, kur ka, dhe butonin **Lexo më shumë** për panelin e detajeve. Zonat e zgjedhura marrin kufi të verdhë. Klikimi i kartës së galerisë ose i një zone në hartë hap panelin e djathtë pa lëvizur ose afruar hartën; butoni **Shfaq të gjitha** është kontrolli i qartë për rivendosjen e pamjes.
 
 Galeria i grupon kartat në seksione të palosshme sipas llojit të shtresës: zona natyrore, florë dhe faunë, me numrin e rezultateve në secilin grup. Seksioni i parë hapet fillimisht; të tjerët janë të mbyllur. Karta e një zone tregon numrin e vëzhgimeve të importuara brenda kufirit; paneli i saj lidhet me regjistrimet përkatëse të florës dhe faunës. Karta e vëzhgimit tregon llojin, vendin, datën dhe fotografinë kur ka një të licencuar. Paneli i detajeve mban burimin dhe licencën pranë fotografisë.
+
+Shënimet e publikuara lexohen nga `public/data/manual/notes.geojson`. Secila pikë ka `id` unik dhe `properties.text`, `category` e `source`; vendndodhjet orientuese shënohen si të tilla në tekst. Kategoritë e semaforit janë `red` (ndikim i raportuar), `yellow` (shqetësim për verifikim) dhe `green` (përmirësim i dokumentuar). Kategoria përmbledh shënimin dhe nuk është vlerësim zyrtar i gjendjes ose ligjshmërisë. Shënimet e publikuara kanë lidhje te burimi dhe nuk mund të fshihen nga vizitorët. Shënimet personale ruhen në shfletues, mund të eksportohen veçmas dhe bëhen të lexueshme në zmadhimin 11 ose më lart.
 
 ## Përditësimi i të dhënave
 
@@ -26,17 +40,19 @@ python3 scripts/link_species_to_areas.py
 python3 scripts/enrich_wikipedia_images.py
 ```
 
-Skripti kërkon zona të mbrojtura, parqe kombëtare dhe rezervate të etiketuara në OpenStreetMap për Shqipërinë (`AL`) dhe Kosovën (`XK`). Gjeometria merret me Overpass `out geom`; kufijtë ruhen si `Polygon` ose `MultiPolygon`, duke përfshirë vrimat. Kërkimi bëhet në kuti gjeografike dhe rezultatet filtrohen sipas kufirit të vendit nga Nominatim. Vëzhgimet e bimëve dhe kafshëve merren nga GBIF dhe ruhen si pika me datën, burimin dhe licencën e regjistrimit. **Pika e vëzhgimit nuk përfaqëson habitatin apo shtrirjen e llojit.** Mungesa e një vëzhgimi në hartë nuk tregon mungesë të llojit në terren.
+Skripti kërkon parqe kombëtare (`boundary=national_park`), zona të mbrojtura (`boundary=protected_area`, duke përfshirë peizazhet e mbrojtura dhe kategori të tjera IUCN sipas `protect_class`) dhe rezervate natyrore (`leisure=nature_reserve`) të etiketuara në OpenStreetMap si `relation` ose `way`, për Shqipërinë (`AL`) dhe Kosovën (`XK`). Gjeometria merret me Overpass `out geom`; kufijtë ruhen si `Polygon` ose `MultiPolygon`, duke përfshirë vrimat. Kërkimi bëhet në kuti gjeografike dhe rezultatet filtrohen sipas kufirit të vendit nga Nominatim (kërkim i strukturuar me emrin anglisht të vendit, p.sh. `country=Albania`). Vëzhgimet e bimëve dhe kafshëve merren nga GBIF dhe ruhen si pika me datën, burimin dhe licencën e regjistrimit. **Pika e vëzhgimit nuk përfaqëson habitatin apo shtrirjen e llojit.** Mungesa e një vëzhgimi në hartë nuk tregon mungesë të llojit në terren.
 
-Mund të përdorni `--countries AL XK`, `--osm-limit 100`, `--gbif-limit 100` dhe `--output-dir` për të kontrolluar importin. Importi shkruan një skedar për çdo shtresë:
+Mund të përdorni `--countries AL XK`, `--osm-limit 100`, `--gbif-limit 100`, `--skip-gbif` dhe `--output-dir` për të kontrolluar importin. `--skip-gbif` merr vetëm shtresat nga OpenStreetMap/Overpass, pa e prekur fare GBIF-in as skedarët `flora.geojson`/`fauna.geojson` ekzistues. Importi shkruan një skedar për çdo shtresë:
 
-- `public/data/groups/zona.geojson`
+- `public/data/groups/parqe.geojson` (parqe kombëtare)
+- `public/data/groups/mbrojtura.geojson` (zona të mbrojtura, përfshi peizazhet e mbrojtura)
+- `public/data/groups/rezervate.geojson` (rezervate natyrore)
 - `public/data/groups/flora.geojson`
 - `public/data/groups/fauna.geojson`
 
 `public/data/groups.json` përcakton shtresat dhe skedarët e lexuar nga harta. Skedarët `public/data/manual/<grupi>.geojson` nuk mbishkruhen gjatë importit. Një grup i ri mund të shtohet në manifest me skedarin e vet GeoJSON.
 
-Nëse Overpass është i zënë, `python3 scripts/extract_nature.py --skip-osm` përditëson vetëm vëzhgimet GBIF dhe ruan zonat ekzistuese. `python3 scripts/import_park_boundaries.py` shton parqe të emërtuara me poligonet OSM nga Nominatim. Importi fillestar i përfshirë në depo u bë në këtë mënyrë, sepse dy serverë publikë Overpass kthyen gabime kohore gjatë importit të gjerë. Për parqe të tjera përdorni Overpass ose hartëzim manual me kufirin dhe burimin e verifikuar.
+Nëse Overpass është i zënë, `python3 scripts/extract_nature.py --skip-osm` përditëson vetëm vëzhgimet GBIF dhe ruan zonat ekzistuese (parqe, mbrojtura, rezervate). `python3 scripts/import_park_boundaries.py` shton parqe të emërtuara me poligonet OSM nga Nominatim, direkt te `parqe.geojson`. Importi fillestar i përfshirë në depo u bë në këtë mënyrë, sepse dy serverë publikë Overpass kthyen gabime kohore gjatë importit të gjerë. Për parqe të tjera përdorni Overpass ose hartëzim manual me kufirin dhe burimin e verifikuar.
 
 `link_species_to_areas.py` numëron vëzhgimet GBIF që bien brenda secilit poligon dhe liston disa lloje në kartën e zonës. Kur parku nuk ka fotografi të vetën, mund të shfaqet fotografia e një vëzhgimi brenda kufirit, e shënuar qartë si e tillë. Këto numra pasqyrojnë vetëm regjistrimet e importuara, jo një inventar të plotë të parkut.
 
@@ -62,7 +78,7 @@ Krijoni Google Sheet me këto kolona (rreshti i parë, saktësisht këto emra):
 
 **Fleta `Legjislacioni`** — `ID i zonës` · `Kategoria e mbrojtjes` (p.sh. "Park Kombëtar (Kategoria II IUCN)") · `Baza ligjore` (ligji ose vendimi që e mbron zonën) · `Niveli i përgjegjësisë` (Qendror / Vendor / Të përbashkët) · `Përparësia e qeverisë` (I lartë / Mesatar / I ulët) · `Plani i menaxhimit` (Ka / Në hartim / Nuk ka) · `Shënime` · `Lidhje` (teksti ligjor ose plani)
 
-`ID i zonës` duhet të përputhet me `id`-në e një `Feature` ekzistues (shihni `Feature.id` te skedarët e mësipërm ose te paneli i detajeve në hartë). Zonat e reja shtohen te `public/data/manual/zona.geojson` me git; Google Sheet mban vetëm statusin, kuadrin ligjor dhe ndërhyrjet për zonat ekzistuese. Paneli i statusit (`/dashboard`) dhe vetë harta (bordi i ngjyrës dhe seksionet "Gjendja e zonës" / "Kuadri ligjor" te paneli i detajeve) e lexojnë këtë të dhënë automatikisht pas sinkronizimit. Fusha `Niveli i përgjegjësisë` dhe `Përparësia e qeverisë` synojnë të pasqyrojnë ndarjen e kompetencave mes qeverisjes qendrore dhe vendore mbi zonën, jo vetëm gjendjen mjedisore.
+`ID i zonës` duhet të përputhet me `id`-në e një `Feature` ekzistues (shihni `Feature.id` te skedarët e mësipërm ose te paneli i detajeve në hartë). Zonat e reja shtohen me git te `public/data/manual/parqe.geojson`, `mbrojtura.geojson` ose `rezervate.geojson`, sipas llojit; Google Sheet mban vetëm statusin, kuadrin ligjor dhe ndërhyrjet për zonat ekzistuese. Paneli i statusit (`/dashboard`) dhe vetë harta (bordi i ngjyrës dhe seksionet "Gjendja e zonës" / "Kuadri ligjor" te paneli i detajeve) e lexojnë këtë të dhënë automatikisht pas sinkronizimit. Fusha `Niveli i përgjegjësisë` dhe `Përparësia e qeverisë` synojnë të pasqyrojnë ndarjen e kompetencave mes qeverisjes qendrore dhe vendore mbi zonën, jo vetëm gjendjen mjedisore.
 
 ## Hartëzim dhe burime lokale
 

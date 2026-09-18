@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from extract_nature import gbif_image, osm_feature, overpass_query, write_layers
+from extract_nature import PROTECT_CLASS_LABELS, gbif_image, osm_feature, overpass_query, write_layers
 
 
 class NatureTests(unittest.TestCase):
@@ -28,18 +28,43 @@ class NatureTests(unittest.TestCase):
             self.assertNotIn('"historic"', query)
 
     def test_osm_polygon_and_per_group_files(self):
-        item = {"element": {"type": "way", "id": 7, "center": {"lat": 42, "lon": 21}, "tags": {"name": "Test park", "boundary": "national_park"}}, "category": "zona", "countries": {"XK"}}
+        item = {"element": {"type": "way", "id": 7, "center": {"lat": 42, "lon": 21}, "tags": {"name": "Test park", "boundary": "national_park"}}, "category": "parqe", "countries": {"XK"}}
         geometries = {("way", 7): {"type": "way", "id": 7, "geometry": [
             {"lon": 21, "lat": 42}, {"lon": 21.1, "lat": 42}, {"lon": 21.1, "lat": 42.1}, {"lon": 21, "lat": 42},
         ]}}
         feature = osm_feature(item, geometries)
         self.assertEqual(feature["geometry"]["type"], "Polygon")
         self.assertEqual(feature["properties"]["countryCodes"], ["XK"])
+        self.assertEqual(feature["properties"]["categoryLabel"], "Park kombëtar")
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             write_layers([feature], root)
-            self.assertEqual(json.loads((root / "groups/zona.geojson").read_text())["features"][0]["id"], "osm-way-7")
-            self.assertEqual([group["id"] for group in json.loads((root / "groups.json").read_text())["groups"]], ["zona", "flora", "fauna"])
+            self.assertEqual(json.loads((root / "groups/parqe.geojson").read_text())["features"][0]["id"], "osm-way-7")
+            self.assertEqual([group["id"] for group in json.loads((root / "groups.json").read_text())["groups"]], ["parqe", "mbrojtura", "rezervate", "flora", "fauna"])
+
+    def test_protected_area_uses_iucn_protect_class_label(self):
+        item = {"element": {"type": "relation", "id": 9, "center": {"lat": 41, "lon": 20}, "tags": {"name": "Test landscape", "boundary": "protected_area", "protect_class": "5"}}, "category": "mbrojtura", "countries": {"AL"}}
+        feature = osm_feature(item, {})
+        self.assertEqual(feature["properties"]["categoryLabel"], PROTECT_CLASS_LABELS["5"])
+        self.assertEqual(feature["properties"]["categoryLabel"], "Peizazh i mbrojtur")
+
+    def test_nature_reserve_category_label(self):
+        item = {"element": {"type": "way", "id": 11, "center": {"lat": 41, "lon": 20}, "tags": {"name": "Test reserve", "leisure": "nature_reserve"}}, "category": "rezervate", "countries": {"AL"}}
+        feature = osm_feature(item, {})
+        self.assertEqual(feature["properties"]["categoryLabel"], "Rezervat natyror")
+
+    def test_write_layers_preserves_untouched_groups(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            flora_feature = {"type": "Feature", "id": "gbif-1", "geometry": {"type": "Point", "coordinates": [20, 41]}, "properties": {"category": "flora"}}
+            write_layers([flora_feature], root)
+            self.assertEqual(len(json.loads((root / "groups/flora.geojson").read_text())["features"]), 1)
+            # A subsequent OSM-only run (group_ids restricted) must not touch flora.geojson.
+            park_feature = {"type": "Feature", "id": "osm-way-1", "geometry": {"type": "Point", "coordinates": [20, 41]}, "properties": {"category": "parqe"}}
+            write_layers([park_feature], root, ["parqe", "mbrojtura", "rezervate"])
+            self.assertEqual(len(json.loads((root / "groups/flora.geojson").read_text())["features"]), 1)
+            ids = [group["id"] for group in json.loads((root / "groups.json").read_text())["groups"]]
+            self.assertEqual(set(ids), {"parqe", "mbrojtura", "rezervate", "flora", "fauna"})
 
 
 if __name__ == "__main__":

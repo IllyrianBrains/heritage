@@ -1,4 +1,6 @@
 (async () => {
+  const appBase = document.querySelector('meta[name="app-base"]')?.content || '/';
+  const localPath = (path) => `${appBase}${String(path).replace(/^\/+/, '')}`;
   const notice = document.getElementById('dashboard-notice');
   const make = (tag, className, value) => {
     const element = document.createElement(tag);
@@ -49,10 +51,10 @@
   };
 
   const [areasResult, interventionsResult, organizationsResult, legislationResult] = await Promise.allSettled([
-    fetch('/data/status/areas.json').then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
-    fetch('/data/status/interventions.json').then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
-    fetch('/data/status/organizations.json').then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
-    fetch('/data/status/legislation.json').then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+    fetch(localPath('data/status/areas.json')).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+    fetch(localPath('data/status/interventions.json')).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+    fetch(localPath('data/status/organizations.json')).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+    fetch(localPath('data/status/legislation.json')).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
   ]);
 
   const areas = areasResult.status === 'fulfilled' ? (areasResult.value.areas || []) : [];
@@ -106,7 +108,7 @@
     if (!shown.length) { areaGrid.append(make('p', 'empty-note', areas.length ? 'Asnjë zonë nuk përputhet me filtrin.' : 'Nuk ka ende të dhëna statusi. Sinkronizo Google Sheet-in me scripts/sync_status.py.')); return; }
     for (const area of shown) {
       const card = make('a', 'area-card');
-      card.href = `/#${encodeURIComponent(area.areaId)}`;
+      card.href = `${appBase}#${encodeURIComponent(area.areaId)}`;
       const top = make('div', 'area-card-top');
       const dot = make('span', 'health-dot');
       dot.style.backgroundColor = STATUS_COLORS[area.status] || STATUS_COLORS.unassessed;
@@ -162,7 +164,7 @@
       top.append(chip(PRIORITY_LABELS[item.priority] || item.priority, PRIORITY_COLORS[item.priority] || PRIORITY_COLORS.medium));
       row.append(top);
       const areaLink = make('a', 'record-link', areaNameById.get(item.areaId) || item.areaId);
-      areaLink.href = `/#${encodeURIComponent(item.areaId)}`;
+      areaLink.href = `${appBase}#${encodeURIComponent(item.areaId)}`;
       row.append(areaLink);
       if (item.description) row.append(make('p', '', item.description));
       const meta = make('div', 'intervention-meta');

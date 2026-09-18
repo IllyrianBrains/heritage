@@ -1,12 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 <BaseLayout title="Shto të dhëna · Harta e Natyrës" description="Udhëzime për të kontribuar të dhëna për trashëgiminë natyrore të Shqipërisë dhe Kosovës.">
   <div class="app-shell">
-    <header class="app-header">
-      <a class="app-brand" href="/" aria-label="Trashëgimia Natyrore"><span class="brand-symbol" aria-hidden="true">✳</span><span class="brand-title">TRASHËGIMIA<br />NATYRORE</span></a>
-      <nav class="header-actions" aria-label="Veprimet kryesore"><a class="header-data" href="/">Harta</a><a class="header-data" href="/dashboard">Raportet</a></nav>
-    </header>
+    <SiteHeader page="contribute" />
     <main class="contribute-main">
       <p class="eyebrow">Kontribuo në atlas</p>
       <h1>Shto të dhëna</h1>
@@ -30,7 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </section>
       </div>
       <p class="contribute-note">Për statusin e zonave, ndërhyrjet dhe organizatat kontribuuese përdoret fleta e përbashkët e raportimit e projektit. Koordinohu me ekipin e projektit për akses.</p>
-      <a class="contribute-back" href="/">← Kthehu te harta</a>
+      <a class="contribute-back" href={base}>← Kthehu te harta</a>
     </main>
   </div>
 </BaseLayout>

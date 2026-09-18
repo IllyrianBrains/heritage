@@ -10,10 +10,12 @@ from shapely.geometry import shape
 DATA = Path(__file__).resolve().parents[1] / "public/data/groups"
 
 
-def main() -> None:
-    area_path = DATA / "zona.geojson"
+AREA_GROUPS = ("parqe", "mbrojtura", "rezervate")
+
+
+def link_area_file(area_path: Path, observations: dict) -> None:
     areas = json.loads(area_path.read_text())
-    observations = {group: json.loads((DATA / f"{group}.geojson").read_text())["features"] for group in ("flora", "fauna")}
+    print(f"{area_path.name}: duke lidhur {len(areas['features'])} zona me vëzhgimet…")
     for area in areas["features"]:
         polygon = shape(area["geometry"])
         properties = area["properties"]
@@ -43,6 +45,18 @@ def main() -> None:
         properties["details"] = details
         properties["extra"] = extra
     area_path.write_text(json.dumps(areas, ensure_ascii=False, indent=2) + "\n")
+
+
+def main() -> None:
+    observations = {group: json.loads((DATA / f"{group}.geojson").read_text())["features"] for group in ("flora", "fauna")}
+    print(f"Vëzhgime të ngarkuara: {len(observations['flora'])} florë, {len(observations['fauna'])} faunë")
+    for group in AREA_GROUPS:
+        area_path = DATA / f"{group}.geojson"
+        if area_path.exists():
+            link_area_file(area_path, observations)
+        else:
+            print(f"{group}.geojson: nuk ekziston, u anashkalua")
+    print("Përfundoi lidhja e llojeve me zonat.")
 
 
 if __name__ == "__main__":

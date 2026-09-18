@@ -1,0 +1,55 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "reported-narta-airport",
+      "geometry": { "type": "Point", "coordinates": [19.433, 40.604] },
+      "properties": {
+        "text": "Nartë–Vjosë · BirdLife (2023) raportoi shqetësime për ndikimin e ndërtimit të aeroportit në habitatin e shpendëve shtegtarë. Pika tregon zonën përafërsisht; verifiko gjendjen aktuale te burimi.",
+        "category": "yellow",
+        "source": "https://www.birdlife.org/news/2023/10/09/saving-the-bird-paradise-of-the-vjosa-narta-lagoon-in-albania/"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "reported-valbona-hydropower",
+      "geometry": { "type": "Point", "coordinates": [19.896, 42.451] },
+      "properties": {
+        "text": "Valbonë · Bankwatch (2019) dokumentoi shqetësime për hidrocentralet dhe devijimin e ujit në luginë. Pika është orientuese dhe nuk shënon një vepër të caktuar.",
+        "category": "red",
+        "source": "https://bankwatch.org/press_release/new-report-hydropower-subsidies-wreak-environmental-havoc-and-line-influential-pockets-in-the-western-balkans"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "reported-ohrid-wastewater",
+      "geometry": { "type": "Point", "coordinates": [20.66, 40.902] },
+      "properties": {
+        "text": "Liqeni i Ohrit, Pogradec · UNESCO (2026) raportoi boshllëqe të mbetura në infrastrukturën e ujërave të ndotura përgjatë bregut shqiptar. Pika është orientuese për zonën, jo vendndodhje e një shkarkimi.",
+        "category": "yellow",
+        "source": "https://whc.unesco.org/document/224819"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "reported-butrint-development",
+      "geometry": { "type": "Point", "coordinates": [20.023, 39.747] },
+      "properties": {
+        "text": "Butrint–Ksamil · Komiteti i UNESCO-s (2026) shprehu shqetësime për projekte ndërtimi në zonën tampon dhe kërkoi shqyrtim të ndikimit. Pika përfaqëson zonën e përgjithshme, jo parcelën e projektit.",
+        "category": "yellow",
+        "source": "https://whc.unesco.org/en/decisions/9120"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "reported-sharri-logging",
+      "geometry": { "type": "Point", "coordinates": [21.01, 42.197] },
+      "properties": {
+        "text": "Sharri, Kosovë · OSBE (2024) e përfshiu prerjen e paligjshme të pyjeve ndër çështjet që kërkojnë bashkëpunim në zonat e mbrojtura të maleve Sharr. Pika është orientuese për parkun.",
+        "category": "red",
+        "source": "https://oceea.osce.org/oceea/581833"
+      }
+    }
+  ]
+}

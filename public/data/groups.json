@@ -1,12 +1,30 @@
 {
   "groups": [
     {
-      "id": "zona",
-      "label": "Zona natyrore",
-      "color": "#287965",
+      "id": "parqe",
+      "label": "Parqe kombëtare",
+      "color": "#1f7a52",
       "files": [
-        "/data/groups/zona.geojson",
-        "/data/manual/zona.geojson"
+        "/data/groups/parqe.geojson",
+        "/data/manual/parqe.geojson"
+      ]
+    },
+    {
+      "id": "mbrojtura",
+      "label": "Zona të mbrojtura",
+      "color": "#2f9e6b",
+      "files": [
+        "/data/groups/mbrojtura.geojson",
+        "/data/manual/mbrojtura.geojson"
+      ]
+    },
+    {
+      "id": "rezervate",
+      "label": "Rezervate natyrore",
+      "color": "#4caf7d",
+      "files": [
+        "/data/groups/rezervate.geojson",
+        "/data/manual/rezervate.geojson"
       ]
     },
     {
