@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-09-17T23:44:41+00:00",
+  "warnings": 0,
+  "interventions": [
+    {
+      "areaId": "osm-relation-7458650",
+      "title": "[Shembull] Patrullim kundër ndërtimeve ilegale",
+      "description": "Patrullime të përjavshme me rojet e parkut dhe raportim te autoritetet lokale.",
+      "priority": "high",
+      "status": "ongoing",
+      "organization": "OJQ Shembull Natyra",
+      "startDate": "2026-05-01",
+      "endDate": null,
+      "link": null
+    },
+    {
+      "areaId": "osm-way-503885261",
+      "title": "[Shembull] Pastrim i bregut dhe monitorim i shpendëve",
+      "description": "Fushatë pastrimi dhe numërim i popullsisë së shpendëve ujorë çdo muaj.",
+      "priority": "high",
+      "status": "planned",
+      "organization": "OJQ Shembull Natyra",
+      "startDate": "2026-10-01",
+      "endDate": null,
+      "link": null
+    },
+    {
+      "areaId": "osm-relation-19369097",
+      "title": "[Shembull] Sinjalistikë e re për vizitorët",
+      "description": "Vendosje tabelash informuese dhe shenja shtegu në pikat kryesore.",
+      "priority": "medium",
+      "status": "done",
+      "organization": "OJQ Shembull Kosovë",
+      "startDate": "2026-04-01",
+      "endDate": "2026-06-15",
+      "link": null
+    }
+  ]
+}

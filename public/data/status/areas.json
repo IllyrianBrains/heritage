@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-09-17T23:44:41+00:00",
+  "warnings": 0,
+  "areas": [
+    {
+      "areaId": "osm-relation-7458650",
+      "areaName": "Bjeshkët e Nemuna National Park",
+      "group": "zona",
+      "status": "watch",
+      "indicators": {
+        "threatLevel": "medium",
+        "habitatTrend": "stable",
+        "enforcementLevel": "partial"
+      },
+      "lastAssessed": "2026-07-15",
+      "assessedBy": "OJQ Shembull Natyra",
+      "notes": "[Shembull] Presion nga ndërtimet ilegale në zonën periferike; nevojitet patrullim shtesë.",
+      "evidenceUrl": null
+    },
+    {
+      "areaId": "osm-way-503885261",
+      "areaName": "Divjakë-Karavasta National Park",
+      "group": "zona",
+      "status": "critical",
+      "indicators": {
+        "threatLevel": "high",
+        "habitatTrend": "declining",
+        "enforcementLevel": "weak"
+      },
+      "lastAssessed": "2026-08-02",
+      "assessedBy": "OJQ Shembull Natyra",
+      "notes": "[Shembull] Ndotje nga rrjedhjet e ujërave të zeza dhe gjueti ilegale e shpendëve ujorë.",
+      "evidenceUrl": null
+    },
+    {
+      "areaId": "osm-relation-19369097",
+      "areaName": "Theth National Park",
+      "group": "zona",
+      "status": "good",
+      "indicators": {
+        "threatLevel": "low",
+        "habitatTrend": "improving",
+        "enforcementLevel": "good"
+      },
+      "lastAssessed": "2026-06-20",
+      "assessedBy": "OJQ Shembull Kosovë",
+      "notes": "[Shembull] Gjendje e mirë pas fushatës së pastrimit dhe sinjalistikës së re.",
+      "evidenceUrl": null
+    },
+    {
+      "areaId": "osm-relation-15532984",
+      "areaName": "Prespa National Park",
+      "group": "zona",
+      "status": "unassessed",
+      "indicators": {
+        "threatLevel": null,
+        "habitatTrend": null,
+        "enforcementLevel": null
+      },
+      "lastAssessed": null,
+      "assessedBy": null,
+      "notes": "[Shembull] Ende pa vlerësim të plotë; NGO partnere po planifikon vizitën e parë në terren.",
+      "evidenceUrl": null
+    }
+  ]
+}

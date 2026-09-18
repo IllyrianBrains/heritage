@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Paneli i Statusit · Harta e Natyrës" description="Gjendja e zonave natyrore, kuadri ligjor, ndërhyrjet e planifikuara dhe organizatat partnere.">
+  <header class="app-header">
+    <a class="app-brand" href="/" aria-label="Trashëgimia Natyrore"><span class="brand-symbol" aria-hidden="true">✳</span><span class="brand-title">TRASHËGIMIA<br />NATYRORE</span></a>
+    <div class="header-status"><span class="status-dot" aria-hidden="true"></span><span>Statusi dhe ndërhyrjet · NGO</span></div>
+    <div class="header-actions"><a class="header-data" href="/">Harta <span aria-hidden="true">↗</span></a></div>
+  </header>
+  <main class="dashboard-main">
+    <section class="dashboard-intro">
+      <p class="eyebrow">Shqipëri dhe Kosovë</p>
+      <h1>Paneli i statusit</h1>
+      <p class="dashboard-lede">Gjendja e zonave natyrore, kuadri ligjor dhe përparësitë e qeverisjes qendrore e vendore, ndërhyrjet e planifikuara ose në vazhdim, dhe organizatat që kontribuojnë me të dhëna — për të koordinuar përparësitë dhe bashkëpunimet mes NGO-ve.</p>
+    </section>
+
+    <section class="stat-tiles" id="stat-tiles" aria-label="Statistika përmbledhëse"></section>
+
+    <section class="dashboard-section" aria-labelledby="areas-heading">
+      <div class="section-head"><h2 id="areas-heading">Gjendja e zonave</h2><span id="areas-count" class="count-badge">…</span></div>
+      <div class="status-filters" id="status-filters" role="group" aria-label="Filtro sipas statusit"></div>
+      <div id="area-grid" class="area-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="dashboard-section" aria-labelledby="legislation-heading">
+      <div class="section-head"><h2 id="legislation-heading">Kuadri ligjor</h2><span id="legislation-count" class="count-badge">…</span></div>
+      <div id="legislation-list" class="legislation-list" aria-live="polite"></div>
+    </section>
+
+    <section class="dashboard-section" aria-labelledby="interventions-heading">
+      <div class="section-head"><h2 id="interventions-heading">Ndërhyrjet</h2><span id="interventions-count" class="count-badge">…</span></div>
+      <div class="intervention-filters" id="intervention-filters" role="group" aria-label="Filtro ndërhyrjet sipas statusit"></div>
+      <div id="intervention-list" class="intervention-list" aria-live="polite"></div>
+    </section>
+
+    <section class="dashboard-section" aria-labelledby="organizations-heading">
+      <div class="section-head"><h2 id="organizations-heading">Organizatat</h2><span id="organizations-count" class="count-badge">…</span></div>
+      <div id="organization-list" class="organization-list" aria-live="polite"></div>
+    </section>
+
+    <div id="dashboard-notice" class="map-notice" role="status" hidden></div>
+  </main>
+  <script is:inline src="/dashboard.js"></script>
+</BaseLayout>

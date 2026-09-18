@@ -1,0 +1,36 @@
+{
+  "generatedAt": "2026-09-17T23:44:41+00:00",
+  "warnings": 0,
+  "legislation": [
+    {
+      "areaId": "osm-relation-7458650",
+      "protectionCategory": "Park Kombëtar (Kategoria II IUCN)",
+      "legalBasis": "[Shembull] Ligji Nr. 04/L-086 për zonat e mbrojtura",
+      "responsibilityLevel": "central",
+      "governmentPriority": "high",
+      "managementPlan": "in_progress",
+      "notes": "[Shembull] Plani i ri i menaxhimit pritet të miratohet brenda vitit.",
+      "link": null
+    },
+    {
+      "areaId": "osm-way-503885261",
+      "protectionCategory": "Park Kombëtar dhe zonë RAMSAR",
+      "legalBasis": "[Shembull] Ligji Nr. 81/2017 'Për zonat e mbrojtura'",
+      "responsibilityLevel": "shared",
+      "governmentPriority": "high",
+      "managementPlan": "yes",
+      "notes": "[Shembull] Bashkia dhe agjencia kombëtare bashkadministrojnë zonën.",
+      "link": null
+    },
+    {
+      "areaId": "osm-relation-19369097",
+      "protectionCategory": "Park Kombëtar (Kategoria II IUCN)",
+      "legalBasis": "[Shembull] Ligji Nr. 81/2017 'Për zonat e mbrojtura'",
+      "responsibilityLevel": "local",
+      "governmentPriority": "medium",
+      "managementPlan": "yes",
+      "notes": "[Shembull] Menaxhohet kryesisht nga bashkia vendore.",
+      "link": null
+    }
+  ]
+}

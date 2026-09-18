@@ -1,0 +1,31 @@
+{
+  "groups": [
+    {
+      "id": "zona",
+      "label": "Zona natyrore",
+      "color": "#287965",
+      "files": [
+        "/data/groups/zona.geojson",
+        "/data/manual/zona.geojson"
+      ]
+    },
+    {
+      "id": "flora",
+      "label": "Flora",
+      "color": "#789f43",
+      "files": [
+        "/data/groups/flora.geojson",
+        "/data/manual/flora.geojson"
+      ]
+    },
+    {
+      "id": "fauna",
+      "label": "Fauna",
+      "color": "#bd7848",
+      "files": [
+        "/data/groups/fauna.geojson",
+        "/data/manual/fauna.geojson"
+      ]
+    }
+  ]
+}

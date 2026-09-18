@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Shto të dhëna · Harta e Natyrës" description="Udhëzime për të kontribuar të dhëna për trashëgiminë natyrore të Shqipërisë dhe Kosovës.">
+  <div class="app-shell">
+    <header class="app-header">
+      <a class="app-brand" href="/" aria-label="Trashëgimia Natyrore"><span class="brand-symbol" aria-hidden="true">✳</span><span class="brand-title">TRASHËGIMIA<br />NATYRORE</span></a>
+      <nav class="header-actions" aria-label="Veprimet kryesore"><a class="header-data" href="/">Harta</a><a class="header-data" href="/dashboard">Raportet</a></nav>
+    </header>
+    <main class="contribute-main">
+      <p class="eyebrow">Kontribuo në atlas</p>
+      <h1>Shto të dhëna</h1>
+      <p class="contribute-lede">Organizatat dhe komunitetet mund të shtojnë zona natyrore, vëzhgime të florës dhe faunës, si dhe burimet që i mbështesin. Të dhënat publikohen pas shqyrtimit.</p>
+      <div class="contribute-grid">
+        <section class="contribute-card">
+          <span class="contribute-step">01</span>
+          <h2>Përgatit vendndodhjen</h2>
+          <p>Përdor GeoJSON në WGS84. Zonat duhen si <code>Polygon</code> ose <code>MultiPolygon</code>; vëzhgimet e florës dhe faunës si <code>Point</code>.</p>
+        </section>
+        <section class="contribute-card">
+          <span class="contribute-step">02</span>
+          <h2>Shto përshkrimin dhe burimet</h2>
+          <p>Çdo objekt duhet të ketë një ID unike, emër, përmbledhje, kod vendi <code>AL</code> ose <code>XK</code>, dhe lidhje me burimin. Për fotografitë, jep autorin dhe licencën.</p>
+        </section>
+        <section class="contribute-card">
+          <span class="contribute-step">03</span>
+          <h2>Dërgo për shqyrtim</h2>
+          <p>Vendose objektin te skedari i grupit përkatës në <code>public/data/manual/</code> dhe propozo ndryshimin në depon e projektit.</p>
+          <a class="contribute-link" href="https://github.com/pomodoren/heritage" target="_blank" rel="noopener noreferrer">Hap depon e projektit ↗</a>
+        </section>
+      </div>
+      <p class="contribute-note">Për statusin e zonave, ndërhyrjet dhe organizatat kontribuuese përdoret fleta e përbashkët e raportimit e projektit. Koordinohu me ekipin e projektit për akses.</p>
+      <a class="contribute-back" href="/">← Kthehu te harta</a>
+    </main>
+  </div>
+</BaseLayout>

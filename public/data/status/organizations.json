@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-09-17T23:44:41+00:00",
+  "organizations": [
+    {
+      "name": "OJQ Shembull Natyra",
+      "focus": "[Shembull] Ruajtja e habitateve ujore dhe shpendëve",
+      "contact": "shembull@example.org",
+      "website": null
+    },
+    {
+      "name": "OJQ Shembull Kosovë",
+      "focus": "[Shembull] Menaxhimi i parqeve kombëtare dhe edukim mjedisor",
+      "contact": "shembull.kosove@example.org",
+      "website": null
+    }
+  ]
+}
