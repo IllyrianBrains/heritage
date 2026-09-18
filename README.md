@@ -13,15 +13,17 @@ npm run dev
 
 ## Publikimi në GitHub Pages
 
-Workflow-i [`.github/workflows/pages.yml`](.github/workflows/pages.yml) ndërton dhe publikon faqen pas çdo `push` në `main`; mund të niset edhe nga **Actions → Publish to GitHub Pages → Run workflow**. Në **Settings → Pages**, zgjidhni **GitHub Actions** si burim publikimi. Adresa e projektit është `https://pomodoren.github.io/heritage/`.
+Workflow-i [`.github/workflows/pages.yml`](.github/workflows/pages.yml) ndërton dhe publikon faqen pas çdo `push` në `main`; mund të niset edhe nga **Actions → Publish to GitHub Pages → Run workflow**. Në **Settings → Pages**, zgjidhni **GitHub Actions** si burim publikimi. Adresa e projektit origjinal është `https://pomodoren.github.io/heritage/`.
 
-Workflow-i përdor Node.js 24 dhe ndërton me `SITE_URL=https://pomodoren.github.io` e `BASE_PATH=/heritage`. Për ta provuar lokalisht me të njëjtën rrugë:
+Për ta publikuar një fork, aktivizoni **Actions** në fork dhe zgjidhni **GitHub Actions** te **Settings → Pages**. Workflow-i merr automatikisht pronarin dhe emrin e depos: një fork `emri/imja` publikohet te `https://emri.github.io/imja/`; depoja `emri/emri.github.io` publikohet te rrënja e domenit. Lidhjet për propozimin e ndryshimeve në faqe drejtojnë te depoja që po ndërtohet.
+
+Workflow-i përdor Node.js 24. Për ta provuar lokalisht me të njëjtën rrugë si projekti origjinal:
 
 ```bash
 SITE_URL=https://pomodoren.github.io BASE_PATH=/heritage npm run build
 ```
 
-Nëse përdoret më vonë një domen i personalizuar, përditësoni `SITE_URL` dhe `BASE_PATH` në workflow, konfiguroni domenin në GitHub Pages dhe shtoni `public/CNAME` sipas udhëzimeve të GitHub.
+Nëse përdoret një domen i personalizuar, konfiguroni domenin në GitHub Pages, shtoni `public/CNAME` dhe përshtatni `SITE_URL` e `BASE_PATH` në workflow.
 
 ## Eksplorimi në hartë
 

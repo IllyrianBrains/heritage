@@ -29,11 +29,19 @@ jobs:
         run: npm ci
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
+      - name: Set site URLs for this repository
+        shell: bash
+        run: |
+          repo_name="${GITHUB_REPOSITORY#*/}"
+          echo "SITE_URL=https://${GITHUB_REPOSITORY_OWNER}.github.io" >> "$GITHUB_ENV"
+          if [[ "${repo_name,,}" == "${GITHUB_REPOSITORY_OWNER,,}.github.io" ]]; then
+            echo "BASE_PATH=/" >> "$GITHUB_ENV"
+          else
+            echo "BASE_PATH=/$repo_name" >> "$GITHUB_ENV"
+          fi
+          echo "PUBLIC_REPOSITORY_URL=https://github.com/$GITHUB_REPOSITORY" >> "$GITHUB_ENV"
       - name: Build site
         run: npm run build
-        env:
-          SITE_URL: https://pomodoren.github.io
-          BASE_PATH: /heritage
       - name: Upload site
         uses: actions/upload-pages-artifact@v4
         with:

@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const repositoryUrl = import.meta.env.PUBLIC_REPOSITORY_URL || 'https://github.com/pomodoren/heritage';
 ---
 <BaseLayout title="Shto të dhëna · Harta e Natyrës" description="Udhëzime për të kontribuar të dhëna për trashëgiminë natyrore të Shqipërisë dhe Kosovës.">
   <div class="app-shell">
@@ -25,7 +26,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
           <span class="contribute-step">03</span>
           <h2>Dërgo për shqyrtim</h2>
           <p>Vendose objektin te skedari i grupit përkatës në <code>public/data/manual/</code> dhe propozo ndryshimin në depon e projektit.</p>
-          <a class="contribute-link" href="https://github.com/pomodoren/heritage" target="_blank" rel="noopener noreferrer">Hap depon e projektit ↗</a>
+          <a class="contribute-link" href={repositoryUrl} target="_blank" rel="noopener noreferrer">Hap depon e projektit ↗</a>
         </section>
       </div>
       <p class="contribute-note">Për statusin e zonave, ndërhyrjet dhe organizatat kontribuuese përdoret fleta e përbashkët e raportimit e projektit. Koordinohu me ekipin e projektit për akses.</p>

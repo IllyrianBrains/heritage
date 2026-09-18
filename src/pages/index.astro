@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const repositoryUrl = import.meta.env.PUBLIC_REPOSITORY_URL || 'https://github.com/pomodoren/heritage';
+const repositoryLabel = repositoryUrl.replace('https://', '');
 ---
 <BaseLayout title="Harta e Natyrës" description="Zona të mbrojtura, flora dhe fauna në Shqipëri dhe Kosovë.">
   <div class="app-shell">
@@ -76,7 +78,17 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
         <div class="project-divider"></div>
         <h2>Një projekt i përbashkët</h2>
         <p>Ky projekt nisi nga <strong>Flamingo Revolution</strong> dhe përfshin kontribute nga organizata të ndryshme që punojnë me natyrën dhe komunitetet.</p>
+        <nav class="project-links" aria-label="Faqet e organizatave">
+          <a href="https://flamingorevolution.eu/" target="_blank" rel="noopener noreferrer"><span><strong>Flamingo Revolution</strong><small>flamingorevolution.eu</small></span><span aria-hidden="true">↗</span></a>
+          <a href="https://referendum21.org/" target="_blank" rel="noopener noreferrer"><span><strong>Referendum 21</strong><small>referendum21.org</small></span><span aria-hidden="true">↗</span></a>
+        </nav>
         <p>Qëllimi është të rrisë ndërgjegjësimin për trashëgiminë natyrore: zonat, florën, faunën dhe të dhënat që na ndihmojnë t’i kuptojmë ato.</p>
+        <div class="project-divider"></div>
+        <h2>Burim i hapur</h2>
+        <p>Ky projekt bazohet në kod me burim të hapur dhe të dhëna të hapura. Ndryshimet në hartë dhe në faqe mund të propozohen në depon e projektit në GitHub.</p>
+        <nav class="project-links" aria-label="Kontributi në projekt">
+          <a href={repositoryUrl} target="_blank" rel="noopener noreferrer"><span><strong>Propozo ndryshime në GitHub</strong><small>{repositoryLabel}</small></span><span aria-hidden="true">↗</span></a>
+        </nav>
         <div class="project-divider"></div>
         <h2>Si lexohet harta</h2>
         <p>Kufijtë e zonave vijnë kryesisht nga OpenStreetMap. Pikat e florës dhe faunës tregojnë vëzhgime, jo gjithë habitatin e një lloji.</p>
