@@ -63,20 +63,30 @@
   const legislation = legislationResult.status === 'fulfilled' ? (legislationResult.value.legislation || []) : [];
   const areaNameById = new Map(areas.map((area) => [area.areaId, area.areaName]));
 
+  const generatedDates = [areasResult, interventionsResult, organizationsResult, legislationResult]
+    .filter((result) => result.status === 'fulfilled' && result.value.generatedAt)
+    .map((result) => new Date(result.value.generatedAt))
+    .filter((date) => !Number.isNaN(date.getTime()));
+  const latestGenerated = generatedDates.sort((a, b) => b - a)[0];
+  document.getElementById('report-updated').textContent = latestGenerated
+    ? new Intl.DateTimeFormat('sq-AL', { day: 'numeric', month: 'long', year: 'numeric' }).format(latestGenerated)
+    : 'Data nuk është e disponueshme';
+
   if ([areasResult, interventionsResult, organizationsResult, legislationResult].every((result) => result.status !== 'fulfilled')) {
     showNotice('Të dhënat e statusit nuk u ngarkuan. Provo ta rifreskosh faqen.');
   }
 
-  const statTile = (label, value) => {
+  const statTile = (label, value, tone = '') => {
     const tile = make('div', 'stat-tile');
+    if (tone) tile.dataset.tone = tone;
     tile.append(make('span', 'stat-tile-label', label), make('span', 'stat-tile-value', value));
     return tile;
   };
   const statTiles = document.getElementById('stat-tiles');
-  for (const key of STATUS_ORDER) statTiles.append(statTile(STATUS_LABELS[key], areas.filter((area) => area.status === key).length));
-  statTiles.append(statTile('Ndërhyrje gjithsej', interventions.length));
-  statTiles.append(statTile('Organizata', organizations.length));
-  statTiles.append(statTile('Zona me kuadër ligjor', legislation.length));
+  statTiles.append(statTile('Zona të vlerësuara', areas.filter((area) => area.status !== 'unassessed').length));
+  statTiles.append(statTile('Kërkojnë vëmendje', areas.filter((area) => ['critical', 'watch'].includes(area.status)).length, 'attention'));
+  statTiles.append(statTile('Ndërhyrje aktive', interventions.filter((item) => item.status === 'ongoing').length, 'active'));
+  statTiles.append(statTile('Partnerë kontribues', organizations.length));
 
   let activeStatus = 'all';
   const statusFilters = document.getElementById('status-filters');

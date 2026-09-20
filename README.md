@@ -31,6 +31,8 @@ Shiriti sipër ka lidhjet **Raportet**, **Shto shënim**, **Shto të dhëna** dh
 
 Galeria i grupon kartat në seksione të palosshme sipas llojit të shtresës: zona natyrore, florë dhe faunë, me numrin e rezultateve në secilin grup. Seksioni i parë hapet fillimisht; të tjerët janë të mbyllur. Karta e një zone tregon numrin e vëzhgimeve të importuara brenda kufirit; paneli i saj lidhet me regjistrimet përkatëse të florës dhe faunës. Karta e vëzhgimit tregon llojin, vendin, datën dhe fotografinë kur ka një të licencuar. Paneli i detajeve mban burimin dhe licencën pranë fotografisë.
 
+Menuja **Mjedisi** mban shtresa të jashtme të ndara nga objektet e atlasit dhe nga harta bazë. Ato mund të aktivizohen njëkohësisht: mozaiku **Copernicus Sentinel-2** për imazheri satelitore, **NASA MODIS Land Cover** për klasat e mbulesës së tokës, **NASA MODIS NDVI** për gjendjen e bimësisë dhe **NASA MODIS** për temperaturën e sipërfaqes së tokës. Pllakat lexohen drejtpërdrejt nga shërbimet publike të EOX dhe NASA EOSDIS GIBS; harta u shton atribuimin përkatës. Mbulesa e tokës është e dukshme fillimisht, ndërsa shtresat e tjera aktivizohen nga menuja. Ato janë vetëm orientuese, jo të dhëna të katalogut apo matje në terren.
+
 Shënimet e publikuara lexohen nga `public/data/manual/notes.geojson`. Secila pikë ka `id` unik dhe `properties.text`, `category` e `source`; vendndodhjet orientuese shënohen si të tilla në tekst. Kategoritë e semaforit janë `red` (ndikim i raportuar), `yellow` (shqetësim për verifikim) dhe `green` (përmirësim i dokumentuar). Kategoria përmbledh shënimin dhe nuk është vlerësim zyrtar i gjendjes ose ligjshmërisë. Shënimet e publikuara kanë lidhje te burimi dhe nuk mund të fshihen nga vizitorët. Shënimet personale ruhen në shfletues, mund të eksportohen veçmas dhe bëhen të lexueshme në zmadhimin 11 ose më lart.
 
 ## Përditësimi i të dhënave
@@ -60,7 +62,27 @@ Nëse Overpass është i zënë, `python3 scripts/extract_nature.py --skip-osm` 
 
 Fotografitë GBIF merren nga media e vëzhgimeve me licencë CC0, CC BY, CC BY-SA ose CC BY-NC; fotografitë me kufizim ND dhe ato pa licencë të qartë nuk shfaqen. Kartat tregojnë autorin dhe licencën, ndërsa paneli i detajeve lidhet me fotografinë dhe kushtet e licencës. `enrich_wikipedia_images.py` përdor imazhin e artikullit vetëm kur ai gjendet në Wikimedia Commons me licencë të verifikueshme. Fotografitë ngarkohen nga shërbimet burimore, prandaj mund të mungojnë kur një burim nuk përgjigjet.
 
+## Matjet aktuale nga sensorët e hapur
+
+Paneli i detajeve të një zone kërkon, vetëm kur ajo zonë hapet, sensorin publik aktiv më të afërt brenda 25 km në rrjetin [Sensor.Community](https://sensor.community/). API-ja publike nuk kërkon çelës dhe kthen matjet e pesë minutave të fundit. Mund të shfaqen PM10, PM2.5, temperaturë, lagështi, presion dhe zhurmë, sipas pajisjeve të lidhura me stacionin. Përgjigjet ruhen në memorien e faqes gjatë sesionit për të shmangur kërkesa të përsëritura.
+
+Këto janë matje orientuese nga pajisje komunitare me kosto të ulët. Distanca nga qendra gjeometrike e zonës dhe koha e matjes shfaqen gjithmonë; matja nuk konsiderohet vlerësim i gjithë zonës dhe nuk zëvendëson monitorimin zyrtar. Kur nuk ka mbulim ose shërbimi i jashtëm nuk përgjigjet, paneli e thotë qartë dhe pjesa tjetër e hartës vazhdon të punojë. Firmware-i dhe platforma Sensor.Community janë me burim të hapur; lidhja për ndërtimin dhe regjistrimin e një sensori shfaqet kur nuk ka mbulim pranë zonës.
+
 ## Statusi dhe ndërhyrjet
+
+### Regjistri i vendeve në rrezik
+
+“Vendet në rrezik” nuk është shtresë e veçantë gjeografike. Çdo çështje lidhet me një zonë që ekziston tashmë në katalog përmes `ID e zonës`. Çështjet aktive e nxjerrin zonën në bllokun prioritar në krye të galerisë, e theksojnë me të kuqe në hartë dhe shfaqin aktivitetin, statusin, datat dhe dëshminë në panelin e zonës.
+
+Skedari [data/issues.csv](data/issues.csv) hapet dhe redaktohet në Excel, LibreOffice ose Google Sheets. Pas ndryshimeve ekzekutoni:
+
+```bash
+python3 scripts/sync_issues.py
+```
+
+Për ta përdorur drejtpërdrejt me një Google Sheet, krijoni një fletë `Çështjet` me të njëjtat kolona dhe ekzekutoni `python3 scripts/sync_issues.py --sheet-id <ID_I_SHEET>`. Kolonat janë: `ID e çështjes` · `ID e zonës` · `Aktiviteti` · `Lloji i rrezikut` · `Përshkrimi` · `Prioriteti` (I lartë / Mesatar / I ulët) · `Statusi` (Në vazhdim / Për verifikim / Pezulluar / Mbyllur) · `Data e raportimit` · `Përditësuar më` · `Organizata raportuese` · `Lidhje dëshmie`.
+
+Sinkronizimi shkruan `public/data/status/issues.json`; një rresht pa dëshmi ose me një `ID e zonës` që nuk ekziston në katalog refuzohet me paralajmërim. Mbyllja e një çështjeje ruan historikun në regjistër, por heq zonën nga blloku prioritar.
 
 Organizatat mjedisore (NGO) raportojnë gjendjen e zonave, kuadrin ligjor dhe ndërhyrjet e planifikuara në një Google Sheet të përbashkët me katër fletë, që sinkronizohet në sit me:
 

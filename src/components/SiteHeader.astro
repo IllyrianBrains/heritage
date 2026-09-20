@@ -8,7 +8,8 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
     <span class="brand-title">TRASHËGIMIA<br />NATYRORE</span>
   </a>
   <nav id="primary-nav" class="header-actions" aria-label="Veprimet kryesore">
-    <a class="header-data" href={base} aria-current={page === 'map' ? 'page' : undefined}>Harta</a>
+    <a class="header-data" href={`${base}map/`} aria-current={page === 'map' ? 'page' : undefined}>Harta</a>
+    <a class="header-data" href={`${base}tourism/`} aria-current={page === 'tourism' ? 'page' : undefined}>Udhëto gjelbër</a>
     <a class="header-data" href={`${base}dashboard/`} aria-current={page === 'dashboard' ? 'page' : undefined}>Raportet</a>
     <a class="header-data" href={`${base}contribute/`} aria-current={page === 'contribute' ? 'page' : undefined}>Shto të dhëna</a>
     <slot />

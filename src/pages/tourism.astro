@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+---
+<BaseLayout title="Udhëto gjelbër · Harta e turizmit të qëndrueshëm" description="Ide për udhëtime me ndikim më të vogël në Shqipëri dhe Kosovë.">
+  <div class="app-shell tourism-shell">
+    <SiteHeader page="tourism" />
+    <main class="tourism-workspace">
+      <aside class="tourism-sidebar" aria-label="Eksploro destinacionet">
+        <header class="tourism-intro">
+          <p class="eyebrow">Shqipëri · Kosovë</p>
+          <h1>Udhëto lehtë.<br /><em>Lër mirësi pas.</em></h1>
+          <p>Zgjidh përvoja lokale, lëviz ngadalë dhe zbulo vende që kujdesen për natyrën e komunitetin.</p>
+        </header>
+
+        <div class="tourism-search">
+          <label class="visually-hidden" for="tourism-query">Kërko destinacion</label>
+          <span aria-hidden="true">⌕</span>
+          <input id="tourism-query" type="search" placeholder="Kërko vend ose përvojë…" autocomplete="off" />
+        </div>
+
+        <div class="tourism-filters" aria-label="Filtro sipas përvojës">
+          <button type="button" data-filter="all" aria-pressed="true">Të gjitha</button>
+          <button type="button" data-filter="nature" aria-pressed="false">Natyrë</button>
+          <button type="button" data-filter="culture" aria-pressed="false">Kulturë</button>
+          <button type="button" data-filter="food" aria-pressed="false">Ushqim lokal</button>
+        </div>
+
+        <div class="tourism-results-head"><strong>Vende për t’u zbuluar</strong><span id="tourism-count">8 vende</span></div>
+        <div id="tourism-list" class="tourism-list" aria-live="polite"></div>
+
+        <footer class="tourism-footnote"><span aria-hidden="true">♻</span><p><strong>Udhëto me kujdes.</strong> Respekto shtigjet, merr mbetjet me vete dhe mbështet bizneset e vogla.</p></footer>
+      </aside>
+
+      <section class="tourism-map-pane" aria-label="Harta e turizmit të qëndrueshëm">
+        <div id="tourism-map" class="tourism-map" role="application" aria-label="Hartë interaktive me destinacione të qëndrueshme"></div>
+        <div class="tourism-map-title">
+          <span class="tourism-live-dot"></span>
+          <div><small>Harta e udhëtimit të ngadaltë</small><strong>8 ide · 2 vende</strong></div>
+        </div>
+        <button id="tourism-sidebar-toggle" class="tourism-sidebar-toggle" type="button" aria-expanded="true" aria-controls="tourism-list"><span aria-hidden="true">←</span><span>Fshih listën</span></button>
+        <div class="tourism-legend" aria-label="Legjenda">
+          <span><i class="nature"></i>Natyrë</span><span><i class="culture"></i>Kulturë</span><span><i class="food"></i>Ushqim lokal</span>
+        </div>
+        <article id="tourism-detail" class="tourism-detail" hidden aria-live="polite"></article>
+      </section>
+    </main>
+  </div>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.9.0/ol.css" />
+  <script is:inline src="https://cdn.jsdelivr.net/npm/ol@10.9.0/dist/ol.js"></script>
+  <script is:inline src={`${base}tourism-map.js?v=1`}></script>
+</BaseLayout>

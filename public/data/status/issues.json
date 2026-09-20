@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-09-20T06:27:33+00:00",
+  "warnings": 0,
+  "issues": [
+    {
+      "id": "vjosa-narta-development",
+      "areaId": "osm-relation-21209191",
+      "areaName": "Peisazh i Mbrojtur Pishë Poro - Nartë",
+      "activity": "Punime dhe zhvillime të raportuara në Pishë Poro–Nartë dhe Zvërnec",
+      "threatType": "Zhvillim urban dhe turistik",
+      "description": "Revolucioni Flamingo raporton punime dhe zhvillime brenda Peizazhit të Mbrojtur Vjosë–Nartë, përfshirë rrafshimin e dunave ranore. Laguna përshkruhet si Zonë e Rëndësishme për Shpendët me mbi 200 gjallesa të regjistruara.",
+      "priority": "high",
+      "status": "ongoing",
+      "reportedAt": "2026-05-16",
+      "updatedAt": "2026-09-20",
+      "reportedBy": "Revolucioni Flamingo",
+      "evidenceUrl": "https://www.flamingorevolution.eu/protestat/"
+    }
+  ]
+}

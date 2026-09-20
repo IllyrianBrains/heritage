@@ -119,8 +119,10 @@
         "countryCodes": [
           "XK"
         ],
-        "summary": "Rezervat natyror në Kosovë; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The White Drin Canyon or White Drin Gorge is a small canyon located in the southwestern Kosovo. The White Drin river runs through the canyon. The canyon is relatively short, only being about 900 m (1 mi) long with a depth of 45 meters. At the entrance of the canyon is Fshajt Bridge, an old Ottoman bridge which…",
+        "details": [
+          "The White Drin Canyon or White Drin Gorge is a small canyon located in the southwestern Kosovo. The White Drin river runs through the canyon. The canyon is relatively short, only being about 900 m (1 mi) long with a depth of 45 meters. At the entrance of the canyon is Fshajt Bridge, an old Ottoman bridge which attracts divers from all over the Balkans. Canyon of the White Drin river at Fshajt Bridge due to its hydrological and geomorphological values,\nin 1986 was taken under legal protection as a Natural Monument."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -131,6 +133,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/White_Drin_Canyon"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q7994654"
           }
         ],
         "osm": {
@@ -141,6 +147,15 @@
             "natural": "valley",
             "wikidata": "Q7994654"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Kanioni_i_drinit_t%C3%AB_bardh%C3%AB.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "source": "https://commons.wikimedia.org/wiki/File:Kanioni_i_drinit_t%C3%AB_bardh%C3%AB.jpg",
+          "credit": "Faton Haxhiavdyli",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "alt": "Gryka e Drinit të Bardhë"
         }
       }
     },

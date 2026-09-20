@@ -8,6 +8,7 @@
   const notice = document.getElementById('map-notice');
   const search = document.getElementById('place-search');
   const scopeOptions = document.getElementById('scope-options');
+  const environmentOptions = document.getElementById('environment-options');
   const countryOptions = document.getElementById('country-options');
   const noteCategories = {
     red: { label: 'Ndikim i raportuar', color: '#f3a29c' },
@@ -109,10 +110,70 @@
     }),
     visible: false,
   });
+  const environmentalDefinitions = [
+    {
+      id: 'copernicus',
+      label: 'Imazheri Sentinel-2',
+      provider: 'Copernicus Sentinel-2 · mozaik 2020',
+      description: 'Imazheri satelitore pa re për të lexuar pyjet, ujërat, tokën dhe zonat e ndërtuara.',
+      swatch: 'linear-gradient(90deg,#234d42,#79905b,#b6a578,#547785)',
+      source: new ol.source.XYZ({
+        url: 'https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/g/{z}/{y}/{x}.jpg',
+        attributions: 'Sentinel-2 cloudless nga EOX · përmban të dhëna të modifikuara Copernicus Sentinel 2020',
+        maxZoom: 14,
+        crossOrigin: 'anonymous',
+      }),
+    },
+    {
+      id: 'landcover',
+      label: 'Mbulesa e tokës',
+      provider: 'NASA MODIS · klasifikim vjetor',
+      description: 'Pyje, ujë, tokë bujqësore, zona të ndërtuara dhe klasa të tjera të mbulesës së tokës.',
+      swatch: 'linear-gradient(90deg,#006400,#ffbb22,#ffff4c,#0064c8,#fa0000)',
+      defaultVisible: true,
+      source: new ol.source.TileWMS({
+        url: 'https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi',
+        params: { LAYERS: 'MODIS_Combined_L3_IGBP_Land_Cover_Type_Annual', FORMAT: 'image/png', TRANSPARENT: true },
+        attributions: 'NASA EOSDIS GIBS · MODIS IGBP Land Cover',
+        crossOrigin: 'anonymous',
+      }),
+    },
+    {
+      id: 'ndvi',
+      label: 'Gjendja e bimësisë',
+      provider: 'NASA MODIS NDVI · 8 ditë',
+      description: 'Indeksi NDVI: tonet më të gjelbra tregojnë bimësi më të dendur dhe aktive.',
+      swatch: 'linear-gradient(90deg,#f1ecec,#d8c6aa,#b4c476,#67a844,#0b5d28)',
+      source: new ol.source.TileWMS({
+        url: 'https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi',
+        params: { LAYERS: 'MODIS_Terra_NDVI_8Day', FORMAT: 'image/png', TRANSPARENT: true },
+        attributions: 'NASA EOSDIS GIBS · MODIS Terra NDVI',
+        crossOrigin: 'anonymous',
+      }),
+    },
+    {
+      id: 'temperature',
+      label: 'Temperatura e sipërfaqes',
+      provider: 'NASA MODIS · 8 ditë, ditën',
+      description: 'Temperatura e sipërfaqes së tokës; nuk është temperatura e ajrit.',
+      swatch: 'linear-gradient(90deg,#313695,#74add1,#ffffbf,#f46d43,#a50026)',
+      source: new ol.source.TileWMS({
+        url: 'https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi',
+        params: { LAYERS: 'MODIS_Terra_L3_Land_Surface_Temp_8Day_Day', FORMAT: 'image/png', TRANSPARENT: true },
+        attributions: 'NASA EOSDIS GIBS · MODIS Terra',
+        crossOrigin: 'anonymous',
+      }),
+    },
+  ];
+  const environmentalLayers = environmentalDefinitions.map((definition) => ({
+    ...definition,
+    layer: new ol.layer.Tile({ source: definition.source, visible: Boolean(definition.defaultVisible), opacity: 0.68 }),
+  }));
   let selectedId = null;
   let query = '';
   const activeCountries = new Set(['AL', 'XK']);
   let photoOnly = false;
+  let dangerOnly = false;
   const activeGroups = new Set(manifest.groups.map((group) => group.id));
   const STATUS_LABELS = { good: 'E mirë', watch: 'Në vëzhgim', critical: 'Kritike', unassessed: 'Pa vlerësim' };
   const STATUS_COLORS = { good: '#0ca30c', watch: '#fab219', critical: '#d03b3b' };
@@ -124,6 +185,16 @@
   const RESPONSIBILITY_LABELS = { central: 'Qendrore', local: 'Vendore', shared: 'E përbashkët' };
   const GOVERNMENT_PRIORITY_LABELS = { high: 'E lartë', medium: 'Mesatare', low: 'E ulët' };
   const MANAGEMENT_PLAN_LABELS = { yes: 'Ka plan menaxhimi', in_progress: 'Plan menaxhimi në hartim', none: 'Pa plan menaxhimi' };
+  const SENSOR_RADIUS_KM = 25;
+  const SENSOR_VALUE_LABELS = {
+    P1: { label: 'PM10', unit: 'µg/m³' },
+    P2: { label: 'PM2.5', unit: 'µg/m³' },
+    temperature: { label: 'Temperatura', unit: '°C' },
+    humidity: { label: 'Lagështia', unit: '%' },
+    pressure: { label: 'Presioni', unit: 'hPa', transform: (value) => value / 100 },
+    noise_LAeq: { label: 'Zhurma LAeq', unit: 'dB(A)' },
+  };
+  const sensorCache = new Map();
   const styles = (color) => ({
     point: new ol.style.Style({ image: new ol.style.Circle({ radius: 8, fill: new ol.style.Fill({ color }), stroke: new ol.style.Stroke({ color: '#fff', width: 2.5 }) }) }),
     selectedPoint: [new ol.style.Style({ image: new ol.style.Circle({ radius: 15, fill: new ol.style.Fill({ color: '#f6d34b' }), stroke: new ol.style.Stroke({ color: '#473b12', width: 1 }) }) }), new ol.style.Style({ image: new ol.style.Circle({ radius: 8, fill: new ol.style.Fill({ color }), stroke: new ol.style.Stroke({ color: '#fff', width: 2 }) }) })],
@@ -133,6 +204,23 @@
     selectedLine: new ol.style.Style({ stroke: new ol.style.Stroke({ color: '#f6d34b', width: 6 }) }),
   });
   const statusAppearances = Object.fromEntries(Object.entries(STATUS_COLORS).map(([level, color]) => [level, styles(color)]));
+  const dangerAppearance = {
+    point: [
+      new ol.style.Style({ image: new ol.style.Circle({ radius: 14, fill: new ol.style.Fill({ color: '#c73f36' }), stroke: new ol.style.Stroke({ color: '#fff', width: 3 }) }) }),
+      new ol.style.Style({ text: new ol.style.Text({ text: '!', font: '800 15px DM Sans', fill: new ol.style.Fill({ color: '#fff' }) }) }),
+    ],
+    selectedPoint: [new ol.style.Style({ image: new ol.style.Circle({ radius: 18, fill: new ol.style.Fill({ color: '#f6d34b' }), stroke: new ol.style.Stroke({ color: '#6d1e18', width: 2 }) }) }), new ol.style.Style({ text: new ol.style.Text({ text: '!', font: '800 16px DM Sans', fill: new ol.style.Fill({ color: '#6d1e18' }) }) })],
+    area: [
+      new ol.style.Style({ fill: new ol.style.Fill({ color: '#c73f3655' }), stroke: new ol.style.Stroke({ color: '#c73f36', width: 4 }) }),
+      new ol.style.Style({ text: new ol.style.Text({ text: '!  NË RREZIK', font: '800 11px DM Sans', fill: new ol.style.Fill({ color: '#fff' }), backgroundFill: new ol.style.Fill({ color: '#ad3029' }), padding: [6, 9, 6, 9], overflow: true }) }),
+    ],
+    selectedArea: [
+      new ol.style.Style({ fill: new ol.style.Fill({ color: '#c73f3677' }), stroke: new ol.style.Stroke({ color: '#f6d34b', width: 5 }) }),
+      new ol.style.Style({ text: new ol.style.Text({ text: '!  NË RREZIK', font: '800 11px DM Sans', fill: new ol.style.Fill({ color: '#fff' }), backgroundFill: new ol.style.Fill({ color: '#ad3029' }), padding: [6, 9, 6, 9], overflow: true }) }),
+    ],
+    line: new ol.style.Style({ stroke: new ol.style.Stroke({ color: '#c73f36', width: 5 }) }),
+    selectedLine: new ol.style.Style({ stroke: new ol.style.Stroke({ color: '#f6d34b', width: 7 }) }),
+  };
 
   for (const group of manifest.groups) {
     const source = new ol.source.Vector();
@@ -141,7 +229,7 @@
       if (!feature.get('searchVisible')) return null;
       const kind = feature.getGeometry()?.getType() || '';
       const selected = feature.getId() === selectedId;
-      const active = statusAppearances[feature.get('statusLevel')] || appearance;
+      const active = feature.get('hasActiveIssue') ? dangerAppearance : statusAppearances[feature.get('statusLevel')] || appearance;
       if (kind.includes('Polygon')) return selected ? active.selectedArea : active.area;
       if (kind.includes('LineString')) return selected ? active.selectedLine : active.line;
       return selected ? active.selectedPoint : active.point;
@@ -198,9 +286,26 @@
     }
   } catch { /* legjislacioni është shtesë; harta funksionon edhe pa të */ }
 
+  try {
+    const response = await fetch(localPath('data/status/issues.json'));
+    if (response.ok) {
+      const payload = await response.json();
+      const issuesByArea = new Map();
+      for (const issue of payload.issues || []) {
+        if (!issuesByArea.has(issue.areaId)) issuesByArea.set(issue.areaId, []);
+        issuesByArea.get(issue.areaId).push(issue);
+      }
+      for (const record of records) {
+        record.issues = issuesByArea.get(record.id) || [];
+        if (record.issues.some((issue) => ['ongoing', 'verification', 'paused'].includes(issue.status))) record.feature.set('hasActiveIssue', true);
+      }
+      document.getElementById('danger-count').textContent = String(records.filter((record) => record.feature.get('hasActiveIssue')).length);
+    }
+  } catch { /* regjistri i çështjeve është shtesë */ }
+
   const map = new ol.Map({
     target: mapElement,
-    layers: [baseLayer, labelsLayer, ...[...groupStates].sort((a, b) => ({ parqe: 0, mbrojtura: 0, rezervate: 0, flora: 1, fauna: 2 }[a.group.id] ?? 1) - ({ parqe: 0, mbrojtura: 0, rezervate: 0, flora: 1, fauna: 2 }[b.group.id] ?? 1)).map((state) => state.layer)],
+    layers: [baseLayer, ...environmentalLayers.map((item) => item.layer), labelsLayer, ...[...groupStates].sort((a, b) => ({ parqe: 0, mbrojtura: 0, rezervate: 0, flora: 1, fauna: 2 }[a.group.id] ?? 1) - ({ parqe: 0, mbrojtura: 0, rezervate: 0, flora: 1, fauna: 2 }[b.group.id] ?? 1)).map((state) => state.layer)],
     view: new ol.View({ center: ol.proj.fromLonLat([20.2, 41.2]), zoom: 7.2, minZoom: 5 }),
   });
   const previewElement = document.getElementById('point-preview');
@@ -337,6 +442,31 @@
     basemapToggle.focus();
   });
   setBasemap('standard');
+  const updateEnvironmentLabel = () => {
+    const enabled = environmentalLayers.filter((item) => item.layer.getVisible());
+    document.getElementById('environment-label').textContent = enabled.length === 0 ? 'Asnjë' : enabled.length === 1 ? enabled[0].label : `${enabled.length} shtresa`;
+  };
+  for (const item of environmentalLayers) {
+    const option = make('label', 'environment-option');
+    const checkbox = make('input');
+    checkbox.type = 'checkbox';
+    checkbox.value = item.id;
+    checkbox.checked = item.layer.getVisible();
+    const copy = make('span', 'environment-copy');
+    copy.append(make('strong', '', item.label), make('small', '', item.provider), make('em', '', item.description));
+    const swatch = make('i', 'environment-swatch');
+    swatch.style.background = item.swatch;
+    option.append(checkbox, swatch, copy);
+    environmentOptions.append(option);
+    checkbox.addEventListener('change', () => {
+      item.layer.setVisible(checkbox.checked);
+      updateEnvironmentLabel();
+    });
+  }
+  const environmentHelp = make('p', 'environment-help');
+  environmentHelp.textContent = 'Shtresat janë orientuese, vijnë drejtpërdrejt nga shërbimet burimore dhe mund të kombinohen. Aktivizimi i tyre nuk ndryshon të dhënat e atlasit.';
+  environmentOptions.append(environmentHelp);
+  updateEnvironmentLabel();
   for (const group of manifest.groups) {
     const option = make('label', 'filter-option');
     const checkbox = make('input');
@@ -373,9 +503,16 @@
     photoOnly = event.target.checked;
     updateFilters();
   });
+  document.getElementById('danger-only').addEventListener('change', (event) => {
+    dangerOnly = event.target.checked;
+    document.getElementById('danger-label').textContent = dangerOnly ? 'Në rrezik' : 'Të gjitha';
+    updateFilters();
+    if (dangerOnly) focusVisible();
+  });
   const matches = (record) => activeGroups.has(record.group.id)
     && (activeCountries.size === 2 || (record.properties.countryCodes || []).some((country) => activeCountries.has(country)))
     && (!photoOnly || Boolean(record.properties.image))
+    && (!dangerOnly || record.feature.get('hasActiveIssue'))
     && [record.properties.name, record.properties.location, record.properties.categoryLabel, record.properties.summary, ...(record.properties.keywords || [])]
       .join(' ').toLocaleLowerCase('sq').includes(query);
   const shownRecords = () => records.filter(matches);
@@ -388,6 +525,91 @@
   const geometryLabel = (feature) => {
     const kind = feature.getGeometry().getType();
     return ({ Polygon: 'Sipërfaqe', MultiPolygon: 'Shumëpoligon', Point: 'Pikë', LineString: 'Vijë', MultiLineString: 'Shumëvijë' })[kind] || kind;
+  };
+  const haversineKm = ([lon1, lat1], [lon2, lat2]) => {
+    const radians = (degrees) => degrees * Math.PI / 180;
+    const dLat = radians(lat2 - lat1);
+    const dLon = radians(lon2 - lon1);
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(radians(lat1)) * Math.cos(radians(lat2)) * Math.sin(dLon / 2) ** 2;
+    return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  };
+  const recordCenter = (record) => ol.proj.toLonLat(ol.extent.getCenter(record.feature.getGeometry().getExtent()));
+  const loadNearbySensors = async (record) => {
+    if (sensorCache.has(record.id)) return sensorCache.get(record.id);
+    const [lon, lat] = recordCenter(record);
+    const request = fetch(`https://data.sensor.community/airrohr/v1/filter/area=${lat.toFixed(5)},${lon.toFixed(5)},${SENSOR_RADIUS_KM}`)
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((measurements) => {
+        const stations = new Map();
+        for (const measurement of Array.isArray(measurements) ? measurements : []) {
+          const location = measurement.location || {};
+          if (Number(location.indoor) === 1) continue;
+          const stationLon = Number(location.longitude);
+          const stationLat = Number(location.latitude);
+          if (!Number.isFinite(stationLon) || !Number.isFinite(stationLat)) continue;
+          const key = String(location.id || `${stationLat.toFixed(5)},${stationLon.toFixed(5)}`);
+          const station = stations.get(key) || {
+            id: key,
+            coordinates: [stationLon, stationLat],
+            distanceKm: haversineKm([lon, lat], [stationLon, stationLat]),
+            timestamp: measurement.timestamp,
+            values: {},
+            valueTimes: {},
+            sensorIds: new Set(),
+          };
+          if (measurement.timestamp > station.timestamp) station.timestamp = measurement.timestamp;
+          if (measurement.sensor?.id) station.sensorIds.add(String(measurement.sensor.id));
+          for (const item of measurement.sensordatavalues || []) {
+            if (!SENSOR_VALUE_LABELS[item.value_type]) continue;
+            const value = Number(item.value);
+            if (Number.isFinite(value) && (!station.valueTimes[item.value_type] || measurement.timestamp > station.valueTimes[item.value_type])) {
+              station.values[item.value_type] = value;
+              station.valueTimes[item.value_type] = measurement.timestamp;
+            }
+          }
+          stations.set(key, station);
+        }
+        return [...stations.values()]
+          .filter((station) => Object.keys(station.values).length)
+          .sort((a, b) => a.distanceKm - b.distanceKm)[0] || null;
+      });
+    sensorCache.set(record.id, request);
+    request.catch(() => sensorCache.delete(record.id));
+    return request;
+  };
+  const renderSensorSection = async (record, section) => {
+    try {
+      const station = await loadNearbySensors(record);
+      if (selectedId !== record.id || !detailContent.contains(section)) return;
+      section.replaceChildren(make('h3', '', 'Matje aktuale pranë zonës'));
+      if (!station) {
+        section.append(make('p', 'sensor-empty', `Nuk u gjet asnjë sensor publik aktiv brenda ${SENSOR_RADIUS_KM} km në pesë minutat e fundit.`));
+        const join = safeLink('Si të ndërtosh dhe regjistrosh një sensor të hapur ↗', 'https://sensor.community/en/sensors/airrohr/');
+        if (join) section.append(join);
+        return;
+      }
+      const grid = make('div', 'sensor-grid');
+      for (const [key, rawValue] of Object.entries(station.values)) {
+        const definition = SENSOR_VALUE_LABELS[key];
+        const value = definition.transform ? definition.transform(rawValue) : rawValue;
+        const tile = make('div', 'sensor-reading');
+        tile.append(make('span', '', definition.label), make('strong', '', `${Number(value.toFixed(1))} ${definition.unit}`));
+        grid.append(tile);
+      }
+      section.append(grid);
+      const measuredAt = new Date(`${station.timestamp.replace(' ', 'T')}Z`);
+      const time = Number.isNaN(measuredAt.getTime()) ? station.timestamp : new Intl.DateTimeFormat('sq-AL', { dateStyle: 'medium', timeStyle: 'short' }).format(measuredAt);
+      section.append(make('p', 'sensor-meta', `Sensori më i afërt: ${station.distanceKm.toFixed(1)} km · Përditësuar ${time}`));
+      section.append(make('p', 'sensor-caveat', 'Matje orientuese nga një sensor komunitar me kosto të ulët; nuk përfaqëson domosdoshmërisht kushtet brenda gjithë zonës dhe nuk zëvendëson monitorimin zyrtar.'));
+      const source = safeLink('Të dhënat dhe harta · Sensor.Community ↗', 'https://maps.sensor.community/');
+      if (source) section.append(source);
+    } catch {
+      if (selectedId !== record.id || !detailContent.contains(section)) return;
+      section.replaceChildren(make('h3', '', 'Matje aktuale pranë zonës'), make('p', 'sensor-empty', 'Matjet e drejtpërdrejta nuk janë të disponueshme tani. Provo përsëri më vonë.'));
+    }
   };
   const focusVisible = () => {
     const shown = shownRecords();
@@ -402,6 +624,24 @@
     document.getElementById('place-count').textContent = String(shown.length);
     document.getElementById('result-label').textContent = `${shown.length} ${shown.length === 1 ? 'rezultat' : 'rezultate'}`;
     listElement.replaceChildren();
+    const priorityRecords = shown.filter((record) => record.issues?.some((issue) => ['ongoing', 'verification', 'paused'].includes(issue.status)));
+    if (priorityRecords.length) {
+      const priority = make('section', 'priority-places');
+      const heading = make('div', 'priority-places-heading');
+      heading.append(make('span', 'priority-alert', '!'), make('strong', '', 'VENDE NË RREZIK'), make('small', '', `${priorityRecords.length} prioritare`));
+      priority.append(heading);
+      for (const record of priorityRecords.sort((a, b) => ({ high: 0, medium: 1, low: 2 }[a.issues[0]?.priority] ?? 3) - ({ high: 0, medium: 1, low: 2 }[b.issues[0]?.priority] ?? 3))) {
+        const issue = record.issues[0];
+        const button = make('button', 'priority-place');
+        button.type = 'button';
+        const copy = make('span', 'priority-place-copy');
+        copy.append(make('strong', '', record.properties.name), make('small', '', issue.activity));
+        button.append(copy, make('span', `priority-level priority-${issue.priority}`, issue.priority === 'high' ? 'Prioritet i lartë' : issue.priority === 'low' ? 'Prioritet i ulët' : 'Prioritet mesatar'), make('b', '', '↗'));
+        button.addEventListener('click', () => selectRecord(record));
+        priority.append(button);
+      }
+      listElement.append(priority);
+    }
     if (shown.length && !shown.some((record) => expandedGroups.has(record.group.id))) expandedGroups.add(shown[0].group.id);
     for (const group of manifest.groups) {
       const groupRecords = shown.filter((record) => record.group.id === group.id);
@@ -531,9 +771,12 @@
             activeCountries.add('AL');
             activeCountries.add('XK');
             photoOnly = false;
+            dangerOnly = false;
             query = '';
             search.value = '';
             document.getElementById('with-photo').checked = false;
+            document.getElementById('danger-only').checked = false;
+            document.getElementById('danger-label').textContent = 'Të gjitha';
             countryOptions.querySelectorAll('input').forEach((country) => { country.checked = true; });
             scopeOptions.querySelectorAll('input').forEach((scope) => { scope.checked = activeGroups.has(scope.value); });
             updateFilters();
@@ -555,6 +798,33 @@
     const mapping = make('section', 'record-section');
     mapping.append(make('h3', '', 'Çfarë tregon harta'), make('p', '', place.mapNote || `Objekti është vizatuar si ${geometryLabel(record.feature).toLowerCase()}.`));
     detailContent.append(mapping);
+    if (record.issues?.length) {
+      const section = make('section', 'record-section issue-section');
+      section.append(make('h3', '', 'Aktivitet që rrezikon trashëgiminë'));
+      for (const issue of record.issues) {
+        const issueCard = make('article', 'issue-card');
+        const head = make('div', 'issue-card-head');
+        const priorityLabel = issue.priority === 'high' ? 'Prioritet i lartë' : issue.priority === 'low' ? 'Prioritet i ulët' : 'Prioritet mesatar';
+        const statusLabel = issue.status === 'ongoing' ? 'Në vazhdim' : issue.status === 'paused' ? 'Pezulluar' : issue.status === 'closed' ? 'Mbyllur' : 'Për verifikim';
+        head.append(make('span', `priority-level priority-${issue.priority}`, priorityLabel), make('span', 'issue-status', statusLabel));
+        issueCard.append(head, make('h4', '', issue.activity));
+        if (issue.threatType) issueCard.append(make('p', 'record-tag', `Lloji: ${issue.threatType}`));
+        if (issue.description) issueCard.append(make('p', '', issue.description));
+        if (issue.reportedAt || issue.updatedAt) issueCard.append(make('p', 'issue-date', [issue.reportedAt && `Raportuar: ${issue.reportedAt}`, issue.updatedAt && `Përditësuar: ${issue.updatedAt}`].filter(Boolean).join(' · ')));
+        if (issue.reportedBy) issueCard.append(make('p', 'issue-reporter', `Raportuar nga ${issue.reportedBy}`));
+        const evidence = issue.evidenceUrl && safeLink('Hap dëshminë burimore ↗', issue.evidenceUrl);
+        if (evidence) issueCard.append(evidence);
+        section.append(issueCard);
+      }
+      detailContent.append(section);
+    }
+    if (!observation) {
+      const sensorSection = make('section', 'record-section sensor-section');
+      sensorSection.setAttribute('aria-live', 'polite');
+      sensorSection.append(make('h3', '', 'Matje aktuale pranë zonës'), make('p', 'sensor-loading', 'Duke kërkuar sensorë të hapur pranë kësaj zone…'));
+      detailContent.append(sensorSection);
+      renderSensorSection(record, sensorSection);
+    }
     if (record.status) {
       const section = make('section', 'record-section');
       section.append(make('h3', '', 'Gjendja e zonës'));
@@ -779,6 +1049,7 @@
       setCatalogOpen(false);
     }
   });
+  if (new URLSearchParams(window.location.search).get('notes') === '1') document.getElementById('open-notes').click();
   document.getElementById('close-notes-editor').addEventListener('click', closeNotesEditor);
   document.getElementById('start-note').addEventListener('click', () => {
     noteForm.hidden = true;

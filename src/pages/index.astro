@@ -1,109 +1,120 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { readFileSync } from 'node:fs';
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
-const repositoryUrl = import.meta.env.PUBLIC_REPOSITORY_URL || 'https://github.com/pomodoren/heritage';
-const repositoryLabel = repositoryUrl.replace('https://', '');
+
+const loadGeoJSON = (name: string) => JSON.parse(readFileSync(`public/data/groups/${name}.geojson`, 'utf8'));
+const parks = loadGeoJSON('parqe').features;
+const protectedAreas = loadGeoJSON('mbrojtura').features;
+const reserves = loadGeoJSON('rezervate').features;
+const flora = loadGeoJSON('flora').features;
+const fauna = loadGeoJSON('fauna').features;
+const publishedNotes = JSON.parse(readFileSync('public/data/manual/notes.geojson', 'utf8')).features;
+const areaTotal = parks.length + protectedAreas.length + reserves.length;
+const observationTotal = flora.length + fauna.length;
+const areaNames = ['Parku Kombëtar Divjakë-Karavasta', 'Parku Kombëtar Lugina e Valbonës', 'Parku Natyror Korab-Koritnik'];
+const areaHighlights = areaNames.map((name) => [...parks, ...protectedAreas].find((item) => item.properties.name === name)).filter(Boolean);
+const speciesHighlights = [flora[0], flora[1], fauna.find((item) => item.properties.name === 'Phoenicopterus roseus'), fauna.find((item) => item.properties.name === 'Fulica atra')].filter(Boolean);
 ---
-<BaseLayout title="Harta e Natyrës" description="Zona të mbrojtura, flora dhe fauna në Shqipëri dhe Kosovë.">
-  <div class="app-shell">
-    <SiteHeader page="map">
-      <button id="open-notes" class="header-data" type="button">Shto shënim</button>
-      <button id="open-project" class="header-data" type="button">Rreth projektit</button>
-    </SiteHeader>
-    <main class="workspace">
-      <aside class="catalog" aria-label="Galeria e vendeve">
-        <div class="catalog-top"><div class="catalog-title"><div><p class="eyebrow">Shqipëri dhe Kosovë</p><h2>Galeria e natyrës</h2></div><span id="place-count" class="count-badge">…</span><button id="catalog-close" class="catalog-close" type="button" aria-label="Mbyll galerinë">Mbyll <span aria-hidden="true">×</span></button></div>
-          <p class="atlas-intro">Zona natyrore dhe vëzhgime të florës e faunës.</p>
-          <label class="photo-filter"><input id="with-photo" type="checkbox" /> Vetëm me fotografi</label>
-        </div>
-        <div class="catalog-list-header"><strong>Eksploro</strong><span id="result-label">Duke ngarkuar…</span></div>
-        <div id="place-list" class="place-list" aria-live="polite"></div>
-        <details class="catalog-bottom">
-          <summary><span class="info-icon" aria-hidden="true">i</span> Rreth të dhënave</summary>
-          <p>Zonat shfaqin kufijtë OSM. Pikat e florës dhe faunës janë vëzhgime, jo shtrirje habitati. Burimet: <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a> dhe <a href="https://www.gbif.org/" target="_blank" rel="noreferrer">GBIF</a>.</p>
-        </details>
-        <div id="catalog-resizer" class="catalog-resizer" role="separator" aria-label="Ndrysho gjerësinë e galerisë" aria-orientation="vertical" aria-valuemin="280" aria-valuemax="760" aria-valuenow="365" tabindex="0"></div>
-      </aside>
-      <section class="map-pane" aria-label="Harta interaktive">
-        <div id="heritage-map" class="map-canvas" role="application" aria-label="Hartë interaktive e zonave natyrore dhe vëzhgimeve të florës e faunës"></div>
-        <div id="point-preview" class="point-preview" hidden></div>
-        <button id="catalog-toggle" class="catalog-toggle map-floating" type="button" aria-controls="place-list" aria-expanded="true" aria-label="Fshih galerinë" title="Fshih galerinë">‹</button>
-        <div class="map-floating map-search"><label class="visually-hidden" for="place-search">Kërko në atlas</label><span aria-hidden="true">⌕</span><input id="place-search" type="search" placeholder="Kërko park, lloj ose vend…" autocomplete="off" /></div>
-        <nav class="map-floating map-filter-bar" aria-label="Filtrat e atlasit">
-          <details class="header-filter" id="scope-filter"><summary>Legjenda <strong id="scope-label">Të gjitha</strong><span aria-hidden="true">⌄</span></summary><div class="filter-popover" id="scope-options" aria-label="Zgjidh shtresat e hartës"></div></details>
-          <details class="header-filter" id="country-filter"><summary>Vendi <strong id="country-label">Të dy</strong><span aria-hidden="true">⌄</span></summary><div class="filter-popover" id="country-options" aria-label="Zgjidh vendet"><label><input type="checkbox" value="AL" checked /> Shqipëri</label><label><input type="checkbox" value="XK" checked /> Kosovë</label></div></details>
-        </nav>
-        <div class="map-floating basemap-switcher" role="group" aria-label="Zgjidh bazën e hartës">
-          <div id="basemap-options" class="basemap-options" role="group" aria-label="Hartat bazë të disponueshme" hidden>
-            <button type="button" data-basemap="standard" aria-pressed="true"><span aria-hidden="true">🗺</span> OpenStreetMap</button>
-            <button type="button" data-basemap="satellite" aria-pressed="false"><span aria-hidden="true">🛰</span> Esri</button>
-            <button type="button" data-basemap="sentinel" aria-pressed="false" title="Sentinel Hub / Copernicus (ESA) – imazheri falas satelitore për ndryshimet e tokës dhe habitatit"><span aria-hidden="true">🌐</span> Copernicus</button>
-            <hr class="basemap-divider" />
-            <button type="button" data-basemap="terrain" aria-pressed="false"><span aria-hidden="true">⛰</span> Terreni</button>
+<BaseLayout title="Trashëgimia Natyrore · Shqipëri dhe Kosovë" description="Një atlas i hapur i zonave të mbrojtura, florës dhe faunës në Shqipëri dhe Kosovë.">
+  <SiteHeader page="home" />
+  <main class="landing-page">
+    <section class="heritage-hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="hero-kicker"><span></span> Atlas i hapur · Shqipëri & Kosovë</p>
+          <h1>Natyra që na është <em>lënë në kujdes.</em></h1>
+          <p class="hero-lede">Një hartë e përbashkët për të zbuluar, dokumentuar dhe mbrojtur trashëgiminë natyrore shqiptare.</p>
+          <div class="hero-actions">
+            <a class="landing-button primary" href={`${base}map/`}>Eksploro hartën <span>→</span></a>
+            <a class="landing-button secondary" href="#zonat">Shfleto të dhënat</a>
           </div>
-          <button id="basemap-toggle" class="basemap-toggle" type="button" aria-controls="basemap-options" aria-expanded="false" aria-label="Harta bazë: OpenStreetMap. Shfaq opsionet"><span id="basemap-current-label" class="basemap-current-label">OpenStreetMap</span><span class="basemap-chevron" aria-hidden="true">⌃</span></button>
+          <p class="hero-note"><span aria-hidden="true">✦</span> Të dhëna të hapura, të ndërtuara së bashku</p>
         </div>
-        <div id="note-banner" class="map-floating note-banner" hidden><span>Kliko në hartë ku do ta ngjisësh shënimin.</span><button id="cancel-note" type="button">Anulo</button></div>
-        <aside id="notes-editor" class="notes-editor" aria-label="Shto një shënim" hidden>
-          <div class="editor-head"><div><p class="eyebrow">Shënime lokale</p><h2>Shënimet e mia</h2></div><button id="close-notes-editor" type="button" aria-label="Mbyll shënimet">×</button></div>
-          <p class="editor-intro">Shto shënime si "sticky notes" direkt në hartë. Teksti shfaqet kur harta afrohet në nivelin 11 ose më shumë. Shënimet e tua ruhen vetëm në këtë shfletues; shënimet e publikuara kanë burime të lidhura.</p>
-          <button id="start-note" class="editor-primary" type="button">Shto shënim të ri ＋</button>
-          <form id="note-form" hidden>
-            <label for="note-text">Teksti i shënimit *</label><textarea id="note-text" name="text" rows="4" required placeholder="Shkruaj shënimin këtu…"></textarea>
-            <label>Kategoria e shënimit</label>
-            <div class="note-color-row" role="radiogroup" aria-label="Kategoria e shënimit">
-              <label class="color-option"><input type="radio" name="category" value="red" /><span class="color-swatch" style="background:#ee6b65"></span><span>E kuqe · Ndikim i raportuar</span></label>
-              <label class="color-option"><input type="radio" name="category" value="yellow" checked /><span class="color-swatch" style="background:#f3cf56"></span><span>E verdhë · Shqetësim për verifikim</span></label>
-              <label class="color-option"><input type="radio" name="category" value="green" /><span class="color-swatch" style="background:#74be8b"></span><span>E gjelbër · Përmirësim i dokumentuar</span></label>
-            </div>
-            <div class="note-form-actions"><button id="cancel-note-form" class="editor-secondary" type="button">Anulo</button><button class="editor-primary" type="submit">Ngjit shënimin</button></div>
-          </form>
-          <div id="note-list" class="note-list" aria-label="Shënimet e ruajtura"></div>
-          <div class="editor-divider"></div>
-          <label for="notes-import">Importo shënimet (GeoJSON)</label><input id="notes-import" type="file" accept=".geojson,.json,application/geo+json,application/json" />
-          <button id="export-notes" class="editor-secondary" type="button">Shkarko shënimet ↓</button>
-          <p class="editor-help">Skedari i eksportuar mund të shtohet te <code>public/data/manual/notes.geojson</code> për t'i publikuar.</p>
-        </aside>
-        <article id="place-detail" class="detail-panel" aria-label="Detajet e vendit" hidden><button id="close-detail" class="detail-close" type="button" aria-label="Mbyll detajet">×</button><div id="detail-content"></div></article>
-        <div id="map-notice" class="map-notice" role="status" hidden></div>
-      </section>
-    </main>
-    <dialog id="project-intro" class="project-intro" aria-labelledby="project-intro-title">
-      <form method="dialog"><button class="project-intro-close" type="submit" aria-label="Mbyll prezantimin">×</button></form>
-      <div class="project-intro-content">
-        <p class="eyebrow">Rreth atlasit</p>
-        <h1 id="project-intro-title">Trashëgimia natyrore</h1>
-        <p class="project-intro-lede">Një hartë e përbashkët për të njohur dhe mbrojtur natyrën e Shqipërisë dhe Kosovës.</p>
-        <div class="project-divider"></div>
-        <h2>Një projekt i përbashkët</h2>
-        <p>Ky projekt nisi nga <strong>Flamingo Revolution</strong> dhe përfshin kontribute nga organizata të ndryshme që punojnë me natyrën dhe komunitetet.</p>
-        <nav class="project-links" aria-label="Faqet e organizatave">
-          <a href="https://flamingorevolution.eu/" target="_blank" rel="noopener noreferrer"><span><strong>Flamingo Revolution</strong><small>flamingorevolution.eu</small></span><span aria-hidden="true">↗</span></a>
-          <a href="https://referendum21.org/" target="_blank" rel="noopener noreferrer"><span><strong>Referendum 21</strong><small>referendum21.org</small></span><span aria-hidden="true">↗</span></a>
-        </nav>
-        <p>Qëllimi është të rrisë ndërgjegjësimin për trashëgiminë natyrore: zonat, florën, faunën dhe të dhënat që na ndihmojnë t’i kuptojmë ato.</p>
-        <div class="project-divider"></div>
-        <h2>Burim i hapur</h2>
-        <p>Ky projekt bazohet në kod me burim të hapur dhe të dhëna të hapura. Ndryshimet në hartë dhe në faqe mund të propozohen në depon e projektit në GitHub.</p>
-        <nav class="project-links" aria-label="Kontributi në projekt">
-          <a href={repositoryUrl} target="_blank" rel="noopener noreferrer"><span><strong>Propozo ndryshime në GitHub</strong><small>{repositoryLabel}</small></span><span aria-hidden="true">↗</span></a>
-        </nav>
-        <div class="project-divider"></div>
-        <h2>Si lexohet harta</h2>
-        <p>Kufijtë e zonave vijnë kryesisht nga OpenStreetMap. Pikat e florës dhe faunës tregojnë vëzhgime, jo gjithë habitatin e një lloji.</p>
-        <p class="project-sources">Burimet përfshijnë <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap</a>, <a href="https://www.gbif.org/" target="_blank" rel="noreferrer">GBIF</a> dhe Wikipedia/Wikimedia Commons.</p>
-        <form method="dialog"><button class="project-intro-start" type="submit" autofocus>Eksploro hartën <span aria-hidden="true">→</span></button></form>
+
+        <a class="map-preview" href={`${base}map/`} aria-label="Hap hartën interaktive">
+          <div class="preview-top"><span>Harta e natyrës</span><span>AL · XK</span></div>
+          <svg class="preview-map" viewBox="0 0 520 570" role="img" aria-label="Ilustrim i hartës së Shqipërisë dhe Kosovës">
+            <defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="currentColor" stroke-opacity=".08"/></pattern></defs>
+            <rect width="520" height="570" fill="url(#grid)"/>
+            <path class="land land-al" d="M260 72l42 20 25 45-4 48 27 50-18 54 8 42-26 51-2 53-29 60-17-30-1-47-26-37 8-46-24-42 13-48-16-37 27-47-4-49z"/>
+            <path class="land land-xk" d="M303 91l54-17 45 19 12 46-40 42-51 4 4-48z"/>
+            <path class="river" d="M298 108c-17 51 28 79-5 128s14 82-12 136-6 79-12 107"/>
+            <g class="marker m1"><circle r="17"/><circle r="5"/></g><g class="marker m2"><circle r="14"/><circle r="4"/></g><g class="marker m3"><circle r="20"/><circle r="6"/></g><g class="marker m4"><circle r="12"/><circle r="4"/></g><g class="marker m5"><circle r="15"/><circle r="5"/></g>
+            <text x="348" y="130">KOSOVË</text><text x="277" y="291" transform="rotate(73 277 291)">SHQIPËRI</text>
+          </svg>
+          <div class="preview-card"><span class="preview-icon">✳</span><span><small>Zonë e mbrojtur</small><strong>Peizazh i dokumentuar</strong></span><b>↗</b></div>
+          <div class="preview-bottom"><span><i></i> 485+ pika dhe zona</span><strong>Hap hartën →</strong></div>
+        </a>
       </div>
-    </dialog>
-  </div>
-  <script is:inline>
-    const projectIntro = document.getElementById('project-intro');
-    document.getElementById('open-project').addEventListener('click', () => projectIntro.showModal());
-    const cameFromInternalPage = document.referrer && new URL(document.referrer).origin === location.origin;
-    if (!cameFromInternalPage) projectIntro.showModal();
-  </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.9.0/ol.css" />
-  <script is:inline src="https://cdn.jsdelivr.net/npm/ol@10.9.0/dist/ol.js"></script>
-  <script is:inline src={`${base}map.js?v=9`}></script>
+    </section>
+
+    <nav class="topic-strip" aria-label="Seksionet e atlasit"><a href="#statistikat">Statistikat</a><i>✦</i><a href="#zonat">Zonat e mbrojtura</a><i>✦</i><a href="#llojet">Flora & fauna</a><i>✦</i><a href="#sensoret">Sensorët</a><i>✦</i><a href="#shenimet">Shënimet</a></nav>
+
+    <section class="project-stats" id="statistikat">
+      <div class="stats-heading"><p class="chapter-number">Projekti në shifra</p><h2>Një atlas që rritet<br />me çdo të dhënë.</h2><p>Një pamje e përmbledhur e materialeve që mund të eksplorohen sot në hartën e Trashëgimisë Natyrore.</p><a href={`${base}dashboard/`}>Hap panelin e plotë të raporteve →</a></div>
+      <div class="stats-grid">
+        <article><span>01</span><strong>{areaTotal}</strong><h3>Zona natyrore</h3><p>Parqe kombëtare, rezervate dhe zona të mbrojtura me kufij të hapur.</p></article>
+        <article><span>02</span><strong>{observationTotal}</strong><h3>Vëzhgime të llojeve</h3><p>{flora.length} regjistrime flore dhe {fauna.length} regjistrime faune nga GBIF.</p></article>
+        <article><span>03</span><strong>2</strong><h3>Vende</h3><p>Shqipëria dhe Kosova, të lexuara si një peizazh natyror i ndërlidhur.</p></article>
+        <article><span>04</span><strong>{publishedNotes.length}</strong><h3>Shënime publike</h3><p>Ndikime dhe shqetësime të dokumentuara, secila me burimin përkatës.</p></article>
+      </div>
+    </section>
+
+    <section class="data-section areas-section" id="zonat">
+      <div class="data-intro"><p class="chapter-number">01 · Zonat</p><h2>Kufijtë e natyrës,<br /><em>të hapur për të gjithë.</em></h2><p>{areaTotal} parqe, rezervate dhe zona të mbrojtura nga OpenStreetMap/Overpass. Çdo kufi ruan lidhjen me objektin burimor dhe kategorinë e mbrojtjes.</p><a class="data-link" href={`${base}map/`}>Eksploro të gjitha zonat <span>→</span></a></div>
+      <div class="area-browser"><div class="browser-head"><span>Vende të zgjedhura</span><b>{areaTotal} zona</b></div>{areaHighlights.map((area, index) => <a class="area-row" href={`${base}map/`}><span>{String(index + 1).padStart(2, '0')}</span><div><strong>{area.properties.name}</strong><small>{area.properties.location} · {area.properties.categoryLabel}</small></div><i>↗</i></a>)}<div class="source-line"><span class="live-dot"></span><span>Burim i hapur</span><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">OpenStreetMap · ODbL ↗</a></div></div>
+    </section>
+
+    <section class="data-section species-section" id="llojet">
+      <div class="section-heading"><div><p class="chapter-number">02 · Biodiversiteti</p><h2>Flora dhe fauna,<br />vëzhgim pas vëzhgimi.</h2></div><div class="section-summary"><strong>{observationTotal} regjistrime</strong><p>Pikat vijnë nga GBIF dhe tregojnë një vëzhgim të dokumentuar, jo gjithë habitatin e një lloji.</p><a class="data-link" href="https://www.gbif.org/" target="_blank" rel="noreferrer">Shiko burimin GBIF ↗</a></div></div>
+      <div class="species-grid">{speciesHighlights.map((item) => <a class="species-card" href={item.properties.sources[0].url} target="_blank" rel="noreferrer"><span class="species-image"><img src={item.properties.image?.url} alt={item.properties.image?.alt || item.properties.name} loading="lazy" /><small>{item.properties.category === 'flora' ? 'Flora' : 'Fauna'}</small></span><span class="species-copy"><i>{item.properties.location}</i><strong>{item.properties.name}</strong><small>{item.properties.extra?.Data || 'Datë e panjohur'} · {item.properties.image?.license}</small></span></a>)}</div>
+    </section>
+
+    <section class="data-section sensors-section" id="sensoret">
+      <div class="sensor-copy"><p class="chapter-number">03 · Sensorët e hapur</p><h2>Çfarë po matet<br /><em>tani?</em></h2><p>Lexime të drejtpërdrejta nga pajisje komunitare të Sensor.Community. Në hartë kërkojmë stacionin aktiv më të afërt për çdo zonë.</p><div class="sensor-legend"><span><i class="good"></i> Matje e drejtpërdrejtë</span><span><i></i> Përditësim çdo 5 minuta</span></div><a class="data-link light-link" href="https://maps.sensor.community/" target="_blank" rel="noreferrer">Hap rrjetin e sensorëve ↗</a></div>
+      <div class="sensor-console"><div class="console-head"><span><i></i> SENSOR.COMMUNITY · LIVE</span><span id="sensor-time">Duke u lidhur…</span></div><div id="sensor-readings" class="live-readings" aria-live="polite"><div class="reading-skeleton"></div><div class="reading-skeleton"></div><div class="reading-skeleton"></div></div><p id="sensor-place" class="console-status">Duke kërkuar sensorë publikë pranë Tiranës…</p><p class="console-caveat">Matjet janë orientuese dhe nuk zëvendësojnë monitorimin zyrtar.</p></div>
+    </section>
+
+    <section class="data-section notes-section" id="shenimet">
+      <div class="notes-demo" aria-hidden="true"><div class="demo-map-lines"></div><article class="sticky-demo yellow"><small>Shqetësim për verifikim</small><p>Shëno një ndryshim, një vëzhgim apo një pyetje direkt në hartë.</p></article><article class="sticky-demo green"><small>Përmirësim i dokumentuar</small><p>Ruaje lokalisht dhe eksportoje si GeoJSON kur të jesh gati.</p></article><span class="demo-pin">+</span></div>
+      <div class="notes-copy"><p class="chapter-number">04 · Shënimet e tua</p><h2>Shto atë që sheh në terren.</h2><p>Vendos shënime personale mbi hartë, kategorizoji sipas gjendjes dhe eksporto një skedar GeoJSON. Shënimet ruhen vetëm në shfletuesin tënd derisa të zgjedhësh t’i ndash.</p><ul><li><span>01</span>Kliko vendin në hartë</li><li><span>02</span>Shto tekstin dhe kategorinë</li><li><span>03</span>Ruaj ose eksporto GeoJSON</li></ul><a class="landing-button note-button" href={`${base}map/?notes=1`}>Shto një shënim <span>＋</span></a></div>
+    </section>
+
+    <section class="method-strip"><p>Të dhëna të hapura, burime të gjurmueshme.</p><div><span><strong>{areaTotal}</strong> zona OSM</span><span><strong>{flora.length}</strong> vëzhgime flore</span><span><strong>{fauna.length}</strong> vëzhgime faune</span><span><strong>LIVE</strong> sensorë komunitarë</span></div><a href={`${base}contribute/`}>Metodologjia dhe kontributi →</a>
+    </section>
+
+    <section class="landing-cta"><div><p class="eyebrow">Fillo të eksplorosh</p><h2>Çfarë natyre do të zbulosh sot?</h2><a class="landing-button light" href={`${base}map/`}>Hap hartën interaktive <span>→</span></a></div><span class="cta-mark" aria-hidden="true">✳</span></section>
+  </main>
+  <footer class="landing-footer"><a class="footer-brand" href={base}><span>✳</span> Trashëgimia Natyrore</a><p>Një projekt i hapur për natyrën e Shqipërisë dhe Kosovës.</p><div><a href={`${base}map/`}>Harta</a><a href={`${base}dashboard/`}>Raportet</a><a href={`${base}contribute/`}>Kontribuo</a></div></footer>
 </BaseLayout>
+
+<script>
+  const readings = document.querySelector<HTMLElement>('#sensor-readings');
+  const sensorTime = document.querySelector<HTMLElement>('#sensor-time');
+  const sensorPlace = document.querySelector<HTMLElement>('#sensor-place');
+  const labels: Record<string, [string, string]> = { P1: ['PM10', 'µg/m³'], P2: ['PM2.5', 'µg/m³'], temperature: ['Temperatura', '°C'], humidity: ['Lagështia', '%'], pressure_at_sealevel: ['Presioni', 'hPa'] };
+  fetch('https://data.sensor.community/airrohr/v1/filter/area=41.3275,19.8187,25')
+    .then((response) => { if (!response.ok) throw new Error(); return response.json(); })
+    .then((data) => {
+      const outdoor = (Array.isArray(data) ? data : []).filter((entry) => Number(entry.location?.indoor) !== 1);
+      const latest = outdoor.sort((a, b) => String(b.timestamp).localeCompare(String(a.timestamp)))[0];
+      if (!latest) throw new Error();
+      const values = latest.sensordatavalues.filter((item) => labels[item.value_type] && Number.isFinite(Number(item.value))).slice(0, 4);
+      if (!values.length) throw new Error();
+      readings?.replaceChildren(...values.map((item) => { const card=document.createElement('div'); card.className='live-reading'; const [label,unit]=labels[item.value_type]; card.innerHTML=`<span>${label}</span><strong>${Number(item.value).toFixed(1)}</strong><small>${unit}</small>`; return card; }));
+      const measured = new Date(`${latest.timestamp.replace(' ', 'T')}Z`);
+      if (sensorTime) sensorTime.textContent = Number.isNaN(measured.getTime()) ? latest.timestamp : new Intl.DateTimeFormat('sq-AL', { dateStyle:'medium', timeStyle:'short' }).format(measured);
+      if (sensorPlace) sensorPlace.textContent = `Stacion publik aktiv · ${Number(latest.location.latitude).toFixed(3)}, ${Number(latest.location.longitude).toFixed(3)}`;
+    })
+    .catch(() => { if (readings) readings.innerHTML='<p class="sensor-unavailable">Nuk ka matje të drejtpërdrejta pranë Tiranës tani.</p>'; if (sensorTime) sensorTime.textContent='Jashtë linje'; if (sensorPlace) sensorPlace.textContent='Hap një zonë në hartë për të kërkuar sensorin më të afërt.'; });
+</script>
+
+<style>
+  .landing-page{overflow:hidden;background:#f5f2e9}.heritage-hero{min-height:calc(100svh - 66px);display:grid;align-items:center;padding:72px max(24px,calc((100vw - 1240px)/2));color:#f8f4e8;background:#153c36;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:20px 20px}.hero-grid{display:grid;grid-template-columns:1.05fr .75fr;gap:clamp(55px,8vw,120px);align-items:center}.hero-kicker{display:flex;align-items:center;gap:10px;margin:0 0 28px;color:#c5d6c7;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.hero-kicker span{width:28px;height:1px;background:#d7b868}.hero-copy h1{max-width:760px;margin:0;font-family:Fraunces,Georgia,serif;font-size:clamp(58px,7.3vw,102px);font-weight:500;line-height:.91;letter-spacing:-.055em}.hero-copy h1 em{display:block;color:#d8bc72;font-style:italic;font-weight:500}.hero-lede{max-width:620px;margin:30px 0 0;color:#c3d0ca;font-size:clamp(16px,1.5vw,20px);line-height:1.65}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}.landing-button{display:inline-flex;align-items:center;justify-content:center;gap:24px;padding:14px 19px;border:1px solid transparent;border-radius:5px;font-size:13px;font-weight:700;transition:.2s ease}.landing-button:hover{transform:translateY(-2px)}.landing-button.primary{color:#173e39;background:#f8f4e8}.landing-button.secondary{border-color:#77968c;color:#fff}.hero-note{display:flex;align-items:center;gap:8px;margin:22px 0 0;color:#94afa5;font-size:11px}.hero-note span{color:#d8bc72}.map-preview{position:relative;display:block;min-height:580px;overflow:hidden;border:1px solid #6b897d;border-radius:14px;color:#173e39;background:#dce6d8;box-shadow:0 34px 80px #071a1538;transform:rotate(1.4deg);transition:.35s ease}.map-preview:hover{transform:rotate(.3deg) translateY(-5px)}.preview-top,.preview-bottom{position:absolute;z-index:2;right:0;left:0;display:flex;align-items:center;justify-content:space-between;padding:17px 20px;background:#f8f5eced;backdrop-filter:blur(8px);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.preview-top{top:0;border-bottom:1px solid #bdcabe}.preview-bottom{bottom:0;border-top:1px solid #bdcabe}.preview-bottom span{display:flex;align-items:center;gap:7px}.preview-bottom i{width:7px;height:7px;border-radius:50%;background:#3e8063}.preview-bottom strong{color:#276149}.preview-map{position:absolute;inset:48px 0;width:100%;height:calc(100% - 96px);color:#375e51}.land{stroke:#52776a;stroke-width:2}.land-al{fill:#afc9aa}.land-xk{fill:#c9d5a4}.river{fill:none;stroke:#769ca4;stroke-width:4;stroke-dasharray:6 6}.preview-map text{fill:#3f6256;font:700 10px 'DM Sans';letter-spacing:.18em}.marker circle:first-child{fill:#fff;stroke:#b99a4e;stroke-width:2}.marker circle:last-child{fill:#b99a4e}.m1{transform:translate(274px,199px)}.m2{transform:translate(351px,121px)}.m3{transform:translate(287px,329px)}.m4{transform:translate(303px,413px)}.m5{transform:translate(252px,268px)}.preview-card{position:absolute;z-index:3;right:24px;bottom:88px;left:24px;display:grid;grid-template-columns:42px 1fr auto;align-items:center;gap:12px;padding:13px;border:1px solid #c8d3c7;border-radius:8px;background:#fffffff2;box-shadow:0 12px 35px #173e3924}.preview-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;color:#f7edcf;background:#285c4e}.preview-card small,.preview-card strong{display:block}.preview-card small{color:#75847d;font-size:9px;text-transform:uppercase;letter-spacing:.08em}.preview-card strong{margin-top:2px;font-family:Fraunces,serif;font-size:15px}.preview-card b{color:#39705c}.topic-strip{display:flex;align-items:center;justify-content:center;gap:clamp(18px,4vw,58px);min-height:66px;padding:16px 24px;border-bottom:1px solid #d8d5ca;background:#fff;color:#60716b;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;white-space:nowrap}.topic-strip i{color:#c0a254;font-size:8px}.landing-section{padding:clamp(80px,10vw,130px) max(24px,calc((100vw - 1240px)/2))}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:60px;margin-bottom:46px}.section-heading h2{margin:0;font-family:Fraunces,serif;font-size:clamp(42px,5vw,66px);font-weight:500;line-height:1;letter-spacing:-.04em}.section-heading>p{max-width:470px;margin:0;color:#61716a;font-size:15px;line-height:1.7}.collections{background:#f5f2e9}.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.collection-card{position:relative;display:flex;min-height:440px;flex-direction:column;overflow:hidden;padding:22px;border:1px solid #cbcabe;border-radius:12px;background:#ebe7db;transition:.25s ease}.collection-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px #21342c12}.card-number{position:relative;z-index:2;color:#66756f;font-size:10px;font-weight:800}.collection-art{position:absolute;inset:0 0 135px;overflow:hidden}.collection-art:before,.collection-art i{content:'';position:absolute;border-radius:50%}.collection-art:before{width:290px;height:290px;top:40px;left:calc(50% - 145px);border:1px solid #375d4d33}.collection-art i{width:210px;height:270px;top:80px;left:calc(50% - 105px);background:#7da283;clip-path:polygon(50% 0,76% 18%,89% 53%,75% 100%,45% 86%,9% 96%,17% 55%,0 27%)}.collection-art b{position:absolute;top:170px;left:50%;transform:translate(-50%,-50%);color:#f4e9c7;font-size:52px;font-weight:400}.ochre .collection-art i{background:#ad8952}.sky .collection-art i{background:#668e91}.card-copy{position:absolute;right:22px;bottom:22px;left:22px}.card-copy>*{display:block}.card-copy strong{font-family:Fraunces,serif;font-size:27px;font-weight:500}.card-copy small{min-height:54px;margin-top:7px;color:#64716b;font-size:12px;line-height:1.5}.card-copy span{margin-top:14px;color:#285e4c;font-size:11px;font-weight:800}.atlas-story{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(70px,11vw,150px);align-items:center;color:#fff;background:#192724}.story-stats{border-top:1px solid #ffffff30}.story-stats div{display:grid;grid-template-columns:150px 1fr;align-items:baseline;padding:25px 0;border-bottom:1px solid #ffffff30}.story-stats strong{font-family:Fraunces,serif;font-size:52px;font-weight:500;color:#d8bc72}.story-stats span{color:#b6c4bf;font-size:12px}.story-copy .eyebrow{color:#b3c8bd}.story-copy h2{max-width:700px;margin:0;font-family:Fraunces,serif;font-size:clamp(46px,6vw,72px);font-weight:500;line-height:.98;letter-spacing:-.04em}.story-copy>p:not(.eyebrow){max-width:650px;margin:25px 0;color:#b8c5c0;line-height:1.75}.story-copy>a{display:inline-flex;gap:20px;padding-bottom:5px;border-bottom:1px solid #79978b;color:#fff;font-size:12px;font-weight:700}.process-section{background:#fff}.text-link{color:#2c6651;font-size:12px;font-weight:800}.process-list{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #d9dfda}.process-list article{display:grid;grid-template-columns:42px 1fr;gap:12px;padding:30px 28px 20px 0}.process-list article+article{padding-left:28px;border-left:1px solid #d9dfda}.process-list article>span{color:#a98b42;font-size:10px;font-weight:800}.process-list h3{margin:0;font-family:Fraunces,serif;font-size:24px;font-weight:500}.process-list p{margin:8px 0 0;color:#65736d;font-size:13px;line-height:1.65}.landing-cta{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:430px;overflow:hidden;padding:80px max(24px,calc((100vw - 1240px)/2));color:#fff;background:#2a6655}.landing-cta .eyebrow{color:#c6d8d0}.landing-cta h2{max-width:750px;margin:0 0 30px;font-family:Fraunces,serif;font-size:clamp(48px,7vw,78px);font-weight:500;line-height:.95;letter-spacing:-.04em}.landing-button.light{color:#245446;background:#fff}.cta-mark{position:absolute;right:max(20px,calc((100vw - 1280px)/2));color:#ffffff12;font-size:340px;line-height:1}.landing-footer{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:50px;padding:32px max(24px,calc((100vw - 1240px)/2));color:#b7c5bf;background:#14231f;font-size:11px}.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.footer-brand span{color:#d8bc72;font-size:21px}.landing-footer p{margin:0}.landing-footer div{display:flex;gap:20px;color:#fff;font-weight:600}
+  .topic-strip a{transition:color .15s}.topic-strip a:hover{color:#1e5745}.data-section{scroll-margin-top:65px;padding:clamp(80px,10vw,135px) max(24px,calc((100vw - 1240px)/2))}.chapter-number{margin:0 0 20px;color:#4f7a65;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.data-intro h2,.species-section h2,.sensor-copy h2,.notes-copy h2{margin:0;font-family:Fraunces,serif;font-size:clamp(45px,5.5vw,72px);font-weight:500;line-height:.98;letter-spacing:-.045em}.data-intro h2 em,.sensor-copy h2 em{color:#997b36;font-style:italic}.data-intro>p:not(.chapter-number),.sensor-copy>p:not(.chapter-number),.notes-copy>p:not(.chapter-number){max-width:560px;margin:25px 0;color:#61716a;font-size:15px;line-height:1.75}.data-link{display:inline-flex;gap:24px;margin-top:9px;padding-bottom:5px;border-bottom:1px solid #92a79d;color:#245b48;font-size:12px;font-weight:800}.areas-section{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(60px,10vw,140px);align-items:center;background:#f5f2e9}.area-browser{overflow:hidden;border:1px solid #c8cbbf;border-radius:12px;background:#fff;box-shadow:0 24px 60px #20382d10}.browser-head,.source-line{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;background:#e6ebe2;color:#54675e;font-size:9px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.browser-head{border-bottom:1px solid #ccd4ca}.browser-head b{color:#245c49}.area-row{display:grid;grid-template-columns:36px 1fr auto;gap:15px;align-items:center;padding:25px 20px;border-bottom:1px solid #e2e5df;transition:.18s ease}.area-row:hover{padding-left:25px;background:#f5f8f3}.area-row>span{color:#a08b53;font-size:10px;font-weight:800}.area-row strong,.area-row small{display:block}.area-row strong{font-family:Fraunces,serif;font-size:20px;font-weight:500}.area-row small{margin-top:4px;color:#78857f;font-size:10px}.area-row i{color:#326c57;font-style:normal}.source-line{justify-content:flex-start;gap:8px;background:#f8f8f5}.source-line a{margin-left:auto;color:#365f50}.live-dot{width:7px;height:7px;border-radius:50%;background:#4f936a;box-shadow:0 0 0 4px #4f936a18}.species-section{background:#fff}.section-summary{max-width:420px}.section-summary>strong{color:#2f6652;font-family:Fraunces,serif;font-size:25px;font-weight:500}.section-summary p{margin:8px 0 0;color:#6a7771;font-size:13px;line-height:1.6}.species-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.species-card{overflow:hidden;border:1px solid #d8ddd7;border-radius:10px;background:#fafbf8;transition:.2s ease}.species-card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #173e3914}.species-image{position:relative;display:block;aspect-ratio:1/1;overflow:hidden;background:#dce5da}.species-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.82);transition:.3s}.species-card:hover img{transform:scale(1.035);filter:saturate(1)}.species-image>small{position:absolute;top:12px;left:12px;padding:6px 8px;border-radius:4px;color:#fff;background:#173e39d9;font-size:8px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.species-copy{display:block;padding:17px}.species-copy>*{display:block}.species-copy i{color:#728179;font-size:9px;font-style:normal;text-transform:uppercase;letter-spacing:.08em}.species-copy strong{margin-top:5px;font-family:Fraunces,serif;font-size:20px;font-weight:500;font-style:italic}.species-copy small{margin-top:8px;color:#87918c;font-size:9px}.sensors-section{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(60px,10vw,140px);align-items:center;color:#fff;background:#172724}.sensor-copy .chapter-number{color:#99b2a6}.sensor-copy h2 em{color:#d8bc72}.sensor-copy>p:not(.chapter-number){color:#b6c5be}.sensor-legend{display:flex;flex-wrap:wrap;gap:18px;margin:24px 0 6px;color:#aebdb6;font-size:10px}.sensor-legend span{display:flex;align-items:center;gap:7px}.sensor-legend i,.console-head i{width:7px;height:7px;border-radius:50%;background:#d8bc72}.sensor-legend i.good,.console-head i{background:#69ba82;box-shadow:0 0 0 4px #69ba8217}.light-link{border-color:#70877d;color:#fff}.sensor-console{overflow:hidden;border:1px solid #536a61;border-radius:12px;background:#20332e;box-shadow:0 25px 70px #0003}.console-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #536a61;color:#9eb1a8;font-size:9px;font-weight:800;letter-spacing:.1em}.console-head span:first-child{display:flex;align-items:center;gap:9px}.live-readings{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#4d635a}.live-reading,.reading-skeleton{min-height:145px;padding:22px;background:#263c36}.live-reading span,.live-reading strong,.live-reading small{display:block}.live-reading span{color:#a9b9b1;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}.live-reading strong{margin-top:15px;color:#fff;font-family:Fraunces,serif;font-size:48px;font-weight:500;line-height:1}.live-reading small{margin-top:4px;color:#d8bc72;font-size:10px}.reading-skeleton{background:linear-gradient(100deg,#263c36 30%,#304a42 50%,#263c36 70%);background-size:300% 100%;animation:sensor-sheen 1.4s infinite}@keyframes sensor-sheen{to{background-position:-150% 0}}.sensor-unavailable{grid-column:1/-1;margin:0;padding:55px 24px;color:#b8c7c0;background:#263c36;text-align:center}.console-status{margin:0;padding:17px 20px 5px;color:#d2ddd8;font-size:11px}.console-caveat{margin:0;padding:3px 20px 18px;color:#82978d;font-size:9px}.notes-section{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(60px,9vw,120px);align-items:center;background:#eef0e8}.notes-demo{position:relative;min-height:540px;overflow:hidden;border:1px solid #c2cbc1;border-radius:12px;background:#d7e2d3}.demo-map-lines{position:absolute;inset:0;background-image:linear-gradient(#44695714 1px,transparent 1px),linear-gradient(90deg,#44695714 1px,transparent 1px);background-size:28px 28px}.demo-map-lines:after{content:'';position:absolute;width:280px;height:390px;top:60px;left:calc(50% - 140px);background:#9cba98;clip-path:polygon(47% 0,74% 18%,67% 39%,84% 62%,64% 100%,38% 81%,15% 88%,25% 55%,8% 31%)}.sticky-demo{position:absolute;z-index:2;width:min(245px,60%);padding:20px;box-shadow:0 13px 25px #173e3925;transform:rotate(-3deg)}.sticky-demo.yellow{top:54px;right:28px;background:#f2d873}.sticky-demo.green{bottom:48px;left:28px;background:#86c596;transform:rotate(2.5deg)}.sticky-demo small{font-size:8px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.sticky-demo p{margin:12px 0 0;font-family:Fraunces,serif;font-size:18px;line-height:1.25}.demo-pin{position:absolute;z-index:3;bottom:35px;right:35px;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;color:#fff;background:#1d5746;font-size:28px}.notes-copy ul{margin:28px 0;padding:0;border-top:1px solid #cbd3ca;list-style:none}.notes-copy li{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid #cbd3ca;font-size:12px;font-weight:700}.notes-copy li span{color:#997b36;font-size:9px}.note-button{margin-top:7px;color:#fff;background:#225b48}.method-strip{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:45px;padding:35px max(24px,calc((100vw - 1240px)/2));color:#bdcbc5;background:#101d19}.method-strip p{margin:0;color:#fff;font-family:Fraunces,serif;font-size:18px}.method-strip div{display:flex;justify-content:center;gap:28px}.method-strip div span{font-size:9px;text-transform:uppercase;letter-spacing:.06em}.method-strip strong{margin-right:4px;color:#d8bc72}.method-strip>a{color:#fff;font-size:10px;font-weight:800}
+  .project-stats{display:grid;grid-template-columns:.72fr 1.28fr;gap:clamp(55px,8vw,110px);padding:clamp(80px,9vw,120px) max(24px,calc((100vw - 1240px)/2));scroll-margin-top:65px;background:#fff}.stats-heading h2{margin:0;font-family:Fraunces,serif;font-size:clamp(42px,4.8vw,64px);font-weight:500;line-height:1;letter-spacing:-.04em}.stats-heading>p:not(.chapter-number){max-width:430px;margin:22px 0;color:#68766f;font-size:13px;line-height:1.7}.stats-heading>a{color:#275f4b;font-size:11px;font-weight:800}.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid #d9dfda;border-left:1px solid #d9dfda}.stats-grid article{position:relative;min-height:245px;padding:25px;border-right:1px solid #d9dfda;border-bottom:1px solid #d9dfda}.stats-grid article>span{position:absolute;top:26px;right:25px;color:#9b8b5d;font-size:9px;font-weight:800}.stats-grid article>strong{display:block;color:#225b48;font-family:Fraunces,serif;font-size:clamp(50px,5vw,70px);font-weight:500;line-height:1}.stats-grid h3{margin:24px 0 7px;font-family:Fraunces,serif;font-size:21px;font-weight:500}.stats-grid p{max-width:250px;margin:0;color:#718078;font-size:11px;line-height:1.55}
+  @media(max-width:900px){.hero-grid,.atlas-story,.project-stats,.areas-section,.sensors-section,.notes-section{grid-template-columns:1fr}.heritage-hero{padding-block:70px}.hero-copy h1{max-width:800px}.map-preview{min-height:500px;max-width:600px;width:100%;justify-self:center}.collection-grid{grid-template-columns:1fr 1fr}.collection-card:last-child{grid-column:1/-1}.section-heading{align-items:start;flex-direction:column;gap:20px}.topic-strip{justify-content:flex-start;overflow:auto}.story-stats{order:2}.process-list{grid-template-columns:1fr}.process-list article+article{padding-left:0;border-left:0;border-top:1px solid #d9dfda}.species-grid{grid-template-columns:repeat(2,1fr)}.sensor-console{width:100%;max-width:650px}.notes-demo{order:2;min-height:480px}.method-strip{grid-template-columns:1fr}.method-strip div{justify-content:flex-start;flex-wrap:wrap}.landing-footer{grid-template-columns:1fr auto}.landing-footer p{display:none}}
+  @media(max-width:600px){.heritage-hero{min-height:auto;padding-block:55px}.hero-copy h1{font-size:53px}.hero-actions{align-items:stretch;flex-direction:column}.map-preview{min-height:430px}.stats-grid,.collection-grid,.species-grid{grid-template-columns:1fr}.stats-grid article{min-height:210px}.collection-card:last-child{grid-column:auto}.collection-card{min-height:390px}.story-stats div{grid-template-columns:115px 1fr}.area-row{grid-template-columns:27px 1fr auto;padding:20px 14px}.area-row strong{font-size:17px}.source-line{flex-wrap:wrap}.source-line a{width:100%;margin:5px 0 0 15px}.species-image{aspect-ratio:1.35/1}.live-reading,.reading-skeleton{min-height:125px;padding:17px}.live-reading strong{font-size:38px}.notes-demo{min-height:420px}.sticky-demo{padding:15px}.method-strip div{display:grid;grid-template-columns:1fr 1fr}.landing-cta{min-height:400px}.cta-mark{right:-100px;font-size:280px}.landing-footer{grid-template-columns:1fr}.landing-footer div{margin-top:5px}}
+</style>

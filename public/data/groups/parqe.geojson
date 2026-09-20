@@ -391,8 +391,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Bredhi i Drenovës është një park kombëtar në Qarkun e Korçës, Shqipëri. Parku ka një sipërfaqe prej 1,380 ha.",
+        "details": [
+          "Bredhi i Drenovës është një park kombëtar në Qarkun e Korçës, Shqipëri. Parku ka një sipërfaqe prej 1,380 ha."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -403,6 +405,10 @@
           {
             "label": "Wikipedia",
             "url": "https://sq.wikipedia.org/wiki/Parku_komb%C3%ABtar_Bredhi_i_Drenov%C3%ABs"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1968796"
           }
         ],
         "osm": {
@@ -413,6 +419,15 @@
             "protect_class": "2",
             "wikidata": "Q1968796"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (sq); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Guri_i_Capit_Panorama.jpg/1280px-Guri_i_Capit_Panorama.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Guri_i_Capit_Panorama.jpg",
+          "credit": "Albinfo",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Parku Kombëtar \"Bredhi i Drenovës\""
         }
       }
     },
@@ -11564,8 +11579,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Karaburun-Sazan Marine Park is a national marine park in the Vlorë County of southwestern Albania. The marine park encompasses over 125.70 km2 (48.53 sq mi) and comprises the boundaries of both the Peninsula of Karaburun and the Island of Sazan. It is home to a vast array of landforms, including mountains, caves,…",
+        "details": [
+          "Karaburun-Sazan Marine Park is a national marine park in the Vlorë County of southwestern Albania. The marine park encompasses over 125.70 km2 (48.53 sq mi) and comprises the boundaries of both the Peninsula of Karaburun and the Island of Sazan. It is home to a vast array of landforms, including mountains, caves, islands, depressions, bays, cliffs, canyons and rocky coasts, all contributing to an exceptionally considerable biological diversity. The marine park has been identified as an Important Bird and Plant Area, because it supports immense bird and plant species. Containing ecosystems and habitats that are specific to the Mediterranean Basin, the convention of Barcelona has classified the marine park as a Specially Protected Areas of Mediterranean Importance."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "MultiPolygon",
         "sources": [
@@ -11576,6 +11593,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Karaburun-Sazan_Marine_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1473700"
           }
         ],
         "osm": {
@@ -11586,6 +11607,15 @@
             "protect_class": "2",
             "wikidata": "Q1473700"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Gjiri_Skaloma_Beget._Karaburun.jpg/1280px-Gjiri_Skaloma_Beget._Karaburun.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Gjiri_Skaloma_Beget._Karaburun.jpg",
+          "credit": "Fation Plaku",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Parku Kombëtar Detar Karaburun-Sazan"
         }
       }
     },
@@ -12319,8 +12349,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Divjakë-Karavasta National Park is a national park in western Albania, sprawling across the Myzeqe Plain in the direct proximity to the Adriatic Sea. The park spans a territory of 222.3 square kilometres (22,230 ha) containing remarkable features such as wetlands, salt marshes, coastal meadows, floodplains,…",
+        "details": [
+          "Divjakë-Karavasta National Park is a national park in western Albania, sprawling across the Myzeqe Plain in the direct proximity to the Adriatic Sea. The park spans a territory of 222.3 square kilometres (22,230 ha) containing remarkable features such as wetlands, salt marshes, coastal meadows, floodplains, woodlands, reed beds, forests and estuaries. Because of the park's important and great availability of bird and plant species, it has been identified as an important Bird and Plant Area of international importance."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -12331,6 +12363,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Divjak%C3%AB-Karavasta_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1231952"
           }
         ],
         "osm": {
@@ -12341,6 +12377,15 @@
             "protect_class": "2",
             "wikidata": "Q1231952"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Karavasta_National_Park_Albania_2016.jpg/1280px-Karavasta_National_Park_Albania_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Karavasta_National_Park_Albania_2016.jpg",
+          "credit": "Tomasz Lewicki - @Flickr: https://www.flickr.com/photos/stalkerpl/",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "alt": "Parku Kombëtar Divjakë-Karavasta"
         }
       }
     },
@@ -14102,8 +14147,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Fir of Hotovë-Dangëlli National Park is the largest national park in Albania located in Gjirokastër County with a surface area of 34,361 ha (343.61 km2). The park takes its name from the Hotova Fir, which is considered one of the most important Mediterranean plant relics of the country. The park is made up of hilly…",
+        "details": [
+          "Fir of Hotovë-Dangëlli National Park is the largest national park in Albania located in Gjirokastër County with a surface area of 34,361 ha (343.61 km2). The park takes its name from the Hotova Fir, which is considered one of the most important Mediterranean plant relics of the country. The park is made up of hilly and mountainous terrain with limestone and sandstone deposits as well as numerous valleys, canyons, gorges, rivers and dense deciduous and coniferous forests. The International Union for Conservation of Nature (IUCN) has listed the park as Category II. The park also includes 11 natural monuments."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -14114,6 +14161,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Fir_of_Hotov%C3%AB-Dang%C3%ABlli_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1321758"
           }
         ],
         "osm": {
@@ -14124,6 +14175,15 @@
             "protect_class": "2",
             "wikidata": "Q1321758"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/Bredhi_I_Hotov%C3%ABs.jpg/1280px-Bredhi_I_Hotov%C3%ABs.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Bredhi_I_Hotov%C3%ABs.jpg",
+          "credit": "Rexhino lahe",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Parku Kombëtar i Bredhit të Hotovës-Dangëlli"
         }
       }
     },
@@ -14957,8 +15017,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Butrint National Park is a national park in Vlorë County, southern Albania. It is located 18 kilometres (11 mi) south of Sarandë. The park encompasses 9,424 hectares (94.24 km2) of hilly terrain with freshwater lakes, wetlands, salt marshes, open plains, reed beds and islands. The park's significance for…",
+        "details": [
+          "Butrint National Park is a national park in Vlorë County, southern Albania. It is located 18 kilometres (11 mi) south of Sarandë. The park encompasses 9,424 hectares (94.24 km2) of hilly terrain with freshwater lakes, wetlands, salt marshes, open plains, reed beds and islands. The park's significance for conservation is reflected in the large number of species with over 1,200 different animals and plants. Its mandate includes the protection of the lake and lagoon of Butrint, the natural channel of Vivari, the islands of Ksamil and as well the archaeological site, that provides valuable remains of ancient civilisations."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -14969,6 +15031,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Butrint_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q975250"
           }
         ],
         "osm": {
@@ -14980,6 +15046,15 @@
             "protect_class": "2",
             "wikidata": "Q975250"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Butrint%2C_Albania.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "source": "https://commons.wikimedia.org/wiki/File:Butrint,_Albania.jpg",
+          "credit": "Marc Morell",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "alt": "Parku Kombëtar i Butrintit"
         }
       }
     },
@@ -15589,8 +15664,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Llogara National Park is a national park centered on the Ceraunian Mountains along the Albanian Riviera in southwestern Albania, spanning a surface area of 1,769 ha (17.69 km2). The park's terrain includes large alpine meadows, vertical rock faces, precipices and dense forests. Most area of the park is covered by…",
+        "details": [
+          "Llogara National Park is a national park centered on the Ceraunian Mountains along the Albanian Riviera in southwestern Albania, spanning a surface area of 1,769 ha (17.69 km2). The park's terrain includes large alpine meadows, vertical rock faces, precipices and dense forests. Most area of the park is covered by forests and was established in 1966 to protect several ecosystems and biodiversity of national importance. The International Union for Conservation of Nature (IUCN) has listed the park as Category II. The region has been recognised as an important Bird and Plant Area, supporting significant number of species."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -15601,6 +15678,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Llogara_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q686088"
           }
         ],
         "osm": {
@@ -15611,6 +15692,15 @@
             "protect_class": "2",
             "wikidata": "Q686088"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Llogara_pass.jpg/1280px-Llogara_pass.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Llogara_pass.jpg",
+          "credit": "godo godaj",
+          "license": "CC BY 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+          "alt": "Parku Kombëtar i Llogarasë"
         }
       }
     },
@@ -17736,8 +17826,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Prespa National Park is a national park situated in southeastern Albania on the border triangle shared with Greece and North Macedonia. At approximately 277.5 km2 (107.1 sq mi), the park encompasses the country's sections of the Great and Small Prespa Lake. It is considerably characterised by high mountains, narrow…",
+        "details": [
+          "Prespa National Park is a national park situated in southeastern Albania on the border triangle shared with Greece and North Macedonia. At approximately 277.5 km2 (107.1 sq mi), the park encompasses the country's sections of the Great and Small Prespa Lake. It is considerably characterised by high mountains, narrow islands, vast freshwater wetlands, salt marshes, meadows, reed beds and dense forests."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -17748,6 +17840,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Prespa_National_Park_%28Albania%29"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q4988996"
           }
         ],
         "osm": {
@@ -17759,6 +17855,15 @@
             "protect_class": "2",
             "wikidata": "Q4988996"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Liqeni_Prespes._Ishulli_Mali_Gradit._Korce._Albania.jpg/1280px-Liqeni_Prespes._Ishulli_Mali_Gradit._Korce._Albania.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Liqeni_Prespes._Ishulli_Mali_Gradit._Korce._Albania.jpg",
+          "credit": "Fation Plaku",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Parku Kombëtar i Prespës"
         }
       }
     },
@@ -18116,8 +18221,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Національний парк Теті — один із національних парків Албанії, розташований на півночі країни, у гірському районі поблизу кордону з Чорногорією, другий за розміром у країні. Займає верхню північну частину долини Шала. Межує на сході з національним парком «Долина Валбони».",
+        "details": [
+          "Національний парк Теті — один із національних парків Албанії, розташований на півночі країни, у гірському районі поблизу кордону з Чорногорією, другий за розміром у країні. Займає верхню північну частину долини Шала. Межує на сході з національним парком «Долина Валбони»."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -18128,6 +18235,10 @@
           {
             "label": "Wikipedia",
             "url": "https://uk.wikipedia.org/wiki/%D0%A2%D0%B5%D1%82%D1%96_%28%D0%BD%D0%B0%D1%86%D1%96%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B8%D0%B9_%D0%BF%D0%B0%D1%80%D0%BA%29"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1587429"
           }
         ],
         "osm": {
@@ -18138,6 +18249,15 @@
             "protect_class": "2",
             "wikidata": "Q1587429"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (uk); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Kisha_e_Thethit_-_2018_%288%29.jpg/1280px-Kisha_e_Thethit_-_2018_%288%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Kisha_e_Thethit_-_2018_(8).jpg",
+          "credit": "Liridon",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Parku Kombëtar i Thethit"
         }
       }
     },
@@ -18605,8 +18725,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The Valbona Valley is in the Albanian Alps in northern Albania. It is part of Alps of Albania National Park, one of the most impressive and notable topographic features of Albania. Being the southernmost continuation of the Dinaric Alps, it forms a section of the Alpine-Himalayan orogenic belt, which extend from…",
+        "details": [
+          "The Valbona Valley is in the Albanian Alps in northern Albania. It is part of Alps of Albania National Park, one of the most impressive and notable topographic features of Albania. Being the southernmost continuation of the Dinaric Alps, it forms a section of the Alpine-Himalayan orogenic belt, which extend from the Atlantic Ocean to the Himalaya Mountains. The mountains are characterized by limestone and dolomite rocks and shows major karst features. Maja Jezercë sprawls to the west of the valley and is the highest mountain of the Dinaric Alps, with an altitude of 2,694 m (8,839 ft). The Valbona River originate from several karst springs along the south of Maja Jezercë and the east of Valbona Pass. It is the largest river within the Albanian Alps and drains the entire eastern portion of the range. Over the past few million years, glaciers have at times covered most of the park. During the Würm period, the glacier of Valbona reached a total length of 9.5 kilometres. Nowadays, there are two very small active glaciers close to the northeastern edge of Maja Jezercë."
+        ],
         "mapNote": "Objekti është vizatuar si vijë në OpenStreetMap.",
         "geometryType": "LineString",
         "sources": [
@@ -18617,6 +18739,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Valbon%C3%AB_Valley_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1725911"
           }
         ],
         "osm": {
@@ -18628,6 +18754,15 @@
             "protect_class": "2",
             "wikidata": "Q1725911"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/2013-10-05_Valbona%2C_Albania_8806.jpg/1280px-2013-10-05_Valbona%2C_Albania_8806.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:2013-10-05_Valbona,_Albania_8806.jpg",
+          "credit": "You may re-use this image under the terms of the license using the following reference: Image: Wikipedia / Tobias Klenze / CC-BY-SA 4.0. …",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "alt": "Parku Kombëtar Lugina e Valbonës"
         }
       }
     },
@@ -18659,8 +18794,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The Valbona Valley is in the Albanian Alps in northern Albania. It is part of Alps of Albania National Park, one of the most impressive and notable topographic features of Albania. Being the southernmost continuation of the Dinaric Alps, it forms a section of the Alpine-Himalayan orogenic belt, which extend from…",
+        "details": [
+          "The Valbona Valley is in the Albanian Alps in northern Albania. It is part of Alps of Albania National Park, one of the most impressive and notable topographic features of Albania. Being the southernmost continuation of the Dinaric Alps, it forms a section of the Alpine-Himalayan orogenic belt, which extend from the Atlantic Ocean to the Himalaya Mountains. The mountains are characterized by limestone and dolomite rocks and shows major karst features. Maja Jezercë sprawls to the west of the valley and is the highest mountain of the Dinaric Alps, with an altitude of 2,694 m (8,839 ft). The Valbona River originate from several karst springs along the south of Maja Jezercë and the east of Valbona Pass. It is the largest river within the Albanian Alps and drains the entire eastern portion of the range. Over the past few million years, glaciers have at times covered most of the park. During the Würm period, the glacier of Valbona reached a total length of 9.5 kilometres. Nowadays, there are two very small active glaciers close to the northeastern edge of Maja Jezercë."
+        ],
         "mapNote": "Objekti është vizatuar si vijë në OpenStreetMap.",
         "geometryType": "LineString",
         "sources": [
@@ -18671,6 +18808,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Valbon%C3%AB_Valley_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1725911"
           }
         ],
         "osm": {
@@ -18682,6 +18823,15 @@
             "protect_class": "2",
             "wikidata": "Q1725911"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/2013-10-05_Valbona%2C_Albania_8806.jpg/1280px-2013-10-05_Valbona%2C_Albania_8806.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:2013-10-05_Valbona,_Albania_8806.jpg",
+          "credit": "You may re-use this image under the terms of the license using the following reference: Image: Wikipedia / Tobias Klenze / CC-BY-SA 4.0. …",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "alt": "Parku Kombëtar Lugina e Valbonës"
         }
       }
     },
@@ -18913,8 +19063,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The Valbona Valley is in the Albanian Alps in northern Albania. It is part of Alps of Albania National Park, one of the most impressive and notable topographic features of Albania. Being the southernmost continuation of the Dinaric Alps, it forms a section of the Alpine-Himalayan orogenic belt, which extend from…",
+        "details": [
+          "The Valbona Valley is in the Albanian Alps in northern Albania. It is part of Alps of Albania National Park, one of the most impressive and notable topographic features of Albania. Being the southernmost continuation of the Dinaric Alps, it forms a section of the Alpine-Himalayan orogenic belt, which extend from the Atlantic Ocean to the Himalaya Mountains. The mountains are characterized by limestone and dolomite rocks and shows major karst features. Maja Jezercë sprawls to the west of the valley and is the highest mountain of the Dinaric Alps, with an altitude of 2,694 m (8,839 ft). The Valbona River originate from several karst springs along the south of Maja Jezercë and the east of Valbona Pass. It is the largest river within the Albanian Alps and drains the entire eastern portion of the range. Over the past few million years, glaciers have at times covered most of the park. During the Würm period, the glacier of Valbona reached a total length of 9.5 kilometres. Nowadays, there are two very small active glaciers close to the northeastern edge of Maja Jezercë."
+        ],
         "mapNote": "Objekti është vizatuar si vijë në OpenStreetMap.",
         "geometryType": "LineString",
         "sources": [
@@ -18925,6 +19077,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Valbon%C3%AB_Valley_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1725911"
           }
         ],
         "osm": {
@@ -18936,6 +19092,15 @@
             "protect_class": "2",
             "wikidata": "Q1725911"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/2013-10-05_Valbona%2C_Albania_8806.jpg/1280px-2013-10-05_Valbona%2C_Albania_8806.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:2013-10-05_Valbona,_Albania_8806.jpg",
+          "credit": "You may re-use this image under the terms of the license using the following reference: Image: Wikipedia / Tobias Klenze / CC-BY-SA 4.0. …",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "alt": "Parku Kombëtar Lugina e Valbonës"
         }
       }
     },
@@ -20861,8 +21026,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The Valbona Valley is in the Albanian Alps in northern Albania. It is part of Alps of Albania National Park, one of the most impressive and notable topographic features of Albania. Being the southernmost continuation of the Dinaric Alps, it forms a section of the Alpine-Himalayan orogenic belt, which extend from…",
+        "details": [
+          "The Valbona Valley is in the Albanian Alps in northern Albania. It is part of Alps of Albania National Park, one of the most impressive and notable topographic features of Albania. Being the southernmost continuation of the Dinaric Alps, it forms a section of the Alpine-Himalayan orogenic belt, which extend from the Atlantic Ocean to the Himalaya Mountains. The mountains are characterized by limestone and dolomite rocks and shows major karst features. Maja Jezercë sprawls to the west of the valley and is the highest mountain of the Dinaric Alps, with an altitude of 2,694 m (8,839 ft). The Valbona River originate from several karst springs along the south of Maja Jezercë and the east of Valbona Pass. It is the largest river within the Albanian Alps and drains the entire eastern portion of the range. Over the past few million years, glaciers have at times covered most of the park. During the Würm period, the glacier of Valbona reached a total length of 9.5 kilometres. Nowadays, there are two very small active glaciers close to the northeastern edge of Maja Jezercë."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -20873,6 +21040,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Valbon%C3%AB_Valley_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1725911"
           }
         ],
         "osm": {
@@ -20884,6 +21055,15 @@
             "protect_class": "2",
             "wikidata": "Q1725911"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/2013-10-05_Valbona%2C_Albania_8806.jpg/1280px-2013-10-05_Valbona%2C_Albania_8806.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:2013-10-05_Valbona,_Albania_8806.jpg",
+          "credit": "You may re-use this image under the terms of the license using the following reference: Image: Wikipedia / Tobias Klenze / CC-BY-SA 4.0. …",
+          "license": "CC BY 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+          "alt": "Parku Kombëtar Lugina e Valbonës"
         }
       }
     },
@@ -21749,8 +21929,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Lurë-Dejë Mountain National Park is a national park in northeastern Albania, spanning an expanded area of 202.42 km2 (78.15 sq mi) since 2018 by encompassing the entire section of Kunora e Lurës, former Zall-Gjocaj National Park, and Dejë Mountain. The park was originally established in 1966 to protect the various…",
+        "details": [
+          "Lurë-Dejë Mountain National Park is a national park in northeastern Albania, spanning an expanded area of 202.42 km2 (78.15 sq mi) since 2018 by encompassing the entire section of Kunora e Lurës, former Zall-Gjocaj National Park, and Dejë Mountain. The park was originally established in 1966 to protect the various ecosystems and biodiversity as Lura National Park. The altitude vary from 1,500–2,300 m (4,921–7,546 ft). The International Union for Conservation of Nature (IUCN) has listed the park as Category II. Nevertheless, it is described as an important Bird and Plant Area, because it supports significant bird and plant species."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -21761,6 +21943,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Lur%C3%AB-Dej%C3%AB_Mountain_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1521938"
           }
         ],
         "osm": {
@@ -21771,6 +21957,15 @@
             "protect_class": "2",
             "wikidata": "Q1521938"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Lura_Liqeni_i_Lul%C3%ABve.JPG/1280px-Lura_Liqeni_i_Lul%C3%ABve.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Lura_Liqeni_i_Lul%C3%ABve.JPG",
+          "credit": "Markussep",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "alt": "Parku Kombëtar Lurë-Mali i Dejës"
         }
       }
     },
@@ -22900,8 +23095,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Dajti Mountain National Park is a national park established in 1966 in central Albania, spanning an area of 293.84 km2 (113.45 sq mi) since 2006. The park is 40 km (25 mi) east of the Adriatic Sea and 26 km (16 mi) east of Tirana. The area is under shared jurisdiction between Albanian Agency of Protected Areas…",
+        "details": [
+          "Dajti Mountain National Park is a national park established in 1966 in central Albania, spanning an area of 293.84 km2 (113.45 sq mi) since 2006. The park is 40 km (25 mi) east of the Adriatic Sea and 26 km (16 mi) east of Tirana. The area is under shared jurisdiction between Albanian Agency of Protected Areas (AKZM) and Tirana Municipality Parks and Recreation Agency (APR). It is adjacent to Shtamë Pass Nature Park to the northwest, Kraste-Verjon Protected Landscape to the west, and Mali me Gropa-Bizë-Martanesh Protected Landscape to the east. The park is marked by an extremely fragmented, rugged topography which creates favourable conditions for a great diversity of ecosystems and biodiversity."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -22912,6 +23109,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Dajti_Mountain_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1968784"
           }
         ],
         "osm": {
@@ -22922,6 +23123,15 @@
             "protect_class": "2",
             "wikidata": "Q1968784"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Mali_i_Dajtit.jpg/1280px-Mali_i_Dajtit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Mali_i_Dajtit.jpg",
+          "credit": "Edvini",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Parku Kombëtar Mali i Dajtit"
         }
       }
     },
@@ -23987,8 +24197,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Tomorr Mountain National Park is a national park founded in 1956 that lies in southern Albania, nestled in the central and higher portions of the Tomorr massif, spanning an area of 261.06 km2 (100.80 sq mi) since 2012, and expanded to include its quarry areas since 2019. The park covers a territory of 26,106 ha.…",
+        "details": [
+          "Tomorr Mountain National Park is a national park founded in 1956 that lies in southern Albania, nestled in the central and higher portions of the Tomorr massif, spanning an area of 261.06 km2 (100.80 sq mi) since 2012, and expanded to include its quarry areas since 2019. The park covers a territory of 26,106 ha. The area falls within the Berat County and only 1,278 ha inside the Elbasan County. The park was established in 1956 and is considered one of the most important protected areas for the maintenance of mountainous biodiversity and ecosystem integrity at the national level. The park has been recognised as an Important Plant Area of international importance by Plantlife."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -23999,6 +24211,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Tomorr_Mountain_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q993154"
           }
         ],
         "osm": {
@@ -24010,6 +24226,15 @@
             "protect_class": "2",
             "wikidata": "Q993154"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Tomorr_Mountain_view_from_Berat_Castle.jpg/1280px-Tomorr_Mountain_view_from_Berat_Castle.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Tomorr_Mountain_view_from_Berat_Castle.jpg",
+          "credit": "Liridon",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Parku Kombëtar Mali i Tomorrit"
         }
       }
     },
@@ -24275,8 +24500,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Shtamë Pass Nature Park is a nature reserve residing in the edge of the mountain chain north of Tirana, Albania, about 25 kilometers east of Kruja. The park is named after the Qafë-Shtamë passage, and has an area of 6,864.36 hectares, with a beautiful mountain scenery consisting mainly of pine forests, some small…",
+        "details": [
+          "Shtamë Pass Nature Park is a nature reserve residing in the edge of the mountain chain north of Tirana, Albania, about 25 kilometers east of Kruja. The park is named after the Qafë-Shtamë passage, and has an area of 6,864.36 hectares, with a beautiful mountain scenery consisting mainly of pine forests, some small lakes and major water sources. The protected area was established in 1996 by the Albanian government as national park and transformed in 2022 into a larger nature park. The park is home to Qafshtama water bottling company known for its curative properties used since the times of Albanian monarchy. The area is becoming lately a popular attraction for hiking."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -24287,6 +24514,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Shtam%C3%AB_Pass_Nature_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1968995"
           }
         ],
         "osm": {
@@ -24297,6 +24528,15 @@
             "protect_class": "2",
             "wikidata": "Q1968995"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Maja_e_Liqenit.jpg/1280px-Maja_e_Liqenit.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Maja_e_Liqenit.jpg",
+          "credit": "Albinfo",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "alt": "Parku Kombëtar Qafë-Shtamë"
         }
       }
     },
@@ -27854,8 +28094,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Park kombëtar në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Shebenik National Park is a national park in eastern Albania adjacent to the border with North Macedonia. It encompasses 34,507.9 hectares (345.079 km2) and is specifically marked by a mountainous landscape supplied with glacial lakes, valleys, dense coniferous and deciduous forests and alpine meadows and pastures.…",
+        "details": [
+          "Shebenik National Park is a national park in eastern Albania adjacent to the border with North Macedonia. It encompasses 34,507.9 hectares (345.079 km2) and is specifically marked by a mountainous landscape supplied with glacial lakes, valleys, dense coniferous and deciduous forests and alpine meadows and pastures. Elevations in the park vary from 300 metres to over 2,200 metres above the Adriatic at the peak of Shebenik and Jabllanica, hence the name. It dwells a number of endangered species that are fast becoming rare in Southern Europe, including the brown bear, gray wolf and Balkan lynx. The abundance in wildlife can in part be explained by the variety of vegetation types and remote location."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -27866,6 +28108,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Shebenik-Jablanica_National_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1969017"
           }
         ],
         "osm": {
@@ -27876,6 +28122,15 @@
             "protect_class": "2",
             "wikidata": "Q1969017"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Towards_Jabllanice_Mountain.jpg/1280px-Towards_Jabllanice_Mountain.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Towards_Jabllanice_Mountain.jpg",
+          "credit": "Spyenson",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "alt": "Parku Kombëtar Shebenik-Jabllanicë"
         }
       }
     },
@@ -36710,14 +36965,24 @@
         "countryCodes": [
           "XK"
         ],
-        "summary": "Park kombëtar në Kosovë; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Parku Kombëtar i Bjeshkëve të Nemuna është një park kombëtar i cili ndodhet në perëndim të Kosovës, më konkretisht ai shtrihet në Rajoni i Pejës dhe Rajoni i Gjakovës. Parku përfshin një sipërfaqe prej rreth 63,028 hektarësh ndërsa u themelua me qëllim të mbrojtjes së ekosistemit, biodiversitetit si dhe…",
+        "details": [
+          "Parku Kombëtar i Bjeshkëve të Nemuna është një park kombëtar i cili ndodhet në perëndim të Kosovës, më konkretisht ai shtrihet në Rajoni i Pejës dhe Rajoni i Gjakovës. Parku përfshin një sipërfaqe prej rreth 63,028 hektarësh ndërsa u themelua me qëllim të mbrojtjes së ekosistemit, biodiversitetit si dhe trashëgimisë kulturore e historike të kësaj pjese të Bjeshkëve të Nemuna."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
           {
             "label": "OpenStreetMap",
             "url": "https://www.openstreetmap.org/relation/7458650"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q26928875"
+          },
+          {
+            "label": "Wikipedia (sq)",
+            "url": "https://sq.wikipedia.org/wiki/Parku_Komb%C3%ABtar_Bjeshk%C3%ABt_e_Nemuna"
           }
         ],
         "osm": {
@@ -36727,6 +36992,15 @@
             "boundary": "national_park",
             "wikidata": "Q26928875"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (sq); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Parku_Komb%C3%ABtar_Bjeshk%C3%ABt_Nemuna%2C_Liqeni_i_madh_ne_Liqenat%2C_Rugove.jpg/1280px-Parku_Komb%C3%ABtar_Bjeshk%C3%ABt_Nemuna%2C_Liqeni_i_madh_ne_Liqenat%2C_Rugove.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Parku_Komb%C3%ABtar_Bjeshk%C3%ABt_Nemuna,_Liqeni_i_madh_ne_Liqenat,_Rugove.jpg",
+          "credit": "Gashi Bujar",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Parku Kombëtar \"Bjeshkët e Nemuna\""
         }
       }
     },

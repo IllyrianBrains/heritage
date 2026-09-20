@@ -6,35 +6,73 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 <BaseLayout title="Paneli i Statusit · Harta e Natyrës" description="Gjendja e zonave natyrore, kuadri ligjor, ndërhyrjet e planifikuara dhe organizatat partnere.">
   <SiteHeader page="dashboard" />
   <main class="dashboard-main">
-    <section class="dashboard-intro">
-      <p class="eyebrow">Shqipëri dhe Kosovë</p>
-      <h1>Paneli i statusit</h1>
-      <p class="dashboard-lede">Gjendja e zonave natyrore, kuadri ligjor dhe përparësitë e qeverisjes qendrore e vendore, ndërhyrjet e planifikuara ose në vazhdim, dhe organizatat që kontribuojnë me të dhëna — për të koordinuar përparësitë dhe bashkëpunimet mes NGO-ve.</p>
+    <header class="dashboard-intro">
+      <div>
+        <p class="eyebrow">Raport rajonal · Shqipëri dhe Kosovë</p>
+        <h1>Gjendja e zonave natyrore</h1>
+        <p class="dashboard-lede">Një pamje e përbashkët e gjendjes, ndërhyrjeve dhe përgjegjësive — për të dalluar shpejt ku kërkohet vëmendje dhe bashkëpunim.</p>
+      </div>
+      <div class="report-meta" aria-label="Informacion mbi raportin">
+        <span>Përditësimi i fundit</span>
+        <strong id="report-updated">Duke u ngarkuar…</strong>
+        <a href={`${base}map/`}>Shiko zonat në hartë <span aria-hidden="true">→</span></a>
+      </div>
+    </header>
+
+    <section class="report-overview" id="overview" aria-labelledby="overview-heading">
+      <div class="overview-heading">
+        <p class="section-kicker">Përmbledhje</p>
+        <h2 id="overview-heading">Pamja e përgjithshme</h2>
+      </div>
+      <div class="stat-tiles" id="stat-tiles" aria-label="Statistika përmbledhëse"></div>
     </section>
 
-    <section class="stat-tiles" id="stat-tiles" aria-label="Statistika përmbledhëse"></section>
+    <div class="dashboard-layout">
+      <aside class="report-rail" aria-label="Përmbajtja e raportit">
+        <span>Në këtë raport</span>
+        <nav>
+          <a href="#areas">01 <strong>Gjendja e zonave</strong></a>
+          <a href="#interventions">02 <strong>Ndërhyrjet</strong></a>
+          <a href="#governance">03 <strong>Qeverisja</strong></a>
+        </nav>
+      </aside>
 
-    <section class="dashboard-section" aria-labelledby="areas-heading">
-      <div class="section-head"><h2 id="areas-heading">Gjendja e zonave</h2><span id="areas-count" class="count-badge">…</span></div>
-      <div class="status-filters" id="status-filters" role="group" aria-label="Filtro sipas statusit"></div>
-      <div id="area-grid" class="area-grid" aria-live="polite"></div>
-    </section>
+      <div class="dashboard-content">
+        <section id="areas" class="dashboard-section" aria-labelledby="areas-heading">
+          <div class="section-head">
+            <div><p class="section-kicker">01 · Monitorimi</p><h2 id="areas-heading">Gjendja e zonave</h2><p>Vlerësimet më të fundit dhe treguesit kryesorë për çdo zonë.</p></div>
+            <span id="areas-count" class="count-badge">…</span>
+          </div>
+          <div class="status-filters" id="status-filters" role="group" aria-label="Filtro sipas statusit"></div>
+          <div id="area-grid" class="area-grid" aria-live="polite"></div>
+        </section>
 
-    <section class="dashboard-section" aria-labelledby="legislation-heading">
-      <div class="section-head"><h2 id="legislation-heading">Kuadri ligjor</h2><span id="legislation-count" class="count-badge">…</span></div>
-      <div id="legislation-list" class="legislation-list" aria-live="polite"></div>
-    </section>
+        <section id="interventions" class="dashboard-section" aria-labelledby="interventions-heading">
+          <div class="section-head">
+            <div><p class="section-kicker">02 · Veprimi</p><h2 id="interventions-heading">Ndërhyrjet</h2><p>Punët e planifikuara, në vazhdim dhe të përfunduara.</p></div>
+            <span id="interventions-count" class="count-badge">…</span>
+          </div>
+          <div class="intervention-filters" id="intervention-filters" role="group" aria-label="Filtro ndërhyrjet sipas statusit"></div>
+          <div id="intervention-list" class="intervention-list" aria-live="polite"></div>
+        </section>
 
-    <section class="dashboard-section" aria-labelledby="interventions-heading">
-      <div class="section-head"><h2 id="interventions-heading">Ndërhyrjet</h2><span id="interventions-count" class="count-badge">…</span></div>
-      <div class="intervention-filters" id="intervention-filters" role="group" aria-label="Filtro ndërhyrjet sipas statusit"></div>
-      <div id="intervention-list" class="intervention-list" aria-live="polite"></div>
-    </section>
-
-    <section class="dashboard-section" aria-labelledby="organizations-heading">
-      <div class="section-head"><h2 id="organizations-heading">Organizatat</h2><span id="organizations-count" class="count-badge">…</span></div>
-      <div id="organization-list" class="organization-list" aria-live="polite"></div>
-    </section>
+        <section id="governance" class="dashboard-section" aria-labelledby="governance-heading">
+          <div class="section-head governance-head">
+            <div><p class="section-kicker">03 · Përgjegjësia</p><h2 id="governance-heading">Qeverisja dhe partnerët</h2><p>Kuadri që përcakton mbrojtjen dhe organizatat që kontribuojnë.</p></div>
+          </div>
+          <div class="governance-grid">
+            <section aria-labelledby="legislation-heading">
+              <div class="subsection-head"><h3 id="legislation-heading">Kuadri ligjor</h3><span id="legislation-count" class="count-badge">…</span></div>
+              <div id="legislation-list" class="legislation-list" aria-live="polite"></div>
+            </section>
+            <section aria-labelledby="organizations-heading">
+              <div class="subsection-head"><h3 id="organizations-heading">Organizatat</h3><span id="organizations-count" class="count-badge">…</span></div>
+              <div id="organization-list" class="organization-list" aria-live="polite"></div>
+            </section>
+          </div>
+        </section>
+      </div>
+    </div>
 
     <div id="dashboard-notice" class="map-notice" role="status" hidden></div>
   </main>

@@ -2063,8 +2063,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Zonë e mbrojtur burimesh në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Bjeshka Oroshit është Zonë e Mbrojtur e Resurseve të Menaxhuara. Bjeshka e Oroshit është shpallur Zonë e Mbrojtur me V.K.M. Nr. 102 datë 15.01.1996. Ajo ka një sipërfaqe prej 4691.2 ha(sipërfaqe me pyje, inproduktive dhe kullota), ndodhet në Njesin Administrative Orosh, Bashkia Mirditë dhe administrohet nga AdZM…",
+        "details": [
+          "Bjeshka Oroshit është Zonë e Mbrojtur e Resurseve të Menaxhuara. Bjeshka e Oroshit është shpallur Zonë e Mbrojtur me V.K.M. Nr. 102 datë 15.01.1996. Ajo ka një sipërfaqe prej 4691.2 ha(sipërfaqe me pyje, inproduktive dhe kullota), ndodhet në Njesin Administrative Orosh, Bashkia Mirditë dhe administrohet nga AdZM ZM, Qarku Lezhës."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -2075,6 +2077,10 @@
           {
             "label": "Wikipedia",
             "url": "https://sq.wikipedia.org/wiki/Bjeshka_e_Oroshit"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q31666168"
           }
         ],
         "osm": {
@@ -2085,6 +2091,15 @@
             "protect_class": "6",
             "wikidata": "Q31666168"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (sq); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Orosh%2C_Mirdit%C3%AB.jpg/1280px-Orosh%2C_Mirdit%C3%AB.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Orosh,_Mirdit%C3%AB.jpg",
+          "credit": "Eda Mekolli",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Bjeshka Oroshit"
         }
       }
     },
@@ -3086,8 +3101,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Monument natyror në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Bredhi i Sotirës është një zonë e mbrojtur natyrore i cili gjendet në Qarkun dhe në rrethin e Gjirokastrës, në Shqipëri.",
+        "details": [
+          "Bredhi i Sotirës është një zonë e mbrojtur natyrore i cili gjendet në Qarkun dhe në rrethin e Gjirokastrës, në Shqipëri."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -3098,6 +3115,10 @@
           {
             "label": "Wikipedia",
             "url": "https://sq.wikipedia.org/wiki/Bredhi_i_Sotir%C3%ABs"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q31666106"
           }
         ],
         "osm": {
@@ -3109,7 +3130,8 @@
             "protect_class": "3",
             "wikidata": "Q31666106"
           }
-        }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (sq); shiko licencën dhe autorët në artikull."
       }
     },
     {
@@ -3362,8 +3384,10 @@
         "countryCodes": [
           "XK"
         ],
-        "summary": "Zonë e mbrojtur në Kosovë; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Gazimestani është një zonë e mbrojtur natyrore dhe hapësirë memoriale në afërsi të Prishtinës, në Kosovë. Zona ndodhet në hapësirën e Fushës së Kosovës dhe lidhet me peizazhin historik, natyror dhe kulturor të kësaj pjese të vendit.",
+        "details": [
+          "Gazimestani është një zonë e mbrojtur natyrore dhe hapësirë memoriale në afërsi të Prishtinës, në Kosovë. Zona ndodhet në hapësirën e Fushës së Kosovës dhe lidhet me peizazhin historik, natyror dhe kulturor të kësaj pjese të vendit."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -3374,6 +3398,10 @@
           {
             "label": "Wikipedia",
             "url": "https://sq.wikipedia.org/wiki/Gazimestani"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q25572250"
           }
         ],
         "osm": {
@@ -3384,6 +3412,15 @@
             "leisure": "nature_reserve",
             "wikidata": "Q25572250"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (sq); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Kosovo-polje.jpg/1280px-Kosovo-polje.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Kosovo-polje.jpg",
+          "credit": "Mladifilozof",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "alt": "Gazimestan"
         }
       }
     },
@@ -3473,8 +3510,10 @@
         "countryCodes": [
           "XK"
         ],
-        "summary": "Zonë e mbrojtur në Kosovë; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Kozhnjeri ose Bjeshka e Kozhnjerit është një rezervat strikt i natyrës, i shpallur në vitin 1955, dhe gjendet në perëndim të Deçanit, Kosovë. Sipërfaqja e Kozhnjerit është 150 ha, ndërsa lartësia mbidetare është prej 1.708 m.",
+        "details": [
+          "Kozhnjeri ose Bjeshka e Kozhnjerit është një rezervat strikt i natyrës, i shpallur në vitin 1955, dhe gjendet në perëndim të Deçanit, Kosovë. Sipërfaqja e Kozhnjerit është 150 ha, ndërsa lartësia mbidetare është prej 1.708 m."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -3485,6 +3524,10 @@
           {
             "label": "Wikipedia",
             "url": "https://sq.wikipedia.org/wiki/Kozhnjeri"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q25572239"
           }
         ],
         "osm": {
@@ -3495,7 +3538,8 @@
             "leisure": "nature_reserve",
             "wikidata": "Q25572239"
           }
-        }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (sq); shiko licencën dhe autorët në artikull."
       }
     },
     {
@@ -5732,8 +5776,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Rezervat i rreptë natyror në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The Gashi is a 27-kilometre-long (17 mi) river located in Tropojë, northern Albania.\nIt was a nature reserve, spanning an area of 3,000 ha. The nature reserve forms a part of the European Green Belt and has been declared a UNESCO World Heritage Site within the Primeval Beech Forests of the Carpathians and Other…",
+        "details": [
+          "The Gashi is a 27-kilometre-long (17 mi) river located in Tropojë, northern Albania.\nIt was a nature reserve, spanning an area of 3,000 ha. The nature reserve forms a part of the European Green Belt and has been declared a UNESCO World Heritage Site within the Primeval Beech Forests of the Carpathians and Other Regions of Europe. In 2022, the protected area was amalgamated to form the Alps of Albania National Park."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -5744,6 +5790,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Gashi_%28river%29"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q64418664"
           }
         ],
         "osm": {
@@ -5755,7 +5805,8 @@
             "protect_class": "1a",
             "wikidata": "Q64418664"
           }
-        }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull."
       }
     },
     {
@@ -6080,8 +6131,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Monument natyror në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Syri i Kaltër është një burim uji, dukuri natyrore dhe vend turistik i shpallur monument i natyrës, që ndodhet në fshatin Muzinë të Rrethit e Delvinës, pranë rrugës nacionale Delvinë – Gjirokastër, në jug të Shqipërisë.",
+        "details": [
+          "Syri i Kaltër është një burim uji, dukuri natyrore dhe vend turistik i shpallur monument i natyrës, që ndodhet në fshatin Muzinë të Rrethit e Delvinës, pranë rrugës nacionale Delvinë – Gjirokastër, në jug të Shqipërisë."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -6092,6 +6145,10 @@
           {
             "label": "Wikipedia",
             "url": "https://sq.wikipedia.org/wiki/Syri_i_Kalt%C3%ABr"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q1973837"
           }
         ],
         "osm": {
@@ -6102,6 +6159,15 @@
             "protect_class": "3",
             "wikidata": "Q1973837"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (sq); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Syri_i_kalter2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+          "source": "https://commons.wikimedia.org/wiki/File:Syri_i_kalter2.jpg",
+          "credit": "No machine-readable author provided. Decius assumed (based on copyright claims).",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/",
+          "alt": "Monument Natyre \"Syri i Kaltër\""
         }
       }
     },
@@ -13975,8 +14041,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Zonë menaxhimi habitati/specie në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The Korab-Koritnik Nature Park is a nature park in eastern Albania and forms a section of the European Green Belt, which serves as a retreat for endangered animal and plant species. It encompasses 55,550 hectares (555.5 km2) of alpine mountainous terrain, with valleys, rivers, glacial lakes, caves, canyons and…",
+        "details": [
+          "The Korab-Koritnik Nature Park is a nature park in eastern Albania and forms a section of the European Green Belt, which serves as a retreat for endangered animal and plant species. It encompasses 55,550 hectares (555.5 km2) of alpine mountainous terrain, with valleys, rivers, glacial lakes, caves, canyons and dense coniferous and deciduous forest. The International Union for Conservation of Nature (IUCN) has listed the park as Category IV. \nKoritnik and Korab have each been recognised as an Important Plant Area of international importance by Plantlife."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -13987,6 +14055,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Korab-Koritnik_Nature_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q39060585"
           }
         ],
         "osm": {
@@ -13998,6 +14070,15 @@
             "protect_class": "4",
             "wikidata": "Q39060585"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Mali_Bardhe.jpg/1280px-Mali_Bardhe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Mali_Bardhe.jpg",
+          "credit": "Albinfo",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Parku Natyror Korab-Koritnik"
         }
       }
     },
@@ -16247,8 +16328,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Peizazh i mbrojtur në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The Buna River-Velipojë Protected Landscape is a protected landscape area in northwestern Albania, encompassing the estuary of Drin, the lagoon of Viluni, the river of Buna with its estuary, and the gulf of Drin that runs across the city of Velipojë alongside the Adriatic Sea.",
+        "details": [
+          "The Buna River-Velipojë Protected Landscape is a protected landscape area in northwestern Albania, encompassing the estuary of Drin, the lagoon of Viluni, the river of Buna with its estuary, and the gulf of Drin that runs across the city of Velipojë alongside the Adriatic Sea."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -16259,6 +16342,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Buna_River_Velipoj%C3%AB_Protected_Landscape"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q48797022"
           }
         ],
         "osm": {
@@ -16269,6 +16356,15 @@
             "protect_class": "5",
             "wikidata": "Q48797022"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Dalja_e_lumit_te_Bunes_nga_liqeni_i_Shkodres.jpg/1280px-Dalja_e_lumit_te_Bunes_nga_liqeni_i_Shkodres.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Dalja_e_lumit_te_Bunes_nga_liqeni_i_Shkodres.jpg",
+          "credit": "Gentiqirjazi",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Peisazh i Mbrojtur Lumi Buna-Velipoje"
         }
       }
     },
@@ -20102,8 +20198,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Peizazh i mbrojtur në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Është ndër zonat më të reja të shpallura në mbrojtje nga Qeveria Shqiptare. Ajo ka statusin “park natyror”. Parku Natyror kufizohet ngushtë me Parkun Kombëtar të Dajtit, nga veriperëndimi i saj, dhe është, gjithashtu, ekologjikisht e lidhur ngushtë edhe me pellgun e Bovillës dhe Parkun Kombëtar të Qafështamës, që…",
+        "details": [
+          "Është ndër zonat më të reja të shpallura në mbrojtje nga Qeveria Shqiptare. Ajo ka statusin “park natyror”. Parku Natyror kufizohet ngushtë me Parkun Kombëtar të Dajtit, nga veriperëndimi i saj, dhe është, gjithashtu, ekologjikisht e lidhur ngushtë edhe me pellgun e Bovillës dhe Parkun Kombëtar të Qafështamës, që ndodhen më në veriperëndim, duke qenë vazhdim natyror i njëri-tjetrit. Kjo zonë shtrihet në një sipërfaqe prej 26,043.34 ha."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -20114,6 +20212,10 @@
           {
             "label": "Wikipedia",
             "url": "https://sq.wikipedia.org/wiki/Mali_me_Gropa_-_Bize_-_Martanesh"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q13042455"
           }
         ],
         "osm": {
@@ -20124,6 +20226,15 @@
             "protect_class": "5",
             "wikidata": "Q13042455"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (sq); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Canyon_bellow_Peshk_village%2C_Martanesh_-_Mapillary_%283BXJeHSAYO_adTGyxo16Sw%29.jpg/1280px-Canyon_bellow_Peshk_village%2C_Martanesh_-_Mapillary_%283BXJeHSAYO_adTGyxo16Sw%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Canyon_bellow_Peshk_village,_Martanesh_-_Mapillary_(3BXJeHSAYO_adTGyxo16Sw).jpg",
+          "credit": "malenki @ Mapillary.com",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Peisazh i Mbrojtur Mali me Gropa-Bize-Martanesh"
         }
       }
     },
@@ -21617,8 +21728,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Peizazh i mbrojtur në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Vjosa Wild River National Park is a national park located in southern Albania. The Vjosa River is Europe's first Wild River National Park that was designated on 15 March 2023. The park was declared a natural ecosystem by decision of the Council of Ministers, in compliance with Law 81/2017 \"On Protected Areas\". The…",
+        "details": [
+          "Vjosa Wild River National Park is a national park located in southern Albania. The Vjosa River is Europe's first Wild River National Park that was designated on 15 March 2023. The park was declared a natural ecosystem by decision of the Council of Ministers, in compliance with Law 81/2017 \"On Protected Areas\". The river valley is considered Albania's biodiversity hotspot, offering ideal aquatic habitats for over 1,100 species of wildlife, including otters, the endangered Egyptian vulture and the critically endangered Balkan lynx, of which only 15 are estimated to remain."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -21629,6 +21742,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Vjosa-Narta_Protected_Landscape"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q48796659"
           }
         ],
         "osm": {
@@ -21639,6 +21756,15 @@
             "protect_class": "5",
             "wikidata": "Q48796659"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Zvernec_monastery%2C_Albania_%28by_Pudelek%29.jpg/1280px-Zvernec_monastery%2C_Albania_%28by_Pudelek%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Zvernec_monastery,_Albania_(by_Pudelek).jpg",
+          "credit": "Pudelek (Marcin Szala)",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "alt": "Peisazh i Mbrojtur Pishë Poro - Nartë"
         }
       }
     },
@@ -23200,8 +23326,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Zonë menaxhimi habitati/specie në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The Lake Shkodër Nature Reserve is a nature reserve in northwestern Albania. The protected area encompasses the Albanian segment of Lake Skadar and the adjoining Buna River and plain, including water and land areas.",
+        "details": [
+          "The Lake Shkodër Nature Reserve is a nature reserve in northwestern Albania. The protected area encompasses the Albanian segment of Lake Skadar and the adjoining Buna River and plain, including water and land areas."
+        ],
         "mapNote": "Sipërfaqja bashkon anët e jashtme dhe përjashton vrimat e relation në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -23212,6 +23340,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Lake_Shkod%C3%ABr_Nature_Reserve"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q60747916"
           }
         ],
         "osm": {
@@ -23223,6 +23355,15 @@
             "protect_class": "4",
             "wikidata": "Q60747916"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Lake_Skadar%2C_Shkoder_Albania_2016.jpg/1280px-Lake_Skadar%2C_Shkoder_Albania_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Lake_Skadar,_Shkoder_Albania_2016.jpg",
+          "credit": "Toma Koma - @Flickr: https://www.flickr.com/photos/97240609@N05/",
+          "license": "CC BY-SA 2.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+          "alt": "Rezerva Natyrore e Menaxhuar Liqeni i Shkodres"
         }
       }
     },
@@ -23548,8 +23689,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Zonë menaxhimi habitati/specie në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Bogovë Nature Park is a nature park in southern Albania, spanning an area of 3.3 km2 (1.3 sq mi). It was established in 1977 to protect several ecosystems and biodiversity of national importance. The nature park of Bogovë falls inside the Pindus Mountains mixed forests terrestrial ecoregion of the Palearctic…",
+        "details": [
+          "Bogovë Nature Park is a nature park in southern Albania, spanning an area of 3.3 km2 (1.3 sq mi). It was established in 1977 to protect several ecosystems and biodiversity of national importance. The nature park of Bogovë falls inside the Pindus Mountains mixed forests terrestrial ecoregion of the Palearctic Mediterranean forests, woodlands, and scrub biome."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -23560,6 +23703,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Bogov%C3%AB_Nature_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q38251706"
           }
         ],
         "osm": {
@@ -23571,6 +23718,15 @@
             "protect_class": "4",
             "wikidata": "Q38251706"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d5/Bogova_Waterfall_-_Mapillary_%28urmOoawelw6W67SolMO-zQ%29.jpg/1280px-Bogova_Waterfall_-_Mapillary_%28urmOoawelw6W67SolMO-zQ%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Bogova_Waterfall_-_Mapillary_(urmOoawelw6W67SolMO-zQ).jpg",
+          "credit": "malenki @ Mapillary.com",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Rezervati Natyror i Menaxhuar \"Bogove\""
         }
       }
     },
@@ -24836,8 +24992,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Zonë menaxhimi habitati/specie në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "The Kunë-Vain-Talë-Patok-Fushëkuqe-Ishëm Nature Reserve is a nature park located within the Lezhë County forming the Drin river delta and facing the Adriatic Sea in northern Albania. It spans an area of 43.93 km2 (16.96 sq mi). The area is the first protected area to be established in Albania as a hunting reserve…",
+        "details": [
+          "The Kunë-Vain-Talë-Patok-Fushëkuqe-Ishëm Nature Reserve is a nature park located within the Lezhë County forming the Drin river delta and facing the Adriatic Sea in northern Albania. It spans an area of 43.93 km2 (16.96 sq mi). The area is the first protected area to be established in Albania as a hunting reserve in July 1940. The current nature reserve was established in 2010 encompassing the Kunë Island, the Kunë-Vain lagoon, the woodlands, and several ecosystems. Notably, it has been also identified as an Important Bird Area by BirdLife International."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -24848,6 +25006,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Kun%C3%AB-Vain-Tale_Nature_Park"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q38693875"
           }
         ],
         "osm": {
@@ -24859,6 +25021,15 @@
             "protect_class": "4",
             "wikidata": "Q38693875"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Kun%C3%AB-Vaine-Tale_Nature_Park_2019_02.jpg/1280px-Kun%C3%AB-Vaine-Tale_Nature_Park_2019_02.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Kun%C3%AB-Vaine-Tale_Nature_Park_2019_02.jpg",
+          "credit": "Pasztilla aka Attila Terbócs",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Rezervati Natyror i Menaxhuar \"Kunë-Vain-Tale\""
         }
       }
     },
@@ -25280,8 +25451,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Zonë menaxhimi habitati/specie në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Ulëz is a city and administrative unit in the municipality of Mat, Albania. It has a population of 1,229 as of the 2011 Albanian census. Ulëz is home to the Ulëz Hydroelectric Power Station and designated as part of the Ulza Regional Nature Park. It is the Least-Populated City or settlement of Albania.",
+        "details": [
+          "Ulëz is a city and administrative unit in the municipality of Mat, Albania. It has a population of 1,229 as of the 2011 Albanian census. Ulëz is home to the Ulëz Hydroelectric Power Station and designated as part of the Ulza Regional Nature Park. It is the Least-Populated City or settlement of Albania."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -25292,6 +25465,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Ul%C3%ABz"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q2542462"
           }
         ],
         "osm": {
@@ -25303,6 +25480,15 @@
             "protect_class": "4",
             "wikidata": "Q2542462"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Ul%C3%ABz%2C_Albania_2017-04.jpg/1280px-Ul%C3%ABz%2C_Albania_2017-04.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Ul%C3%ABz,_Albania_2017-04.jpg",
+          "credit": "Pasztilla aka Attila Terbócs",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+          "alt": "Rezervati Natyror i Menaxhuar \"Liqeni i Ulzës\""
         }
       }
     },
@@ -26572,8 +26758,10 @@
         "countryCodes": [
           "AL"
         ],
-        "summary": "Zonë menaxhimi habitati/specie në Shqipëri; kufiri dhe të dhënat vijnë nga OpenStreetMap.",
-        "details": [],
+        "summary": "Patok Lagoon is a lagoon of the Adriatic Sea on the Mediterranean Sea in the central coast of Albania.",
+        "details": [
+          "Patok Lagoon is a lagoon of the Adriatic Sea on the Mediterranean Sea in the central coast of Albania."
+        ],
         "mapNote": "Sipërfaqja vjen nga kufiri i objektit në OpenStreetMap.",
         "geometryType": "Polygon",
         "sources": [
@@ -26584,6 +26772,10 @@
           {
             "label": "Wikipedia",
             "url": "https://en.wikipedia.org/wiki/Patoku_Lagoon"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q13041389"
           }
         ],
         "osm": {
@@ -26595,6 +26787,15 @@
             "protect_class": "4",
             "wikidata": "Q13041389"
           }
+        },
+        "wikipediaAttribution": "Përmbledhje nga Wikipedia (en); shiko licencën dhe autorët në artikull.",
+        "image": {
+          "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Naturschutzgebiet_Patog_in_Albanien.JPG/1280px-Naturschutzgebiet_Patog_in_Albanien.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+          "source": "https://commons.wikimedia.org/wiki/File:Naturschutzgebiet_Patog_in_Albanien.JPG",
+          "credit": "Usien",
+          "license": "CC BY-SA 3.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+          "alt": "Rezervati Natyror i Menaxhuar \"Patok- Fushë Kuqe-Ishëm\""
         }
       }
     },
@@ -35041,6 +35242,10 @@
           {
             "label": "OpenStreetMap",
             "url": "https://www.openstreetmap.org/way/591370281"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q120122850"
           }
         ],
         "osm": {
@@ -56046,6 +56251,14 @@
           {
             "label": "OpenStreetMap",
             "url": "https://www.openstreetmap.org/way/1094358205"
+          },
+          {
+            "label": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q120764834"
+          },
+          {
+            "label": "Wikipedia (commons)",
+            "url": "https://commons.wikipedia.org/wiki/Category%3AShkug%C3%ABza"
           }
         ],
         "osm": {
