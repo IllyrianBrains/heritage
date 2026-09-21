@@ -130,7 +130,6 @@
       provider: 'NASA MODIS · klasifikim vjetor',
       description: 'Pyje, ujë, tokë bujqësore, zona të ndërtuara dhe klasa të tjera të mbulesës së tokës.',
       swatch: 'linear-gradient(90deg,#006400,#ffbb22,#ffff4c,#0064c8,#fa0000)',
-      defaultVisible: true,
       source: new ol.source.TileWMS({
         url: 'https://gibs.earthdata.nasa.gov/wms/epsg3857/best/wms.cgi',
         params: { LAYERS: 'MODIS_Combined_L3_IGBP_Land_Cover_Type_Annual', FORMAT: 'image/png', TRANSPARENT: true },
@@ -908,6 +907,7 @@
   const noteForm = document.getElementById('note-form');
   const noteText = document.getElementById('note-text');
   const noteList = document.getElementById('note-list');
+  const exportNotes = document.getElementById('export-notes');
   const noteState = new Map();
   const noteReadZoom = 11;
   let placingNote = false;
@@ -963,8 +963,10 @@
   };
   const renderNoteList = () => {
     noteList.replaceChildren();
+    let localNoteCount = 0;
     for (const [id, note] of noteState) {
       if (note.published) continue;
+      localNoteCount += 1;
       const item = make('div', 'note-item');
       const dot = make('span', 'note-item-dot');
       dot.style.background = noteCategories[note.category].color;
@@ -979,7 +981,9 @@
       item.append(dot, openButton, deleteButton);
       noteList.append(item);
     }
-    if (![...noteState.values()].some((note) => !note.published)) noteList.append(make('p', 'no-results', 'Ende pa shënime.'));
+    if (!localNoteCount) noteList.append(make('p', 'no-results', 'Ende pa shënime.'));
+    exportNotes.disabled = localNoteCount === 0;
+    exportNotes.title = localNoteCount ? `Shkarko ${localNoteCount} shënime si GeoJSON` : 'Shto një shënim përpara se ta shkarkosh';
   };
   const saveNotes = () => {
     const collection = {
@@ -1099,7 +1103,7 @@
     } catch { showNotice('Skedari nuk u importua. Kontrollo që është një GeoJSON FeatureCollection i vlefshëm me pika.'); }
     event.target.value = '';
   });
-  document.getElementById('export-notes').addEventListener('click', () => {
+  exportNotes.addEventListener('click', () => {
     const collection = {
       type: 'FeatureCollection',
       features: [...noteState.entries()].filter(([, note]) => !note.published).map(([id, note]) => ({ type: 'Feature', id, geometry: { type: 'Point', coordinates: note.coordinate }, properties: { text: note.text, category: note.category, color: noteCategories[note.category].color } })),
@@ -1108,8 +1112,11 @@
     const url = URL.createObjectURL(blob);
     const anchor = make('a');
     anchor.href = url;
-    anchor.download = 'notes.geojson';
+    anchor.download = `shenime-harta-${new Date().toISOString().slice(0, 10)}.geojson`;
+    document.body.append(anchor);
     anchor.click();
+    anchor.remove();
+    showNotice(`${collection.features.length} shënime u shkarkuan si GeoJSON.`);
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
   search.addEventListener('input', () => { query = search.value.trim().toLocaleLowerCase('sq'); renderCards(); });

@@ -9,7 +9,7 @@ npm ci
 npm run dev
 ```
 
-`npm run build` krijon aplikacionin statik në `dist/`.
+`npm run build` krijon aplikacionin statik në `dist/`.  
 
 ## Publikimi në GitHub Pages
 

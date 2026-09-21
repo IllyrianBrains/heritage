@@ -6,47 +6,141 @@
 .ib-cta { border-top: 1px solid rgba(0,0,0,0.08); padding-top: 1rem; }
 .ib-cta ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
 
-/* ===== FORCE CHARCOAL HEADER ===== */
+/* ===== Brand: same palette and type as the map site (src/styles/site.css) ===== */
 
-:root {
-  --ib-charcoal: #23272d;
-  --ib-accent: #b23a3a;   /* deep red */
+:root,
+[data-md-color-scheme="default"] {
+  --ib-green: #173e39;
+  --ib-green-mid: #2d554c;
+  --ib-green-deep: #10302c;
+  --ib-link: #22573f;
+  --ib-gold: #e6c77f;
+  --ib-gold-line: #d9c47b;
+  --ib-gold-dark: #8a6a1c;
+  --ib-ink: #172725;
+  --ib-muted: #60716b;
+  --ib-line: #dce4de;
+  --ib-pale: #f5f7f2;
+  --ib-mint: #edf5ee;
+
+  --md-primary-fg-color: var(--ib-green);
+  --md-primary-fg-color--light: var(--ib-green-mid);
+  --md-primary-fg-color--dark: var(--ib-green-deep);
+  --md-primary-bg-color: #fff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.72);
+  --md-accent-fg-color: var(--ib-gold-dark);
+  --md-accent-fg-color--transparent: rgba(138, 106, 28, 0.1);
+  --md-default-bg-color: var(--ib-pale);
+  --md-default-fg-color: var(--ib-ink);
+  --md-typeset-color: var(--ib-ink);
+  --md-typeset-a-color: var(--ib-link);
 }
 
-/* Ensure charcoal header */
+/* Headings use the serif from the map site */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 500;
+  color: var(--ib-green);
+  letter-spacing: -0.02em;
+}
+.md-typeset h1 { letter-spacing: -0.03em; }
+
+/* Header and tabs */
 .md-header,
 .md-tabs {
-  background-color: var(--ib-charcoal) !important;
+  background-color: var(--ib-green);
+  color: #fff;
 }
-
-/* Accent line */
 .md-header {
-  border-bottom: 4px solid var(--ib-accent) !important;
+  box-shadow: none;
 }
-
-
-/* Top header bar */
-.md-header {
-  background-color: var(--ib-charcoal) !important;
-  background: var(--ib-charcoal) !important;
-}
-
-/* Tabs row (second bar) */
 .md-tabs {
-  background-color: var(--ib-charcoal) !important;
+  border-bottom: 2px solid var(--ib-gold-line);
+  box-shadow: 0 5px 18px rgba(16, 45, 25, 0.22);
+}
+body,
+.md-main {
+  background-color: var(--ib-pale);
+}
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 10px;
+}
+.md-header__title {
+  font-family: Fraunces, Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.82);
+  opacity: 1;
+}
+.md-tabs__link:hover,
+.md-tabs__link--active,
+.md-tabs__item--active .md-tabs__link {
+  color: var(--ib-gold);
+  opacity: 1;
 }
 
-/* Make sure text/icons are readable */
-.md-header__title,
-.md-tabs__link,
-.md-header__button,
-.md-tabs__link--active {
-  color: rgba(255, 255, 255, 0.92) !important;
+/* Buttons */
+.md-typeset .md-button {
+  border-color: var(--ib-green);
+  border-radius: 6px;
+  color: var(--ib-green);
+}
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  border-color: var(--ib-green-mid);
+  background: var(--ib-mint);
+  color: var(--ib-green);
+}
+.md-typeset .md-button--primary {
+  border-color: var(--ib-green);
+  background: var(--ib-green);
+  color: #fff;
+}
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  border-color: var(--ib-green-mid);
+  background: var(--ib-green-mid);
+  color: #fff;
 }
 
-/* Optional: subtle divider */
-.md-header {
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+/* Cards and tables */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--ib-line);
+  border-radius: 8px;
+  background: #fff;
+}
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid > .card:hover {
+  border-color: var(--ib-gold);
+  box-shadow: 0 8px 22px rgba(23, 62, 57, 0.12);
+}
+.md-typeset table:not([class]) {
+  border: 1px solid var(--ib-line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: none;
+}
+.md-typeset table:not([class]) th {
+  background: var(--ib-mint);
+  color: var(--ib-green);
+}
+
+/* Footer */
+.md-footer,
+.md-footer-meta {
+  background-color: var(--ib-green);
+}
+.md-footer-meta {
+  background-color: var(--ib-green-deep);
 }
 
 /* --- Slider layout --- */

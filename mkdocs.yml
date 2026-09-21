@@ -1,36 +1,39 @@
-# --- Build paths ---
 docs_dir: !ENV [BUILD_DOCS_DIR, "docs"]
 site_dir: !ENV [BUILD_SITE_DIR, "site"]
-site_url: !ENV [BUILD_SITE_URL, "https://ib-heritage.example.org/"]
-
-site_name: Trashëgimia
-site_description: !ENV [SITE_DESCRIPTION, "Burime për kulturën shqiptare, gjuhën, kujtesën dhe hartëzimin e hapur."]
-
-repo_url: !ENV [BUILD_REPO_URL, ""]
-repo_name: ""
-
+site_url: !ENV [BUILD_SITE_URL, "https://pomodoren.github.io/heritage/docs/"]
+site_name: Trashëgimia Natyrore
+site_description: Njohuri, mjete dhe procese për mbrojtjen e natyrës dhe të trashëgimisë natyrore në Shqipëri, Kosovë dhe rajon.
+repo_url: !ENV [BUILD_REPO_URL, "https://github.com/pomodoren/heritage"]
+repo_name: Kontribuo në GitHub
+edit_uri: edit/main/docs/
 theme:
   name: material
-  icon:
-    logo: bootstrap/envelope-paper
-  favicon: assets/logo.png
-  language: !ENV [BUILD_THEME_LANGUAGE, "sq"]
-  custom_dir: docs/overrides
+  logo: assets/favicon.svg
+  favicon: assets/favicon.svg
+  font:
+    text: DM Sans
+  language: sq
+  palette:
+    primary: custom
+    accent: custom
   features:
-    - navigation.top
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
     - search.highlight
-
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    - toc.follow
+    - content.action.edit
 extra_css:
-  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css
+  - https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap
   - assets/styles/extra.css
-
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js
   - assets/javascripts/wiki-sliders-api.js
-
-
 plugins:
   - search
   - mkdocs-jupyter
@@ -40,90 +43,75 @@ plugins:
         sq:
           name: Shqip
           build: true
-  - social
-  - blog:
-      post_date_format: medium
-
-
-# --- Website-like content blocks (hero / CTA / footer) ---
-extra:
-  generator: false
-  context: !ENV [BUILD_CONTEXT, "production"]
-  language_switcher: true
-
-  alternate:
-    - name: Shqip
-      link: /
-      lang: sq
-
-  social:
-    - icon: fontawesome/brands/linkedin
-      link: https://github.com/pomodoren/heritage
-    - icon: fontawesome/brands/instagram
-      link: https://github.com/pomodoren/heritage
-    - icon: fontawesome/brands/github
-      link: https://github.com/pomodoren/heritage
-    - icon: fontawesome/brands/discourse
-      link: https://github.com/pomodoren/heritage
-  generator: false 
-  footer:
-    copyright: "© 2026 Illyrian Brains Network"
-    custom: true
-
-
+  - blog
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - attr_list
   - tables
+  - md_in_html
   - toc:
       toc_depth: 3
-  - md_in_html
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-    
-theme:
-  name: material
-  features:
-    - navigation.top
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
-    - search.highlight
-    - navigation.indexes
-    - navigation.instant
-    - navigation.instant.progress
-    - navigation.footer
-    - toc.integrate 
-
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/pomodoren/heritage
 nav:
-  - Kryefaqja: 
-    - Trashëgimia: index.md
-    - Rreth Nesh: kontributi/about.md
-    - Burimet: kontributi/burimet.md
-    - Metodologjia: kontributi/metodologjia.md
-    - Bashkohu dhe ti!: kontributi/bashkohu.md
-
-  - Gjuha:
-    - Gjuhë & Libra: kultura/gjuha.md
-    
-  - Kultura:
-      - Art & Media: kultura/art.md
-      - Muzikë & Valle: kultura/muzike.md
-      - Gatime & Tradita: kultura/gatime.md
-      - Personalitete: kultura/personalitete.md
-
-  - Historike:
-      - UNESCO: trashegimia/unesco.md
-      - Historike & Monumente: trashegimia/historike.md
-      - Regjistra & Referenca: trashegimia/regjistra.md
-
-  - Natyra:
-      - Parqe & Zona të Mbrojtura: natyra/parqe.md
-      - Peisazhe & Rajone Natyrore: natyra/peisazhe.md
-      - Biodiversitet: natyra/biodiversitet.md
-      - Ujëra & Ekosisteme: natyra/ujera.md
-
+  - Ballina: index.md
+  - Baza e njohurive:
+      - baza/index.md
+      - Themelet:
+          - Çfarë është trashëgimia natyrore: baza/cfare-eshte.md
+          - Zonat e mbrojtura: baza/zona-te-mbrojtura.md
+          - Biodiversiteti: baza/biodiversiteti.md
+          - Ujërat & ekosistemet: baza/ujerat.md
+          - Peizazhet: baza/peizazhet.md
+          - Kërcënimet kryesore: baza/kercenime.md
+      - Kuadri i mbrojtjes:
+          - Konventat & standardet: baza/konventat.md
+          - Ligjet & institucionet: baza/ligje-institucione.md
+          - Të drejtat e publikut: baza/te-drejtat.md
+      - Të dhënat:
+          - Burimet e të dhënave: baza/burime-te-dhena.md
+          - Fjalori: baza/fjalori.md
+  - Raportimi:
+      - raportimi/index.md
+      - Kuadrot e raportimit: raportimi/kuadrot.md
+      - Të dhënat e nevojshme: raportimi/te-dhenat.md
+      - Treguesit: raportimi/treguesit.md
+      - Indekset: raportimi/indekset.md
+      - Rekomandime:
+          - rekomandime/index.md
+          - Vëzhgim & identifikim: rekomandime/vezhgim.md
+          - Hartëzim & terren: rekomandime/hartezim.md
+          - Satelitë & monitorim: rekomandime/monitorim.md
+          - Të dhëna & regjistra: rekomandime/te-dhena.md
+          - Verifikim & arkivim: rekomandime/verifikim.md
+          - Siguria dixhitale: rekomandime/siguria.md
+          - Organizata & rrjete: rekomandime/organizata.md
+  - Aktivizmi:
+      - aktivizmi/index.md
+      - Dokumento një problem: aktivizmi/dokumento.md
+      - Raporto te institucionet: aktivizmi/raporto.md
+      - Kërko informacion publik: aktivizmi/informim.md
+      - Pjesëmarrja në vendimmarrje: aktivizmi/pjesemarrje.md
+      - Organizo një fushatë: aktivizmi/fushata.md
+      - Komuniko me publikun: aktivizmi/komuniko.md
+      - Siguria e aktivistëve: aktivizmi/siguria.md
+      - Raste studimore:
+          - Vjosa: aktivizmi/raste/vjosa.md
+  - Rreth nesh:
+      - rreth/index.md
+      - Rrjeti: rreth/rrjeti.md
+      - Metodologjia: rreth/metodologjia.md
+      - Licenca & atribuimi: rreth/licenca.md
+      - Si të kontribuosh: rreth/kontribuo.md

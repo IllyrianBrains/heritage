@@ -29,8 +29,10 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
       const header = toggle?.closest<HTMLElement>('.app-header');
       const menu = header?.querySelector<HTMLElement>('.header-actions');
       if (toggle && header && menu) {
+        const groups = [...menu.querySelectorAll<HTMLDetailsElement>('.nav-group')];
         const closeMenu = () => {
           header.classList.remove('nav-open');
+          groups.forEach((group) => group.removeAttribute('open'));
           toggle.setAttribute('aria-expanded', 'false');
           toggle.setAttribute('aria-label', 'Hap menunë');
         };
@@ -52,6 +54,11 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
           }
         });
         window.matchMedia('(min-width: 701px)').addEventListener('change', closeMenu);
+        groups.forEach((group) => group.addEventListener('toggle', () => {
+          if (group.open) groups.forEach((other) => {
+            if (other !== group) other.removeAttribute('open');
+          });
+        }));
       }
     </script>
   </body>

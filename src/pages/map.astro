@@ -8,8 +8,7 @@ const repositoryLabel = repositoryUrl.replace('https://', '');
 <BaseLayout title="Harta e Natyrës" description="Zona të mbrojtura, flora dhe fauna në Shqipëri dhe Kosovë.">
   <div class="app-shell">
     <SiteHeader page="map">
-      <button id="open-notes" class="header-data" type="button">Shto shënim</button>
-      <button id="open-project" class="header-data" type="button">Rreth projektit</button>
+      <button slot="about-actions" id="open-project" type="button"><strong>Rreth projektit</strong><small>Lexo prezantimin e atlasit</small></button>
     </SiteHeader>
     <main class="workspace">
       <aside class="catalog" aria-label="Galeria e vendeve">
@@ -28,14 +27,20 @@ const repositoryLabel = repositoryUrl.replace('https://', '');
         <div id="heritage-map" class="map-canvas" role="application" aria-label="Hartë interaktive e zonave natyrore dhe vëzhgimeve të florës e faunës"></div>
         <div id="point-preview" class="point-preview" hidden></div>
         <button id="catalog-toggle" class="catalog-toggle map-floating" type="button" aria-controls="place-list" aria-expanded="true" aria-label="Fshih galerinë" title="Fshih galerinë">‹</button>
+        <div class="map-toolbar">
         <div class="map-floating map-search"><label class="visually-hidden" for="place-search">Kërko në atlas</label><span aria-hidden="true">⌕</span><input id="place-search" type="search" placeholder="Kërko park, lloj ose vend…" autocomplete="off" /></div>
-        <nav class="map-floating map-filter-bar" aria-label="Filtrat e atlasit">
+        <nav class="map-filter-bar" aria-label="Filtrat e atlasit">
           <details class="header-filter" id="scope-filter"><summary>Legjenda <strong id="scope-label">Të gjitha</strong><span aria-hidden="true">⌄</span></summary><div class="filter-popover" id="scope-options" aria-label="Zgjidh shtresat e hartës"></div></details>
           <details class="header-filter" id="environment-filter"><summary>Mjedisi <strong id="environment-label">Duke ngarkuar…</strong><span aria-hidden="true">⌄</span></summary><div class="filter-popover environment-popover" id="environment-options" aria-label="Zgjidh shtresat mjedisore"></div></details>
           <details class="header-filter" id="country-filter"><summary>Vendi <strong id="country-label">Të dy</strong><span aria-hidden="true">⌄</span></summary><div class="filter-popover" id="country-options" aria-label="Zgjidh vendet"><label><input type="checkbox" value="AL" checked /> Shqipëri</label><label><input type="checkbox" value="XK" checked /> Kosovë</label></div></details>
           <details class="header-filter danger-header-filter" id="danger-filter"><summary>Rreziku <strong id="danger-label">Të gjitha</strong><span aria-hidden="true">⌄</span></summary><div class="filter-popover danger-popover" aria-label="Filtro sipas rrezikut"><label><input id="danger-only" type="checkbox" /><i class="danger-option-dot" aria-hidden="true">!</i><span>Vetëm vendet në rrezik</span><small id="danger-count">…</small></label></div></details>
           <label class="photo-filter"><input id="with-photo" type="checkbox" /> Vetëm me fotografi</label>
         </nav>
+        <div class="map-note-actions">
+          <button id="export-notes" class="map-floating map-download-notes" type="button" disabled><span aria-hidden="true">↓</span> Shkarko shënimet</button>
+          <button id="open-notes" class="map-floating map-add-note" type="button"><span aria-hidden="true">＋</span> Shto shënim</button>
+        </div>
+        </div>
         <div class="map-floating basemap-switcher" role="group" aria-label="Zgjidh bazën e hartës">
           <div id="basemap-options" class="basemap-options" role="group" aria-label="Hartat bazë të disponueshme" hidden>
             <button type="button" data-basemap="standard" aria-pressed="true"><span aria-hidden="true">🗺</span> OpenStreetMap</button>
@@ -64,8 +69,7 @@ const repositoryLabel = repositoryUrl.replace('https://', '');
           <div id="note-list" class="note-list" aria-label="Shënimet e ruajtura"></div>
           <div class="editor-divider"></div>
           <label for="notes-import">Importo shënimet (GeoJSON)</label><input id="notes-import" type="file" accept=".geojson,.json,application/geo+json,application/json" />
-          <button id="export-notes" class="editor-secondary" type="button">Shkarko shënimet ↓</button>
-          <p class="editor-help">Skedari i eksportuar mund të shtohet te <code>public/data/manual/notes.geojson</code> për t'i publikuar.</p>
+          <p class="editor-help">Përdor <strong>Shkarko shënimet</strong> sipër hartës për t'i ruajtur si GeoJSON. Skedari mund të rihapet këtu ose të shtohet te <code>public/data/manual/notes.geojson</code> për publikim.</p>
         </aside>
         <article id="place-detail" class="detail-panel" aria-label="Detajet e vendit" hidden><button id="close-detail" class="detail-close" type="button" aria-label="Mbyll detajet">×</button><div id="detail-content"></div></article>
         <div id="map-notice" class="map-notice" role="status" hidden></div>
@@ -107,5 +111,5 @@ const repositoryLabel = repositoryUrl.replace('https://', '');
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.9.0/ol.css" />
   <script is:inline src="https://cdn.jsdelivr.net/npm/ol@10.9.0/dist/ol.js"></script>
-  <script is:inline src={`${base}map.js?v=12`}></script>
+  <script is:inline src={`${base}map.js?v=13`}></script>
 </BaseLayout>
