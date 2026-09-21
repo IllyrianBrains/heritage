@@ -47,18 +47,10 @@
     },
     {
       "id": "projekte",
-      "label": "Projekte",
+      "label": "Projekte dhe protesta",
       "color": "#7a4fb5",
       "files": [
         "/data/projects.geojson"
-      ]
-    },
-    {
-      "id": "protesta",
-      "label": "Protesta",
-      "color": "#c2543a",
-      "files": [
-        "/data/protests.geojson"
       ]
     }
   ]

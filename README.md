@@ -62,6 +62,12 @@ Nëse Overpass është i zënë, `python3 scripts/extract_nature.py --skip-osm` 
 
 Fotografitë GBIF merren nga media e vëzhgimeve me licencë CC0, CC BY, CC BY-SA ose CC BY-NC; fotografitë me kufizim ND dhe ato pa licencë të qartë nuk shfaqen. Kartat tregojnë autorin dhe licencën, ndërsa paneli i detajeve lidhet me fotografinë dhe kushtet e licencës. `enrich_wikipedia_images.py` përdor imazhin e artikullit vetëm kur ai gjendet në Wikimedia Commons me licencë të verifikueshme. Fotografitë ngarkohen nga shërbimet burimore, prandaj mund të mungojnë kur një burim nuk përgjigjet.
 
+## Projekte dhe protesta
+
+Lista te menuja **Projekte & protesta**, shtresa në hartë dhe kufijtë vijnë nga një skedar i vetëm: [public/data/projects.geojson](public/data/projects.geojson). Çdo objekt ka `geometry` (MultiPolygon ose `null`), `group`, `status`, `tagline` dhe `href`. Për t'i caktuar një projekti një vend, ngjit koordinatat te `geometry`.
+
+Çdo protestë ka faqe të vetën te `/protesta/<id>/`. Përmbajtja e faqes (kronologjia, çfarë kundërshtohet, burimet) ruhet te [src/data/cases.json](src/data/cases.json) me të njëjtin `id`; faqja krijohet nga një shabllon i vetëm. Statusi i rrezikut vjen nga [data/issues.csv](data/issues.csv), ku `ID e zonës` është po ai `id`.
+
 ## Matjet aktuale nga sensorët e hapur
 
 Paneli i detajeve të një zone kërkon, vetëm kur ajo zonë hapet, sensorin publik aktiv më të afërt brenda 25 km në rrjetin [Sensor.Community](https://sensor.community/). API-ja publike nuk kërkon çelës dhe kthen matjet e pesë minutave të fundit. Mund të shfaqen PM10, PM2.5, temperaturë, lagështi, presion dhe zhurmë, sipas pajisjeve të lidhura me stacionin. Përgjigjet ruhen në memorien e faqes gjatë sesionit për të shmangur kërkesa të përsëritura.

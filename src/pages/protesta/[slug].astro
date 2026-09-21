@@ -1,0 +1,168 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import cases from '../../data/cases.json';
+
+export function getStaticPaths() {
+  const collection = JSON.parse(readFileSync(join(process.cwd(), 'public/data/projects.geojson'), 'utf8'));
+  return collection.features
+    .filter((feature) => cases[feature.id])
+    .map((feature) => ({ params: { slug: feature.id }, props: { id: feature.id, place: feature.properties } }));
+}
+
+const { id, place } = Astro.props;
+const item = cases[id];
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+
+const months = ['janar', 'shkurt', 'mars', 'prill', 'maj', 'qershor', 'korrik', 'gusht', 'shtator', 'tetor', 'nëntor', 'dhjetor'];
+const statusLabels = { ongoing: 'Në vazhdim', verification: 'Për verifikim', paused: 'Pezulluar', closed: 'Mbyllur' };
+let issue = null;
+try {
+  const data = JSON.parse(readFileSync(join(process.cwd(), 'public/data/status/issues.json'), 'utf8'));
+  issue = data.issues.find((entry) => entry.areaId === id) || null;
+} catch {}
+const [year, month, day] = (issue?.updatedAt || '').split('-').map(Number);
+const updated = year ? `${day} ${months[month - 1]} ${year}` : '';
+const statusLabel = statusLabels[issue?.status] || place.status || '';
+
+const related = JSON.parse(readFileSync(join(process.cwd(), 'public/data/projects.geojson'), 'utf8')).features
+  .filter((feature) => feature.id !== id && cases[feature.id])
+  .map((feature) => feature.properties);
+const photos = item.photos || [];
+const hero = photos[0];
+const gallery = photos.slice(1);
+const img = (photo) => `${base}assets/protesta/${id}/${photo.file}`;
+const paths = [
+  { href: `${base}map/`, title: 'Shiko në hartë', text: 'Vendi shfaqet te shtresa «Projekte dhe protesta», me statusin dhe burimet.' },
+  { href: `${base}docs/aktivizmi/protestat/flamingo/`, title: 'Kupto Revolucionin Flamingo', text: 'Si nisi lëvizja, kush mori pjesë dhe si u organizua.' },
+  { href: `${base}docs/aktivizmi/protestat/dokumentimi/`, title: 'Dokumento një protestë', text: 'Kronologji, burime, fotografi dhe të dhëna që mbeten të verifikueshme.' },
+  { href: `${base}docs/rreth/kontribuo/`, title: 'Ke informacion ose foto?', text: 'Ndaje me burim dhe licencë që faqja të plotësohet.' },
+];
+---
+<BaseLayout title={`Trashëgimia Natyrore · ${place.name}`} description={place.summary}>
+  <SiteHeader page={id} />
+  <main class="landing">
+    <section class:list={['lp-hero', { 'lp-hero-plain': !hero }]} aria-labelledby="lp-title">
+      {hero && <img class="lp-hero-img" src={img(hero)} width={hero.size[0]} height={hero.size[1]} alt={hero.alt} fetchpriority="high" decoding="async" />}
+      <div class="lp-hero-inner">
+        <p class="lp-eyebrow">{place.group} · {place.location}</p>
+        <h1 id="lp-title">{place.name}</h1>
+        <p class="lp-lede">{item.lede}</p>
+        <div class="lp-actions">
+          <a class="lp-btn lp-btn-primary" href="#kronologjia">Shiko kronologjinë <span aria-hidden="true">↓</span></a>
+          <a class="lp-btn lp-btn-ghost" href={`${base}map/`}>Hap hartën <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      {hero && <p class="lp-photo-credit">Foto: <a href={hero.source} target="_blank" rel="noopener noreferrer">{hero.author}</a>, <a href={hero.licenseUrl} target="_blank" rel="noopener noreferrer">{hero.license}</a></p>}
+    </section>
+
+    <section class="lp-section lp-report lp-report-first" aria-labelledby="lp-report-title">
+      <div>
+        <p class="lp-kicker">Çfarë raportohet</p>
+        <h2 id="lp-report-title">{item.headline}</h2>
+      </div>
+      <div class="lp-report-body">
+        {item.body.map((paragraph) => <p>{paragraph}</p>)}
+        <p class="lp-caveat">{item.caveat}</p>
+        <ul class="lp-meta">
+          {statusLabel && <li><span>Statusi</span><strong>{statusLabel}</strong></li>}
+          {updated && <li><span>Përditësuar</span><strong>{updated}</strong></li>}
+          <li><span>Vendi</span><strong>{place.location}</strong></li>
+        </ul>
+        {item.note && <p class="lp-note">{item.note}</p>}
+      </div>
+    </section>
+
+    <section class="lp-section" id="kronologjia" aria-labelledby="lp-timeline-title">
+      <div class="lp-section-head">
+        <p class="lp-kicker">Kronologjia</p>
+        <h2 id="lp-timeline-title">Çfarë ndodhi, sipas burimeve</h2>
+      </div>
+      <ol class="lp-timeline">
+        {item.timeline.map((event) => (
+          <li>
+            <time>{event.date}</time>
+            <p>{event.text}{event.source && <> <a href={event.source.url} target="_blank" rel="noopener noreferrer">{event.source.label} ↗</a></>}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="lp-section lp-why" aria-labelledby="lp-why-title">
+      <div class="lp-why-head">
+        <p class="lp-kicker">Çështja</p>
+        <h2 id="lp-why-title">Çfarë kundërshtohet dhe çfarë mbetet e paqartë</h2>
+      </div>
+      <ul class="lp-principles">
+        {item.contested.map((entry) => <li><strong>{entry.title}</strong><span>{entry.text}</span></li>)}
+      </ul>
+      <ul class="lp-principles lp-unclear">
+        {item.unclear.map((entry) => <li><strong>{entry.title}</strong><span>{entry.text}</span></li>)}
+      </ul>
+    </section>
+
+    <section class="lp-section lp-things" id="fotot" aria-labelledby="lp-things-title">
+      <div class="lp-section-head">
+        <p class="lp-kicker">Vendi në foto</p>
+        <h2 id="lp-things-title">Si duket vendi</h2>
+        <p>Fotot tregojnë vendin ose zonën përreth, jo vetë protestën ose punimet; janë të ngarkuara në Wikimedia Commons me licencë të lirë.</p>
+      </div>
+      <div class="lp-gallery">
+        {gallery.map((photo) => (
+          <figure class="lp-tile">
+            <img src={img(photo)} width={photo.size[0]} height={photo.size[1]} alt={photo.alt} loading="lazy" decoding="async" />
+            <figcaption>
+              <strong>{photo.caption}</strong>
+              <small>Foto: <a href={photo.source} target="_blank" rel="noopener noreferrer">{photo.author}</a> · <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a></small>
+            </figcaption>
+          </figure>
+        ))}
+        <aside class="lp-tile lp-tile-ask" aria-label="Fotografi që mungojnë">
+          <span class="lp-tile-kicker">Fotot që mungojnë</span>
+          <strong>Foto nga vendi ose nga protesta?</strong>
+          <span class="lp-tile-text">Nëse ke foto që mund t'i ndash me licencë të lirë dhe me burim, ndihmo ta plotësojmë këtë faqe.</span>
+          <a class="lp-btn lp-btn-dark" href={`${base}docs/rreth/kontribuo/`}>Si të kontribuosh <span aria-hidden="true">→</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lp-section lp-paths" aria-labelledby="lp-paths-title">
+      <div class="lp-section-head">
+        <p class="lp-kicker">Nga ku të nisësh</p>
+        <h2 id="lp-paths-title">Zgjidh hapin tënd të parë</h2>
+      </div>
+      <div class="lp-path-grid">
+        {paths.map((entry) => (
+          <a class="lp-path" href={entry.href}><strong>{entry.title}</strong><span>{entry.text}</span><i aria-hidden="true">→</i></a>
+        ))}
+      </div>
+    </section>
+
+    <section class="lp-section lp-credits">
+      <details>
+        <summary>Burimet</summary>
+        <ul>
+          {item.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>)}
+        </ul>
+      </details>
+      {photos.length > 0 && (
+        <details>
+          <summary>Kreditet e fotove</summary>
+          <ul>
+            {photos.map((photo) => (
+              <li><a href={photo.source} target="_blank" rel="noopener noreferrer">{photo.title}</a> nga {photo.author}, <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a>, përmes Wikimedia Commons.</li>
+            ))}
+          </ul>
+        </details>
+      )}
+      <details>
+        <summary>Raste të tjera</summary>
+        <ul>
+          {related.map((entry) => <li><a href={`${base}${entry.href}`}>{entry.name}</a>, {entry.tagline}</li>)}
+        </ul>
+      </details>
+    </section>
+  </main>
+</BaseLayout>

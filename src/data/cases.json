@@ -1,0 +1,768 @@
+{
+ "rrjolli": {
+  "lede": "Në fshatin Baks-Rrjoll, pranë Velipojës, banorët kundërshtojnë një projekt turistik ndërsa pretendojnë prona që sipas tyre nuk janë zgjidhur. Këtu nisi cikli i protestave i vitit 2026, para Zvërnecit.",
+  "note": "Mos e ngatërro me krahinën historike të Rrjollit në Malësi; kjo faqe flet për fshatin Baks-Rrjoll.",
+  "headline": "Një resort mbi tokë që banorët e pretendojnë",
+  "body": [
+   "Sipas burimeve, rreth 60 familje pretendojnë prona stërgjyshore brenda zonës së projektit «Baks Bay» / Blue Borgo, dhe banorët thonë se toka e pretenduar prej tyre po përdorej ndërsa mosmarrëveshjet e pronësisë nuk ishin zgjidhur.",
+   "Citizens.al raporton për 35 blloqe banimi në 147,2 hektarë dhe banorët pretendojnë dokumente të falsifikuara të kalimit të tokës."
+  ],
+  "caveat": "Këto janë pretendime të banorëve dhe raportime mediatike; nuk janë verifikuar nga kjo faqe.",
+  "timeline": [
+   {
+    "date": "2 shkurt 2026",
+    "text": "Banorët rifilluan protestat kur makineritë u kthyen në kantier.",
+    "source": {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    }
+   },
+   {
+    "date": "4 shkurt 2026",
+    "text": "Protesta hyri në ditën e tretë, me përplasje me policinë, dhe u shtri deri para SPAK, ku kërkohej hetim për parregullsi të pretenduara në dokumentet e pronësisë.",
+    "source": {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    }
+   },
+   {
+    "date": "13 qershor 2026",
+    "text": "Banorët rrëzuan gardhin perimetral që kompania «Gener 2» kishte vënë për projektin «Baks Bay».",
+    "source": {
+     "label": "Citizens.al",
+     "url": "https://citizens.al/en/2026/06/21/After-the-red-and-yellow-berry-and-the-pear--the-Kakomese-fence-also-falls./"
+    }
+   }
+  ],
+  "contested": [
+   {
+    "title": "Pronësia e tokës",
+    "text": "Banorët thonë se ndërtimi po ndodh mbi toka që pretendojnë familjet vendore."
+   },
+   {
+    "title": "Dokumentet",
+    "text": "Banorët pretendojnë dokumente të falsifikuara; kërkojnë hetim nga SPAK."
+   },
+   {
+    "title": "Gardhimi",
+    "text": "Gardhi perimetral u shndërrua në simbol të mosmarrëveshjes dhe u rrëzua më 13 qershor."
+   }
+  ],
+  "unclear": [
+   {
+    "title": "Zgjidhja",
+    "text": "Nuk gjeta vendim gjyqësor ose zgjidhje të dokumentuar. Wikipedia e shënon protestën si në vazhdim."
+   },
+   {
+    "title": "Qëndrimi i kompanisë",
+    "text": "Nuk gjeta deklarata të kompanisë në burimet e lexuara."
+   }
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: 2026 Zvërnec protest",
+    "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+   },
+   {
+    "label": "Citizens.al: gardhet që bien",
+    "url": "https://citizens.al/en/2026/06/21/After-the-red-and-yellow-berry-and-the-pear--the-Kakomese-fence-also-falls./"
+   },
+   {
+    "label": "Wikipedia: Rrjolli (krahina historike)",
+    "url": "https://en.wikipedia.org/wiki/Rrjolli"
+   }
+  ],
+  "photos": [
+   {
+    "file": "1.jpg",
+    "size": [
+     1920,
+     1276
+    ],
+    "alt": "Velipoja dhe Zadrima nga ajri",
+    "caption": "Velipoja nga ajri",
+    "author": "Albinfo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Velipoja_and_Zadrima_(WPWTR16).JPG",
+    "title": "Velipoja and Zadrima (WPWTR16)"
+   },
+   {
+    "file": "2.jpg",
+    "size": [
+     1280,
+     852
+    ],
+    "alt": "Plazhi i Velipojës",
+    "caption": "Plazhi i Velipojës",
+    "author": "Albinfo",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Velipoj%C3%AB.jpg",
+    "title": "Velipojë"
+   }
+  ]
+ },
+ "zvernec": {
+  "lede": "Në Zvërnec dhe Pishë Poro–Nartë, gardhimi i pyllit të pishave dhe punimet në një peizazh të mbrojtur nxitën protestat që u bënë Revolucioni Flamingo.",
+  "headline": "Gardhim dhe punime në një peizazh të mbrojtur",
+  "body": [
+   "Punimet kryhen nga «Zvërnec South Adriatic Development», e lidhur sipas Wikipedias me projektin Sazan–Zvërnec. Kanë përfshirë gardhim të rreth 300 hektarëve pyll pishe, hapje rrugësh dhe shkulje pemësh, pa dëgjesa publike sipas raportimeve.",
+   "Protestuesit kërkuan ndalimin e punimeve, publikimin e dokumenteve dhe ndërhyrjen e institucioneve. Zona është Zonë e Rëndësishme për Shpendët, me mbi 200 lloje të regjistruara."
+  ],
+  "caveat": "Lejet dhe raporti i ndikimit në mjedis kundërshtohen: Inspektorati Kombëtar thotë se ekzistojnë, Reporter.al raportoi se nuk ishin publikuar zyrtarisht.",
+  "timeline": [
+   {
+    "date": "16 maj 2026",
+    "text": "Protesta e parë në kantierin në Akërni.",
+    "source": {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    }
+   },
+   {
+    "date": "23 maj 2026",
+    "text": "Banorë dhe aktivistë u mblodhën pranë Lagunës së Nartës.",
+    "source": {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    }
+   },
+   {
+    "date": "26 maj 2026",
+    "text": "Demonstratë para Ministrisë së Mjedisit.",
+    "source": {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    }
+   },
+   {
+    "date": "30 maj 2026",
+    "text": "Përplasje me sigurinë private në kantier; videot tregojnë përleshje dhe spraj me piper, dhe Komiteti Shqiptar i Helsinkit raportoi se një banor u tërhoq me forcë brenda zonës së gardhuar.",
+    "source": {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    }
+   },
+   {
+    "date": "31 maj 2026",
+    "text": "Nisën protestat e përditshme në Tiranë, që u bënë Revolucioni Flamingo.",
+    "source": {
+     "label": "Flamingo Revolution",
+     "url": "https://www.flamingorevolution.eu/protestat/"
+    }
+   },
+   {
+    "date": "15 korrik 2026",
+    "text": "Kryeministri premtoi ndryshimin e ligjit për zonat e mbrojtura sipas standardeve të BE-së dhe shfuqizimin e ligjit për investimet strategjike.",
+    "source": {
+     "label": "Balkan Insight",
+     "url": "https://balkaninsight.com/2026/07/15/albanian-protesters-celebrate-as-pm-backtracks-on-controversial-environment-laws/bi/"
+    }
+   }
+  ],
+  "contested": [
+   {
+    "title": "Punimet në zonën e mbrojtur",
+    "text": "Gardhim, rrugë dhe shkulje pemësh brenda Peizazhit të Mbrojtur Vjosë–Nartë, përfshirë rrafshimin e dunave sipas lëvizjes."
+   },
+   {
+    "title": "Ligji i vitit 2024",
+    "text": "Ndryshimi i ligjit për zonat e mbrojtura lejon struktura me pesë yje e më shumë në zona të mbrojtura."
+   },
+   {
+    "title": "Mungesa e transparencës",
+    "text": "Protestuesit kërkojnë dokumentet, lejet dhe dëgjesat publike."
+   }
+  ],
+  "unclear": [
+   {
+    "title": "Lejet",
+    "text": "Inspektorati thotë se punimet mbulohen nga leje dhe raport mjedisor; Reporter.al thotë se nuk ishin publikuar."
+   },
+   {
+    "title": "Hetimet",
+    "text": "Autoritetet njoftuan hetime për 30 majin; nuk gjeta rezultat të dokumentuar."
+   },
+   {
+    "title": "Ndryshimi i ligjit",
+    "text": "Nuk gjeta konfirmim që ndryshimet e premtuara janë miratuar."
+   }
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: 2026 Zvërnec protest",
+    "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+   },
+   {
+    "label": "Flamingo Revolution: protestat",
+    "url": "https://www.flamingorevolution.eu/protestat/"
+   },
+   {
+    "label": "Balkan Insight, 15 korrik 2026",
+    "url": "https://balkaninsight.com/2026/07/15/albanian-protesters-celebrate-as-pm-backtracks-on-controversial-environment-laws/bi/"
+   }
+  ],
+  "photos": [
+   {
+    "file": "1.jpg",
+    "size": [
+     1920,
+     1272
+    ],
+    "alt": "Kanali që lidh Lagunën e Nartës me detin pranë Zvërnecit",
+    "caption": "Laguna e Nartës",
+    "author": "Pasztilla",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Zv%C3%ABrnec,_Albania_%E2%80%93_Narta_Lagoon_01.jpg",
+    "title": "Zvërnec, Albania – Narta Lagoon 01"
+   },
+   {
+    "file": "2.jpg",
+    "size": [
+     1280,
+     847
+    ],
+    "alt": "Gjiri i vogël te Kepi i Treportit me varka",
+    "caption": "Kepi i Treportit",
+    "author": "Pasztilla",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Zv%C3%ABrnec,_Albania_%E2%80%93_Kepi_i_Treportit_01.jpg",
+    "title": "Zvërnec, Albania – Kepi i Treportit 01"
+   },
+   {
+    "file": "3.jpg",
+    "size": [
+     1280,
+     847
+    ],
+    "alt": "Bregdeti i Zvërnecit me ndërtesa turistike ekzistuese",
+    "caption": "Bregdeti i Zvërnecit",
+    "author": "Pasztilla",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Zv%C3%ABrnec,_Albania_%E2%80%93_Adria_Coast_01.jpg",
+    "title": "Zvërnec, Albania – Adria Coast 01"
+   }
+  ]
+ },
+ "sazan": {
+  "lede": "Sazani është ishull i pabanuar dhe ish-bazë ushtarake në gjirin e Vlorës. Nuk është një protestë vetë, por vendi te i cili lidhet projekti që protestat kundërshtojnë.",
+  "headline": "Ishulli dhe projekti Sazan–Zvërnec",
+  "body": [
+   "Sipas Wikipedias, projekti përfshin ishullin dhe një stërzonë bregdetare pranë Zvërnecit, me një vend të dytë planifikuar në bregdetin e paprekur të Pishë Poro–Nartës brenda peizazhit të mbrojtur, me mbi 10 mijë njësi akomodimi.",
+   "Vjosë–Nartë strehon foka murgj, breshka deti dhe mbi 200 lloje shpendësh, përfshirë flamingot dhe pelikanët."
+  ],
+  "caveat": "Shifrat vijnë nga Wikipedia dhe raportime të tjera, jo nga dokumente zyrtare të verifikuara këtu.",
+  "timeline": [
+   {
+    "date": "Mars 2024",
+    "text": "U njoftuan planet për Sazanin dhe bregdetin përballë pranë fshatit Zvërnec.",
+    "source": {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    }
+   },
+   {
+    "date": "2024",
+    "text": "Ligji për zonat e mbrojtura u ndryshua për të përjashtuar nga kufizimet strukturat me pesë yje e më shumë.",
+    "source": {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    }
+   },
+   {
+    "date": "30 dhjetor 2025",
+    "text": "Qeveria i dha projektit statusin e investimit strategjik. Shitja e tokës raportohet 1,4 miliardë euro.",
+    "source": {
+     "label": "Wikipedia",
+     "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    }
+   }
+  ],
+  "contested": [
+   {
+    "title": "Shitja e tokës",
+    "text": "Raportohet se banorët dhe deputetët e mësuan shitjen nga gazetat."
+   },
+   {
+    "title": "Përmasat",
+    "text": "565 hektarë, prej të cilëve rreth 45 hektarë të ndërtuar, sipas Wikipedias."
+   },
+   {
+    "title": "Pjesa në zonën e mbrojtur",
+    "text": "Vendi i dytë në Pishë Poro–Nartë është ai që kundërshtojnë protestat në Zvërnec."
+   }
+  ],
+  "unclear": [
+   {
+    "title": "Shifrat",
+    "text": "Vlerat vijnë nga një burim dytësor dhe nuk janë verifikuar me dokumente zyrtare."
+   },
+   {
+    "title": "Protesta",
+    "text": "Nuk gjeta protestë të veçantë në vetë ishullin; protestat ndodhën në Zvërnec dhe Tiranë."
+   }
+  ],
+  "sources": [
+   {
+    "label": "Wikipedia: 2026 Zvërnec protest",
+    "url": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+   },
+   {
+    "label": "Wikipedia: Sazan",
+    "url": "https://en.wikipedia.org/wiki/Sazan"
+   }
+  ],
+  "photos": [
+   {
+    "file": "1.jpg",
+    "size": [
+     1920,
+     1148
+    ],
+    "alt": "Shkëmbinjtë në bregun perëndimor të ishullit Sazan",
+    "caption": "Bregu perëndimor i Sazanit",
+    "author": "Albinfo",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cliffs_on_Sazan%27s_west_coast.jpg",
+    "title": "Cliffs on Sazan's west coast"
+   },
+   {
+    "file": "2.jpg",
+    "size": [
+     1280,
+     824
+    ],
+    "alt": "Ndërtesë e ish-bazës ushtarake mbi shkëmbinjtë e Sazanit",
+    "caption": "Ish-baza ushtarake",
+    "author": "Albinfo",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bunkers_on_Sazan_Island.jpg",
+    "title": "Bunkers on Sazan Island"
+   },
+   {
+    "file": "3.jpg",
+    "size": [
+     1280,
+     848
+    ],
+    "alt": "Sazani nga deti",
+    "caption": "Sazani nga deti",
+    "author": "Pasztilla",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sazan_Island,_Albania_2016_01.jpg",
+    "title": "Sazan Island, Albania 2016 01"
+   }
+  ]
+ },
+ "dardhe": {
+  "lede": "Në Dardhë (Librazhd) banorët rrëzuan gardhin që një koncesionar kishte vënë rreth burimit që i furnizon me ujë të pijshëm.",
+  "headline": "Gardhi rreth burimit «Gurra e Bardhë»",
+  "body": [
+   "Është një nga protestat që u përhapën pas Zvërnecit dhe ka të bëjë me aksesin në ujë. Sipas Citizens.al, koncesionari «Lucente» kishte gardhuar burimin që shërben fshatin."
+  ],
+  "caveat": "Kam gjetur pak detaje për këtë rast; faqja do të plotësohet kur të ketë burime të tjera.",
+  "timeline": [
+   {
+    "date": "14 qershor 2026",
+    "text": "Banorët rrëzuan gardhin rreth burimit «Gurra e Bardhë».",
+    "source": {
+     "label": "Citizens.al",
+     "url": "https://citizens.al/en/2026/06/21/After-the-red-and-yellow-berry-and-the-pear--the-Kakomese-fence-also-falls./"
+    }
+   }
+  ],
+  "contested": [
+   {
+    "title": "Aksesi në ujin e pijshëm",
+    "text": "Gardhimi i një burimi që përdoret nga fshati."
+   }
+  ],
+  "unclear": [
+   {
+    "title": "Baza ligjore",
+    "text": "Nuk gjeta detaje për koncesionin ose lejen."
+   },
+   {
+    "title": "Reagimi",
+    "text": "Nuk gjeta qëndrimin e kompanisë ose të autoriteteve, as gjurmim të mëtejshëm."
+   }
+  ],
+  "sources": [
+   {
+    "label": "Citizens.al",
+    "url": "https://citizens.al/en/2026/06/21/After-the-red-and-yellow-berry-and-the-pear--the-Kakomese-fence-also-falls./"
+   }
+  ],
+  "photos": [
+   {
+    "file": "1.jpg",
+    "size": [
+     1599,
+     899
+    ],
+    "alt": "Lugina e lumit në zonën e Librazhdit",
+    "caption": "Zona e Librazhdit",
+    "author": "Albanasa",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Librazhd_Albania.jpg",
+    "title": "Librazhd Albania"
+   }
+  ]
+ },
+ "kakome": {
+  "lede": "Në Kakomë banorë dhe pronarë rrëzuan një gardh që kufizonte aksesin në plazh për 22 vjet. Është kryesisht mosmarrëveshje pronësie dhe aksesi në bregdet, e lidhur me protestat e tjera.",
+  "note": "Mediat e vendosin te Saranda, por OSM e ka plazhin te njësia Lukovë, bashkia Himarë.",
+  "headline": "Një gardh 22-vjeçar në bregdet",
+  "body": [
+   "Dhjetëra banorë, pronarë dhe emigrantë, kryesisht nga Nivica dhe Shën Vasili, thanë se u ishte mohuar e drejta e pronës dhe kërkuan akses të lirë. Raportohet se nuk pati të lënduar ose përplasje.",
+   "Citizens.al e vendos mosmarrëveshjen mes kompanisë «Riviera» dhe pretendimeve të trashëgimtarëve, që nga viti 2004."
+  ],
+  "caveat": "Burimi i parë përmban vetëm deklaratat e protestuesve; nuk ka qëndrim nga kush e ngriti gardhin.",
+  "timeline": [
+   {
+    "date": "2004",
+    "text": "Sipas Citizens.al nis mosmarrëveshja e pronësisë mes kompanisë «Riviera» dhe trashëgimtarëve.",
+    "source": {
+     "label": "Citizens.al",
+     "url": "https://citizens.al/en/2026/06/21/After-the-red-and-yellow-berry-and-the-pear--the-Kakomese-fence-also-falls./"
+    }
+   },
+   {
+    "date": "21 qershor 2026",
+    "text": "Protestuesit rrëzuan gardhin që e ndante zonën për 22 vjet.",
+    "source": {
+     "label": "Albanian Daily News",
+     "url": "https://albaniandailynews.com/news/protesters-tear-down-long-standing-barrier-at-kakome-amid-property-access-dispute"
+    }
+   }
+  ],
+  "contested": [
+   {
+    "title": "Aksesi në bregdet",
+    "text": "Gardhi kufizonte vizitorët në plazh."
+   },
+   {
+    "title": "Pronësia",
+    "text": "Pronarët thonë se u është mohuar e drejta e pronës."
+   }
+  ],
+  "unclear": [
+   {
+    "title": "Ana tjetër",
+    "text": "Nuk ka qëndrim nga kush e ngriti ose e mbante gardhin."
+   },
+   {
+    "title": "Zgjidhja",
+    "text": "Mosmarrëveshja e pronësisë mbetet e pazgjidhur sipas raportimeve."
+   }
+  ],
+  "sources": [
+   {
+    "label": "Albanian Daily News",
+    "url": "https://albaniandailynews.com/news/protesters-tear-down-long-standing-barrier-at-kakome-amid-property-access-dispute"
+   },
+   {
+    "label": "Citizens.al",
+    "url": "https://citizens.al/en/2026/06/21/After-the-red-and-yellow-berry-and-the-pear--the-Kakomese-fence-also-falls./"
+   }
+  ],
+  "photos": [
+   {
+    "file": "1.jpg",
+    "size": [
+     1920,
+     1280
+    ],
+    "alt": "Rruga drejt Kakomës me detin në sfond",
+    "caption": "Rruga drejt Kakomës",
+    "author": "Stephen Daniel Kellett",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:3Road_To_Kakome_Near_Saranda_2017.jpg",
+    "title": "3Road To Kakome Near Saranda 2017"
+   },
+   {
+    "file": "2.jpg",
+    "size": [
+     1280,
+     720
+    ],
+    "alt": "Manastiri i Shën Mërisë në Kakomë",
+    "caption": "Manastiri i Shën Mërisë",
+    "author": "Adert",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:St._Mary%27s_Monastery,_Kakome-1.jpg",
+    "title": "St. Mary's Monastery, Kakome-1"
+   }
+  ]
+ },
+ "nikaj-mertur": {
+  "lede": "Banorët e Nikaj-Mërturit protestuan kundër ndërtimit të digave në lumin Mërtur, në Alpet Shqiptare. Është protesta mjedisore më e qartë e këtij cikli që nuk lidhet me bregdetin.",
+  "note": "Vendndodhja e saktë e digave nuk u gjet; poligoni në hartë është njësia Lekbibaj, afër fshatrave Curraj.",
+  "headline": "Diga në një lumë të paprekur të Alpeve",
+  "body": [
+   "Lumi rrjedh në Parkun Natyror Rajonal Nikaj-Mërtur, të shpallur në vitin 2014, dhe konsiderohet një nga më pak të prekurit në Alpet Shqiptare. Punimet e KESH kishin nisur rreth tri javë më parë pa njoftim të komunitetit dhe pa tabela informuese.",
+   "Banorët kundërshtojnë që lumi është klasifikuar si «përrua», që sipas tyre e bëri projektin të mundur, dhe e shohin punën si ekstraktive, pasi zona vuan nga mungesa e investimeve në rrugë dhe shërbime."
+  ],
+  "caveat": "Burimet nuk përputhen për numrin e digave: Riverwatch dhe Wikipedia flasin për tri diga, Citizens.al për 10 diga mbajtëse në 22 muaj. Duhet verifikuar te KESH.",
+  "timeline": [
+   {
+    "date": "Qershor 2026",
+    "text": "Nisën punimet e KESH në lumin Mërtur, pa konsultim me komunitetin.",
+    "source": {
+     "label": "Citizens.al",
+     "url": "https://citizens.al/2026/07/06/nikaj-merturi-organizohet-ne-proteste-per-mbrojtjen-e-lumit/"
+    }
+   },
+   {
+    "date": "5 korrik 2026",
+    "text": "Rreth 300 banorë të zonës dhe të diasporës protestuan; kërkuan pezullim, transparencë dhe përfshirje të komunitetit.",
+    "source": {
+     "label": "Citizens.al",
+     "url": "https://citizens.al/2026/07/06/nikaj-merturi-organizohet-ne-proteste-per-mbrojtjen-e-lumit/"
+    }
+   },
+   {
+    "date": "Pas 5 korrikut 2026",
+    "text": "Riverwatch raporton se KESH pezulloi punimet për tri diga; data nuk është konfirmuar.",
+    "source": {
+     "label": "Riverwatch",
+     "url": "https://riverwatch.eu/en/balkanrivers/news/good-news-m%C3%ABrtur-river-kesh-suspends-construction-works-3-dams"
+    }
+   }
+  ],
+  "contested": [
+   {
+    "title": "Diga në park natyror",
+    "text": "Ndërhyrje në një lum në Parkun Natyror Rajonal Nikaj-Mërtur."
+   },
+   {
+    "title": "Mungesa e konsultimit",
+    "text": "Punimet nisën pa njoftim dhe pa tabela informuese."
+   },
+   {
+    "title": "Klasifikimi «përrua»",
+    "text": "Banorët thonë se klasifikimi lejoi financimin e një pune që e shohin të panevojshme."
+   }
+  ],
+  "unclear": [
+   {
+    "title": "Numri i digave",
+    "text": "Tri ose 10, sipas burimeve të ndryshme."
+   },
+   {
+    "title": "Statusi",
+    "text": "Riverwatch: punimet u pezulluan. Wikipedia e shënon ende si në vazhdim."
+   },
+   {
+    "title": "Vendndodhja",
+    "text": "Nuk gjeta koordinatat e digave."
+   }
+  ],
+  "sources": [
+   {
+    "label": "Citizens.al",
+    "url": "https://citizens.al/2026/07/06/nikaj-merturi-organizohet-ne-proteste-per-mbrojtjen-e-lumit/"
+   },
+   {
+    "label": "Riverwatch: banorët protestojnë",
+    "url": "https://riverwatch.eu/en/balkanrivers/news/residents-nikaj-m%C3%ABrtur-albanian-alps-protest-against-construction-three-dams"
+   },
+   {
+    "label": "Riverwatch: KESH pezullon punimet",
+    "url": "https://riverwatch.eu/en/balkanrivers/news/good-news-m%C3%ABrtur-river-kesh-suspends-construction-works-3-dams"
+   }
+  ],
+  "photos": [
+   {
+    "file": "1.jpg",
+    "size": [
+     1920,
+     1271
+    ],
+    "alt": "Kullota dhe male mbi Lekbibaj",
+    "caption": "Mbi Lekbibaj",
+    "author": "Pasztilla",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lekbibaj,_Tropoj%C3%AB,_Albania_2018_01.jpg",
+    "title": "Lekbibaj, Tropojë, Albania 2018 01"
+   },
+   {
+    "file": "2.jpg",
+    "size": [
+     1280,
+     848
+    ],
+    "alt": "Rruga dhe një shtëpi guri në Lekbibaj",
+    "caption": "Rruga në Lekbibaj",
+    "author": "Pasztilla",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lekbibaj,_Tropoj%C3%AB,_Albania_2018_04.jpg",
+    "title": "Lekbibaj, Tropojë, Albania 2018 04"
+   },
+   {
+    "file": "3.jpg",
+    "size": [
+     1280,
+     853
+    ],
+    "alt": "Lugina e fshatit Vranë në Lekbibaj",
+    "caption": "Fshati Vranë",
+    "author": "Enriketa Halilaj",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fshati_Vrane,Lekbibaj_,Tropoje.JPG",
+    "title": "Fshati Vrane,Lekbibaj ,Tropoje"
+   }
+  ]
+ },
+ "theth": {
+  "lede": "Banorët e Thethit protestuan kundër prishjes së bujtinave dhe kabinave turistike të ndërtuara pa leje në Parkun Kombëtar të Thethit. Nuk është pjesë e ciklit Flamingo, por ngre të njëjtin tension mes mbrojtjes së zonës dhe jetesës vendore.",
+  "note": "Këtu banorët nuk mbrojnë natyrën nga një projekt, por kundërshtojnë zbatimin e ligjit mbi ndërtimet pa leje. Është përfshirë sepse ngre pyetje për zonat e mbrojtura: kush lejon ndërtimin dhe kush përballon pasojat.",
+  "headline": "Prishje në një park kombëtar",
+  "body": [
+   "Banorët thonë se ndërtuan në tokën e stërgjyshërve dhe se u nxitën nga shteti të zhvillonin turizëm. Një i ri tha se mori hua 30 mijë euro për një kafene e kabinë pas thirrjes «kthehuni në vendin e stërgjyshërve».",
+   "Autoritetet thonë se objektet janë pa leje, dhe se mospërputhja me ligjin mbetet pavarësisht nxitjeve. Ligji kërkon lejen e ndërtimit, vlerësimin e ndikimit në mjedis, miratimin e bashkisë dhe autorizim nga administrata e parkut."
+  ],
+  "caveat": "Numrat e objekteve nuk përputhen mes burimeve dhe nuk janë verifikuar; disa burime janë pjesërisht pas pagese.",
+  "timeline": [
+   {
+    "date": "Tetor 2023",
+    "text": "Banorët bllokuan në Qafë-Thorë një aksion të IKMT-së për prishjen e rreth 10 bujtinave; aksioni u anulua. Ata kërkonin dialog dhe certifikata pronësie.",
+    "source": {
+     "label": "Shqiptarja",
+     "url": "https://shqiptarja.com/lajm/bujtina-pa-leje-ne-theth-protesta-zmbraps-aksionin-e-ikmtse-banoret-po-zhvillojme-turizem-ne-shtepite-tona-prej-30-vitesh-shteti-nuk-na-jep-hipotekat"
+    }
+   },
+   {
+    "date": "Qershor 2024",
+    "text": "Sipas Balkan Insight, kryeministri vizitoi Thethin, dorëzoi tituj pronësie dhe premtoi mbështetje për të kthyerit që zhvillojnë turizëm.",
+    "source": {
+     "label": "Balkan Insight",
+     "url": "https://balkaninsight.com/2025/07/14/villagers-protest-albanian-government-crackdown-on-illegal-building-developments/"
+    }
+   },
+   {
+    "date": "Korrik 2025",
+    "text": "Nisi prishja e objekteve pa leje. Qindra banorë bllokuan urën e fshatit dhe u përplasën me policinë; IKMT tha se veprimi do të vazhdonte për 80 objekte. Të paktën një ndërtesë dykatëshe u prish.",
+    "source": {
+     "label": "Shqiptarja",
+     "url": "https://shqiptarja.com/lajm/banoret-e-thethit-proteste-kunder-prishjes-s-objekteve-pa-leje-bllokojne-uren-e-fshatit-prezente-forcat-e-policise"
+    }
+   },
+   {
+    "date": "Gusht 2025",
+    "text": "Balkan Insight raportoi zemërim në fshat pas prishjes së kabinave prej druri.",
+    "source": {
+     "label": "Balkan Insight",
+     "url": "https://balkaninsight.com/2025/08/04/anger-in-albanian-mountain-village-after-holiday-cabins-demolished/"
+    }
+   }
+  ],
+  "contested": [
+   {
+    "title": "Ndërtime pa leje",
+    "text": "Autoritetet kërkojnë prishjen e objekteve të ndërtuara pa leje në park kombëtar."
+   },
+   {
+    "title": "Nxitja nga shteti",
+    "text": "Banorët thonë se u nxitën të ndërtonin dhe se shteti nuk i ka dhënë hipotekat prej dekadash."
+   },
+   {
+    "title": "Jetesa",
+    "text": "Prishja godet turizmin që sjell mijëra vizitorë në vit."
+   }
+  ],
+  "unclear": [
+   {
+    "title": "Numri i objekteve",
+    "text": "Shqiptarja flet për 80 objekte të planifikuara; Albania Visit për afro 100 të rrëzuara dhe 20 familje të prekura."
+   },
+   {
+    "title": "Ndikimi mjedisor",
+    "text": "Burimet e gjetura nuk masin dëmin ekologjik të ndërtimeve ose të prishjeve."
+   },
+   {
+    "title": "Pas 2025-ës",
+    "text": "Nuk gjeta zhvillime për legalizim ose kompensim, as protestë të vazhdueshme në 2026."
+   }
+  ],
+  "sources": [
+   {
+    "label": "Shqiptarja, korrik 2025",
+    "url": "https://shqiptarja.com/lajm/banoret-e-thethit-proteste-kunder-prishjes-s-objekteve-pa-leje-bllokojne-uren-e-fshatit-prezente-forcat-e-policise"
+   },
+   {
+    "label": "Shqiptarja, tetor 2023",
+    "url": "https://shqiptarja.com/lajm/bujtina-pa-leje-ne-theth-protesta-zmbraps-aksionin-e-ikmtse-banoret-po-zhvillojme-turizem-ne-shtepite-tona-prej-30-vitesh-shteti-nuk-na-jep-hipotekat"
+   },
+   {
+    "label": "Balkan Insight, korrik 2025",
+    "url": "https://balkaninsight.com/2025/07/14/villagers-protest-albanian-government-crackdown-on-illegal-building-developments/"
+   },
+   {
+    "label": "Balkan Insight, gusht 2025",
+    "url": "https://balkaninsight.com/2025/08/04/anger-in-albanian-mountain-village-after-holiday-cabins-demolished/"
+   },
+   {
+    "label": "Albania Visit",
+    "url": "https://albaniavisit.com/tourism-politics/theth-demolition-crisis-2025/"
+   }
+  ],
+  "photos": [
+   {
+    "file": "1.jpg",
+    "size": [
+     1920,
+     1280
+    ],
+    "alt": "Mali dhe fshati i Thethit në Parkun Kombëtar",
+    "caption": "Parku Kombëtar i Thethit",
+    "author": "Alexkom000",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2024-10-14_Theth_National_Park_03.jpg",
+    "title": "2024-10-14 Theth National Park 03"
+   },
+   {
+    "file": "2.jpg",
+    "size": [
+     1280,
+     960
+    ],
+    "alt": "Lugina e Thethit në vjeshtë",
+    "caption": "Lugina në vjeshtë",
+    "author": "Peter Chovanec",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Theth_and_Theth_National_Park,_Albania_2017.jpg",
+    "title": "Theth and Theth National Park, Albania 2017"
+   },
+   {
+    "file": "3.jpg",
+    "size": [
+     1280,
+     960
+    ],
+    "alt": "Një bujtinë prej guri në Theth me male në sfond",
+    "caption": "Një bujtinë në Theth",
+    "author": "Adam Jones from Kelowna, BC, Canada",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Zorgji_Guesthouse_-_Theth_Village_-_Northern_Albania_-_01_(41838911615).jpg",
+    "title": "Zorgji Guesthouse - Theth Village - Northern Albania - 01 (41838911615)"
+   }
+  ]
+ }
+}

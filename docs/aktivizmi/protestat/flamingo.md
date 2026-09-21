@@ -8,23 +8,16 @@ Sipas kronologjisë së publikuar nga lëvizja, protestat nisën rreth ndërhyrj
 
 ## Vendet e protestës { #vendet-e-protestes }
 
-Sipas [Wikipedias](https://en.wikipedia.org/wiki/Flamingo_Revolution), cikli i protestave 2026 kaloi nëpër disa vende kryesore. Ato janë shtuar te [harta](../../../../map/) si protesta.
+Cikli i protestave i vitit 2026 kaloi nëpër disa vende, [sipas Wikipedias](https://en.wikipedia.org/wiki/Flamingo_Revolution). Secili ka faqen e vet me kronologji, burime dhe çfarë mbetet e paqartë, dhe shfaqet te [harta](../../../../map/) si «Projekte dhe protesta».
 
-- **[Baks-Rrjoll (Velipojë, Shkodër)](vendet/rrjolli.md).** Protestat nisën më 2 shkurt 2026 kundër resortit të planifikuar Blue Borgo dhe mosmarrëveshjes për pronësinë e tokës. Mos e ngatërro me [krahinën historike të Rrjollit](https://en.wikipedia.org/wiki/Rrjolli) në Malësi.
-- **[Zvërnec (Vlorë)](vendet/zvernec.md).** Më 16 maj 2026 u hap fronti i dytë, për punimet përgatitore dhe zhvillimet turistike të propozuara pranë Lagunës së Nartës. Dhuna kundër protestuesve më 30 maj u bë shkaku i drejtpërdrejtë i protestave të përditshme në Tiranë.
-- **[Sazan (Vlorë)](vendet/sazan.md).** Ishull i pabanuar dhe ish-bazë ushtarake, i lidhur me projektin turistik Sazan–Zvërnec.
+- [Rrjolli (Baks-Rrjoll)](../../../../protesta/rrjolli/), nga 2 shkurti
+- [Zvërnec dhe Pishë Poro–Nartë](../../../../protesta/zvernec/), nga 16 maji
+- [Sazan](../../../../protesta/sazan/), ishulli i lidhur me projektin
+- [Dardhë](../../../../protesta/dardhe/), 14 qershor
+- [Kakomë](../../../../protesta/kakome/), 21 qershor
+- [Nikaj-Mërtur](../../../../protesta/nikaj-mertur/), 5 korrik
 
-Protestat u përhapën edhe në vende të tjera, ku çështja ishte gardhimi ose ndërtimi në burime natyrore. Sipas raportimeve të [Citizens.al](https://citizens.al/en/2026/06/21/After-the-red-and-yellow-berry-and-the-pear--the-Kakomese-fence-also-falls./) dhe [Wikipedias](https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest):
-
-- **[Dardhë (Librazhd)](vendet/dardhe.md).** Më 14 qershor 2026 banorët rrëzuan gardhin që një koncesionar kishte vënë rreth burimit të ujit të pijshëm «Gurra e Bardhë».
-- **[Kakomë (Sarandë / Himarë)](vendet/kakome.md).** Më 21 qershor 2026 banorët rrëzuan një gardh që kufizonte aksesin në bregdet për mbi 20 vjet. Është kryesisht mosmarrëveshje pronësie, e lidhur me protestat.
-- **[Nikaj-Mërtur (Tropojë)](vendet/nikaj-mertur.md).** Më 5 korrik 2026 mbi 300 banorë protestuan kundër tri digave të KESH në lumin Mërtur, në një park natyror rajonal. [Riverwatch](https://riverwatch.eu/en/balkanrivers/news/good-news-m%C3%ABrtur-river-kesh-suspends-construction-works-3-dams) raporton se KESH i pezulloi punimet; Wikipedia e shënon ende si në vazhdim, prandaj statusi duhet verifikuar.
-
-Një rast më i hershëm, jashtë ciklit Flamingo, është i ngjashëm në tension:
-
-- **[Theth (Shkodër)](vendet/theth.md).** Në korrik 2025 banorët bllokuan urën e fshatit kundër prishjes së bujtinave pa leje në Parkun Kombëtar të Thethit. Kjo protestë e lidh mbrojtjen e zonës me jetesën vendore.
-
-Për këto vende harta tregon përkohësisht njësinë administrative ose parkun që përmban vendin (Velipojë, Qendër Vlorë, Hotolisht, Lukovë, Lekbibaj dhe Parku Kombëtar i Thethit), jo kufirin e saktë të zonës; shih [protests.geojson](https://github.com/pomodoren/heritage/blob/main/public/data/protests.geojson).
+Një rast më i hershëm, jashtë ciklit Flamingo: [Theth](../../../../protesta/theth/), korrik 2025.
 
 ## Kush mori pjesë
 

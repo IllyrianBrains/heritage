@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T06:27:33+00:00",
+  "generatedAt": "2026-09-21T22:58:31+00:00",
   "warnings": 0,
   "issues": [
     {
@@ -15,6 +15,104 @@
       "updatedAt": "2026-09-20",
       "reportedBy": "Revolucioni Flamingo",
       "evidenceUrl": "https://www.flamingorevolution.eu/protestat/"
+    },
+    {
+      "id": "rrjoll-baks-bay",
+      "areaId": "rrjolli",
+      "areaName": "Rrjolli",
+      "activity": "Projekti «Baks Bay» / Blue Borgo në Baks-Rrjoll dhe mosmarrëveshja për tokën",
+      "threatType": "Zhvillim urban dhe turistik",
+      "description": "Banorët protestojnë kundër resortit dhe pretendojnë prona të pazgjidhura; gardhi perimetral u rrëzua më 13 qershor 2026. Pretendimet për dokumente të falsifikuara janë të banorëve dhe nuk janë verifikuar.",
+      "priority": "high",
+      "status": "ongoing",
+      "reportedAt": "2026-02-02",
+      "updatedAt": "2026-09-22",
+      "reportedBy": "Banorët vendorë (raportuar nga Wikipedia dhe Citizens.al)",
+      "evidenceUrl": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    },
+    {
+      "id": "zvernec-fencing",
+      "areaId": "zvernec",
+      "areaName": "Zvërnec",
+      "activity": "Gardhim dhe punime përgatitore në Zvërnec dhe Pishë Poro–Nartë",
+      "threatType": "Zhvillim urban dhe turistik",
+      "description": "Gardhim i rreth 300 hektarëve pyll pishe dhe hapje rrugësh në peizazhin e mbrojtur, me përplasje më 30 maj 2026. Lejet dhe raporti i ndikimit në mjedis kundërshtohen; hetimet nuk kanë rezultat të dokumentuar.",
+      "priority": "high",
+      "status": "ongoing",
+      "reportedAt": "2026-05-16",
+      "updatedAt": "2026-09-22",
+      "reportedBy": "Revolucioni Flamingo dhe banorët",
+      "evidenceUrl": "https://www.flamingorevolution.eu/protestat/"
+    },
+    {
+      "id": "sazan-development",
+      "areaId": "sazan",
+      "areaName": "Sazan",
+      "activity": "Projekti turistik Sazan–Zvërnec dhe shitja e tokës në ishull",
+      "threatType": "Zhvillim urban dhe turistik",
+      "description": "Ishull i pabanuar dhe ish-bazë ushtarake me status investimi strategjik nga 30 dhjetor 2025; shifrat (1,4 miliardë euro, 565 hektarë) vijnë nga Wikipedia dhe nuk janë verifikuar zyrtarisht.",
+      "priority": "medium",
+      "status": "verification",
+      "reportedAt": "2025-12-30",
+      "updatedAt": "2026-09-22",
+      "reportedBy": "Wikipedia",
+      "evidenceUrl": "https://en.wikipedia.org/wiki/2026_Zv%C3%ABrnec_protest"
+    },
+    {
+      "id": "dardhe-gurra-e-bardhe",
+      "areaId": "dardhe",
+      "areaName": "Dardhë",
+      "activity": "Gardhim i burimit të ujit «Gurra e Bardhë» nga një koncesionar",
+      "threatType": "Akses në ujë dhe burime",
+      "description": "Banorët rrëzuan gardhin më 14 qershor 2026. Baza ligjore e koncesionit dhe qëndrimi i kompanisë nuk janë gjetur.",
+      "priority": "medium",
+      "status": "verification",
+      "reportedAt": "2026-06-14",
+      "updatedAt": "2026-09-22",
+      "reportedBy": "Citizens.al",
+      "evidenceUrl": "https://citizens.al/en/2026/06/21/After-the-red-and-yellow-berry-and-the-pear--the-Kakomese-fence-also-falls./"
+    },
+    {
+      "id": "kakome-fence",
+      "areaId": "kakome",
+      "areaName": "Kakomë",
+      "activity": "Gardh që kufizonte aksesin në plazhin e Kakomës për 22 vjet",
+      "threatType": "Akses në bregdet",
+      "description": "Banorët e rrëzuan gardhin më 21 qershor 2026; mosmarrëveshja e pronësisë mbetet e pazgjidhur dhe kërkon verifikim nga të dyja palët.",
+      "priority": "medium",
+      "status": "verification",
+      "reportedAt": "2026-06-21",
+      "updatedAt": "2026-09-22",
+      "reportedBy": "Albanian Daily News dhe Citizens.al",
+      "evidenceUrl": "https://albaniandailynews.com/news/protesters-tear-down-long-standing-barrier-at-kakome-amid-property-access-dispute"
+    },
+    {
+      "id": "mertur-dams",
+      "areaId": "nikaj-mertur",
+      "areaName": "Nikaj-Mërtur",
+      "activity": "Tri diga (ose 10 diga mbajtëse sipas Citizens.al) në lumin Mërtur",
+      "threatType": "Hidroenergji dhe ndërhyrje në lumenj",
+      "description": "Punimet e KESH në park natyror rajonal u kundërshtuan nga rreth 300 banorë më 5 korrik 2026; Riverwatch raporton pezullim të punimeve, data nuk është konfirmuar.",
+      "priority": "high",
+      "status": "paused",
+      "reportedAt": "2026-07-05",
+      "updatedAt": "2026-09-22",
+      "reportedBy": "Citizens.al dhe Riverwatch",
+      "evidenceUrl": "https://riverwatch.eu/en/balkanrivers/news/good-news-m%C3%ABrtur-river-kesh-suspends-construction-works-3-dams"
+    },
+    {
+      "id": "theth-demolitions",
+      "areaId": "theth",
+      "areaName": "Theth",
+      "activity": "Prishje e bujtinave pa leje në Parkun Kombëtar të Thethit",
+      "threatType": "Ndërtime pa leje në park kombëtar",
+      "description": "Prishjet u kryen në korrik 2025 pas bllokimit të urës nga banorët. Nuk gjeta protestë të vazhdueshme në 2026 ose zgjidhje të legalizimit.",
+      "priority": "low",
+      "status": "closed",
+      "reportedAt": "2025-07-09",
+      "updatedAt": "2026-09-22",
+      "reportedBy": "Shqiptarja dhe Balkan Insight",
+      "evidenceUrl": "https://shqiptarja.com/lajm/banoret-e-thethit-proteste-kunder-prishjes-s-objekteve-pa-leje-bllokojne-uren-e-fshatit-prezente-forcat-e-policise"
     }
   ]
 }

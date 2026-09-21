@@ -25,7 +25,7 @@ def cell(row: dict, key: str) -> str:
 
 def load_known_areas() -> dict[str, str]:
     known = {}
-    for folder in (DATA_DIR / "groups", DATA_DIR / "manual"):
+    for folder in (DATA_DIR / "groups", DATA_DIR / "manual", DATA_DIR):
         for path in sorted(folder.glob("*.geojson")):
             collection = json.loads(path.read_text(encoding="utf-8"))
             for feature in collection.get("features", []):

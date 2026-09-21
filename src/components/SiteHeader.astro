@@ -2,13 +2,9 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 const { page = 'map' } = Astro.props;
-// Projects and protests (with their MultiPolygon extents) live in public/data/{projects,protests}.geojson.
-const load = (file) => JSON.parse(readFileSync(join(process.cwd(), 'public/data', file), 'utf8')).features.map((feature) => feature.properties);
-const grouped = (items) => [...new Set(items.map((item) => item.group))].map((name) => ({ name, items: items.filter((item) => item.group === name) }));
-const menus = [
-  { label: 'Projekte', groups: grouped(load('projects.geojson')) },
-  { label: 'Protesta', groups: grouped(load('protests.geojson')) },
-];
+// Projects and protests (with their MultiPolygon extents) live in public/data/projects.geojson.
+const items = JSON.parse(readFileSync(join(process.cwd(), 'public/data/projects.geojson'), 'utf8')).features.map((feature) => feature.properties);
+const groups = [...new Set(items.map((item) => item.group))].map((name) => ({ name, items: items.filter((item) => item.group === name) }));
 const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
 ---
 <header class="app-header">
@@ -18,24 +14,22 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
   </a>
   <nav id="primary-nav" class="header-actions" aria-label="Veprimet kryesore">
     <a class="header-data" href={base} aria-current={page === 'map' ? 'page' : undefined}>Harta</a>
-    {menus.map((menu) => (
-      <details class="nav-group">
-        <summary>{menu.label} <span aria-hidden="true">⌄</span></summary>
-        <div class="nav-dropdown nav-dropdown-projects">
-          {menu.groups.map((group) => (
-            <div class="nav-section" role="group" aria-label={group.name}>
-              {menu.groups.length > 1 && <p class="nav-heading">{group.name}</p>}
-              {group.items.map((item) => (
-                <a href={`${base}${item.href}`} aria-current={page === item.page ? 'page' : undefined}>
-                  <strong>{item.name}{item.status && <span class="nav-status">{item.status}</span>}</strong>
-                  <small>{item.tagline}</small>
-                </a>
-              ))}
-            </div>
-          ))}
-        </div>
-      </details>
-    ))}
+    <details class="nav-group">
+      <summary>Projekte &amp; protesta <span aria-hidden="true">⌄</span></summary>
+      <div class="nav-dropdown nav-dropdown-projects">
+        {groups.map((group) => (
+          <div class="nav-section" role="group" aria-label={group.name}>
+            <p class="nav-heading">{group.name}</p>
+            {group.items.map((item) => (
+              <a href={`${base}${item.href}`} aria-current={page === item.page ? 'page' : undefined}>
+                <strong>{item.name}{item.status && <span class="nav-status">{item.status}</span>}</strong>
+                <small>{item.tagline}</small>
+              </a>
+            ))}
+          </div>
+        ))}
+      </div>
+    </details>
     <details class="nav-group">
       <summary>Dokumentimi <span aria-hidden="true">⌄</span></summary>
       <div class="nav-dropdown nav-dropdown-right">
