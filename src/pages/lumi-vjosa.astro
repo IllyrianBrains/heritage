@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const img = (name) => `${base}assets/lumi-vjosa/${name}.jpg`;
+
+const CC_BY_SA = 'https://creativecommons.org/licenses/by-sa/4.0/';
+const CC0 = 'https://creativecommons.org/publicdomain/zero/1.0/';
+const commons = (file) => `https://commons.wikimedia.org/wiki/File:${file}`;
+const photos = {
+  hero: { size: [1920, 1280], author: 'Pudelek', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: commons('Vjosa_river,_Albania.JPG'), title: 'Vjosa river, Albania' },
+  konfluenca: { size: [1100, 825], author: 'Calistemon', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: commons('Confluence_of_the_Drino_with_the_Vjos%C3%AB_River_near_Tepelen%C3%AB,_Albania,_September_2022_04.jpg'), title: 'Confluence of the Drino with the Vjosë River near Tepelenë, Albania, September 2022 04' },
+  kanjoni: { size: [800, 1067], author: 'Trigruda', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: commons('Vjosa_River_in_Petran,_South-Albania.jpg'), title: 'Vjosa River in Petran, South-Albania' },
+  grykederdhja: { size: [1100, 617], author: 'Piotr Bednarek', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: commons('Vjosa_river_mouth.jpg'), title: 'Vjosa river mouth' },
+  zhavorri: { size: [1100, 753], author: 'Pudelek', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: commons('Vjosa_river_near_Tepelena.JPG'), title: 'Vjosa river near Tepelena' },
+  burimi: { size: [1100, 731], author: 'Albinfo', license: 'CC0', licenseUrl: CC0, source: commons('Vjosa_at_K%C3%ABlcyra-_Black_Water.jpg'), title: 'Vjosa at Këlcyra – Black Water' },
+  kullotat: { size: [1100, 825], author: 'EllieMin.65', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: commons('Grassland_along_the_Vjosa_river_with_the_Nem%C3%ABr%C3%A7ka_mountain_range_in_the_background.jpg'), title: 'Grassland along the Vjosa river with the Nemërçka mountain range in the background' },
+  byllis: { size: [1100, 649], author: 'Albinfo', license: 'Domen publik', licenseUrl: commons('Byllis_Vjosa.jpg'), source: commons('Byllis_Vjosa.jpg'), title: 'Byllis Vjosa' },
+};
+
+const things = [
+  { photo: 'konfluenca', wide: true, kicker: 'Lumi që lëviz lirshëm', title: 'Ku Drini takon Vjosën', alt: 'Lugina e gjerë e Vjosës me kanale uji dhe brigje zhavorri pranë Tepelenës', text: 'Pa diga, lumi ndryshon shtratin çdo pranverë dhe çdo përrua. Kjo është ajo që e bën Vjosën të egër, jo vetëm të bukur.' },
+  { photo: 'kanjoni', kicker: 'Kanione dhe rrjedha', title: 'Kanioni pranë Petranit', alt: 'Vjosa me ujë të gjelbër mes shkëmbinjsh, me male në sfond', text: 'Në pjesët e ngushta lumi kalon mes shkëmbinjsh dhe përroskash, para se të hapet në luginë.' },
+  { photo: 'zhavorri', kicker: 'Ishuj dhe brigje zhavorri', title: 'Zhavorri pranë Tepelenës', alt: 'Vjosa me brigje të gjera zhavorri dhe mbetje të një ure pranë Tepelenës', text: 'Zhavorri që bart lumi krijon ishuj dhe habitate për shpendë e peshq. Parku mbron pikërisht nga nxjerrja e zhavorrit.' },
+  { photo: 'burimi', kicker: 'Burime dhe degë', title: 'Burimi i Zi në Këlcyrë', alt: 'Ujë i gjelbër nga një burim që derdhet në ujin e bardhë të Vjosës në Këlcyrë', text: 'Në Këlcyrë një burim me ujë të gjelbër derdhet në Vjosë. Rrjedha e lirë përfshin edhe degët e saj.' },
+  { photo: 'kullotat', kicker: 'Luginë dhe male', title: 'Fushat në këmbë të Nemërçkës', alt: 'Bar i lartë në brigjet e Vjosës me malet Nemërçka në sfond', text: 'Lugina përreth lumit është vend jetese dhe kullotë. Mbrojtja e lumit lidhet me komunitetet që jetojnë pranë tij.' },
+  { photo: 'byllis', kicker: 'Peizazh dhe trashëgimi', title: 'Byllisi mbi lumë', alt: 'Muret e qytetit antik Byllis me luginën e Vjosës në sfond', text: 'Lugina e Vjosës është një rrugë e lashtë mes brendshmes dhe bregdetit. Byllisi e shikon lumin nga lart.' },
+  { photo: 'grykederdhja', kicker: 'Lumi dhe deti', title: 'Ku Vjosa derdhet në Adriatik', alt: 'Pamje ajrore e grykëderdhjes së Vjosës me plazh dhe det', text: 'Grykëderdhja ndodhet brenda Peizazhit të Mbrojtur Vjosë–Nartë, ku lumi takon lagunën dhe detin.' },
+];
+
+const lessons = [
+  { title: 'Fakte të forta', text: 'Studimet shkencore e bënë vlerën e lumit të pamohueshme.' },
+  { title: 'Aleanca të gjera', text: 'Shkencëtarë, komunitete vendore, OJQ dhe media punuan së bashku.' },
+  { title: 'Kërkesë e qartë', text: 'Ruajtja e rrjedhës së lirë, jo vetëm “kundër një projekti”.' },
+];
+
+const paths = [
+  { href: `${base}docs/aktivizmi/raste/vjosa/`, title: 'Lexo rastin e plotë', text: 'Si u ndërtua fushata, kush mori pjesë dhe gjashtë mësimet kryesore.' },
+  { href: `${base}map/`, title: 'Shiko në hartë', text: 'Parku kombëtar Vjosa dhe zonat e tjera të mbrojtura në Shqipëri dhe Kosovë.' },
+  { href: `${base}docs/aktivizmi/fushata/`, title: 'Organizo një fushatë', text: 'Hapat për të kthyer një shqetësim në kërkesë të qartë dhe aleanca.' },
+  { href: `${base}vjose-narta/`, title: 'Një rast që vazhdon: Vjosë–Nartë', text: 'Laguna ku lumi derdhet në det, ku lëvizja raporton punime brenda zonës së mbrojtur.' },
+];
+---
+<BaseLayout title="Trashëgimia Natyrore · Si u shpëtua Vjosa" description="Faqe informuese për njerëzit që nuk janë aktivistë mjedisorë: çfarë është Parku Kombëtar i Lumit të Egër Vjosa, pse ka rëndësi dhe si u arrit mbrojtja e tij.">
+  <SiteHeader page="lumi-vjosa" />
+  <main class="landing">
+    <section class="lp-hero" aria-labelledby="lp-title">
+      <img class="lp-hero-img" src={img('hero')} width="1920" height="1280" alt="Vjosa me brigje zhavorri në një luginë me male në sfond" fetchpriority="high" decoding="async" />
+      <div class="lp-hero-inner">
+        <p class="lp-eyebrow">Lumi Vjosa · Parku Kombëtar i Lumit të Egër</p>
+        <h1 id="lp-title">Si u shpëtua një lumë i egër?</h1>
+        <p class="lp-lede">Për vite me radhë u planifikuan hidrocentrale në Vjosë. Shkencëtarë, komunitete dhe organizata ia dolën ta ruajnë lumin të lirë, dhe në mars 2023 ai u shpall park kombëtar. Këtu e gjen të shpjeguar thjesht: çfarë mbrohet, pse ka rëndësi dhe çfarë mësojmë prej këtij rasti.</p>
+        <div class="lp-actions">
+          <a class="lp-btn lp-btn-primary" href="#natyra">Shiko çfarë mbrohet <span aria-hidden="true">↓</span></a>
+          <a class="lp-btn lp-btn-ghost" href={`${base}docs/aktivizmi/raste/vjosa/`}>Lexo rastin e plotë <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <p class="lp-photo-credit">Foto: <a href={photos.hero.source} target="_blank" rel="noopener noreferrer">{photos.hero.author}</a>, <a href={photos.hero.licenseUrl} target="_blank" rel="noopener noreferrer">{photos.hero.license}</a></p>
+    </section>
+
+    <section class="lp-section lp-why" id="pse" aria-labelledby="lp-why-title">
+      <div class="lp-why-head">
+        <p class="lp-kicker">Pse ekziston kjo faqe</p>
+        <h2 id="lp-why-title">Një fushatë që funksionoi, dhe pse ia vlen ta njohim</h2>
+      </div>
+      <div class="lp-why-body">
+        <p>Vjosa është një nga lumenjtë e fundit të mëdhenj në Evropë që rrjedh pa diga në pjesën më të madhe të rrjedhës. Rasti i saj tregon se mbrojtja e natyrës mund të fitohet kur njerëzit e njohin vendin dhe bashkohen rreth një kërkese të qartë.</p>
+        <p>Informacioni për këtë rast është i shpërndarë nëpër raporte, shtyp dhe faqe organizatash. Këtu e mbledhim në një vend, me fjalë të thjeshta dhe me foto nga vetë lumi.</p>
+      </div>
+      <ul class="lp-principles">
+        {lessons.map((item) => (
+          <li><strong>{item.title}</strong><span>{item.text}</span></li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="lp-section lp-things" id="natyra" aria-labelledby="lp-things-title">
+      <div class="lp-section-head">
+        <p class="lp-kicker">Çfarë duhet mbrojtur</p>
+        <h2 id="lp-things-title">Një lumë që rrjedh i lirë, nga kanionet te deti</h2>
+        <p>Sipas Wikipedias, lumi është rreth 272 km i gjatë, prej të cilave rreth 192 km në Shqipëri. Parku shtrihet mbi 12 727 hektarë dhe është në kategorinë II të IUCN. Fotot më poshtë janë nga vetë lugina.</p>
+      </div>
+      <div class="lp-gallery">
+        {things.map((item) => {
+          const photo = photos[item.photo];
+          return (
+            <figure class:list={['lp-tile', { 'lp-tile-wide': item.wide }]}>
+              <img src={img(item.photo)} width={photo.size[0]} height={photo.size[1]} alt={item.alt} loading="lazy" decoding="async" />
+              <figcaption>
+                <span class="lp-tile-kicker">{item.kicker}</span>
+                <strong>{item.title}</strong>
+                <span class="lp-tile-text">{item.text}</span>
+                <small>Foto: <a href={photo.source} target="_blank" rel="noopener noreferrer">{photo.author}</a> · <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a></small>
+              </figcaption>
+            </figure>
+          );
+        })}
+        <aside class="lp-tile lp-tile-ask" aria-label="Fotografi që mungojnë">
+          <span class="lp-tile-kicker">Fotot që mungojnë</span>
+          <strong>Jeta e egër e lumit</strong>
+          <span class="lp-tile-text">Parku përmend vidra, shpendë grabitqarë, rrëqebullin e Ballkanit dhe shumë lloje peshqish, por nuk gjetëm foto me licencë të lirë të bëra brenda tij. Nëse ke të tilla, mund t'i ndash me të gjithë.</span>
+          <a class="lp-btn lp-btn-dark" href={`${base}docs/rreth/kontribuo/`}>Si të kontribuosh <span aria-hidden="true">→</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lp-section lp-report" aria-labelledby="lp-report-title">
+      <div>
+        <p class="lp-kicker">Çfarë u arrit</p>
+        <h2 id="lp-report-title">Nga hidrocentralet e planifikuara te parku kombëtar</h2>
+      </div>
+      <div class="lp-report-body">
+        <p>Më 15 mars 2023, në një ceremoni në Tepelenë, Vjosa u shpall Parku i parë Kombëtar i Lumit të Egër në Evropë. Mbrojtja përfshin lumin nga burimi deri në Adriatik dhe degët kryesore, kundër digave dhe nxjerrjes së zhavorrit. Në 2025 parku u shpall edhe rezervë e biosferës nga UNESCO.</p>
+        <p class="lp-caveat">Shpallja nuk mbyll punën: menaxhimi dhe zbatimi janë hapi tjetër. Të dhënat më sipër janë marrë nga Wikipedia dhe faqja zyrtare e parkut; kontrolloji te burimet përpara se t'i citosh.</p>
+        <ul class="lp-meta">
+          <li><span>Statusi</span><strong>Park kombëtar</strong></li>
+          <li><span>Shpallur</span><strong>15 mars 2023</strong></li>
+          <li><span>Burimi</span><strong><a href="https://www.parkukombetarvjosa.al/" target="_blank" rel="noopener noreferrer">parkukombetarvjosa.al ↗</a></strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="lp-section lp-paths" aria-labelledby="lp-paths-title">
+      <div class="lp-section-head">
+        <p class="lp-kicker">Nga ku të nisësh</p>
+        <h2 id="lp-paths-title">Zgjidh hapin tënd të parë</h2>
+      </div>
+      <div class="lp-path-grid">
+        {paths.map((item) => (
+          <a class="lp-path" href={item.href}><strong>{item.title}</strong><span>{item.text}</span><i aria-hidden="true">→</i></a>
+        ))}
+      </div>
+    </section>
+
+    <section class="lp-section lp-credits">
+      <details>
+        <summary>Kreditet e fotove</summary>
+        <ul>
+          {Object.values(photos).map((photo) => (
+            <li><a href={photo.source} target="_blank" rel="noopener noreferrer">{photo.title}</a> nga {photo.author}, <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a>, përmes Wikimedia Commons.</li>
+          ))}
+        </ul>
+      </details>
+    </section>
+  </main>
+</BaseLayout>

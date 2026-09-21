@@ -490,3 +490,65 @@ body,
   .md-typeset .ib-landing-hero { padding: 1.8rem 1.3rem 1.6rem; }
   .md-typeset .ib-landing-hero h1 { font-size: 1.75rem; }
 }
+
+/* ===== Mobile ===== */
+
+/* The edit pencil floats beside the hero on the landing page */
+.md-content__inner:has(.ib-landing-hero) > .md-content__button { display: none; }
+
+@media screen and (max-width: 76.1875em) {
+  /* Site name fits the header instead of ending in an ellipsis */
+  .md-header__title { font-size: 0.72rem; letter-spacing: 0.04em; }
+}
+
+@media screen and (max-width: 59.9375em) {
+  .md-main__inner { margin-top: 0.4rem; }
+  .md-content__inner { margin-inline: 0.9rem; }
+  .md-content__inner::before { height: 0.2rem; }
+
+  .md-typeset { font-size: 0.76rem; line-height: 1.6; }
+  .md-typeset h1 { margin-bottom: 0.9em; font-size: 1.75em; line-height: 1.15; }
+  .md-typeset h2 { margin-top: 1.9em; font-size: 1.4em; }
+  .md-typeset h3 { font-size: 1.1em; }
+
+  /* Tables: denser, so three columns still read on a phone */
+  .md-typeset table:not([class]) { font-size: 0.68rem; }
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td { padding: 0.65em 0.7em; }
+
+  .md-typeset code { word-break: break-word; }
+  .md-typeset pre > code { font-size: 0.72em; }
+  .md-typeset .admonition,
+  .md-typeset details { font-size: 0.72rem; }
+  .md-typeset .grid.cards > ul > li { padding: 0.8rem 0.9rem; }
+  .md-typeset .ib-glance { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* Buttons fill the row and are easy to tap */
+  .md-typeset .md-button {
+    display: block;
+    margin: 0.5rem 0 0;
+    padding: 0.7em 1em;
+    text-align: center;
+  }
+  .md-typeset .ib-landing-hero .md-button,
+  .md-typeset .ib-banner .md-button { margin: 0.5rem 0 0; }
+
+  /* Landing: the four steps become a 2x2 grid */
+  .md-typeset .ib-landing h2 { margin-top: 2rem; font-size: 1.35em; }
+  .md-typeset .ib-path > ol { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; }
+  .md-typeset .ib-path > ol > li { padding: 2.5rem 0.8rem 0.8rem; font-size: 0.72rem; }
+  .md-typeset .ib-path > ol > li::before { top: 0.5rem; left: 0.8rem; font-size: 1.25rem; }
+  .md-typeset .ib-path > ol > li > p:first-child { font-size: 0.85rem; }
+  .md-typeset .ib-banner { padding: 1.1rem 1.1rem 1rem; }
+  .md-typeset .ib-landing-hero .ib-chips { margin-top: 1.1rem; }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .ib-landing-hero {
+    margin: 0.2rem -0.3rem 1.5rem;
+    padding: 1.5rem 1.1rem 1.3rem;
+    border-radius: 12px;
+  }
+  .md-typeset .ib-landing-hero h1 { font-size: 1.7rem; }
+  .md-typeset .ib-landing-hero::after { top: -5rem; right: -6rem; }
+}

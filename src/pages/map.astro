@@ -8,7 +8,7 @@ const repositoryLabel = repositoryUrl.replace('https://', '');
 <BaseLayout title="Harta e Natyrës" description="Zona të mbrojtura, flora dhe fauna në Shqipëri dhe Kosovë.">
   <div class="app-shell">
     <SiteHeader page="map">
-      <button slot="about-actions" id="open-project" type="button"><strong>Rreth projektit</strong><small>Lexo prezantimin e atlasit</small></button>
+      <button slot="about-actions" id="open-project" class="header-data" type="button">Rreth projektit</button>
     </SiteHeader>
     <main class="workspace">
       <aside class="catalog" aria-label="Galeria e vendeve">
@@ -105,7 +105,7 @@ const repositoryLabel = repositoryUrl.replace('https://', '');
     const projectIntro = document.getElementById('project-intro');
     document.getElementById('open-project').addEventListener('click', () => projectIntro.showModal());
     const cameFromInternalPage = document.referrer && new URL(document.referrer).origin === location.origin;
-    if (!cameFromInternalPage) projectIntro.showModal();
+    if (!cameFromInternalPage || location.hash === '#rreth-projektit') projectIntro.showModal();
   </script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.9.0/ol.css" />
   <script is:inline src="https://cdn.jsdelivr.net/npm/ol@10.9.0/dist/ol.js"></script>

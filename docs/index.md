@@ -13,7 +13,7 @@ hide:
 
 Për ata që e dokumentojnë, e monitorojnë dhe e mbrojnë natyrën. Këtu gjen **çfarë duhet mbrojtur, si ta dokumentosh dhe si ta kthesh një shqetësim në veprim.**
 
-[Fillo nga baza e njohurive](baza/index.md){ .md-button .md-button--primary }
+[Fillo nga Baza](baza/index.md){ .md-button .md-button--primary }
 [Hap hartën interaktive](../map/){ .md-button }
 
 <p class="ib-chips"><span>Ligje & institucione</span><span>Mjete të përzgjedhura</span><span>Modele emaili</span><span>Raste të vërteta</span></p>

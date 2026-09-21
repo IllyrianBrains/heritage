@@ -13,7 +13,7 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
       <summary>Raste <span aria-hidden="true">⌄</span></summary>
       <div class="nav-dropdown">
         <a href={`${base}vjose-narta/`} aria-current={page === 'vjose-narta' ? 'page' : undefined}><strong>Vjosë–Nartë</strong><small>Flamingot, laguna dhe Peizazhi i Mbrojtur</small></a>
-        <a href={`${base}docs/aktivizmi/raste/vjosa/`}><strong>Lumi Vjosa</strong><small>Nga fushata te parku kombëtar, 2023</small></a>
+        <a href={`${base}lumi-vjosa/`} aria-current={page === 'lumi-vjosa' ? 'page' : undefined}><strong>Lumi Vjosa</strong><small>Nga fushata te parku kombëtar, 2023</small></a>
         <a href={`${base}docs/aktivizmi/protestat/`}><strong>Flamingo</strong><small>Protestat, organizimi dhe dokumentimi</small></a>
       </div>
     </details>
@@ -24,9 +24,9 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
         <a href={`${base}docs/raportimi/`}><strong>Raportimi</strong><small>Kuadrot, treguesit dhe të dhënat</small></a>
         <a href={`${base}docs/aktivizmi/`}><strong>Aktivizmi</strong><small>Nga shqetësimi te veprimi</small></a>
         <a href={`${base}docs/rreth/`}><strong>Rreth nesh</strong><small>Nisma, rrjeti dhe si të bashkohesh</small></a>
-        <slot name="about-actions" />
       </div>
     </details>
+    <slot name="about-actions"><a class="header-data" href={`${base}#rreth-projektit`}>Rreth projektit</a></slot>
   </nav>
   <button class="mobile-menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Hap menunë"><span></span><span></span><span></span></button>
 </header>

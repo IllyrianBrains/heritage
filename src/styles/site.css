@@ -644,3 +644,28 @@
 @media(min-width:701px){
   .app-header{padding-inline:clamp(20px,2.5vw,40px)}
 }
+
+/* "Rreth projektit" is a top-level button on the map page; match the link items. */
+.header-actions>button.header-data{background:transparent;color:inherit;font-family:inherit}
+
+/* Mjetet on phones: search lines up with the button, filters sit in two columns, and the panel scrolls inside the screen. */
+@media(max-width:900px){
+  .map-toolbar .map-search{top:auto;right:auto;left:auto}
+}
+@media(max-width:700px) and (orientation:portrait){
+  .map-toolbar{gap:8px}
+  .map-toolbar .map-search{width:100%}
+  .map-tools-menu>summary{gap:8px}
+  .map-tools-menu>summary small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .map-tools-content{max-height:calc(100dvh - 240px);overflow-y:auto;overscroll-behavior:contain;padding:8px;border-radius:10px}
+  .map-toolbar .map-filter-bar{grid-template-columns:1fr 1fr;gap:8px}
+  .map-toolbar .header-filter[open],.map-toolbar .photo-filter{grid-column:1/-1}
+  .map-toolbar .header-filter summary{position:relative;flex-direction:column;align-items:flex-start;justify-content:center;gap:1px;min-height:52px;padding:7px 28px 7px 11px;border-radius:8px}
+  .map-toolbar .header-filter summary strong{margin-left:0;max-width:100%;overflow:hidden;font-size:.82rem;text-overflow:ellipsis}
+  .map-toolbar .header-filter summary>span{position:absolute;top:50%;right:10px;transform:translateY(-50%)}
+  .map-toolbar .header-filter[open]>summary>span{transform:translateY(-50%) rotate(180deg)}
+  .map-toolbar .photo-filter{min-height:46px;border-radius:8px}
+  .map-toolbar .map-note-actions{gap:8px;padding-top:9px}
+  .map-toolbar .map-add-note,.map-toolbar .map-download-notes{min-height:46px;border-radius:8px}
+  .map-toolbar .map-add-note{border-color:#173e39;background:#173e39;color:#fff}
+}
