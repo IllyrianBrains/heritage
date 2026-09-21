@@ -645,7 +645,7 @@
   .app-header{padding-inline:clamp(20px,2.5vw,40px)}
 }
 
-/* "Rreth projektit" is a top-level button on the map page; match the link items. */
+/* "Rreth nismes" is a top-level button on the map page; match the link items. */
 .header-actions>button.header-data{background:transparent;color:inherit;font-family:inherit}
 
 /* Mjetet on phones: search lines up with the button, filters sit in two columns, and the panel scrolls inside the screen. */
@@ -669,3 +669,11 @@
   .map-toolbar .map-add-note,.map-toolbar .map-download-notes{min-height:46px;border-radius:8px}
   .map-toolbar .map-add-note{border-color:#173e39;background:#173e39;color:#fff}
 }
+
+/* Projects dropdown: grouped, scrollable, with a status label per project. */
+.nav-dropdown-projects{max-height:min(72vh,620px);overflow-y:auto;overscroll-behavior:contain}
+.nav-heading{margin:0;padding:8px 12px 4px;color:#8a6b1f;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.nav-section+.nav-section{margin-top:6px;padding-top:4px;border-top:1px solid #dfe8e1}
+.nav-dropdown strong{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.nav-status{padding:1px 7px;border-radius:999px;background:#eef2d9;color:#4d5a17;font-size:.62em;font-weight:700;letter-spacing:.01em;white-space:nowrap}
+@media (max-width:900px){.nav-heading{color:#e6c77f}.nav-section+.nav-section{border-top-color:#ffffff26}.nav-status{background:#ffffff22;color:#f2f7f4}.nav-dropdown-projects{max-height:none;overflow:visible}}

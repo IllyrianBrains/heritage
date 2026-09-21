@@ -304,7 +304,7 @@
 
   const map = new ol.Map({
     target: mapElement,
-    layers: [baseLayer, ...environmentalLayers.map((item) => item.layer), labelsLayer, ...[...groupStates].sort((a, b) => ({ parqe: 0, mbrojtura: 0, rezervate: 0, flora: 1, fauna: 2 }[a.group.id] ?? 1) - ({ parqe: 0, mbrojtura: 0, rezervate: 0, flora: 1, fauna: 2 }[b.group.id] ?? 1)).map((state) => state.layer)],
+    layers: [baseLayer, ...environmentalLayers.map((item) => item.layer), labelsLayer, ...[...groupStates].sort((a, b) => ({ parqe: 0, mbrojtura: 0, rezervate: 0, projekte: 0.5, protesta: 0.5, flora: 1, fauna: 2 }[a.group.id] ?? 1) - ({ parqe: 0, mbrojtura: 0, rezervate: 0, projekte: 0.5, protesta: 0.5, flora: 1, fauna: 2 }[b.group.id] ?? 1)).map((state) => state.layer)],
     view: new ol.View({ center: ol.proj.fromLonLat([20.2, 41.2]), zoom: 7.2, minZoom: 5 }),
   });
   const previewElement = document.getElementById('point-preview');
@@ -472,7 +472,7 @@
     checkbox.type = 'checkbox';
     checkbox.value = group.id;
     checkbox.checked = true;
-    const isArea = ['parqe', 'mbrojtura', 'rezervate'].includes(group.id);
+    const isArea = ['parqe', 'mbrojtura', 'rezervate', 'projekte', 'protesta'].includes(group.id);
     const dot = make('i', isArea ? 'key-dot key-area' : 'key-dot');
     dot.style.backgroundColor = group.color || '#4d6a59';
     option.append(checkbox, dot, make('span', '', group.label), make('small', '', records.filter((record) => record.group.id === group.id).length));

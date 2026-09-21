@@ -90,7 +90,7 @@ flowchart LR
 
     [:octicons-arrow-right-24: Siguria e aktivistëve](siguria.md)
 
--   :material-book-open-page-variant-outline:{ .lg .middle } **Raste studimore**
+-   :material-book-open-page-variant-outline:{ .lg .middle } **Projekte**
 
     ---
 
