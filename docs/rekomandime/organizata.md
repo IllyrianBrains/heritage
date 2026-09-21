@@ -1,27 +1,32 @@
 # Organizata & rrjete
 
-Organizata me të cilat mund të bashkëpunosh, të kërkosh këshilla ose mbështetje. Përfshirja këtu është **rekomandim për njohje**, jo miratim zyrtar; verifiko punën e çdo organizate përpara se të bashkëpunosh.
+Organizata me të cilat mund të bashkëpunosh, të kërkosh këshilla ose mbështetje. Përfshirja këtu është **rekomandim për njohje**, jo miratim zyrtar; verifiko punën e çdo organizate para se të bashkëpunosh.
 
 *Versioni i parë: shtator 2026*
 
-## Ç'kërkojmë
-
-- **Transparencë:** raporte publike dhe informacion për financimin.
-- **Punë e verifikueshme** në terren ose në politika mjedisore.
-- **Respekt për komunitetet** dhe për sigurinë e burimeve.
-- **Bashkëpunim të hapur** me grupe të tjera.
+**Ç'kërkojmë:** transparencë (raporte publike dhe financim); punë e verifikueshme në terren ose politika; respekt për komunitetet dhe sigurinë e burimeve; bashkëpunim i hapur.
 
 ## Në projekt
 
-Organizatat dhe ekspertët që kontribuojnë në këtë nismë janë të listuar te faqja [Rrjeti](../rreth/rrjeti.md).
+Organizatat dhe ekspertët që kontribuojnë në këtë nismë janë te [Rrjeti](../rreth/rrjeti.md).
 
-| Organizata | Fokusi |
-|---|---|
-| **Qendra LUMI** | Lumenjtë dhe komunitetet |
-| **AlbNatyra** | Biodiversiteti dhe edukimi |
-| **RESU** | Lumenjtë dhe zhvillimi vendor |
+<div class="grid cards ib-compact" markdown>
 
-## Organizata të tjera që punojnë në rajon
+-   :material-waves-arrow-right:{ .lg .middle } **Qendra LUMI**
+
+    Lumenjtë dhe komunitetet.
+
+-   :material-bird:{ .lg .middle } **AlbNatyra**
+
+    Biodiversiteti dhe edukimi.
+
+-   :material-account-group-outline:{ .lg .middle } **RESU**
+
+    Lumenjtë dhe zhvillimi vendor.
+
+</div>
+
+## Organizata të tjera në rajon
 
 | Organizata | Roli |
 |---|---|
@@ -34,11 +39,22 @@ Organizatat dhe ekspertët që kontribuojnë në këtë nismë janë të listuar
 
 ## Mbështetje për mbrojtësit e rrezikuar
 
-| Organizata | Ç'ofron |
-|---|---|
-| [Front Line Defenders](https://www.frontlinedefenders.org) | Mbrojtje dhe mbështetje urgjente për mbrojtësit e të drejtave të njeriut, përfshirë ata të mjedisit |
-| [Access Now Helpline](https://www.accessnow.org/help/) | Ndihmë e sigurisë dixhitale |
+<div class="grid cards" markdown>
+
+-   :material-shield-account-outline:{ .lg .middle } **Front Line Defenders**
+
+    Mbrojtje dhe mbështetje urgjente për mbrojtësit e të drejtave të njeriut, përfshirë ata të mjedisit.
+
+    [:octicons-arrow-right-24: frontlinedefenders.org](https://www.frontlinedefenders.org)
+
+-   :material-lifebuoy:{ .lg .middle } **Access Now Helpline**
+
+    Ndihmë e sigurisë dixhitale.
+
+    [:octicons-arrow-right-24: accessnow.org/help](https://www.accessnow.org/help/)
+
+</div>
 
 ## Nuk e sheh organizatën tënde?
 
-Shto një propozim me: emrin, faqen, fushën e punës, dhe dy burime që tregojnë punën e saj. Shih [Si të kontribuosh](../rreth/kontribuo.md).
+Shto një propozim me emrin, faqen, fushën e punës dhe dy burime që tregojnë punën e saj: [Si të kontribuosh](../rreth/kontribuo.md).

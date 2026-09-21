@@ -8,42 +8,22 @@ const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
     <span class="brand-title"><span>TRASHËGIMIA</span><span>NATYRORE</span></span>
   </a>
   <nav id="primary-nav" class="header-actions" aria-label="Veprimet kryesore">
-    <details class="nav-group" data-active={['map', 'dashboard'].includes(page) ? 'true' : undefined}>
-      <summary>Baza e njohurive <span aria-hidden="true">⌄</span></summary>
+    <a class="header-data" href={base} aria-current={page === 'map' ? 'page' : undefined}>Harta</a>
+    <details class="nav-group">
+      <summary>Raste <span aria-hidden="true">⌄</span></summary>
       <div class="nav-dropdown">
-        <a href={base} aria-current={page === 'map' ? 'page' : undefined}><strong>Harta</strong><small>Eksploro vendet dhe të dhënat</small></a>
-        <a href={`${base}dashboard/`} aria-current={page === 'dashboard' ? 'page' : undefined}><strong>Raporte</strong><small>Çështje, gjendje dhe ndërhyrje</small></a>
-        <a href={`${base}docs/raportimi/`}><strong>Raportimi &amp; treguesit</strong><small>Kuadrot, të dhënat dhe standardet</small></a>
-        <a href={`${base}docs/baza/`}><strong>Themelet</strong><small>Natyra, biodiversiteti dhe kërcënimet</small></a>
-        <a href={`${base}docs/baza/ligje-institucione/`}><strong>Kuadri i mbrojtjes</strong><small>Ligje, institucione dhe të drejtat e publikut</small></a>
-        <a href={`${base}docs/baza/burime-te-dhena/`}><strong>Të dhënat</strong><small>Burime, regjistra dhe fjalori</small></a>
+        <a href={`${base}vjose-narta/`} aria-current={page === 'vjose-narta' ? 'page' : undefined}><strong>Vjosë–Nartë</strong><small>Flamingot, laguna dhe Peizazhi i Mbrojtur</small></a>
+        <a href={`${base}docs/aktivizmi/raste/vjosa/`}><strong>Lumi Vjosa</strong><small>Nga fushata te parku kombëtar, 2023</small></a>
+        <a href={`${base}docs/aktivizmi/protestat/`}><strong>Flamingo</strong><small>Protestat, organizimi dhe dokumentimi</small></a>
       </div>
     </details>
     <details class="nav-group">
-      <summary>Rekomandime <span aria-hidden="true">⌄</span></summary>
-      <div class="nav-dropdown">
-        <a href={`${base}docs/rekomandime/`}><strong>Të gjitha rekomandimet</strong><small>Mjete dhe organizata të përzgjedhura</small></a>
-        <a href={`${base}docs/rekomandime/vezhgim/`}><strong>Vëzhgim &amp; hartëzim</strong><small>Dokumento specie dhe vende në terren</small></a>
-        <a href={`${base}docs/rekomandime/monitorim/`}><strong>Monitorim &amp; verifikim</strong><small>Satelitë, arkivim dhe kontroll burimesh</small></a>
-        <a href={`${base}docs/rekomandime/siguria/`}><strong>Siguria dixhitale</strong><small>Mbro të dhënat, pajisjet dhe llogaritë</small></a>
-      </div>
-    </details>
-    <details class="nav-group">
-      <summary>Aktivizmi <span aria-hidden="true">⌄</span></summary>
-      <div class="nav-dropdown">
-        <a href={`${base}docs/aktivizmi/`}><strong>Nga shqetësimi te veprimi</strong><small>Dokumento dhe organizo një çështje</small></a>
-        <a href={`${base}docs/aktivizmi/raporto/`}><strong>Raporto &amp; informohu</strong><small>Institucionet dhe informacioni publik</small></a>
-        <a href={`${base}docs/aktivizmi/pjesemarrje/`}><strong>Merr pjesë</strong><small>Vendimmarrje, fushata dhe komunikim</small></a>
-        <a href={`${base}docs/rreth/kontribuo/#shto-te-dhena-ne-harte`}><strong>Shto të dhëna</strong><small>Kontribuo në hartë dhe në projekt</small></a>
-        <slot name="contribute-actions" />
-      </div>
-    </details>
-    <details class="nav-group">
-      <summary>Rreth nesh <span aria-hidden="true">⌄</span></summary>
+      <summary>Dokumentimi <span aria-hidden="true">⌄</span></summary>
       <div class="nav-dropdown nav-dropdown-right">
-        <a href={`${base}docs/rreth/`}><strong>Nisma</strong><small>Qëllimi dhe historia e projektit</small></a>
-        <a href={`${base}docs/rreth/rrjeti/`}><strong>Rrjeti</strong><small>Organizata dhe bashkëpunëtorë</small></a>
-        <a href={`${base}docs/rreth/kontribuo/`}><strong>Bashkohu</strong><small>Bëhu pjesë e nismës</small></a>
+        <a href={`${base}docs/baza/`}><strong>Baza e njohurive</strong><small>Natyra, biodiversiteti, kërcënimet dhe ligjet</small></a>
+        <a href={`${base}docs/raportimi/`}><strong>Raportimi</strong><small>Kuadrot, treguesit dhe të dhënat</small></a>
+        <a href={`${base}docs/aktivizmi/`}><strong>Aktivizmi</strong><small>Nga shqetësimi te veprimi</small></a>
+        <a href={`${base}docs/rreth/`}><strong>Rreth nesh</strong><small>Nisma, rrjeti dhe si të bashkohesh</small></a>
         <slot name="about-actions" />
       </div>
     </details>

@@ -2,29 +2,44 @@
 
 ## Burimet që përdorim
 
-Platforma mbështetet në burime publike dhe të hapura, përfshirë:
+Guide mbështetet në burime publike dhe të hapura. Lista me kushtet e secilit është te [Burimet e të dhënave](../baza/burime-te-dhena.md).
 
-* UNESCO World Heritage & Intangible Cultural Heritage
-* Regjistrin Kombëtar të Trashëgimisë Kulturore
-* OpenStreetMap
-* GBIF, Wikipedia dhe Wikidata
-* Dokumentacion institucional dhe akademik
+<div class="grid cards ib-compact" markdown>
 
-Burimet citohen aty ku është e nevojshme për transparencë dhe verifikim. Lista me kushtet e secilit është te [Burimet e të dhënave](../baza/burime-te-dhena.md).
+-   :material-map-outline:{ .lg .middle } **OpenStreetMap**
 
-## Licenca
+    Kufij, rrugë, ujëra.
 
-Përmbajtja tekstuale e kësaj platforme është e disponueshme sipas kushteve të përcaktuara në depon e projektit. Kur përdoren të dhëna ose materiale nga burime të jashtme:
+-   :material-database-outline:{ .lg .middle } **GBIF, Wikipedia, Wikidata**
 
-* Respektohen kushtet e atribuimit.
-* Ruhet referenca e burimit origjinal.
-* Shënohet licenca përkatëse (p.sh. CC-BY, ODbL, etj.).
+    Vëzhgime dhe përshkrime.
+
+-   :material-earth:{ .lg .middle } **UNESCO**
+
+    Trashëgimia Botërore dhe e Paprekshme.
+
+-   :material-bank-outline:{ .lg .middle } **Institucionet**
+
+    Regjistri Kombëtar i Trashëgimisë Kulturore dhe dokumentacioni institucional e akademik.
+
+</div>
+
+## Licenca e përmbajtjes
+
+Përmbajtja tekstuale është e disponueshme sipas kushteve të përcaktuara në [depon e projektit](https://github.com/pomodoren/heritage). Kur përdoren materiale nga burime të jashtme:
+
+- respektohen kushtet e atribuimit;
+- ruhet referenca e burimit origjinal;
+- shënohet licenca përkatëse (p.sh. CC-BY, ODbL).
 
 ## Ripërdorimi i të dhënave të hartës
 
-- **OpenStreetMap:** ODbL, me atribuim "© kontribuesit e OpenStreetMap".
-- **GBIF:** licenca varet nga grupi i të dhënave (CC0, CC-BY, CC-BY-NC); ruaj atribuimin.
-- **Wikipedia/Wikidata/Commons:** CC-BY-SA, CC0 ose licenca të tjera sipas skedarit.
-- **Fotot e kontribuesve:** vetëm me licencë të shënuar nga autori.
+| Burimi | Licenca | Atribuimi |
+|---|---|---|
+| **OpenStreetMap** | ODbL | "© kontribuesit e OpenStreetMap" |
+| **GBIF** | Varet nga grupi i të dhënave (CC0, CC-BY, CC-BY-NC) | Ruaj atribuimin e grupit |
+| **Wikipedia / Wikidata / Commons** | CC-BY-SA, CC0 ose tjetër sipas skedarit | Sipas licencës së skedarit |
+| **Fotot e kontribuesve** | Vetëm me licencë të shënuar nga autori | Emri i autorit |
 
-Nëse dyshon se një përmbajtje shkel të drejta ose publikon informacion të ndjeshëm, na njofto përmes [depos](https://github.com/pomodoren/heritage/issues).
+!!! note "Dyshon për shkelje?"
+    Nëse një përmbajtje shkel të drejta ose publikon informacion të ndjeshëm, na njofto përmes [depos](https://github.com/pomodoren/heritage/issues).

@@ -1,17 +1,17 @@
 # Të dhënat e nevojshme
 
-Raportet ndërkombëtare kërkojnë të njëjtat lloje të dhënash, edhe pse formularët ndryshojnë. Kjo faqe i grupon sipas asaj që duhet të përmbajë një dosje për një sit ose një çështje, me standardet ku ka.
+Raportet ndërkombëtare kërkojnë të njëjtat lloje të dhënash, edhe pse formularët ndryshojnë. Kjo faqe i grupon sipas asaj që duhet të përmbajë një dosje për një sit ose një çështje.
 
-## Lista e të dhënave sipas kategorisë
+## Tetë kategoritë e dosjes
 
 | Kategoria | Çfarë duhet | Shembull |
 |---|---|---|
 | **Identifikimi** | Emri, kodi, akti i shpalljes dhe data, autoriteti menaxhues | Vendimi i Këshillit të Ministrave, viti, AKZM |
 | **Vendndodhja dhe kufijtë** | Poligoni i kufirit, sipërfaqja, sistemi i koordinatave | GeoJSON në WGS84; hektarë |
 | **Kategoria dhe statusi** | Kategoria IUCN, statusi ndërkombëtar (Ramsar, UNESCO, Emerald, KBA) | Kategoria II; sit Ramsar |
-| **Gjendja e natyrës** | Habitatet, speciet, popullatat, cilësia e ujit, mbulesa e tokës | Listë e specieve me status IUCN; klasa ekologjike e lumit |
-| **Trysnitë dhe kërcënimet** | Çfarë e prek zonën, ku, kur dhe sa e rëndë | Prerje pylli; përdor klasifikimin e kërcënimeve të IUCN, shih [Kërcënimet](../baza/kercenime.md) |
-| **Menaxhimi** | Plani i menaxhimit, zonimi, stafi, buxheti, monitorimi, efektshmëria | Plan i miratuar; rezultati i vlerësimit METT |
+| **Gjendja e natyrës** | Habitatet, speciet, popullatat, cilësia e ujit, mbulesa e tokës | Listë specieve me status IUCN; klasa ekologjike e lumit |
+| **Trysnitë dhe kërcënimet** | Çfarë e prek zonën, ku, kur dhe sa e rëndë | Prerje pylli; klasifikimi IUCN, shih [Kërcënimet](../baza/kercenime.md) |
+| **Menaxhimi** | Plani, zonimi, stafi, buxheti, monitorimi, efektshmëria | Plan i miratuar; rezultati METT |
 | **Vendimet dhe lejet** | Lejet mjedisore, VNM, vendimet gjyqësore, ankesat | Numri dhe data e lejes; statusi i procedurës |
 | **Metadata** | Burimi, data, metoda, licenca, pasiguria | "Vëzhgim në terren, 12.06.2026, GPS ±5 m, CC-BY" |
 
@@ -20,11 +20,11 @@ Raportet ndërkombëtare kërkojnë të njëjtat lloje të dhënash, edhe pse fo
 | Standardi | Për çfarë shërben |
 |---|---|
 | **Darwin Core** | Formati ndërkombëtar për vëzhgime specieve; përdoret nga [GBIF](https://www.gbif.org) |
-| **Atributet e WDPA** | Fusha standarde për zona të mbrojtura (emri, kategoria IUCN, statusi, viti, autoriteti); përdoren nga [Protected Planet](https://www.protectedplanet.net) |
-| **Variablat Thelbësorë të Biodiversitetit (EBV)** | Kornizë e GEO BON: gjenetika, popullatat, tiparet, bashkësitë, funksioni dhe struktura e ekosistemit |
+| **Atributet e WDPA** | Fusha standarde për zona të mbrojtura; përdoren nga [Protected Planet](https://www.protectedplanet.net) |
+| **EBV** | Variablat Thelbësorë të Biodiversitetit (GEO BON): gjenetika, popullatat, tiparet, bashkësitë, funksioni dhe struktura e ekosistemit |
 | **INSPIRE** | Standardi evropian për të dhëna hapësinore, përfshirë *Vendet e mbrojtura* |
-| **ISO 19115** | Standardi për metadatat e të dhënave gjeohapësinore |
-| **Parimet FAIR** | Të dhëna të gjetshme, të qasshme, ndërvepruese dhe të ripërdorshme |
+| **ISO 19115** | Metadatat e të dhënave gjeohapësinore |
+| **FAIR** | Të dhëna të gjetshme, të qasshme, ndërvepruese dhe të ripërdorshme |
 
 ## Fushat minimale për një vëzhgim specieje
 
@@ -32,7 +32,7 @@ Në formatin Darwin Core, një regjistrim i përdorshëm ka të paktën:
 
 | Fusha | Kuptimi |
 |---|---|
-| `scientificName` | Emri shkencor i specieve |
+| `scientificName` | Emri shkencor |
 | `eventDate` | Data (dhe ora) e vëzhgimit |
 | `decimalLatitude`, `decimalLongitude` | Koordinatat në WGS84 |
 | `coordinateUncertaintyInMeters` | Pasiguria e vendndodhjes |
@@ -42,23 +42,42 @@ Në formatin Darwin Core, një regjistrim i përdorshëm ka të paktën:
 
 ## Cilësia që kërkojnë raportet
 
-- **Vijë referimi (*baseline*).** Një tregues ka kuptim vetëm ndaj një pike fillestare; shëno vitin dhe metodën.
-- **Seri kohore.** Të njëjtën gjë matur me të njëjtën metodë në intervale të rregullta.
-- **Metodë e dokumentuar.** Që dikush tjetër ta përsërisë.
-- **Pasiguri e deklaruar.** Numri i mostrave, saktësia e GPS-it, kufizimet.
-- **Burim dhe licencë.** Shih [Burimet e të dhënave](../baza/burime-te-dhena.md).
+<div class="grid cards ib-compact" markdown>
+
+-   :material-flag-outline:{ .lg .middle } **Vijë referimi**
+
+    Një tregues ka kuptim ndaj një pike fillestare; shëno vitin dhe metodën.
+
+-   :material-chart-timeline-variant:{ .lg .middle } **Seri kohore**
+
+    E njëjta gjë e matur me të njëjtën metodë në intervale të rregullta.
+
+-   :material-book-open-outline:{ .lg .middle } **Metodë e dokumentuar**
+
+    Që dikush tjetër ta përsërisë.
+
+-   :material-plus-minus-variant:{ .lg .middle } **Pasiguri e deklaruar**
+
+    Numri i mostrave, saktësia e GPS-it, kufizimet.
+
+-   :material-license:{ .lg .middle } **Burim dhe licencë**
+
+    Shih [Burimet e të dhënave](../baza/burime-te-dhena.md).
+
+</div>
 
 ## Të dhëna të ndjeshme
 
-Vendndodhja e saktë e specieve të rrezikuara ose të kërkuara për tregti mund të ekspozojë ato ndaj gjuetisë dhe mbledhjes. Para se të publikosh:
+!!! warning "Para se të publikosh vendndodhjen e një specieje"
+    Vendndodhja e saktë e specieve të rrezikuara ose të kërkuara për tregti mund t'i ekspozojë ato ndaj gjuetisë dhe mbledhjes.
 
-- **Përgjithëso koordinatat** (p.sh. katror 10 km) për speciet e ndjeshme.
-- Ruaj vendndodhjen e saktë në një arkiv të mbyllur për institucionet.
-- Shëno në të dhëna që janë përgjithësuar (Darwin Core ka fushën `dataGeneralizations`).
+    1. **Përgjithëso koordinatat** (p.sh. katror 10 km) për speciet e ndjeshme.
+    2. **Ruaj vendndodhjen e saktë** në një arkiv të mbyllur për institucionet.
+    3. **Shëno që janë përgjithësuar** (Darwin Core ka fushën `dataGeneralizations`).
 
 ## Hapi tjetër
 
-Mbledh të dhënat me mjetet te [Rekomandime](../rekomandime/index.md) dhe pastaj shih [Treguesit](treguesit.md) për ta kthyer në matje që përdoren në raporte.
+Mbledh të dhënat me [mjetet e rekomanduara](../rekomandime/index.md), pastaj shih [Treguesit](treguesit.md) për t'i kthyer në matje që përdoren në raporte.
 
 ## Burimet
 

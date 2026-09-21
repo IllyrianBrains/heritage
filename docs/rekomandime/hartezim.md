@@ -4,29 +4,34 @@ Mjete për të vizatuar kufij, mbledhur pika në terren dhe analizuar hapësirë
 
 *Versioni i parë: shtator 2026*
 
-## Ç'kërkojmë
+## Zgjidh shpejt
 
-- Formate të hapura: GeoJSON, GPX, GeoPackage.
-- Puna **offline** në terren.
-- Sistemi i koordinatave i qartë (**WGS84** për shkëmbim).
+| Dua të… | Përdor |
+|---|---|
+| Vizatoj kufij dhe analizoj shtresa në kompjuter | [QGIS](#qgis) |
+| Mbledh pika në terren, offline | [QField](#qfield) ose [KoboToolbox / ODK](#kobotoolbox-dhe-odk) |
+| Përmirësoj ose kërkoj në hartën e hapur | [OpenStreetMap](#openstreetmap) |
+| Navigoj në mal pa lidhje | [Organic Maps / OsmAnd](#organic-maps-dhe-osmand) |
+
+**Ç'kërkojmë:** formate të hapura (GeoJSON, GPX, GeoPackage); punë **offline** në terren; sistem koordinatash i qartë (**WGS84** për shkëmbim).
 
 ## Mjetet
 
 ### QGIS
 
-:material-map: [qgis.org](https://qgis.org) · falas, kod i hapur (GPL)
+<span class="ib-pill">falas</span> <span class="ib-pill">kod i hapur (GPL)</span> · [qgis.org](https://qgis.org)
 
-Programi kryesor i hapur GIS për desktop. Krijon, redakton dhe analizon kufij, shtresa dhe hartat e kërcënimeve. Eksporton në GeoJSON për [hartën e projektit](../../../map/).
+Programi kryesor i hapur GIS për desktop. Krijon, redakton dhe analizon kufij, shtresa dhe harta të kërcënimeve. Eksporton në GeoJSON për [hartën e projektit](../../../map/).
 
 ### QField
 
-:material-cellphone-marker: [qfield.org](https://qfield.org) · falas, kod i hapur
+<span class="ib-pill">falas</span> <span class="ib-pill">kod i hapur</span> <span class="ib-pill">offline</span> · [qfield.org](https://qfield.org)
 
-Përdor projektet QGIS në celular për mbledhje të dhënash në terren, offline. Mirë për ekipe monitorimi.
+Përdor projektet QGIS në celular për mbledhje të dhënash në terren. Mirë për ekipe monitorimi.
 
 ### OpenStreetMap
 
-:material-map-marker-radius: [openstreetmap.org](https://www.openstreetmap.org) · të dhëna të hapura (ODbL)
+<span class="ib-pill">të dhëna të hapura (ODbL)</span> · [openstreetmap.org](https://www.openstreetmap.org)
 
 Harta e hapur e botës. Kufijtë e zonave të mbrojtura, rrugët dhe ujërat mund të përmirësohen nga kushdo. Përdor **[Overpass Turbo](https://overpass-turbo.eu)** për të kërkuar dhe eksportuar të dhëna.
 
@@ -35,22 +40,24 @@ Harta e hapur e botës. Kufijtë e zonave të mbrojtura, rrugët dhe ujërat mun
 
 ### Organic Maps dhe OsmAnd
 
-:material-navigation: [organicmaps.app](https://organicmaps.app) · [osmand.net](https://osmand.net) · aplikacione offline
+<span class="ib-pill">aplikacione</span> <span class="ib-pill">offline</span> · [organicmaps.app](https://organicmaps.app) · [osmand.net](https://osmand.net)
 
 Navigim offline me të dhënat e OSM; të dobishme për shtigje malore dhe zona pa lidhje.
 
 ### KoboToolbox dhe ODK
 
-:material-clipboard-text-outline: [kobotoolbox.org](https://www.kobotoolbox.org) · [getodk.org](https://getodk.org)
+<span class="ib-pill">falas</span> <span class="ib-pill">offline</span> · [kobotoolbox.org](https://www.kobotoolbox.org) · [getodk.org](https://getodk.org)
 
-Formularë për mbledhjen e të dhënave në terren (anketa, listat e kontrollit, raportet e incidenteve), offline dhe me foto e GPS. Zgjidh ato kur disa vullnetarë duhet të plotësojnë të njëjtin format.
+Formularë për mbledhjen e të dhënave në terren (anketa, lista kontrolli, raporte incidentesh), me foto e GPS. Zgjidh ato kur disa vullnetarë duhet të plotësojnë të njëjtin format.
 
 ## Rrjedha e propozuar
 
-1. Regjistro pika ose gjurmë me QField/ODK.
-2. Pastro dhe kontrollo në QGIS.
-3. Ruaj si GeoJSON me `source`, `date`, `license`.
-4. Propozo për hartën: shih [Shto të dhëna](../rreth/kontribuo.md#shto-te-dhena-ne-harte).
+```mermaid
+flowchart LR
+    A["Regjistro pika ose gjurmë<br/>QField / ODK"] --> B["Pastro dhe kontrollo<br/>QGIS"] --> C["Ruaj si GeoJSON<br/>source, date, license"] --> D["Propozo për hartën"]
+```
+
+Hapi i fundit: [Shto të dhëna në hartë](../rreth/kontribuo.md#shto-te-dhena-ne-harte).
 
 ## Burimet
 

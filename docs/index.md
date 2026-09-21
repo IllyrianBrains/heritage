@@ -5,69 +5,109 @@ hide:
   - toc
 ---
 
-# Mbrojtja e natyrës dhe trashëgimisë natyrore
+<div class="ib-landing-hero" markdown>
 
-Një vend i vetëm për të dhënat, njohuritë dhe procesin e mbrojtjes së natyrës në Shqipëri, Kosovë dhe rajon: **çfarë duhet mbrojtur, çfarë përdorim për ta dokumentuar dhe si ta kthejmë një shqetësim në veprim.**
+<p class="ib-eyebrow">Shqipëri · Kosovë · Rajon</p>
 
-[Fillo me bazën e njohurive](baza/index.md){ .md-button .md-button--primary }
+# Guide për mbrojtjen e natyrës
+
+Për ata që e dokumentojnë, e monitorojnë dhe e mbrojnë natyrën. Këtu gjen **çfarë duhet mbrojtur, si ta dokumentosh dhe si ta kthesh një shqetësim në veprim.**
+
+[Fillo nga baza e njohurive](baza/index.md){ .md-button .md-button--primary }
 [Hap hartën interaktive](../map/){ .md-button }
 
-## Çfarë gjen këtu
-
-<div class="grid cards" markdown>
-
--   :material-book-open-variant:{ .lg .middle } **Baza e njohurive**
-
-    ---
-
-    Zonat e mbrojtura, biodiversiteti, ujërat, kërcënimet, konventat, ligjet dhe institucionet: kuptimi që të duhet përpara se të veprosh.
-
-    [:octicons-arrow-right-24: Lexo](baza/index.md)
-
--   :material-star-check-outline:{ .lg .middle } **Rekomandime**
-
-    ---
-
-    Mjete, burime të dhënash dhe organizata të përzgjedhura me kritere të hapura, për vëzhgim, hartëzim, monitorim, verifikim dhe siguri.
-
-    [:octicons-arrow-right-24: Zgjidh mjetin](rekomandime/index.md)
-
--   :material-bullhorn-outline:{ .lg .middle } **Aktivizmi**
-
-    ---
-
-    Nga një shqetësim te një çështje e dokumentuar: dëshmi, kërkesa për informim, ankesa, pjesëmarrje në konsultime dhe fushata.
-
-    [:octicons-arrow-right-24: Vepro](aktivizmi/index.md)
-
--   :material-account-group-outline:{ .lg .middle } **Rreth nesh**
-
-    ---
-
-    Misioni, metodologjia, licencat dhe mënyra si mund të kontribuosh dhe të korrigjosh përmbajtjen.
-
-    [:octicons-arrow-right-24: Njihu me nismën](rreth/index.md)
+<p class="ib-chips"><span>Ligje & institucione</span><span>Mjete të përzgjedhura</span><span>Modele emaili</span><span>Raste të vërteta</span></p>
 
 </div>
 
-## Nis sipas nevojës
+<div class="ib-landing" markdown>
+
+## Katër hapa nga shqetësimi te veprimi
+
+<div class="ib-path" markdown>
+
+1. [**Kupto**](baza/index.md)
+
+    Zonat e mbrojtura, kërcënimet, konventat dhe ligjet.
+
+2. [**Dokumento**](rekomandime/index.md)
+
+    Mjete për vëzhgim, hartëzim, satelitë dhe verifikim.
+
+3. [**Raporto**](raportimi/index.md)
+
+    Kuadrot, treguesit dhe indekset që përdorin shtetet.
+
+4. [**Vepro**](aktivizmi/index.md)
+
+    Ankesa, kërkesa për informim, fushata dhe protesta.
+
+</div>
+
+## Të gatshme për t'u përdorur
+
+<div class="ib-banners" markdown>
+
+<div class="ib-banner ib-banner--dark" markdown>
+
+### :material-map-marker-radius-outline: Harta interaktive
+
+Zonat e mbrojtura, vëzhgimet dhe shënimet mbi hartë. Shto një shënim nga terreni dhe dërgoje për shqyrtim.
+
+[Hap hartën](../map/){ .md-button .md-button--primary }
+[Shto një shënim](../map/?notes=1){ .md-button }
+
+</div>
+
+<div class="ib-banner" markdown>
+
+### :material-email-fast-outline: Modele emaili
+
+Kopjo, plotëso dhe dërgo. Çdo model ka pjesë të etiketuara dhe afate të qarta.
+
+- [Ankesë te institucioni](aktivizmi/raporto.md)
+- [Kërkesë për informacion publik](aktivizmi/informim.md)
+- [Koment në konsultim publik](aktivizmi/pjesemarrje.md)
+
+</div>
+
+</div>
+
+## Nis sipas situatës
 
 | Situata jote | Nis këtu |
 |---|---|
-| Pashë një ndërhyrje të dyshimtë në natyrë (prerje, ndërtim, ndotje, gjueti) | [Dokumento një problem](aktivizmi/dokumento.md) |
+| Pashë prerje, ndërtim, ndotje ose gjueti të dyshimtë | [Dokumento një problem](aktivizmi/dokumento.md) |
 | Dua të di nëse një vend është i mbrojtur dhe çfarë ndalohet aty | [Zonat e mbrojtura](baza/zona-te-mbrojtura.md) · [Ligjet & institucionet](baza/ligje-institucione.md) |
-| Dua të marr dokumente nga një institucion | [Kërko informacion publik](aktivizmi/informim.md) |
+| Dua dokumente nga një institucion | [Kërko informacion publik](aktivizmi/informim.md) |
 | Një projekt është në konsultim publik | [Pjesëmarrja në vendimmarrje](aktivizmi/pjesemarrje.md) |
-| Dua të regjistroj specie ose të monitoroj një vend | [Vëzhgim & identifikim](rekomandime/vezhgim.md) · [Satelitë & monitorim](rekomandime/monitorim.md) |
-| Dua të organizoj një grup ose fushatë | [Organizo një fushatë](aktivizmi/fushata.md) |
+| Dua të monitoroj një vend ose të regjistroj specie | [Vëzhgim & identifikim](rekomandime/vezhgim.md) · [Satelitë & monitorim](rekomandime/monitorim.md) |
+| Dua të organizoj një fushatë ose protestë | [Fushata](aktivizmi/fushata.md) · [Protesta](aktivizmi/protestat/index.md) |
 | Kam frikë për sigurinë time ose të burimeve | [Siguria e aktivistëve](aktivizmi/siguria.md) |
 
-## Parimet
+## Një rast i vërtetë
 
-- **E verifikueshme.** Çdo pretendim lidhet me burim; pasiguria thuhet hapur.
-- **E hapur.** Të dhëna dhe mjete me licenca të hapura kudo që është e mundur.
-- **E sigurt.** Mbrojtja e specieve të ndjeshme, e njerëzve dhe e vendndodhjeve vjen para publikimit.
-- **Praktike.** Çdo faqe përfundon me hapat e radhës, jo vetëm me teori.
+<div class="grid cards" markdown>
 
-!!! info "Ky është një burim në ndërtim e sipër"
+-   :material-waves-arrow-right:{ .lg .middle } **Vjosa: nga lumë i rrezikuar në park kombëtar**
+
+    ---
+
+    Dokumentim shkencor, aleanca të gjera dhe presion në disa nivele, deri në shpalljen e parkut në mars 2023. Gjashtë mësime që përdoren edhe sot.
+
+    [:octicons-arrow-right-24: Lexo rastin](aktivizmi/raste/vjosa.md)
+
+-   :material-bird:{ .lg .middle } **Flamingo: nga protesta te projektet**
+
+    ---
+
+    Si një protestë mjedisore u lidh me dokumentim, harta, diasporë dhe pjesëmarrje më të gjerë.
+
+    [:octicons-arrow-right-24: Lexo rastin](aktivizmi/protestat/flamingo.md)
+
+</div>
+
+!!! info "Burim në ndërtim e sipër"
     Përmbajtja rishikohet vazhdimisht. Nëse gjen një gabim ose një burim të vjetruar, [shiko si mund ta korrigjosh](rreth/kontribuo.md).
+
+</div>

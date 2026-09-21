@@ -1,22 +1,37 @@
 # Rreth nesh
 
-**Trashëgimia Natyrore** është një nismë e hapur për të mbledhur në një vend të dhënat, njohuritë dhe procesin e mbrojtjes së natyrës dhe të trashëgimisë natyrore në Shqipëri, Kosovë dhe rajon. Ajo lidhet me [hartën interaktive](../../map/), ku të dhënat shfaqen gjeografikisht.
-
-Nisma u nis nga **Flamingo Revolution**, me kontribute nga organizata dhe ekspertë të ndryshëm. Ajo bazohet në bashkëpunim: sa më shumë njerëz të japin dije, korrigjime dhe të dhëna, aq më e dobishme bëhet.
+**Trashëgimia Natyrore** është një nismë e hapur që mbledh në një vend të dhënat, njohuritë dhe procesin e mbrojtjes së natyrës në Shqipëri, Kosovë dhe rajon. Ajo lidhet me [hartën interaktive](../../map/), ku të dhënat shfaqen gjeografikisht.
 
 ## Misioni
 
-* Të mbledhim dhe organizojmë njohuritë për natyrën dhe mbrojtjen e saj në mënyrë të qartë dhe të kuptueshme.
-* Të lidhim burimet zyrtare me dokumentimin publik dhe qytetar.
-* Të ofrojmë **mjete dhe procese praktike** për ata që duan të veprojnë.
-* Të nxisim bashkëpunim dhe kontribut të hapur mes organizatave, ekspertëve dhe qytetarëve.
-* Të ruajmë një qasje neutrale, të bazuar në burime të verifikueshme.
+<div class="grid cards ib-compact" markdown>
+
+-   :material-book-open-page-variant-outline:{ .lg .middle } **Njohuri të qarta**
+
+    Organizojmë dijen për natyrën dhe mbrojtjen e saj që të kuptohet lehtë.
+
+-   :material-link-variant:{ .lg .middle } **Burime të lidhura**
+
+    Bashkojmë burimet zyrtare me dokumentimin publik dhe qytetar.
+
+-   :material-tools:{ .lg .middle } **Mjete praktike**
+
+    Japim procese dhe mjete për ata që duan të veprojnë.
+
+-   :material-account-group-outline:{ .lg .middle } **Kontribut i hapur**
+
+    Nxisim bashkëpunim mes organizatave, ekspertëve dhe qytetarëve.
+
+</div>
+
+Mbajmë një qasje **neutrale dhe të bazuar në burime të verifikueshme**.
 
 ## Çfarë nuk jemi
 
-- Nuk jemi institucion zyrtar dhe përmbajtja nuk zëvendëson aktet ligjore.
-- Nuk japim këshillë ligjore.
-- Nuk marrim pagesë për rekomandime dhe nuk promovojmë mjete me interes tregtar.
+!!! failure "Kufijtë tanë"
+    - **Nuk jemi institucion zyrtar.** Përmbajtja nuk zëvendëson aktet ligjore.
+    - **Nuk japim këshillë ligjore.**
+    - **Nuk marrim pagesë për rekomandime** dhe nuk promovojmë mjete me interes tregtar.
 
 ## Ku të vazhdosh
 

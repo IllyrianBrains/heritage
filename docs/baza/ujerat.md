@@ -2,37 +2,53 @@
 
 Lumenjtë, liqenet, lagunat dhe burimet janë nga ekosistemet më të rrezikuara dhe më të rëndësishmet për njerëzit: sigurojnë ujë, mbajnë peshkun dhe shpendët dhe mbrojnë nga përmbytjet.
 
-## Liqene
+## Vendet kryesore
 
-* **Liqeni i Ohrit**: një nga liqenet më të vjetër në Evropë; sit UNESCO i përzier (ndërkufitar me Maqedoninë e Veriut).
-* **Liqeni i Shkodrës**: ekosistem i rëndësishëm ndërkufitar me Malin e Zi.
-* **Liqenet e Prespës**: biodiversitet i lartë, ndërkufitare mes tri vendeve.
+=== "Liqene"
 
-## Lumenj
+    - **Liqeni i Ohrit:** një nga liqenet më të vjetër në Evropë; sit UNESCO i përzier, ndërkufitar me Maqedoninë e Veriut.
+    - **Liqeni i Shkodrës:** ekosistem i rëndësishëm ndërkufitar me Malin e Zi.
+    - **Liqenet e Prespës:** biodiversitet i lartë, ndërkufitarë mes tri vendeve.
 
-* **Vjosa**: një nga lumenjtë e fundit të egër në Evropë; ka status parku kombëtar që nga 2023.
-* **Drini**: sistem lumor me ndikim rajonal dhe kaskada hidrocentralesh.
-* **Buna**: lidhje mes Liqenit të Shkodrës dhe Adriatikut.
+=== "Lumenj"
 
-## Zona të lagështa dhe laguna
+    - **Vjosa:** një nga lumenjtë e fundit të egër në Evropë; park kombëtar që nga 2023. Shih [rastin Vjosa](../aktivizmi/raste/vjosa.md).
+    - **Drini:** sistem lumor me ndikim rajonal dhe kaskada hidrocentralesh.
+    - **Buna:** lidhje mes Liqenit të Shkodrës dhe Adriatikut.
 
-* **Laguna e Karavastasë**: zonë e rëndësishme për shpendët migratorë (Ramsar).
-* **Liqeni i Shkodrës dhe Buna**: zonë Ramsar ndërkufitare.
-* **Butrinti**: sit Ramsar dhe UNESCO.
-* **Laguna e Nartës** dhe grykëderdhja e Vjosës: habitate bregdetare të rëndësishme për shpendët.
+=== "Zona të lagështa"
 
-Lista e plotë dhe e përditësuar e vendeve Ramsar gjendet te [Ramsar Sites Information Service](https://rsis.ramsar.org).
+    - **Laguna e Karavastasë:** shpendë migratorë (Ramsar).
+    - **Liqeni i Shkodrës dhe Buna:** zonë Ramsar ndërkufitare.
+    - **Butrinti:** sit Ramsar dhe UNESCO.
+    - **Laguna e Nartës** dhe grykëderdhja e Vjosës: habitate bregdetare të rëndësishme për shpendët.
 
-## Ç'ka rëndësi për një lumë të shëndetshëm
+    Lista e plotë dhe e përditësuar: [Ramsar Sites Information Service](https://rsis.ramsar.org).
 
-- **rrjedha e lirë**: digat dhe ujëmbledhësit ndërpresin lëvizjen e peshqve dhe të sedimenteve,
-- **rrjedha ekologjike**: sasia minimale e ujit që duhet të mbetet në shtrat,
-- **shtrati dhe brigjet**: nxjerrja e inerteve (rërë, zhavorr) e shkatërron habitatin,
-- **cilësia e ujit**: ndotja nga mbeturinat, kanalizimet dhe industria.
+## Katër gjëra që i mbajnë lumenjtë e shëndetshëm
 
-## Zona ndërkufitare
+<div class="grid cards ib-compact" markdown>
 
-Liqenet Ohër, Shkodër dhe Prespë kërkojnë bashkëpunim mes shteteve. Kur dokumenton një çështje në to, kontrollo edhe institucionet dhe ligjet e vendit tjetër.
+-   :material-waves-arrow-right:{ .lg .middle } **Rrjedha e lirë**
+
+    Digat dhe ujëmbledhësit ndërpresin lëvizjen e peshqve dhe të sedimenteve.
+
+-   :material-water-percent:{ .lg .middle } **Rrjedha ekologjike**
+
+    Sasia minimale e ujit që duhet të mbetet në shtrat.
+
+-   :material-terrain:{ .lg .middle } **Shtrati dhe brigjet**
+
+    Nxjerrja e inerteve (rërë, zhavorr) e shkatërron habitatin.
+
+-   :material-flask-outline:{ .lg .middle } **Cilësia e ujit**
+
+    Ndotja nga mbeturinat, kanalizimet dhe industria.
+
+</div>
+
+!!! warning "Zona ndërkufitare"
+    Liqenet Ohër, Shkodër dhe Prespë kërkojnë bashkëpunim mes shteteve. Kur dokumenton një çështje në to, kontrollo edhe institucionet dhe ligjet e vendit tjetër. Shih edhe Konventën e Espoo-s te [Konventat](konventat.md).
 
 ## Burimet
 

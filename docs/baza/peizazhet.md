@@ -1,20 +1,35 @@
 # Peizazhet
 
-Peizazhi është mënyra si duket dhe funksionon një territor kur natyra dhe njeriu e kanë formësuar bashkë. Disa peizazhe janë pothuajse të paprekura; të tjera janë të formuara nga bujqësia dhe blegtoria tradicionale, dhe pikërisht kjo i bën të vlefshme.
+Peizazhi është mënyra si duket dhe funksionon një territor kur natyra dhe njeriu e kanë formësuar bashkë. Disa peizazhe janë pothuajse të paprekura; të tjera janë formuar nga bujqësia dhe blegtoria tradicionale, dhe pikërisht kjo i bën të vlefshme.
 
 ## Shembuj
 
-* **Alpet Shqiptare**: një nga zonat më të egra dhe të paprekura në Ballkan.
-* **Riviera Shqiptare**: bregdet me peizazh mesdhetar, nën presion të fortë ndërtimi.
-* **Lugina e Drinit**: peizazh malor dhe liqene artificiale.
-* **Fusha e Myzeqesë**: peizazh agrar tradicional, afër zonave të lagështa.
+<div class="grid cards ib-compact" markdown>
+
+-   :material-image-filter-hdr:{ .lg .middle } **Alpet Shqiptare**
+
+    Një nga zonat më të egra dhe të paprekura në Ballkan.
+
+-   :material-beach:{ .lg .middle } **Riviera Shqiptare**
+
+    Bregdet mesdhetar nën presion të fortë ndërtimi.
+
+-   :material-terrain:{ .lg .middle } **Lugina e Drinit**
+
+    Peizazh malor dhe liqene artificiale.
+
+-   :material-barley:{ .lg .middle } **Fusha e Myzeqesë**
+
+    Peizazh agrar tradicional, afër zonave të lagështa.
+
+</div>
 
 ## Pse rrezikohen
 
-- ndërtim i shpërndarë dhe infrastrukturë që ndan habitatet,
-- braktisje e kullotave dhe e bujqësisë tradicionale,
-- intensifikim bujqësor,
-- turizëm i pakontrolluar.
+- Ndërtim i shpërndarë dhe infrastrukturë që ndan habitatet.
+- Braktisje e kullotave dhe e bujqësisë tradicionale.
+- Intensifikim bujqësor.
+- Turizëm i pakontrolluar.
 
 ## Si i dokumenton
 

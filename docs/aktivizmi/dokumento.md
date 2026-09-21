@@ -1,45 +1,107 @@
 # Dokumento një problem
 
-Dokumentimi i mirë është themeli i çdo veprimi tjetër: pa fakte të qarta, ankesa mund të injorohet ose të kundërshtohet.
+Dokumentimi i mirë është themeli i çdo veprimi tjetër: pa fakte të qarta, një ankesë mund të injorohet ose të kundërshtohet.
 
-## Para terrenit
+<div class="ib-glance">
+<div><strong>Për kë</strong>Kushdo që ka parë një ndërhyrje të dyshimtë</div>
+<div><strong>Të duhet</strong>Telefon me GPS, kamera, një person që di ku je</div>
+<div><strong>Del</strong>Paketë dëshmie + regjistër rasti</div>
+</div>
 
-- Përcakto çfarë po kërkon të verifikosh.
-- Kontrollo kufizimet e hyrjes dhe rreziqet fizike.
-- Njofto dikë për itinerarin.
-- Mos publiko të dhëna që rrezikojnë specie, dëshmitarë ose komunitete.
+## 1. Para terrenit
 
-## Paketa minimale e dëshmisë
+- [ ] Përcakto çfarë po kërkon të verifikosh.
+- [ ] Kontrollo kufizimet e hyrjes dhe rreziqet fizike.
+- [ ] Njofto dikë për itinerarin dhe kohën e kthimit.
+- [ ] Vendos çfarë **nuk** do të publikosh: specie, dëshmitarë, komunitete.
 
-1. Vendndodhja në koordinata WGS84.
-2. Data dhe ora, me zonën kohore.
-3. Fotografi origjinale dhe një pamje të kontekstit.
-4. Përshkrim faktik: çfarë shihet, jo çfarë supozohet.
-5. Burimi dhe personi ose organizata që e mblodhi.
+## 2. Paketa minimale e dëshmisë
 
-### Foto që vlejnë
+<div class="grid cards ib-compact" markdown>
 
-- **Një e gjerë**, që tregon vendin dhe pikat e referencës (rrugë, mal, ndërtesë).
-- **Një e mesme**, që tregon objektin (makineri, ndërtim, kurth).
-- **Një afër**, me detaje (targa, tabela, numra serialë) kur ka.
-- Për ndryshime: **e njëjta pikë në kohë të ndryshme**.
+-   :material-map-marker-outline:{ .lg .middle } **Vendndodhja**
 
-## Kontrollo statusin
+    Koordinata në WGS84.
 
-Para se të shkruash "ilegale", kontrollo:
+-   :material-clock-outline:{ .lg .middle } **Koha**
 
-- A është zona e mbrojtur, dhe në cilën kategori? [Zonat e mbrojtura](../baza/zona-te-mbrojtura.md)
-- Ka leje? Kërko nga institucioni: [Kërko informacion publik](informim.md)
-- Cilat institucione kanë kompetencë? [Ligjet & institucionet](../baza/ligje-institucione.md)
+    Data dhe ora, me zonën kohore.
 
-Përdor fjalë të kujdesshme: *"nuk kemi gjetur leje publike"* është e vërtetë; *"është pa leje"* mund të mos jetë, deri sa të konfirmohet.
+-   :material-camera-outline:{ .lg .middle } **Fotografitë**
 
-## Pas terrenit
+    Origjinale, plus një pamje e kontekstit.
 
-Ruaj skedarët origjinalë, krijo një kopje pune dhe mbaj regjistër të ndryshimeve. Nëse informacioni nuk është verifikuar, etiketoje qartë. Për verifikim dhe arkivim, shih [Verifikim & arkivim](../rekomandime/verifikim.md).
+-   :material-text-box-outline:{ .lg .middle } **Përshkrimi**
+
+    Çfarë shihet, jo çfarë supozohet.
+
+-   :material-account-outline:{ .lg .middle } **Burimi**
+
+    Personi ose organizata që e mblodhi.
+
+</div>
+
+### Tri foto që vlejnë
+
+=== "E gjerë"
+
+    Tregon vendin dhe pikat e referencës: rrugë, mal, ndërtesë.
+
+=== "E mesme"
+
+    Tregon objektin: makineri, ndërtim, kurth.
+
+=== "Afër"
+
+    Detajet: targa, tabela, numra serialë, kur ka.
+
+Për ndryshime, shto **të njëjtën pikë në kohë të ndryshme**.
+
+## 3. Kontrollo statusin para se të thuash "ilegale"
+
+<div class="grid cards ib-compact" markdown>
+
+-   :material-shield-half-full:{ .lg .middle } **A është zona e mbrojtur?**
+
+    Në cilën kategori? [Zonat e mbrojtura](../baza/zona-te-mbrojtura.md)
+
+-   :material-file-search-outline:{ .lg .middle } **Ka leje?**
+
+    Kërkoji institucionit: [Kërko informacion publik](informim.md)
+
+-   :material-bank-outline:{ .lg .middle } **Kush ka kompetencë?**
+
+    [Ligjet & institucionet](../baza/ligje-institucione.md)
+
+</div>
+
+!!! tip "Fjalë të kujdesshme"
+    *"Nuk kemi gjetur leje publike"* është e vërtetë. *"Është pa leje"* mund të mos jetë, deri sa të konfirmohet.
+
+## 4. Pas terrenit
+
+<div class="ib-steps" markdown>
+
+1. **Ruaj origjinalet** dhe punoj vetëm mbi kopje.
+2. **Mbaj regjistër ndryshimesh** për çdo skedar.
+3. **Etiketo qartë** informacionin e paverifikuar.
+4. **Verifiko dhe arkivo:** [Verifikim & arkivim](../rekomandime/verifikim.md).
+
+</div>
 
 ## Regjistri i rastit
 
-Mban një skedar (ose tabelë) për çdo rast me: ID, data, vendndodhja, përshkrimi, skedarët, kush e mblodhi, statusi i verifikimit, njoftimet e dërguara dhe përgjigjet.
+Një skedar ose tabelë për çdo rast:
+
+| Fusha | Çfarë shënohet |
+|---|---|
+| ID dhe data | Numër unik dhe data e vëzhgimit |
+| Vendndodhja | Koordinata dhe përshkrim |
+| Përshkrimi | Fakte, jo supozime |
+| Skedarët | Lista me emrat e origjinaleve |
+| Mbledhësi | Kush e mblodhi |
+| Verifikimi | Nivel: i verifikuar, në verifikim |
+| Njoftimet | Kujt i dërguar, kur, me çfarë numri protokolli |
+| Përgjigjet | Data dhe përmbajtja |
 
 [Shto një shënim në hartë](../../../map/?notes=1){ .md-button .md-button--primary }

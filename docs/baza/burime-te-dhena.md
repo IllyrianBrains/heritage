@@ -1,6 +1,6 @@
 # Burimet e të dhënave
 
-Të dhënat që përdorim këtu vijnë nga burime publike dhe të hapura. Kjo faqe shpjegon çfarë gjendet ku dhe me çfarë kufizimesh. Për mjetet me të cilat i përdor, shih [Rekomandime](../rekomandime/te-dhena.md).
+Të dhënat që përdorim vijnë nga burime publike dhe të hapura. Kjo faqe shpjegon çfarë gjendet ku dhe me çfarë kufizimesh. Për mjetet me të cilat i përdor, shih [Rekomandime](../rekomandime/te-dhena.md).
 
 ## Burimet kryesore
 
@@ -8,7 +8,7 @@ Të dhënat që përdorim këtu vijnë nga burime publike dhe të hapura. Kjo fa
 |---|---|---|
 | [OpenStreetMap](https://www.openstreetmap.org) | Kufij të zonave të mbrojtura, rrugë, ujëra | ODbL; cilësia varet nga kontribuesit |
 | [Protected Planet / WDPA](https://www.protectedplanet.net) | Baza globale e zonave të mbrojtura | Kushte të veçanta për ripërdorim |
-| [GBIF](https://www.gbif.org) | Vëzhgime të specieve | Licencë për çdo grup të dhënash (CC0, CC-BY, CC-BY-NC) |
+| [GBIF](https://www.gbif.org) | Vëzhgime të specieve | Licencë për çdo grup (CC0, CC-BY, CC-BY-NC) |
 | [IUCN Red List](https://www.iucnredlist.org) | Statusi i rrezikut të specieve | Kushte përdorimi të IUCN |
 | [Ramsar Sites Information Service](https://rsis.ramsar.org) | Sitet Ramsar dhe fletët e tyre | Publike |
 | [Key Biodiversity Areas](https://www.keybiodiversityareas.org) | Zona kyçe të biodiversitetit | Kushte të veçanta |
@@ -18,22 +18,31 @@ Të dhënat që përdorim këtu vijnë nga burime publike dhe të hapura. Kjo fa
 | Regjistri Kombëtar i Trashëgimisë Kulturore | Objekte kulturore | Sipas institucionit |
 | Portalet e institucioneve (ministritë, agjencitë) | Leje, VNM, raporte, plane | Sipas institucionit |
 
-## Parimet që ndjekim
+## Tri parime
 
-- Çdo të dhënë e shoqërojmë me **burimin, datën dhe licencën**.
-- Kur të dhënat janë të paplota ose orientuese, e thonë hapur.
-- Nuk përzien kufijtë zyrtarë me ata të hartuar nga komuniteti pa i etiketuar.
+<div class="grid cards ib-compact" markdown>
+
+-   :material-tag-text-outline:{ .lg .middle } **Burim, datë, licencë**
+
+    Çdo të dhënë e shoqërojmë me të tria.
+
+-   :material-alert-circle-outline:{ .lg .middle } **Kufizimet thuhen hapur**
+
+    Kur të dhënat janë të paplota ose orientuese, e themi.
+
+-   :material-layers-outline:{ .lg .middle } **Pa përzierje**
+
+    Kufijtë zyrtarë nuk përzihen me ata të hartuar nga komuniteti pa etiketim.
+
+</div>
 
 ## Kufizime të njohura
 
-- **Kufijtë e OSM** mund të mos përputhen me aktin ligjor të shpalljes.
-- **GBIF** pasqyron ku janë vëzhguar speciet, jo ku jetojnë.
-- **Të dhënat institucionale** shpesh janë PDF ose të skanuara; mund të duhet kërkesë formale, shih [Kërko informacion publik](../aktivizmi/informim.md).
+!!! warning ""
+    - **Kufijtë e OSM** mund të mos përputhen me aktin ligjor të shpalljes.
+    - **GBIF** pasqyron ku janë vëzhguar speciet, jo ku jetojnë.
+    - **Të dhënat institucionale** shpesh janë PDF ose të skanuara; mund të duhet kërkesë formale: [Kërko informacion publik](../aktivizmi/informim.md).
 
 ## Si i përditësojmë të dhënat e hartës
 
-Skriptet e depos importojnë zonat nga OpenStreetMap dhe vëzhgimet nga GBIF; shih [README-në e projektit](https://github.com/pomodoren/heritage#readme) për komandat.
-
-## Licenca
-
-Shih [Licenca & atribuimi](../rreth/licenca.md).
+Skriptet e depos importojnë zonat nga OpenStreetMap dhe vëzhgimet nga GBIF; shih [README-në e projektit](https://github.com/pomodoren/heritage#readme) për komandat. Licenca: [Licenca & atribuimi](../rreth/licenca.md).

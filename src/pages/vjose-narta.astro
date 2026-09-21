@@ -1,0 +1,151 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+const base = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/`;
+const img = (name) => `${base}assets/vjose-narta/${name}.jpg`;
+
+const CC_BY = 'https://creativecommons.org/licenses/by/4.0/';
+const CC_BY_SA = 'https://creativecommons.org/licenses/by-sa/4.0/';
+const photos = {
+  'hero-flamingo': { size: [1920, 1280], author: 'Arbenllapashtica', license: 'CC BY 4.0', licenseUrl: CC_BY, source: 'https://commons.wikimedia.org/wiki/File:Laguna_e_Nart%C3%ABs_-_Vlor%C3%AB_(25).jpg', title: 'Laguna e Nartës - Vlorë (25)' },
+  'flamingo-flock': { size: [1100, 694], author: 'Arbenllapashtica', license: 'CC BY 4.0', licenseUrl: CC_BY, source: 'https://commons.wikimedia.org/wiki/File:Laguna_e_Nart%C3%ABs_-_Vlor%C3%AB_(2).jpg', title: 'Laguna e Nartës - Vlorë (2)' },
+  laguna: { size: [1100, 825], author: 'Leeturtle', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: 'https://commons.wikimedia.org/wiki/File:Narta_lagoon,_southern_Albania.jpg', title: 'Narta lagoon, southern Albania' },
+  'zvernec-ishulli': { size: [1100, 729], author: 'Pasztilla (Attila Terbócs)', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: 'https://commons.wikimedia.org/wiki/File:Zv%C3%ABrnec_Island,_Albania_01.jpg', title: 'Zvërnec Island, Albania 01' },
+  pelikan: { size: [1100, 844], author: 'gailhampshire', license: 'CC BY 2.0', licenseUrl: 'https://creativecommons.org/licenses/by/2.0/', source: 'https://commons.wikimedia.org/wiki/File:Dalmatian_Pelican._Pelecanus_crispus_(42882199270).jpg', title: 'Dalmatian Pelican. Pelecanus crispus' },
+  gaforre: { size: [1100, 729], author: 'Pasztilla (Attila Terbócs)', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: 'https://commons.wikimedia.org/wiki/File:Narta_Lagoon,_Albania_%E2%80%93_Crab_01.jpg', title: 'Narta Lagoon, Albania – Crab 01' },
+  bregdeti: { size: [1100, 620], author: 'Wildwheelwildsoul', license: 'CC0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/', source: 'https://commons.wikimedia.org/wiki/File:The_Vjosa-Narte_Protected_Landscape_rocks.jpg', title: 'The Vjosa-Narte Protected Landscape rocks' },
+  grykederdhja: { size: [1100, 729], author: 'Pasztilla (Attila Terbócs)', license: 'CC BY-SA 4.0', licenseUrl: CC_BY_SA, source: 'https://commons.wikimedia.org/wiki/File:Zv%C3%ABrnec,_Albania_%E2%80%93_Narta_Lagoon_01.jpg', title: 'Zvërnec, Albania – Narta Lagoon 01' },
+};
+
+const things = [
+  { photo: 'flamingo-flock', wide: true, kicker: 'Simboli i lëvizjes', title: 'Flamingot e Nartës', alt: 'Tufë flamingosh mbi ujin e Lagunës së Nartës', text: 'Zogu që i dha emrin lëvizjes nuk është vetëm simbol: është banor real i lagunës, ku shihet duke fluturuar dhe pushuar në ujë.' },
+  { photo: 'laguna', kicker: 'Zonë e Rëndësishme për Shpendët', title: 'Laguna e Nartës', alt: 'Laguna e Nartës me një gadishull të vogël dhe male në sfond', text: 'Laguna bregdetare pranë Vlorës. Sipas Revolucionit Flamingo, aty janë regjistruar mbi 200 gjallesa.' },
+  { photo: 'zvernec-ishulli', kicker: 'Peizazh dhe trashëgimi', title: 'Ishulli i Zvërnecit', alt: 'Ishulli i Zvërnecit i mbuluar me pyll, i parë nga një urë druri mbi lagunë', text: 'Një ishull i pyllëzuar me manastir, i lidhur me bregun me një urë druri. Zvërneci është ndër zonat ku lëvizja raporton punime.' },
+  { photo: 'pelikan', kicker: 'Shpendët e ujit', title: 'Pelikani kaçurrel', alt: 'Pelikan kaçurrel me krahë të hapur në bregun e kripëtoreve', text: 'Fotografuar te kripëtoret e Vjosë–Nartës pranë Vlorës. Është një nga shpendët më të mëdhenj të ujit në rajon.' },
+  { photo: 'gaforre', kicker: 'Jeta e vogël', title: 'Gaforrja e lagunës', alt: 'Një gaforre jeshile në rërën e lagunës', text: 'Nuk mbrohen vetëm zogjtë. Zinxhiri ushqimor varet edhe nga kafshët e vogla që jetojnë në rërë dhe baltë.' },
+  { photo: 'bregdeti', kicker: 'Bregdeti', title: 'Bregu shkëmbor', alt: 'Shkëmbinj bregdetarë që futen në det në Peizazhin e Mbrojtur Vjosë–Nartë', text: 'Shkëmbinj bregdetarë brenda Peizazhit të Mbrojtur Vjosë–Nartë, në kufirin mes tokës dhe detit.' },
+  { photo: 'grykederdhja', kicker: 'Laguna dhe deti', title: 'Ku laguna takon Adriatikun', alt: 'Kanal uji mes dy brigjeve ku laguna takon detin, pranë Zvërnecit', text: 'Vendi ku uji i lagunës takon detin Adriatik, pranë Zvërnecit.' },
+];
+
+const months = ['janar', 'shkurt', 'mars', 'prill', 'maj', 'qershor', 'korrik', 'gusht', 'shtator', 'tetor', 'nëntor', 'dhjetor'];
+let issue = { updatedAt: '', status: '' };
+try {
+  const data = JSON.parse(readFileSync(join(process.cwd(), 'public/data/status/issues.json'), 'utf8'));
+  issue = data.issues.find((item) => item.id === 'vjosa-narta-development') || issue;
+} catch {}
+const [year, month, day] = (issue.updatedAt || '').split('-').map(Number);
+const updated = year ? `${day} ${months[month - 1]} ${year}` : '';
+const statusLabel = { ongoing: 'Në vazhdim' }[issue.status] || '';
+
+const paths = [
+  { href: `${base}map/`, title: 'Shiko në hartë', text: 'Zonat e mbrojtura, flora dhe fauna në Shqipëri dhe Kosovë, me foto dhe burime.' },
+  { href: `${base}docs/baza/zona-te-mbrojtura/`, title: 'Mëso bazat', text: 'Çfarë është një zonë e mbrojtur, çfarë ndalohet aty dhe kush e mbikëqyr.' },
+  { href: `${base}docs/aktivizmi/protestat/flamingo/`, title: 'Kupto Revolucionin Flamingo', text: 'Si nisi lëvizja, kush mori pjesë dhe si u organizua, me lidhje te burimet e saj.' },
+  { href: `${base}docs/aktivizmi/`, title: 'Merr pjesë', text: 'Si të dokumentosh një shqetësim, të kërkosh informacion publik dhe të veprosh.' },
+];
+---
+<BaseLayout title="Trashëgimia Natyrore · Çfarë po mbrojmë në Vjosë–Nartë" description="Faqe informuese për njerëzit që nuk janë aktivistë mjedisorë: çfarë është Peizazhi i Mbrojtur Vjosë–Nartë, pse ka rëndësi dhe çfarë raporton Revolucioni Flamingo.">
+  <SiteHeader page="vjose-narta" />
+  <main class="landing">
+    <section class="lp-hero" aria-labelledby="lp-title">
+      <img class="lp-hero-img" src={img('hero-flamingo')} width="1920" height="1280" alt="Flamingo në fluturim mbi Lagunën e Nartës" fetchpriority="high" decoding="async" />
+      <div class="lp-hero-inner">
+        <p class="lp-eyebrow">Revolucioni Flamingo · Peizazhi i Mbrojtur Vjosë–Nartë</p>
+        <h1 id="lp-title">Çfarë po mbrojmë në Vjosë–Nartë?</h1>
+        <p class="lp-lede">Njerëz nga Vlora, Tirana dhe diaspora dolën në rrugë për një lagunë, një pyll bregdetar dhe disa duna që shumë prej nesh nuk i kemi parë kurrë nga afër. Këtu e gjen të shpjeguar thjesht: çfarë është ky vend, pse ka rëndësi dhe ku mund ta verifikosh vetë.</p>
+        <div class="lp-actions">
+          <a class="lp-btn lp-btn-primary" href="#natyra">Shiko çfarë mbrohet <span aria-hidden="true">↓</span></a>
+          <a class="lp-btn lp-btn-ghost" href={`${base}map/`}>Hap hartën <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <p class="lp-photo-credit">Foto: <a href={photos['hero-flamingo'].source} target="_blank" rel="noopener noreferrer">{photos['hero-flamingo'].author}</a>, <a href={photos['hero-flamingo'].licenseUrl} target="_blank" rel="noopener noreferrer">{photos['hero-flamingo'].license}</a></p>
+    </section>
+
+    <section class="lp-section lp-why" id="pse" aria-labelledby="lp-why-title">
+      <div class="lp-why-head">
+        <p class="lp-kicker">Pse ekziston kjo faqe</p>
+        <h2 id="lp-why-title">Një protestë e madhe, por pak informacion për natyrën që qëndron pas saj</h2>
+      </div>
+      <div class="lp-why-body">
+        <p>Kjo nismë nisi nga një boshllëk. Kur Revolucioni Flamingo doli në rrugë për Vjosë–Nartën, çështja u bë shpejt e njohur, por informacioni për vetë natyrën mbeti i pakët për ata që nuk janë aktivistë mjedisorë: çfarë është ky peizazh, çfarë jetë ka, çfarë thotë ligji dhe çfarë raportohet se po ndryshon.</p>
+        <p>Informacioni ekziston, por është i shpërndarë nëpër ligje, raporte teknike dhe rrjete sociale. Këtu e mbledhim në një vend, me fjalë të thjeshta dhe me foto.</p>
+      </div>
+      <ul class="lp-principles">
+        <li><strong>Për të gjithë, jo vetëm për aktivistët</strong><span>Gjuhë e thjeshtë dhe fotografi në vend të zhargonit teknik.</span></li>
+        <li><strong>Fakte me burim</strong><span>Çdo pretendim lidhet me një burim, dhe ajo që raporton lëvizja dallohet nga ajo që është verifikuar.</span></li>
+        <li><strong>Nga kuptimi te veprimi</strong><span>Kush e njeh një vend, e ka më të lehtë ta dokumentojë, ta raportojë dhe ta mbrojë.</span></li>
+      </ul>
+    </section>
+
+    <section class="lp-section lp-things" id="natyra" aria-labelledby="lp-things-title">
+      <div class="lp-section-head">
+        <p class="lp-kicker">Çfarë duhet mbrojtur</p>
+        <h2 id="lp-things-title">Një lagunë, një ishull me pyll dhe jeta që varet prej tyre</h2>
+        <p>Peizazhi i Mbrojtur Vjosë–Nartë përfshin lagunën e Nartës, ishullin e Zvërnecit, kripëtoret dhe bregdetin te grykëderdhja e Vjosës. Fotot më poshtë janë nga vetë ky vend.</p>
+      </div>
+      <div class="lp-gallery">
+        {things.map((item) => {
+          const photo = photos[item.photo];
+          return (
+            <figure class:list={['lp-tile', { 'lp-tile-wide': item.wide }]}>
+              <img src={img(item.photo)} width={photo.size[0]} height={photo.size[1]} alt={item.alt} loading="lazy" decoding="async" />
+              <figcaption>
+                <span class="lp-tile-kicker">{item.kicker}</span>
+                <strong>{item.title}</strong>
+                <span class="lp-tile-text">{item.text}</span>
+                <small>Foto: <a href={photo.source} target="_blank" rel="noopener noreferrer">{photo.author}</a> · <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a></small>
+              </figcaption>
+            </figure>
+          );
+        })}
+        <aside class="lp-tile lp-tile-ask" aria-label="Fotografi që mungojnë">
+          <span class="lp-tile-kicker">Fotot që mungojnë</span>
+          <strong>Pisha e Poros dhe dunat</strong>
+          <span class="lp-tile-text">Janë në qendër të asaj që raportohet, por nuk gjetëm foto me licencë të lirë. Nëse ke të tilla, mund t'i ndash me të gjithë.</span>
+          <a class="lp-btn lp-btn-dark" href={`${base}docs/rreth/kontribuo/`}>Si të kontribuosh <span aria-hidden="true">→</span></a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="lp-section lp-report" aria-labelledby="lp-report-title">
+      <div>
+        <p class="lp-kicker">Çfarë raportohet</p>
+        <h2 id="lp-report-title">Punime brenda një zone të mbrojtur</h2>
+      </div>
+      <div class="lp-report-body">
+        <p>Sipas Revolucionit Flamingo, brenda Peizazhit të Mbrojtur Vjosë–Nartë janë raportuar punime dhe zhvillime në Pishë Poro–Nartë dhe Zvërnec, përfshirë rrafshimin e dunave ranore.</p>
+        <p class="lp-caveat">Ky është pretendimi i lëvizjes, jo verifikim i pavarur nga kjo faqe. Për ta kontrolluar, shih burimin, zonën në hartë dhe kuadrin ligjor.</p>
+        <ul class="lp-meta">
+          {statusLabel && <li><span>Statusi</span><strong>{statusLabel}</strong></li>}
+          {updated && <li><span>Përditësuar</span><strong>{updated}</strong></li>}
+          <li><span>Burimi</span><strong><a href="https://www.flamingorevolution.eu/protestat/" target="_blank" rel="noopener noreferrer">flamingorevolution.eu ↗</a></strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="lp-section lp-paths" aria-labelledby="lp-paths-title">
+      <div class="lp-section-head">
+        <p class="lp-kicker">Nga ku të nisësh</p>
+        <h2 id="lp-paths-title">Zgjidh hapin tënd të parë</h2>
+      </div>
+      <div class="lp-path-grid">
+        {paths.map((item) => (
+          <a class="lp-path" href={item.href}><strong>{item.title}</strong><span>{item.text}</span><i aria-hidden="true">→</i></a>
+        ))}
+      </div>
+    </section>
+
+    <section class="lp-section lp-credits">
+      <details>
+        <summary>Kreditet e fotove</summary>
+        <ul>
+          {Object.values(photos).map((photo) => (
+            <li><a href={photo.source} target="_blank" rel="noopener noreferrer">{photo.title}</a> nga {photo.author}, <a href={photo.licenseUrl} target="_blank" rel="noopener noreferrer">{photo.license}</a>, përmes Wikimedia Commons.</li>
+          ))}
+        </ul>
+      </details>
+    </section>
+  </main>
+</BaseLayout>

@@ -193,3 +193,300 @@ body,
 .ib-wiki-card img {
   height: 180px !important;
 }
+
+/* ===== Handbook components ===== */
+
+/* "Në një shikim": three short facts at the top of a practical page */
+.md-typeset .ib-glance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.6rem;
+  margin: 1.1rem 0 1.5rem;
+}
+.md-typeset .ib-glance > div {
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--ib-line);
+  border-left: 3px solid var(--ib-gold-line);
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.md-typeset .ib-glance strong {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--ib-muted);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Numbered steps: wrap an ordered list in <div class="ib-steps" markdown> */
+.md-typeset .ib-steps > ol {
+  margin: 1rem 0 1.3rem;
+  padding: 0;
+  list-style: none;
+  counter-reset: ib-step;
+}
+.md-typeset .ib-steps > ol > li {
+  position: relative;
+  margin: 0 0 0.75rem;
+  padding: 0.15rem 0 0.15rem 2.7rem;
+  counter-increment: ib-step;
+}
+.md-typeset .ib-steps > ol > li::before {
+  content: counter(ib-step);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 50%;
+  background: var(--ib-green);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.md-typeset .ib-steps > ol > li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: -0.7rem;
+  left: 0.9rem;
+  width: 2px;
+  background: var(--ib-line);
+}
+
+/* Compact cards: less padding, for reference lists */
+.md-typeset .grid.cards.ib-compact > ul > li { padding: 0.6rem 0.8rem; }
+.md-typeset .grid.cards.ib-compact p { margin: 0.2em 0; }
+
+/* Pill labels for status, level, country */
+.md-typeset .ib-pill {
+  display: inline-block;
+  padding: 0.05rem 0.55rem;
+  border: 1px solid var(--ib-line);
+  border-radius: 999px;
+  background: var(--ib-mint);
+  color: var(--ib-green);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.md-typeset .ib-pill--warn {
+  border-color: var(--ib-gold-line);
+  background: #fbf3dc;
+  color: var(--ib-gold-dark);
+}
+
+/* Task lists read as checklists */
+.md-typeset .task-list-item { margin-bottom: 0.25rem; }
+
+/* Landing hero lead paragraph */
+.md-typeset .ib-lead { font-size: 0.95rem; color: var(--ib-muted); max-width: 46rem; }
+
+/* Exactly four cards: 2x2 instead of 3 + 1 orphan */
+@media screen and (min-width: 60em) {
+  .md-typeset .grid.cards > ul:has(> li:nth-child(4):last-child) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Landing page ===== */
+
+.md-typeset .ib-landing-hero {
+  position: relative;
+  overflow: hidden;
+  margin: 0.4rem 0 2rem;
+  padding: 2.6rem 2.4rem 2.2rem;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 92% 8%, rgba(230, 199, 127, 0.28), transparent 42%),
+    radial-gradient(circle at 8% 110%, rgba(45, 85, 76, 0.9), transparent 55%),
+    linear-gradient(135deg, var(--ib-green-deep), var(--ib-green) 60%, var(--ib-green-mid));
+  box-shadow: 0 18px 40px rgba(16, 48, 44, 0.22);
+  color: #fff;
+}
+.md-typeset .ib-landing-hero::after {
+  content: "";
+  position: absolute;
+  top: -3.5rem;
+  right: -3.5rem;
+  width: 15rem;
+  height: 15rem;
+  border: 1px solid rgba(230, 199, 127, 0.35);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2.2rem rgba(230, 199, 127, 0.06), 0 0 0 4.4rem rgba(230, 199, 127, 0.04);
+  pointer-events: none;
+}
+.md-typeset .ib-landing-hero > * { position: relative; z-index: 1; }
+.md-typeset .ib-landing-hero .ib-eyebrow {
+  margin: 0 0 0.6rem;
+  color: var(--ib-gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.md-typeset .ib-landing-hero h1 {
+  max-width: 34rem;
+  margin: 0 0 0.8rem;
+  color: #fff;
+  font-size: 2.35rem;
+  line-height: 1.12;
+}
+.md-typeset .ib-landing-hero p { color: rgba(255, 255, 255, 0.86); }
+.md-typeset .ib-landing-hero .ib-hero-lead {
+  max-width: 36rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.md-typeset .ib-landing-hero .ib-hero-lead strong { color: var(--ib-gold); }
+.md-typeset .ib-landing-hero .md-button {
+  margin: 0.5rem 0.5rem 0 0;
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+.md-typeset .ib-landing-hero .md-button:hover,
+.md-typeset .ib-landing-hero .md-button:focus {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+.md-typeset .ib-landing-hero .md-button--primary {
+  border-color: var(--ib-gold);
+  background: var(--ib-gold);
+  color: var(--ib-green-deep);
+  font-weight: 700;
+}
+.md-typeset .ib-landing-hero .md-button--primary:hover,
+.md-typeset .ib-landing-hero .md-button--primary:focus {
+  border-color: #f0d898;
+  background: #f0d898;
+  color: var(--ib-green-deep);
+}
+.md-typeset .ib-landing-hero .ib-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1.5rem 0 0;
+}
+.md-typeset .ib-landing-hero .ib-chips span {
+  padding: 0.15rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.72rem;
+}
+
+/* Section heading with a short gold rule */
+.md-typeset .ib-landing h2 {
+  margin-top: 2.4rem;
+}
+.md-typeset .ib-landing h2::after {
+  content: "";
+  display: block;
+  width: 2.4rem;
+  height: 3px;
+  margin-top: 0.4rem;
+  border-radius: 2px;
+  background: var(--ib-gold-line);
+}
+.md-typeset .ib-section-lead {
+  margin-top: -0.2rem;
+  color: var(--ib-muted);
+  font-size: 0.8rem;
+}
+
+/* Four-step path through the guide */
+.md-typeset .ib-path > ol {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+  gap: 0.8rem;
+  margin: 1.2rem 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: ib-path;
+}
+.md-typeset .ib-path > ol > li {
+  position: relative;
+  margin: 0;
+  padding: 2.9rem 1rem 1rem;
+  border: 1px solid var(--ib-line);
+  border-top: 3px solid var(--ib-green);
+  border-radius: 10px;
+  background: #fff;
+  counter-increment: ib-path;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.md-typeset .ib-path > ol > li:hover {
+  border-top-color: var(--ib-gold-line);
+  box-shadow: 0 10px 24px rgba(23, 62, 57, 0.12);
+  transform: translateY(-2px);
+}
+.md-typeset .ib-path > ol > li::before {
+  content: "0" counter(ib-path);
+  position: absolute;
+  top: 0.6rem;
+  left: 1rem;
+  color: var(--ib-gold-dark);
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.md-typeset .ib-path > ol > li > p:first-child {
+  margin: 0 0 0.3rem;
+  font-size: 0.95rem;
+}
+.md-typeset .ib-path > ol > li > p:first-child a { font-weight: 700; }
+
+/* Two wide highlight banners */
+.md-typeset .ib-banners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.md-typeset .ib-banner {
+  padding: 1.3rem 1.4rem;
+  border: 1px solid var(--ib-line);
+  border-radius: 12px;
+  background: linear-gradient(160deg, #fff, var(--ib-mint));
+}
+.md-typeset .ib-banner--dark {
+  border-color: transparent;
+  background: linear-gradient(150deg, var(--ib-green-deep), var(--ib-green-mid));
+  color: #fff;
+}
+.md-typeset .ib-banner h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+}
+.md-typeset .ib-banner--dark h3,
+.md-typeset .ib-banner--dark p { color: #fff; }
+.md-typeset .ib-banner p { margin: 0.3rem 0 0.7rem; font-size: 0.82rem; }
+.md-typeset .ib-banner .md-button { margin: 0.2rem 0.4rem 0 0; }
+.md-typeset .ib-banner--dark .md-button {
+  border-color: rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+.md-typeset .ib-banner--dark .md-button:hover { background: rgba(255, 255, 255, 0.12); }
+.md-typeset .ib-banner--dark .md-button--primary {
+  border-color: var(--ib-gold);
+  background: var(--ib-gold);
+  color: var(--ib-green-deep);
+}
+.md-typeset .ib-banner ul { margin: 0.4rem 0 0.8rem; padding-left: 1.1rem; font-size: 0.82rem; }
+.md-typeset .ib-banner li { margin: 0.15rem 0; }
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .ib-landing-hero { padding: 1.8rem 1.3rem 1.6rem; }
+  .md-typeset .ib-landing-hero h1 { font-size: 1.75rem; }
+}

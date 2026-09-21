@@ -1,18 +1,40 @@
 # Komuniko me publikun
 
-Përdor këtë strukturë: **vendi → problemi → dëshmia → ndikimi → kërkesa → veprimi i publikut**.
+Tregoje historinë me fakte, burime dhe një kërkesë të qartë.
 
-## Para publikimit
+## Struktura e mesazhit
 
-- Lidh çdo pretendim me burimin.
-- Shëno datën dhe kufizimet e të dhënave.
-- Kontrollo emrat, shifrat dhe citimet.
-- Dallo opinionin nga fakti dhe pasigurinë nga përfundimi.
-- Shto tekst alternativ për figurat dhe titra për videot.
+```mermaid
+flowchart LR
+    A[Vendi] --> B[Problemi] --> C[Dëshmia] --> D[Ndikimi] --> E[Kërkesa] --> F[Veprimi i publikut]
+```
+
+## Lista para publikimit
+
+- [ ] Çdo pretendim lidhet me burimin.
+- [ ] Data dhe kufizimet e të dhënave janë shënuar.
+- [ ] Emrat, shifrat dhe citimet janë kontrolluar.
+- [ ] Opinioni dallohet nga fakti, pasiguria nga përfundimi.
+- [ ] Figurat kanë tekst alternativ dhe videot kanë titra.
+- [ ] Nuk zbulohen burime, vendndodhje të ndjeshme ose fytyra pa pëlqim.
 
 ## Pas publikimit
 
-Mbaj një faqe bazë që përditësohet, ruaj korrigjimet dhe drejto postimet e shkurtra te burimi i plotë. Mat edhe përgjigjet institucionale, pjesëmarrjen dhe ndryshimet konkrete.
+<div class="grid cards ib-compact" markdown>
+
+-   :material-page-layout-header:{ .lg .middle } **Një faqe bazë**
+
+    E përditësuar; postimet e shkurtra drejtojnë te burimi i plotë.
+
+-   :material-pencil-circle-outline:{ .lg .middle } **Korrigjime të hapura**
+
+    Ruaji dhe shënoji publikisht.
+
+-   :material-chart-timeline-variant:{ .lg .middle } **Mat rezultatin**
+
+    Përgjigjet institucionale, pjesëmarrja dhe ndryshimet konkrete.
+
+</div>
 
 ## Shih edhe
 

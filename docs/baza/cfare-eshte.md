@@ -1,37 +1,74 @@
 # Çfarë është trashëgimia natyrore
 
-**Trashëgimia natyrore** janë elementet e natyrës që kanë vlerë shkencore, ekologjike, estetike ose kulturore dhe që duhet t'u kalojnë brezave të ardhshëm në gjendje të mirë.
+**Trashëgimia natyrore** janë elementet e natyrës me vlerë shkencore, ekologjike, estetike ose kulturore, që duhet t'u kalojnë brezave të ardhshëm në gjendje të mirë.
 
 ## Çfarë përfshin
 
-| Grupi | Shembuj |
-|---|---|
-| **Zona** | parqe kombëtare, rezervate, monumente natyre, peizazhe të mbrojtura |
-| **Habitate & ekosisteme** | pyje primare, laguna, kënetat, kullota alpine, grykëderdhje lumenjsh |
-| **Specie** | flora dhe fauna e egër, veçanërisht speciet endemike ose të rrezikuara |
-| **Ujëra** | lumenj të lirë, liqene, burime, ujëra nëntokësore |
-| **Formacione gjeologjike** | shpella, kanione, kaskada, formacione karstike |
-| **Peizazhe** | ato ku natyra dhe puna e njeriut kanë formuar një tërësi me vlerë |
+<div class="grid cards ib-compact" markdown>
+
+-   :material-tree-outline:{ .lg .middle } **Zona**
+
+    Parqe kombëtare, rezervate, monumente natyre, peizazhe të mbrojtura.
+
+-   :material-leaf:{ .lg .middle } **Habitate & ekosisteme**
+
+    Pyje primare, laguna, kënetat, kullota alpine, grykëderdhje lumenjsh.
+
+-   :material-paw:{ .lg .middle } **Specie**
+
+    Flora dhe fauna e egër, sidomos speciet endemike ose të rrezikuara.
+
+-   :material-waves:{ .lg .middle } **Ujëra**
+
+    Lumenj të lirë, liqene, burime, ujëra nëntokësore.
+
+-   :material-image-filter-hdr:{ .lg .middle } **Formacione gjeologjike**
+
+    Shpella, kanione, kaskada, formacione karstike.
+
+-   :material-panorama-variant-outline:{ .lg .middle } **Peizazhe**
+
+    Ku natyra dhe puna e njeriut kanë formuar një tërësi me vlerë.
+
+</div>
 
 ## Pse mbrohet
 
-- **Shërbimet e ekosistemit:** uji i pastër, ajri, ndryshimi i klimës, mbrojtja nga përmbytjet, pjalmimi.
-- **Biodiversiteti:** një specie e humbur nuk kthehet.
-- **Kultura dhe ekonomia vendore:** bujqësia, blegtoria, turizmi dhe identiteti i komuniteteve varen prej saj.
-- **Detyrimet ligjore:** vendet kanë marrë përsipër standarde kombëtare dhe ndërkombëtare, shih [Konventat](konventat.md).
+<div class="grid cards ib-compact" markdown>
 
-## Natyrë dhe kulturë
+-   :material-water-check:{ .lg .middle } **Shërbimet e ekosistemit**
 
-Natyra dhe veprimtaria njerëzore shpesh nuk ndahen: transhumanca, kullotat tradicionale, terracat bujqësore dhe peizazhi bujqësor ndikojnë drejtpërdrejt te habitatet.
+    Uji i pastër, ajri, klima, mbrojtja nga përmbytjet, pjalmimi.
 
-## Mbrojtje dhe mirëmbajtje
+-   :material-dna:{ .lg .middle } **Biodiversiteti**
 
-Mbrojtja nuk mbaron me shpalljen e një zone. Që një zonë të funksionojë duhen:
+    Një specie e humbur nuk kthehet.
 
-1. **kufij të qartë dhe të publikuar**,
-2. **plan menaxhimi** dhe njerëz me përgjegjësi për zbatimin,
-3. **monitorim** i gjendjes së specieve dhe habitateve,
-4. **zbatim i ligjit** kundër shkeljeve,
-5. **përfshirje e komuniteteve** që jetojnë aty.
+-   :material-home-group:{ .lg .middle } **Kultura dhe ekonomia vendore**
 
-Kur njëri prej tyre mungon, zona ekziston vetëm në letër ("park letre"). Kjo është një nga arsyet pse dokumentimi qytetar ka rëndësi, shih [Aktivizmi](../aktivizmi/index.md).
+    Bujqësia, blegtoria, turizmi dhe identiteti i komuniteteve varen prej saj.
+
+-   :material-scale-balance:{ .lg .middle } **Detyrimet ligjore**
+
+    Vendet kanë marrë standarde kombëtare dhe ndërkombëtare, shih [Konventat](konventat.md).
+
+</div>
+
+!!! info "Natyrë dhe kulturë shpesh shkojnë bashkë"
+    Transhumanca, kullotat tradicionale dhe terracat bujqësore ndikojnë drejtpërdrejt te habitatet. Shpesh vlera e një peizazhi është vetë puna e njeriut mbi të.
+
+## Pesë kushte që një zonë të funksionojë
+
+Mbrojtja nuk mbaron me shpalljen. Kur një prej këtyre mungon, zona ekziston vetëm në letër (**"park letre"**).
+
+<div class="ib-steps" markdown>
+
+1. **Kufij të qartë dhe të publikuar.**
+2. **Plan menaxhimi** dhe njerëz me përgjegjësi për zbatimin, shih [Menaxhimi](menaxhimi/index.md).
+3. **Monitorim** i gjendjes së specieve dhe habitateve.
+4. **Zbatim i ligjit** kundër shkeljeve.
+5. **Përfshirje e komuniteteve** që jetojnë aty.
+
+</div>
+
+Kjo është një nga arsyet pse dokumentimi qytetar ka rëndësi: [Aktivizmi](../aktivizmi/index.md).

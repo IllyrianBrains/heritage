@@ -13,6 +13,7 @@ flowchart LR
     E -- Po --> F[Ndiq zbatimin]
     E -- Jo --> G[Eskalo & komuniko]
     G --> H[Fushatë & aleanca]
+    H --> I[Protestë paqësore]
 ```
 
 ## Zgjidh pikën ku je
@@ -21,17 +22,23 @@ flowchart LR
 
 -   :material-camera-outline:{ .lg .middle } **1. Dokumento**
 
+    ---
+
     Çfarë të mbledhësh në terren dhe si ta ruash që të merret seriozisht.
 
     [:octicons-arrow-right-24: Dokumento një problem](dokumento.md)
 
 -   :material-file-document-edit-outline:{ .lg .middle } **2. Raporto**
 
-    Kujt t'i drejtohesh dhe si ta shkruash një ankesë efektive.
+    ---
+
+    Kujt t'i drejtohesh dhe si ta shkruash një ankesë efektive, me modele emaili.
 
     [:octicons-arrow-right-24: Raporto te institucionet](raporto.md)
 
 -   :material-file-search-outline:{ .lg .middle } **3. Kërko informacion**
+
+    ---
 
     Kërko lejet, planet dhe raportet që institucionet duhet t'i japin.
 
@@ -39,11 +46,15 @@ flowchart LR
 
 -   :material-forum-outline:{ .lg .middle } **4. Merr pjesë**
 
+    ---
+
     Komento në konsultime publike dhe në VNM para se vendimi të merret.
 
     [:octicons-arrow-right-24: Pjesëmarrja në vendimmarrje](pjesemarrje.md)
 
 -   :material-account-group-outline:{ .lg .middle } **5. Organizo**
+
+    ---
 
     Ndërto një kërkesë të qartë, aleanca dhe një plan.
 
@@ -51,17 +62,37 @@ flowchart LR
 
 -   :material-bullhorn-outline:{ .lg .middle } **6. Komuniko**
 
+    ---
+
     Tregoje historinë me fakte, burime dhe kërkesë të qartë.
 
     [:octicons-arrow-right-24: Komuniko me publikun](komuniko.md)
 
+</div>
+
+## Të lidhura
+
+<div class="grid cards" markdown>
+
+-   :material-account-voice:{ .lg .middle } **Protesta**
+
+    ---
+
+    Planifiko një protestë paqësore, të sigurt dhe të lidhur me një kërkesë konkrete.
+
+    [:octicons-arrow-right-24: Hape Flamingo](protestat/index.md)
+
 -   :material-shield-account-outline:{ .lg .middle } **Siguria**
+
+    ---
 
     Rreziqet dhe si t'i ulësh, për ty dhe për burimet.
 
     [:octicons-arrow-right-24: Siguria e aktivistëve](siguria.md)
 
 -   :material-book-open-page-variant-outline:{ .lg .middle } **Raste studimore**
+
+    ---
 
     Çfarë funksionoi (dhe çfarë jo) në raste të mëparshme.
 

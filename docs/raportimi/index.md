@@ -1,23 +1,32 @@
 # Standardet ndërkombëtare të raportimit
 
-Shtetet raportojnë rregullisht te konventat dhe organizmat ndërkombëtarë për gjendjen e natyrës. Këto raporte ndjekin **formate, tregues dhe indekse të standardizuara**. Kur i njeh, mund të lexosh një raport zyrtar në mënyrë kritike, të kontrollosh çfarë mungon dhe të mbledhësh të dhëna që përshtaten me të.
+Shtetet raportojnë rregullisht te konventat dhe organizmat ndërkombëtarë për gjendjen e natyrës, sipas **formateve, treguesve dhe indekseve të standardizuara**. Kur i njeh, mund ta lexosh një raport zyrtar në mënyrë kritike, të kontrollosh çfarë mungon dhe të mbledhësh të dhëna që përshtaten me të.
 
 [Shiko panelin e raporteve të projektit](../../dashboard/){ .md-button }
 
 ## Si lidhen të dhënat, treguesit dhe indekset
 
+```mermaid
+flowchart LR
+    A["Të dhëna<br/>vëzhgimi, matja"] --> B["Tregues<br/>matje e llogaritur"] --> C["Indeks<br/>vlerë e përbërë"] --> D["Raport<br/>dokumenti para një organi"]
+```
+
 | Niveli | Çfarë është | Shembull |
 |---|---|---|
-| **Të dhëna** | Vëzhgimi ose matja bazë | Një vëzhgim i specieve me datë dhe koordinata; kufiri i një zone të mbrojtur |
-| **Tregues** | Një matje e llogaritur nga të dhënat, me njësi dhe periudhë | Përqindja e tokës nën mbrojtje; sipërfaqja pyjore në hektarë |
-| **Indeks** | Vlerë e përbërë ose e normalizuar që përmbledh shumë tregues ose specie | Indeksi i Listës së Kuqe (0 deri 1) |
+| **Të dhëna** | Vëzhgimi ose matja bazë | Një vëzhgim specieje me datë dhe koordinata; kufiri i një zone të mbrojtur |
+| **Tregues** | Matje e llogaritur nga të dhënat, me njësi dhe periudhë | Përqindja e tokës nën mbrojtje; sipërfaqja pyjore në hektarë |
+| **Indeks** | Vlerë e përbërë që përmbledh shumë tregues ose specie | Indeksi i Listës së Kuqe (0 deri 1) |
 | **Raport** | Dokumenti që i paraqet ato para një organi ose publiku, sipas një formati | Raporti kombëtar te Konventa për Diversitetin Biologjik |
 
-Secili nivel varet nga ai më poshtë. Një indeks i mirë nuk zëvendëson të dhënat e mira, dhe një tregues pa burim e datë nuk verifikohet dot.
+Secili nivel varet nga ai më i ulët. Një indeks i mirë nuk zëvendëson të dhënat e mira, dhe një tregues pa burim e datë nuk verifikohet dot.
+
+## Pesë faqet e kësaj pjese
 
 <div class="grid cards" markdown>
 
 -   :material-file-document-outline:{ .lg .middle } **Kuadrot e raportimit**
+
+    ---
 
     Kush raporton, te kush, sa shpesh dhe me çfarë formati.
 
@@ -25,11 +34,15 @@ Secili nivel varet nga ai më poshtë. Një indeks i mirë nuk zëvendëson të 
 
 -   :material-database-check-outline:{ .lg .middle } **Të dhënat e nevojshme**
 
+    ---
+
     Çfarë duhet mbledhur dhe si përshkruhet që të jetë e krahasueshme.
 
     [:octicons-arrow-right-24: Shiko](te-dhenat.md)
 
 -   :material-chart-line:{ .lg .middle } **Treguesit**
+
+    ---
 
     Treguesit e OZHQ-ve, të Kuadrit Global të Biodiversitetit, të BE-së dhe të Ramsarit.
 
@@ -37,29 +50,45 @@ Secili nivel varet nga ai më poshtë. Një indeks i mirë nuk zëvendëson të 
 
 -   :material-numeric:{ .lg .middle } **Indekset**
 
-    Indekset e biodiversitetit, të ujit dhe të vëzhgimit nga satelitët, dhe kufizimet e tyre.
+    ---
+
+    Indekset e biodiversitetit, të ujit dhe të satelitëve, dhe kufizimet e tyre.
 
     [:octicons-arrow-right-24: Shiko](indekset.md)
 
 -   :material-star-check-outline:{ .lg .middle } **Rekomandime**
 
-    Mjetet për vëzhgim, hartëzim, satelitë, të dhëna, verifikim dhe siguri që i furnizojnë këto raporte.
+    ---
+
+    Mjetet që i furnizojnë këto raporte.
 
     [:octicons-arrow-right-24: Shiko](../rekomandime/index.md)
 
 </div>
 
-## Për kë është kjo pjesë
+## Për kë është
 
-- **Për ata që lexojnë raporte zyrtare** dhe duan të dinë çfarë matet dhe çfarë lihet jashtë.
-- **Për OJQ-të dhe grupet vendore** që duan të dorëzojnë informacion plotësues, p.sh. një raport alternativ (*shadow report*), duke përdorur të njëjtat terma dhe struktura.
-- **Për ata që mbledhin të dhëna** dhe duan që puna e tyre të jetë e përdorshme përtej një harte të vetme.
+<div class="grid cards ib-compact" markdown>
+
+-   :material-book-search-outline:{ .lg .middle } **Lexuesit e raporteve**
+
+    Duan të dinë çfarë matet dhe çfarë lihet jashtë.
+
+-   :material-domain:{ .lg .middle } **OJQ-të dhe grupet vendore**
+
+    Duan të dorëzojnë informacion plotësues, p.sh. një raport alternativ (*shadow report*), me të njëjtat terma.
+
+-   :material-map-marker-path:{ .lg .middle } **Mbledhësit e të dhënave**
+
+    Duan që puna e tyre të përdoret përtej një harte të vetme.
+
+</div>
 
 !!! note "Kufizim i rëndësishëm"
-    Të dhënat e komunitetit **plotësojnë** ato zyrtare, nuk i zëvendësojnë. Një tregues zyrtar kërkon metodë të dokumentuar dhe shpesh kampionim shkencor. Është e ndershme ta thuash qartë çfarë mbulon puna jote dhe çfarë jo.
+    Të dhënat e komunitetit **plotësojnë** ato zyrtare, nuk i zëvendësojnë. Një tregues zyrtar kërkon metodë të dokumentuar dhe shpesh kampionim shkencor. Thuaj qartë çfarë mbulon puna jote dhe çfarë jo.
 
-!!! warning "Afatet dhe indikatorët ndryshojnë"
-    Ciklet e raportimit, listat e treguesve dhe versionet e formularëve azhurnohen. Kontrollo gjithmonë faqen e sekretariatit përkatës para se të referohesh te një afat ose numër treguesi. Për statusin e Kosovës te konventat, shih [Konventat & standardet](../baza/konventat.md).
+!!! warning "Afatet dhe treguesit ndryshojnë"
+    Ciklet e raportimit, listat e treguesve dhe versionet e formularëve azhurnohen. Kontrollo gjithmonë faqen e sekretariatit para se të referohesh te një afat ose numër treguesi. Për statusin e Kosovës te konventat, shih [Konventat & standardet](../baza/konventat.md).
 
 ## Burimet
 
