@@ -1,6 +1,6 @@
 # Raporto te institucionet
 
-Një ankesë e mirë është **e shkurtër, e dokumentuar dhe e drejtuar te institucioni me kompetencë**. Zakonisht duhet dërguar në më shumë se një vend.
+Një ankesë e mirë është **e shkurtër, e dokumentuar dhe e drejtuar te institucioni me kompetencë**. Zakonisht duhet dërguar në më shumë se një vend. Për një çështje që i drejtohet një konvente ose organizmi ndërkombëtar, jo një institucioni vendas, shih [Si të raportosh ndërkombëtarisht](../raportimi/udhezuesi.md).
 
 <div class="ib-glance">
 <div><strong>Për kë</strong>Kushdo me një rast të dokumentuar</div>

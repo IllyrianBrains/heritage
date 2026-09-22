@@ -33,4 +33,4 @@ Peizazhi është mënyra si duket dhe funksionon një territor kur natyra dhe nj
 
 ## Si i dokumenton
 
-Fotografi krahasuese nga i njëjti vend në kohë të ndryshme (**fotografim i përsëritur**) dhe imazhet satelitore janë mënyrat më të thjeshta për të treguar ndryshimin. Shih [Satelitë & monitorim](../rekomandime/monitorim.md).
+Fotografi krahasuese nga i njëjti vend në kohë të ndryshme (**fotografim i përsëritur**) dhe imazhet satelitore janë mënyrat më të thjeshta për të treguar ndryshimin. Shih [Satelitë & monitorim](../raportimi/profili/terreni/monitorim.md).

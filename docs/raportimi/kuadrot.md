@@ -54,13 +54,7 @@
 
 ## Si t'i përdorësh
 
-<div class="ib-steps" markdown>
-
-1. **Gjej raportin e vendit** te sekretariati i konventës: shpesh është publik dhe tregon çfarë ka deklaruar shteti.
-2. **Krahaso deklaratën me terrenin.** Raporti thotë se një sit është "në gjendje të mirë" dhe ti ke dëshmi të kundërta? [Dokumentoje me kujdes](../aktivizmi/dokumento.md).
-3. **Dorëzo informacion plotësues** atje ku mekanizmi e lejon: dosjet e Konventës së Bernës, komunikimet te Komiteti i Aarhusit, informacioni për Qendrën e Trashëgimisë Botërore për sitet në rrezik.
-
-</div>
+Kjo faqe tregon **çfarë ekziston**. Për hapat praktikë — si të gjesh raportin e vendit, si të krahasosh deklaratën me terrenin dhe si të dorëzosh informacion plotësues — shih [Si të raportosh ndërkombëtarisht](udhezuesi.md).
 
 ## Burimet
 

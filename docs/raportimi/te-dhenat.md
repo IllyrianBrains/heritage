@@ -1,6 +1,6 @@
 # Të dhënat e nevojshme
 
-Raportet ndërkombëtare kërkojnë të njëjtat lloje të dhënash, edhe pse formularët ndryshojnë. Kjo faqe i grupon sipas asaj që duhet të përmbajë një dosje për një sit ose një çështje.
+Raportet ndërkombëtare kërkojnë të njëjtat lloje të dhënash, edhe pse formularët ndryshojnë. Kjo faqe i grupon sipas asaj që duhet të përmbajë një dosje për një sit ose një çështje. Për hapat praktikë të një kontributi, shih [Si të raportosh ndërkombëtarisht](udhezuesi.md).
 
 ## Tetë kategoritë e dosjes
 
@@ -77,7 +77,7 @@ Në formatin Darwin Core, një regjistrim i përdorshëm ka të paktën:
 
 ## Hapi tjetër
 
-Mbledh të dhënat me [mjetet e rekomanduara](../rekomandime/index.md), pastaj shih [Treguesit](treguesit.md) për t'i kthyer në matje që përdoren në raporte.
+Mbledh të dhënat sipas [profilit tënd](profili/index.md), pastaj shih [Treguesit](treguesit.md) për t'i kthyer në matje që përdoren në raporte.
 
 ## Burimet
 

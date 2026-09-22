@@ -67,7 +67,7 @@ Emisionet në mjedis zakonisht nuk mund të mbahen sekret.
 
     Agjencia e Informimit dhe Privatësisë, Avokati i Popullit, gjykatat.
 
-Qendrat Aarhus dhe OJQ-të mjedisore mund të të ndihmojnë të hartosh kërkesën: [Organizata & rrjete](../rekomandime/organizata.md).
+Qendrat Aarhus dhe OJQ-të mjedisore mund të të ndihmojnë të hartosh kërkesën: [Organizata & rrjete](../raportimi/organizata.md).
 
 !!! note "Afatet"
     Afatet e përgjigjes dhe të apelimit ndryshojnë sipas ligjit. Kontrollo ato në tekstin në fuqi dhe shëno datën e dërgimit të çdo kërkese.

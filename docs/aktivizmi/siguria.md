@@ -43,7 +43,7 @@ Puna për mbrojtjen e mjedisit mund të prekë interesa të fuqishme. Siguria nu
 
 === "Dixhital"
 
-    Mjetet: [Siguria dixhitale](../rekomandime/siguria.md). Në thelb:
+    Mjetet: [Siguria dixhitale](../raportimi/siguria.md). Në thelb:
 
     - fjalëkalime unike dhe verifikim me dy hapa;
     - komunikim i enkriptuar për diskutimet e ndjeshme;
@@ -71,4 +71,4 @@ Puna për mbrojtjen e mjedisit mund të prekë interesa të fuqishme. Siguria nu
 | **Presion ose kërcënim** | Dokumentoji, njofto organizatën dhe partnerët; kontakto [Front Line Defenders](https://www.frontlinedefenders.org) ose organizata lokale |
 | **Incident dixhital** | [Access Now Helpline](https://www.accessnow.org/help/) |
 
-Organizatat e mbështetjes janë te [Organizata & rrjete](../rekomandime/organizata.md).
+Organizatat e mbështetjes janë te [Organizata & rrjete](../raportimi/organizata.md).

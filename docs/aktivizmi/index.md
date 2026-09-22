@@ -90,13 +90,13 @@ flowchart LR
 
     [:octicons-arrow-right-24: Siguria e aktivistëve](siguria.md)
 
--   :material-book-open-page-variant-outline:{ .lg .middle } **Projekte**
+-   :material-book-open-page-variant-outline:{ .lg .middle } **Raste**
 
     ---
 
     Çfarë funksionoi (dhe çfarë jo) në raste të mëparshme.
 
-    [:octicons-arrow-right-24: Rasti Vjosa](raste/vjosa.md)
+    [:octicons-arrow-right-24: Rasti Vjosa](../../lumi-vjosa/)
 
 </div>
 

@@ -6,7 +6,6 @@
    "id": "vjose-narta",
    "properties": {
     "name": "Vjosë–Nartë",
-    "categoryLabel": "Projekt",
     "location": "Shqipëri",
     "countryCodes": [
      "AL"
@@ -18,7 +17,8 @@
     "geometrySource": "OpenStreetMap relation 21209191 (Peizazh i Mbrojtur Pishë Poro - Nartë)",
     "group": "Vjosa dhe Narta",
     "status": "Në vazhdim",
-    "kind": "project"
+    "kind": "project",
+    "hasFlamingos": true
    },
    "geometry": {
     "type": "MultiPolygon",
@@ -1507,7 +1507,6 @@
    "id": "lumi-vjosa",
    "properties": {
     "name": "Lumi Vjosa",
-    "categoryLabel": "Projekt",
     "location": "Shqipëri",
     "countryCodes": [
      "AL"
@@ -1518,26 +1517,6 @@
     "page": "lumi-vjosa",
     "group": "Vjosa dhe Narta",
     "status": "Park kombëtar, 2023",
-    "kind": "project"
-   },
-   "geometry": null
-  },
-  {
-   "type": "Feature",
-   "id": "flamingo",
-   "properties": {
-    "name": "Flamingo",
-    "categoryLabel": "Projekt",
-    "location": "Shqipëri",
-    "countryCodes": [
-     "AL"
-    ],
-    "summary": "Protestat, organizimi dhe dokumentimi",
-    "tagline": "Protestat, organizimi dhe dokumentimi",
-    "href": "docs/aktivizmi/protestat/",
-    "page": "flamingo",
-    "group": "Revolucioni Flamingo",
-    "status": "Protesta çdo ditë",
     "kind": "project"
    },
    "geometry": null
@@ -1562,8 +1541,7 @@
     "geometrySource": "OpenStreetMap relation 1248297 (Velipojë, njësi administrative, niveli 8): njësia që përmban pikën e fshatit. Zëvendësoje me kufirin e saktë të zonës së protestës kur të vizatohet.",
     "group": "Revolucioni Flamingo",
     "status": "Në vazhdim",
-    "kind": "protest",
-    "categoryLabel": "Protestë"
+    "kind": "protest"
    },
    "geometry": {
     "type": "MultiPolygon",
@@ -5459,8 +5437,7 @@
     "geometrySource": "OpenStreetMap relation 1255522 (Qendër Vlorë, njësi administrative, niveli 8): njësia që përmban pikën e fshatit. Zëvendësoje me kufirin e saktë të zonës së protestës kur të vizatohet.",
     "group": "Revolucioni Flamingo",
     "status": "Në vazhdim",
-    "kind": "protest",
-    "categoryLabel": "Protestë"
+    "kind": "protest"
    },
    "geometry": {
     "type": "MultiPolygon",
@@ -13077,7 +13054,7 @@
     "group": "Revolucioni Flamingo",
     "status": "Projekt i lidhur",
     "kind": "protest",
-    "categoryLabel": "Vend i lidhur me protestat"
+    "hasFlamingos": true
    },
    "geometry": {
     "type": "MultiPolygon",
@@ -15665,8 +15642,7 @@
      41.1370814
     ],
     "geometrySource": "OpenStreetMap relation 1250598 (Hotolisht, njësi administrative, niveli 8): njësia që përmban pikën e referencës. Pika është fshati Dardhë (OSM node 728420953). Zëvendësoje me kufirin e saktë të zonës kur të vizatohet.",
-    "kind": "protest",
-    "categoryLabel": "Protestë"
+    "kind": "protest"
    },
    "geometry": {
     "type": "MultiPolygon",
@@ -18146,8 +18122,7 @@
      39.9267878
     ],
     "geometrySource": "OpenStreetMap relation 1255535 (Lukovë, njësi administrative, niveli 8): njësia që përmban pikën e referencës. Pika është Plazhi i Kakomesë (OSM way 533163311); mediat e vendosin te Saranda, OSM te bashkia Himarë. Zëvendësoje me kufirin e saktë të zonës kur të vizatohet.",
-    "kind": "protest",
-    "categoryLabel": "Protestë"
+    "kind": "protest"
    },
    "geometry": {
     "type": "MultiPolygon",
@@ -21239,8 +21214,7 @@
      42.3018695
     ],
     "geometrySource": "OpenStreetMap relation 1248563 (Lekbibaj, njësi administrative, niveli 8): njësia që përmban pikën e referencës. Pika është Curraj i Poshtëm (OSM node 728420154), afër lumit; nuk kam gjetur vendndodhjen e saktë të digave. Zëvendësoje me kufirin e saktë të zonës kur të vizatohet.",
-    "kind": "protest",
-    "categoryLabel": "Protestë"
+    "kind": "protest"
    },
    "geometry": {
     "type": "MultiPolygon",
@@ -22276,8 +22250,7 @@
      42.3946562
     ],
     "geometrySource": "OpenStreetMap relation 19369097 (Parku Kombëtar i Thethit): parku që përmban fshatin (OSM node 728416858). Zëvendësoje me zonën e bujtinave kur të vizatohet.",
-    "kind": "protest",
-    "categoryLabel": "Protestë"
+    "kind": "protest"
    },
    "geometry": {
     "type": "MultiPolygon",

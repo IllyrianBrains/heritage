@@ -1,6 +1,14 @@
 {
   "groups": [
     {
+      "id": "projekte",
+      "label": "Dosje",
+      "color": "#7a4fb5",
+      "files": [
+        "/data/projects.geojson"
+      ]
+    },
+    {
       "id": "parqe",
       "label": "Parqe kombëtare",
       "color": "#1f7a52",
@@ -28,6 +36,24 @@
       ]
     },
     {
+      "id": "lumenj",
+      "label": "Lumenjtë",
+      "color": "#2f7fb0",
+      "files": [
+        "/data/groups/lumenj.geojson",
+        "/data/manual/lumenj.geojson"
+      ]
+    },
+    {
+      "id": "shtigje",
+      "label": "Shtigje ecjeje",
+      "color": "#a5672f",
+      "files": [
+        "/data/groups/shtigje.geojson",
+        "/data/manual/shtigje.geojson"
+      ]
+    },
+    {
       "id": "flora",
       "label": "Flora",
       "color": "#789f43",
@@ -43,14 +69,6 @@
       "files": [
         "/data/groups/fauna.geojson",
         "/data/manual/fauna.geojson"
-      ]
-    },
-    {
-      "id": "projekte",
-      "label": "Projekte dhe protesta",
-      "color": "#7a4fb5",
-      "files": [
-        "/data/projects.geojson"
       ]
     }
   ]

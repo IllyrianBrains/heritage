@@ -18,7 +18,7 @@ Kjo Guide ka vlerë vetëm nëse përmirësohet nga njerëz të ndryshëm. Çdo 
 
 -   :material-toolbox-outline:{ .lg .middle } **Propozo një mjet**
 
-    Sugjero një mjet ose burim që përmbush [kriteret tona](../rekomandime/index.md).
+    Sugjero një mjet ose burim që përmbush [kriteret tona](../raportimi/profili/index.md).
 
 -   :material-translate:{ .lg .middle } **Përkthe ose rishiko**
 
@@ -105,8 +105,7 @@ Për të propozuar një profil ose organizatë, [hap një çështje në GitHub](
 | Seksioni | Dosja | Ç'përmban |
 |---|---|---|
 | Baza e njohurive | `docs/baza/` | Njohuri, kuadri, të dhëna |
-| Raportimi | `docs/raportimi/` | Kuadro, tregues, indekse |
-| Rekomandime | `docs/rekomandime/` | Mjete dhe organizata |
+| Raportimi | `docs/raportimi/` | Udhëzuesi, profilet (mjete), kuadro, tregues, indekse |
 | Aktivizmi | `docs/aktivizmi/` | Procese, modele, raste |
 | Rreth nesh | `docs/rreth/` | Misioni, metodologjia, kontributi |
 

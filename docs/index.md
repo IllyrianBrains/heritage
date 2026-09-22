@@ -30,13 +30,13 @@ Për ata që e dokumentojnë, e monitorojnë dhe e mbrojnë natyrën. Këtu gjen
 
     Zonat e mbrojtura, kërcënimet, konventat dhe ligjet.
 
-2. [**Dokumento**](rekomandime/index.md)
+2. [**Dokumento**](raportimi/profili/index.md)
 
-    Mjete për vëzhgim, hartëzim, satelitë dhe verifikim.
+    Mjete për vëzhgim, hartëzim, satelitë dhe verifikim, sipas profilit tënd.
 
 3. [**Raporto**](raportimi/index.md)
 
-    Kuadrot, treguesit dhe indekset që përdorin shtetet.
+    Si të kontribuosh në raportimin ndërkombëtar: kuadrot, treguesit dhe indekset që përdorin shtetet.
 
 4. [**Vepro**](aktivizmi/index.md)
 
@@ -81,7 +81,7 @@ Kopjo, plotëso dhe dërgo. Çdo model ka pjesë të etiketuara dhe afate të qa
 | Dua të di nëse një vend është i mbrojtur dhe çfarë ndalohet aty | [Zonat e mbrojtura](baza/zona-te-mbrojtura.md) · [Ligjet & institucionet](baza/ligje-institucione.md) |
 | Dua dokumente nga një institucion | [Kërko informacion publik](aktivizmi/informim.md) |
 | Një projekt është në konsultim publik | [Pjesëmarrja në vendimmarrje](aktivizmi/pjesemarrje.md) |
-| Dua të monitoroj një vend ose të regjistroj specie | [Vëzhgim & identifikim](rekomandime/vezhgim.md) · [Satelitë & monitorim](rekomandime/monitorim.md) |
+| Dua të monitoroj një vend ose të regjistroj specie | [Vullnetari i ri](raportimi/profili/fillestari/index.md) · [Puna në terren](raportimi/profili/terreni/index.md) |
 | Dua të organizoj një fushatë ose protestë | [Fushata](aktivizmi/fushata.md) · [Protesta](aktivizmi/protestat/index.md) |
 | Kam frikë për sigurinë time ose të burimeve | [Siguria e aktivistëve](aktivizmi/siguria.md) |
 
@@ -95,7 +95,7 @@ Kopjo, plotëso dhe dërgo. Çdo model ka pjesë të etiketuara dhe afate të qa
 
     Dokumentim shkencor, aleanca të gjera dhe presion në disa nivele, deri në shpalljen e parkut në mars 2023. Gjashtë mësime që përdoren edhe sot.
 
-    [:octicons-arrow-right-24: Lexo rastin](aktivizmi/raste/vjosa.md)
+    [:octicons-arrow-right-24: Lexo rastin](../lumi-vjosa/)
 
 -   :material-bird:{ .lg .middle } **Flamingo: nga protesta te projektet**
 
@@ -103,7 +103,7 @@ Kopjo, plotëso dhe dërgo. Çdo model ka pjesë të etiketuara dhe afate të qa
 
     Si një protestë mjedisore u lidh me dokumentim, harta, diasporë dhe pjesëmarrje më të gjerë.
 
-    [:octicons-arrow-right-24: Lexo rastin](aktivizmi/protestat/flamingo.md)
+    [:octicons-arrow-right-24: Lexo rastin](../vjose-narta/)
 
 </div>
 

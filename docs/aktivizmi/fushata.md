@@ -58,7 +58,7 @@ Një kërkesë e mirë thotë **çfarë duhet të ndryshojë, kush mund ta ndrys
 
 -   :material-book-open-page-variant-outline:{ .lg .middle } **Rast real**
 
-    [Rasti Vjosa](raste/vjosa.md)
+    [Rasti Vjosa](../../../lumi-vjosa/)
 
 -   :material-account-voice:{ .lg .middle } **Protestë**
 

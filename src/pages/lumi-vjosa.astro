@@ -32,10 +32,11 @@ const lessons = [
   { title: 'Fakte të forta', text: 'Studimet shkencore e bënë vlerën e lumit të pamohueshme.' },
   { title: 'Aleanca të gjera', text: 'Shkencëtarë, komunitete vendore, OJQ dhe media punuan së bashku.' },
   { title: 'Kërkesë e qartë', text: 'Ruajtja e rrjedhës së lirë, jo vetëm “kundër një projekti”.' },
+  { title: 'Kohë e gjatë', text: 'Fushata zgjati vite; qëndrueshmëria pati rëndësi.' },
+  { title: 'Disa nivele presioni', text: 'Vendor, kombëtar dhe evropian, njëkohësisht.' },
 ];
 
 const paths = [
-  { href: `${base}docs/aktivizmi/raste/vjosa/`, title: 'Lexo rastin e plotë', text: 'Si u ndërtua fushata, kush mori pjesë dhe gjashtë mësimet kryesore.' },
   { href: `${base}map/`, title: 'Shiko në hartë', text: 'Parku kombëtar Vjosa dhe zonat e tjera të mbrojtura në Shqipëri dhe Kosovë.' },
   { href: `${base}docs/aktivizmi/fushata/`, title: 'Organizo një fushatë', text: 'Hapat për të kthyer një shqetësim në kërkesë të qartë dhe aleanca.' },
   { href: `${base}vjose-narta/`, title: 'Një rast që vazhdon: Vjosë–Nartë', text: 'Laguna ku lumi derdhet në det, ku lëvizja raporton punime brenda zonës së mbrojtur.' },
@@ -52,7 +53,7 @@ const paths = [
         <p class="lp-lede">Për vite me radhë u planifikuan hidrocentrale në Vjosë. Shkencëtarë, komunitete dhe organizata ia dolën ta ruajnë lumin të lirë, dhe në mars 2023 ai u shpall park kombëtar. Këtu e gjen të shpjeguar thjesht: çfarë mbrohet, pse ka rëndësi dhe çfarë mësojmë prej këtij rasti.</p>
         <div class="lp-actions">
           <a class="lp-btn lp-btn-primary" href="#natyra">Shiko çfarë mbrohet <span aria-hidden="true">↓</span></a>
-          <a class="lp-btn lp-btn-ghost" href={`${base}docs/aktivizmi/raste/vjosa/`}>Lexo rastin e plotë <span aria-hidden="true">→</span></a>
+          <a class="lp-btn lp-btn-ghost" href={`${base}map/`}>Hap hartën <span aria-hidden="true">→</span></a>
         </div>
       </div>
       <p class="lp-photo-credit">Foto: <a href={photos.hero.source} target="_blank" rel="noopener noreferrer">{photos.hero.author}</a>, <a href={photos.hero.licenseUrl} target="_blank" rel="noopener noreferrer">{photos.hero.license}</a></p>
@@ -66,6 +67,7 @@ const paths = [
       <div class="lp-why-body">
         <p>Vjosa është një nga lumenjtë e fundit të mëdhenj në Evropë që rrjedh pa diga në pjesën më të madhe të rrjedhës. Rasti i saj tregon se mbrojtja e natyrës mund të fitohet kur njerëzit e njohin vendin dhe bashkohen rreth një kërkese të qartë.</p>
         <p>Informacioni për këtë rast është i shpërndarë nëpër raporte, shtyp dhe faqe organizatash. Këtu e mbledhim në një vend, me fjalë të thjeshta dhe me foto nga vetë lumi.</p>
+        <p>Aleanca ndërkombëtare <em>Save the Blue Heart of Europe</em>, së bashku me EcoAlbania, Riverwatch dhe EuroNatur, e lidhi rastin me komunitetet vendore dhe me presion evropian, përfshirë një ankesë te Konventa e Bernës.</p>
       </div>
       <ul class="lp-principles">
         {lessons.map((item) => (

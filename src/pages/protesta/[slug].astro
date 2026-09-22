@@ -35,8 +35,8 @@ const hero = photos[0];
 const gallery = photos.slice(1);
 const img = (photo) => `${base}assets/protesta/${id}/${photo.file}`;
 const paths = [
-  { href: `${base}map/`, title: 'Shiko në hartë', text: 'Vendi shfaqet te shtresa «Projekte dhe protesta», me statusin dhe burimet.' },
-  { href: `${base}docs/aktivizmi/protestat/flamingo/`, title: 'Kupto Revolucionin Flamingo', text: 'Si nisi lëvizja, kush mori pjesë dhe si u organizua.' },
+  { href: `${base}map/`, title: 'Shiko në hartë', text: 'Vendi shfaqet te shtresa «Dosje», me statusin dhe burimet.' },
+  { href: `${base}vjose-narta/`, title: 'Kupto Revolucionin Flamingo', text: 'Si nisi lëvizja, kush mori pjesë dhe si u organizua.' },
   { href: `${base}docs/aktivizmi/protestat/dokumentimi/`, title: 'Dokumento një protestë', text: 'Kronologji, burime, fotografi dhe të dhëna që mbeten të verifikueshme.' },
   { href: `${base}docs/rreth/kontribuo/`, title: 'Ke informacion ose foto?', text: 'Ndaje me burim dhe licencë që faqja të plotësohet.' },
 ];
@@ -158,7 +158,7 @@ const paths = [
         </details>
       )}
       <details>
-        <summary>Raste të tjera</summary>
+        <summary>Dosje të tjera</summary>
         <ul>
           {related.map((entry) => <li><a href={`${base}${entry.href}`}>{entry.name}</a>, {entry.tagline}</li>)}
         </ul>

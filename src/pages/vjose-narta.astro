@@ -39,10 +39,19 @@ const [year, month, day] = (issue.updatedAt || '').split('-').map(Number);
 const updated = year ? `${day} ${months[month - 1]} ${year}` : '';
 const statusLabel = { ongoing: 'Në vazhdim' }[issue.status] || '';
 
+const initiatives = [
+  { title: 'Nismë referendare', text: 'Propozuar si mjet për ta çuar çështjen drejtpërdrejt te votuesit.' },
+  { title: 'Projektligje të propozuara', text: 'Ide dhe nene të hartuara nga vetë lëvizja, për t’u diskutuar publikisht.' },
+  { title: 'Flamingo Times', text: 'Gazetë e lëvizjes, për ta mbajtur çështjen të dukshme mes tubimeve.' },
+  { title: 'Dosje dokumentare', text: 'Arkiv me burime, fotografi dhe të dhëna për secilin rast.' },
+  { title: 'Hartë dhe matje', text: 'Vendndodhjet dhe shtrirja e protestave, të përditësuara me kohë.' },
+  { title: 'Diaspora dhe raportim qytetar', text: 'Koordinim jashtë vendit dhe kanale për t’u bashkuar nga kushdo.' },
+];
+
 const paths = [
   { href: `${base}map/`, title: 'Shiko në hartë', text: 'Zonat e mbrojtura, flora dhe fauna në Shqipëri dhe Kosovë, me foto dhe burime.' },
   { href: `${base}docs/baza/zona-te-mbrojtura/`, title: 'Mëso bazat', text: 'Çfarë është një zonë e mbrojtur, çfarë ndalohet aty dhe kush e mbikëqyr.' },
-  { href: `${base}docs/aktivizmi/protestat/flamingo/`, title: 'Kupto Revolucionin Flamingo', text: 'Si nisi lëvizja, kush mori pjesë dhe si u organizua, me lidhje te burimet e saj.' },
+  { href: `${base}docs/aktivizmi/protestat/`, title: 'Organizo ose dokumento një protestë', text: 'Udhëzues praktik: qëllimi, kërkesa, ekipi, siguria dhe dokumentimi.' },
   { href: `${base}docs/aktivizmi/`, title: 'Merr pjesë', text: 'Si të dokumentosh një shqetësim, të kërkosh informacion publik dhe të veprosh.' },
 ];
 ---
@@ -123,6 +132,23 @@ const paths = [
           <li><span>Burimi</span><strong><a href="https://www.flamingorevolution.eu/protestat/" target="_blank" rel="noopener noreferrer">flamingorevolution.eu ↗</a></strong></li>
         </ul>
       </div>
+    </section>
+
+    <section class="lp-section lp-why" id="levizja" aria-labelledby="lp-levizja-title">
+      <div class="lp-why-head">
+        <p class="lp-kicker">Lëvizja</p>
+        <h2 id="lp-levizja-title">Kush qëndron pas protestës dhe si organizohet</h2>
+      </div>
+      <div class="lp-why-body">
+        <p>Sipas <a href="https://www.flamingorevolution.eu/" target="_blank" rel="noopener noreferrer">Revolucionit Flamingo</a>, pjesëmarrja në protesta ka qenë ndërbrezore dhe e larmishme: aktivistë, punonjës, fëmijë me familjet, studentë, profesionistë, pensionistë dhe diasporë. Lëvizja u nis nga ndërhyrjet e raportuara në Pishë Poro–Nartë dhe u shtri nga Vlora në Tiranë, qytete të tjera dhe diasporë.</p>
+        <p>Lëvizja e përshkruan kulturën e vet organizative si <strong>e hapur, vullnetare dhe e decentralizuar</strong>, e mbështetur te bashkëpunimi në platforma online, me punë të kryer nga vullnetarë dhe pa financim nga palë të treta.</p>
+        <p class="lp-caveat">Kjo është mënyra si e paraqet lëvizja veten, jo verifikim i pavarur nga kjo faqe. <a href="https://www.flamingorevolution.eu/rreth-nesh/" target="_blank" rel="noopener noreferrer">Burimi ↗</a></p>
+      </div>
+      <ul class="lp-principles">
+        {initiatives.map((item) => (
+          <li><strong>{item.title}</strong><span>{item.text}</span></li>
+        ))}
+      </ul>
     </section>
 
     <section class="lp-section lp-paths" aria-labelledby="lp-paths-title">

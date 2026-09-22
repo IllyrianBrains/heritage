@@ -1,12 +1,10 @@
-# Të dhëna & regjistra
+# Të dhëna & regjistra zyrtare
 
-Ku të kërkosh informacion të besueshëm për zonat, speciet dhe statusin ligjor. Për përshkrimin e burimeve dhe kufizimeve: [Burimet e të dhënave](../baza/burime-te-dhena.md).
+Ku të kërkosh informacion të besueshëm për zonat, speciet dhe statusin ligjor, për ta krahasuar me dëshminë tënde. Pjesë e profilit [Raportuesi](index.md). Për përshkrimin e burimeve dhe kufizimeve: [Burimet e të dhënave](../../../baza/burime-te-dhena.md).
 
 *Versioni i parë: shtator 2026*
 
 **Ç'kërkojmë:** institucion ose organizatë e njohur pas të dhënave; metodologji dhe **datë përditësimi** të dukshme; qasje falas dhe eksport ose API.
-
-## Zgjidh sipas pyetjes
 
 | Pyetja | Burimi | Shënim |
 |---|---|---|
@@ -20,9 +18,12 @@ Ku të kërkosh informacion të besueshëm për zonat, speciet dhe statusin ligj
 | Si lidhen emrat, identifikuesit dhe faqet? | [Wikidata](https://www.wikidata.org) | Për lidhje me Wikipedia dhe imazhe të licencuara |
 | Çfarë thotë ligji? | [QBZ](https://qbz.gov.al) / [Gazeta Zyrtare e Kosovës](https://gzk.rks-gov.net) | Burimi zyrtar |
 
-## Këshilla
-
 !!! tip ""
     - **Kërko në disa burime.** Asnjë nuk është i plotë.
     - Kur kufijtë ndryshojnë mes burimeve, **akti ligjor** ka përparësi.
-    - Nëse një institucion nuk publikon të dhënat, kërkoji formalisht: [Kërko informacion publik](../aktivizmi/informim.md).
+    - Nëse një institucion nuk publikon të dhënat, kërkoji formalisht: [Kërko informacion publik](../../../aktivizmi/informim.md).
+
+## Burimet
+
+- [GBIF: si të publikosh të dhëna](https://www.gbif.org/publishing-data)
+- [Protected Planet: WDPA Manual](https://www.protectedplanet.net)

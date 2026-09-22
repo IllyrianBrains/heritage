@@ -85,7 +85,7 @@ Për ndryshime, shto **të njëjtën pikë në kohë të ndryshme**.
 1. **Ruaj origjinalet** dhe punoj vetëm mbi kopje.
 2. **Mbaj regjistër ndryshimesh** për çdo skedar.
 3. **Etiketo qartë** informacionin e paverifikuar.
-4. **Verifiko dhe arkivo:** [Verifikim & arkivim](../rekomandime/verifikim.md).
+4. **Verifiko dhe arkivo:** [Raportuesi](../raportimi/profili/raportuesi/verifikim.md).
 
 </div>
 

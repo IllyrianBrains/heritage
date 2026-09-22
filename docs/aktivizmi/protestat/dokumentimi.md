@@ -71,4 +71,4 @@ Dokumentimi ruan kujtesën e një proteste, mbron mesazhin nga shtrembërimi dhe
     - Kufizo qasjen kur materiali mund të rrezikojë një person.
     - Mos e përdor dokumentimin për të ndjekur ose ekspozuar pjesëmarrësit.
 
-Shih edhe [Verifikim & arkivim](../../rekomandime/verifikim.md) dhe [Siguria e aktivistëve](../siguria.md).
+Shih edhe [Raportuesi](../../raportimi/profili/raportuesi/verifikim.md) dhe [Siguria e aktivistëve](../siguria.md).

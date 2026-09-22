@@ -94,19 +94,31 @@ nav:
           - Fjalori: baza/fjalori.md
   - Raportimi:
       - raportimi/index.md
-      - Kuadrot e raportimit: raportimi/kuadrot.md
-      - Të dhënat e nevojshme: raportimi/te-dhenat.md
-      - Treguesit: raportimi/treguesit.md
-      - Indekset: raportimi/indekset.md
-      - Rekomandime:
-          - rekomandime/index.md
-          - Vëzhgim & identifikim: rekomandime/vezhgim.md
-          - Hartëzim & terren: rekomandime/hartezim.md
-          - Satelitë & monitorim: rekomandime/monitorim.md
-          - Të dhëna & regjistra: rekomandime/te-dhena.md
-          - Verifikim & arkivim: rekomandime/verifikim.md
-          - Siguria dixhitale: rekomandime/siguria.md
-          - Organizata & rrjete: rekomandime/organizata.md
+      - Si të raportosh ndërkombëtarisht: raportimi/udhezuesi.md
+      - Profili yt:
+          - raportimi/profili/index.md
+          - Vullnetari i ri:
+              - raportimi/profili/fillestari/index.md
+              - Praktikat: raportimi/profili/fillestari/praktikat.md
+              - Platformat: raportimi/profili/fillestari/platformat.md
+          - Puna në terren:
+              - raportimi/profili/terreni/index.md
+              - Praktikat: raportimi/profili/terreni/praktikat.md
+              - Hartëzim & mbledhje: raportimi/profili/terreni/hartezim.md
+              - Shtesa (plugins) të QGIS: raportimi/profili/terreni/shtesa-qgis.md
+              - Satelitë & monitorim: raportimi/profili/terreni/monitorim.md
+          - Raportuesi:
+              - raportimi/profili/raportuesi/index.md
+              - Praktikat: raportimi/profili/raportuesi/praktikat.md
+              - Verifikim & arkivim: raportimi/profili/raportuesi/verifikim.md
+              - Të dhëna & regjistra zyrtare: raportimi/profili/raportuesi/te-dhena.md
+      - Referenca:
+          - Kuadrot e raportimit: raportimi/kuadrot.md
+          - Të dhënat e nevojshme: raportimi/te-dhenat.md
+          - Treguesit: raportimi/treguesit.md
+          - Indekset: raportimi/indekset.md
+          - Siguria dixhitale: raportimi/siguria.md
+          - Organizata & rrjete: raportimi/organizata.md
   - Aktivizmi:
       - aktivizmi/index.md
       - Dokumento një problem: aktivizmi/dokumento.md
@@ -121,9 +133,6 @@ nav:
           - Organizo një protestë: aktivizmi/protestat/organizimi.md
           - Dokumento protestën: aktivizmi/protestat/dokumentimi.md
           - Protesta dhe diaspora: aktivizmi/protestat/diaspora.md
-          - Rasti Flamingo: aktivizmi/protestat/flamingo.md
-      - Projekte:
-          - Vjosa: aktivizmi/raste/vjosa.md
   - Rreth nesh:
       - rreth/index.md
       - Rrjeti: rreth/rrjeti.md

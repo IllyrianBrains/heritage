@@ -12,7 +12,7 @@ Lumenjtë, liqenet, lagunat dhe burimet janë nga ekosistemet më të rrezikuara
 
 === "Lumenj"
 
-    - **Vjosa:** një nga lumenjtë e fundit të egër në Evropë; park kombëtar që nga 2023. Shih [rastin Vjosa](../aktivizmi/raste/vjosa.md).
+    - **Vjosa:** një nga lumenjtë e fundit të egër në Evropë; park kombëtar që nga 2023. Shih [rastin Vjosa](../../../lumi-vjosa/).
     - **Drini:** sistem lumor me ndikim rajonal dhe kaskada hidrocentralesh.
     - **Buna:** lidhje mes Liqenit të Shkodrës dhe Adriatikut.
 

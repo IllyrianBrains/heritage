@@ -1,7 +1,8 @@
-# Standardet ndërkombëtare të raportimit
+# Raportimi ndërkombëtar
 
-Shtetet raportojnë rregullisht te konventat dhe organizmat ndërkombëtarë për gjendjen e natyrës, sipas **formateve, treguesve dhe indekseve të standardizuara**. Kur i njeh, mund ta lexosh një raport zyrtar në mënyrë kritike, të kontrollosh çfarë mungon dhe të mbledhësh të dhëna që përshtaten me të.
+Shtetet raportojnë rregullisht te konventat dhe organizmat ndërkombëtarë për gjendjen e natyrës, sipas **formateve, treguesve dhe indekseve të standardizuara**. Kjo pjesë ka dy shtresa: një **udhëzues praktik** për si të bëhesh vetë pjesë e këtij sistemi, dhe **referenca** për kuadrot, të dhënat, treguesit dhe indekset që e mbajnë.
 
+[Fillo udhëzuesin](udhezuesi.md){ .md-button .md-button--primary }
 [Shiko panelin e raporteve të projektit](../../dashboard/){ .md-button }
 
 ## Si lidhen të dhënat, treguesit dhe indekset
@@ -20,7 +21,31 @@ flowchart LR
 
 Secili nivel varet nga ai më i ulët. Një indeks i mirë nuk zëvendëson të dhënat e mira, dhe një tregues pa burim e datë nuk verifikohet dot.
 
-## Pesë faqet e kësaj pjese
+## Udhëzuesi
+
+<div class="grid cards" markdown>
+
+-   :material-map-marker-path:{ .lg .middle } **Si të raportosh ndërkombëtarisht**
+
+    ---
+
+    Hap pas hapi: zgjidh mekanizmin e duhur, mblidh dhe strukturo të dhënat, shkruaj kontributin dhe dërgoje.
+
+    [:octicons-arrow-right-24: Fillo](udhezuesi.md)
+
+-   :material-account-multiple-outline:{ .lg .middle } **Zgjidh profilin tënd**
+
+    ---
+
+    Mjetet që i furnizojnë të dhënat për këtë punë, sipas asaj që bën: vullnetar i ri, terren ose raportues.
+
+    [:octicons-arrow-right-24: Shiko](profili/index.md)
+
+</div>
+
+## Referenca
+
+Katër faqe përshkruese: çfarë ekziston, jo si të veprosh. Përdori kur shkruan kontributin nga udhëzuesi, ose kur lexon një raport zyrtar dhe do të dish çfarë kërkohej prej tij.
 
 <div class="grid cards" markdown>
 
@@ -55,14 +80,6 @@ Secili nivel varet nga ai më i ulët. Një indeks i mirë nuk zëvendëson të 
     Indekset e biodiversitetit, të ujit dhe të satelitëve, dhe kufizimet e tyre.
 
     [:octicons-arrow-right-24: Shiko](indekset.md)
-
--   :material-star-check-outline:{ .lg .middle } **Rekomandime**
-
-    ---
-
-    Mjetet që i furnizojnë këto raporte.
-
-    [:octicons-arrow-right-24: Shiko](../rekomandime/index.md)
 
 </div>
 

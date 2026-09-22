@@ -39,7 +39,7 @@ Si e ndërtojmë, verifikojmë dhe përditësojmë përmbajtjen e kësaj Guide.
 2. **Faktin e ndajmë nga interpretimi**, dhe pasigurinë nga përfundimi.
 3. **Data e përditësimit** dhe kufizimet e të dhënave shënohen kur kanë rëndësi.
 4. **Ligjet dhe institucionet** citohen me emër, numër dhe lidhje te burimi zyrtar kur ka; lexuesi verifikon versionin në fuqi.
-5. **Rekomandimet** ndjekin [kriteret e publikuara](../rekomandime/index.md).
+5. **Rekomandimet** ndjekin [kriteret e publikuara](../raportimi/profili/index.md).
 6. **Të dhënat e ndjeshme mbrohen:** nuk publikojmë vendndodhje të sakta të specieve të rrezikuara ose të dhëna personale pa pëlqim.
 
 </div>

@@ -71,4 +71,4 @@ Përcakto pragjet që kërkojnë ndërhyrje urgjente ose rishikim të masave.
 
 Kur popullata kalon kufij administrativë, metodat, treguesit dhe shkëmbimi i të dhënave duhet të koordinohen mes institucioneve dhe vendeve.
 
-Për kategoritë e rrezikut shih [Biodiversiteti](../biodiversiteti.md); për mbledhjen e të dhënave shih [Vëzhgim & identifikim](../../rekomandime/vezhgim.md). Korniza e procesit bazohet te [Conservation Standards](https://www.conservationstandards.org/about/).
+Për kategoritë e rrezikut shih [Biodiversiteti](../biodiversiteti.md); për mbledhjen e të dhënave shih [Vullnetari i ri](../../raportimi/profili/fillestari/index.md). Korniza e procesit bazohet te [Conservation Standards](https://www.conservationstandards.org/about/).

@@ -1,6 +1,6 @@
 # Burimet e të dhënave
 
-Të dhënat që përdorim vijnë nga burime publike dhe të hapura. Kjo faqe shpjegon çfarë gjendet ku dhe me çfarë kufizimesh. Për mjetet me të cilat i përdor, shih [Rekomandime](../rekomandime/te-dhena.md).
+Të dhënat që përdorim vijnë nga burime publike dhe të hapura. Kjo faqe shpjegon çfarë gjendet ku dhe me çfarë kufizimesh. Për mjetet me të cilat i përdor, shih [Të dhëna & regjistra zyrtare](../raportimi/profili/raportuesi/te-dhena.md).
 
 ## Burimet kryesore
 

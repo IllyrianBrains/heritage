@@ -42,15 +42,10 @@ flowchart LR
 
     [:octicons-arrow-right-24: Veprimi në diasporë](diaspora.md)
 
--   :material-bird:{ .lg .middle } **Rasti Flamingo**
-
-    ---
-
-    Si një protestë mjedisore u lidh me projekte, dokumentim dhe pjesëmarrje më të gjerë.
-
-    [:octicons-arrow-right-24: Lexo rastin](flamingo.md)
-
 </div>
+
+!!! tip "Rastet konkrete"
+    Vendet e ciklit të protestave (Rrjolli, Zvërnec, Sazan, Dardhë, Kakomë, Nikaj-Mërtur, Theth), me kronologji, burime dhe çfarë mbetet e paqartë, shfaqen te **Dosje** në [hartë](../../../map/).
 
 ## Pesë parime
 

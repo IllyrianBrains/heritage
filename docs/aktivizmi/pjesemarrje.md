@@ -34,7 +34,7 @@ Shumë projekte kalojnë nga **konsultimi publik** para se të miratohen. Kjo ë
 
 </div>
 
-**Si e gjen një konsultim:** regjistrat e konsultimit publik të ministrisë ose bashkisë, njoftimet e institucioneve, [organizatat që ndjekin projektet](../rekomandime/organizata.md), ose drejtpërdrejt: [Kërko informacion publik](informim.md).
+**Si e gjen një konsultim:** regjistrat e konsultimit publik të ministrisë ose bashkisë, njoftimet e institucioneve, [organizatat që ndjekin projektet](../raportimi/organizata.md), ose drejtpërdrejt: [Kërko informacion publik](informim.md).
 
 ## Si të japësh koment që peshon
 
@@ -42,7 +42,7 @@ Shumë projekte kalojnë nga **konsultimi publik** para se të miratohen. Kjo ë
 
 1. **Lexo dokumentin**, sidomos VNM dhe përfundimet për biodiversitetin.
 2. **Cakto pikat konkrete:** çfarë mungon, çfarë nuk është studiuar, çfarë është gabim.
-3. **Sill të dhëna:** vëzhgime të specieve, imazhe satelitore, raporte të tjera. Shih [Vëzhgim & identifikim](../rekomandime/vezhgim.md).
+3. **Sill të dhëna:** vëzhgime të specieve, imazhe satelitore, raporte të tjera. Shih [Vullnetari i ri](../raportimi/profili/fillestari/index.md) dhe [Puna në terren](../raportimi/profili/terreni/index.md).
 4. **Kërko masa specifike:** studime shtesë, alternativa, kushte, refuzim të projektit.
 5. **Dërgo me shkrim brenda afatit** dhe ruaj konfirmimin.
 6. **Kërko përgjigje** me shkrim për komentet e dërguara.

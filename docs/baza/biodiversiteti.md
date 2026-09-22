@@ -108,7 +108,7 @@ Një vëzhgim (p.sh. në GBIF ose iNaturalist) është **një pikë, një datë,
 </div>
 
 !!! warning "Vendndodhjet e specieve të ndjeshme"
-    Fole shqiponjash, populla të vogla të specieve të rrezikuara dhe bimë të rralla mund të rrezikohen nga mbledhësit dhe gjuetarët e paligjshëm. Mos publiko koordinata të sakta për to; shih [Vëzhgim & identifikim](../rekomandime/vezhgim.md).
+    Fole shqiponjash, populla të vogla të specieve të rrezikuara dhe bimë të rralla mund të rrezikohen nga mbledhësit dhe gjuetarët e paligjshëm. Mos publiko koordinata të sakta për to; shih [Vullnetari i ri](../raportimi/profili/fillestari/index.md).
 
 ## Nga vëzhgimi te ruajtja
 

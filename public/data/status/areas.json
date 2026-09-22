@@ -21,15 +21,15 @@
       "areaId": "osm-way-503885261",
       "areaName": "Divjakë-Karavasta National Park",
       "group": "zona",
-      "status": "critical",
+      "status": "good",
       "indicators": {
-        "threatLevel": "high",
-        "habitatTrend": "declining",
-        "enforcementLevel": "weak"
+        "threatLevel": "low",
+        "habitatTrend": "stable",
+        "enforcementLevel": "good"
       },
       "lastAssessed": "2026-08-02",
       "assessedBy": "OJQ Shembull Natyra",
-      "notes": "[Shembull] Ndotje nga rrjedhjet e ujërave të zeza dhe gjueti ilegale e shpendëve ujorë.",
+      "notes": "[Shembull] Vlerësim i përkohshëm; pritet përditësim me të dhëna reale.",
       "evidenceUrl": null
     },
     {

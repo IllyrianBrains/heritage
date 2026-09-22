@@ -62,11 +62,13 @@ Nëse Overpass është i zënë, `python3 scripts/extract_nature.py --skip-osm` 
 
 Fotografitë GBIF merren nga media e vëzhgimeve me licencë CC0, CC BY, CC BY-SA ose CC BY-NC; fotografitë me kufizim ND dhe ato pa licencë të qartë nuk shfaqen. Kartat tregojnë autorin dhe licencën, ndërsa paneli i detajeve lidhet me fotografinë dhe kushtet e licencës. `enrich_wikipedia_images.py` përdor imazhin e artikullit vetëm kur ai gjendet në Wikimedia Commons me licencë të verifikueshme. Fotografitë ngarkohen nga shërbimet burimore, prandaj mund të mungojnë kur një burim nuk përgjigjet.
 
-## Projekte dhe protesta
+## Dosjet
 
-Lista te menuja **Projekte & protesta**, shtresa në hartë dhe kufijtë vijnë nga një skedar i vetëm: [public/data/projects.geojson](public/data/projects.geojson). Çdo objekt ka `geometry` (MultiPolygon ose `null`), `group`, `status`, `tagline` dhe `href`. Për t'i caktuar një projekti një vend, ngjit koordinatat te `geometry`.
+Lista te menuja **Dosje**, shtresa në hartë dhe kufijtë vijnë nga një skedar i vetëm: [public/data/projects.geojson](public/data/projects.geojson). Çdo objekt ka `geometry` (MultiPolygon ose `null`), `group`, `status`, `tagline` dhe `href`. Për t'i caktuar një rasti një vend, ngjit koordinatat te `geometry`.
 
 Çdo protestë ka faqe të vetën te `/protesta/<id>/`. Përmbajtja e faqes (kronologjia, çfarë kundërshtohet, burimet) ruhet te [src/data/cases.json](src/data/cases.json) me të njëjtin `id`; faqja krijohet nga një shabllon i vetëm. Statusi i rrezikut vjen nga [data/issues.csv](data/issues.csv), ku `ID e zonës` është po ai `id`.
+
+Dosjet janë faqe të plota te vetë kjo faqe (map-web); dokumentacioni (`docs/`) nuk përsërit historinë e një rasti specifik, vetëm lidh drejt tij, për të shmangur dublimin e përmbajtjes mes dy faqeve.
 
 ## Matjet aktuale nga sensorët e hapur
 

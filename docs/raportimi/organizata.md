@@ -1,6 +1,6 @@
 # Organizata & rrjete
 
-Organizata me të cilat mund të bashkëpunosh, të kërkosh këshilla ose mbështetje. Përfshirja këtu është **rekomandim për njohje**, jo miratim zyrtar; verifiko punën e çdo organizate para se të bashkëpunosh.
+Organizata me të cilat mund të bashkëpunosh, të kërkosh këshilla ose mbështetje. Të përbashkëta për të tria [profilet](profili/index.md). Përfshirja këtu është **rekomandim për njohje**, jo miratim zyrtar; verifiko punën e çdo organizate para se të bashkëpunosh.
 
 *Versioni i parë: shtator 2026*
 

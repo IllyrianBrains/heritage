@@ -33,7 +33,7 @@ flowchart LR
     - **Llogaraja:** ndërthurje mal-det.
     - **Divjakë-Karavasta:** laguna dhe habitate të shpendëve.
     - **Butrinti:** trashëgimi kulturore dhe natyrore.
-    - **Lumi i Egër i Vjosës** (2023): shpallur pas një fushate të gjatë, shih [rastin Vjosa](../aktivizmi/raste/vjosa.md).
+    - **Lumi i Egër i Vjosës** (2023): shpallur pas një fushate të gjatë, shih [rastin Vjosa](../../../lumi-vjosa/).
 
 === "Kosovë"
 

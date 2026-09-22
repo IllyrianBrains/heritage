@@ -282,6 +282,42 @@ body,
   color: var(--ib-gold-dark);
 }
 
+/* Tool logos next to headings: small, consistent badge so mixed favicon
+   qualities and transparent backgrounds still read cleanly */
+.md-typeset img.ib-tool-logo {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: contain;
+  vertical-align: -0.45rem;
+  margin-right: 0.45rem;
+  padding: 0.2rem;
+  background: #fff;
+  border: 1px solid var(--ib-line);
+  border-radius: 0.4rem;
+}
+
+/* Tool/plugin entries as standalone cards: separates each recommendation
+   from surrounding prose, matching the border+radius+hover language already
+   used by .grid.cards and tables. */
+.md-typeset .ib-tool-card {
+  border: 1px solid var(--ib-line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 1.1rem 1.3rem 1.3rem;
+  margin: 1.25rem 0 1.5rem;
+}
+.md-typeset .ib-tool-card:hover {
+  border-color: var(--ib-gold);
+  box-shadow: 0 8px 22px rgba(23, 62, 57, 0.12);
+}
+.md-typeset .ib-tool-card > h3:first-child {
+  margin-top: 0;
+}
+.md-typeset .ib-tool-card > :last-child {
+  margin-bottom: 0;
+}
+
 /* Task lists read as checklists */
 .md-typeset .task-list-item { margin-bottom: 0.25rem; }
 

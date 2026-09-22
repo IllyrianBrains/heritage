@@ -172,8 +172,8 @@
   let query = '';
   const activeCountries = new Set(['AL', 'XK']);
   let photoOnly = false;
-  let dangerOnly = false;
-  const activeGroups = new Set(manifest.groups.map((group) => group.id));
+  const DEFAULT_INACTIVE_GROUPS = ['lumenj', 'shtigje', 'flora', 'fauna'];
+  const activeGroups = new Set(manifest.groups.map((group) => group.id).filter((id) => !DEFAULT_INACTIVE_GROUPS.includes(id)));
   const STATUS_LABELS = { good: 'E mirë', watch: 'Në vëzhgim', critical: 'Kritike', unassessed: 'Pa vlerësim' };
   const STATUS_COLORS = { good: '#0ca30c', watch: '#fab219', critical: '#d03b3b' };
   const INDICATOR_LABELS = {
@@ -203,23 +203,9 @@
     selectedLine: new ol.style.Style({ stroke: new ol.style.Stroke({ color: '#f6d34b', width: 6 }) }),
   });
   const statusAppearances = Object.fromEntries(Object.entries(STATUS_COLORS).map(([level, color]) => [level, styles(color)]));
-  const dangerAppearance = {
-    point: [
-      new ol.style.Style({ image: new ol.style.Circle({ radius: 14, fill: new ol.style.Fill({ color: '#c73f36' }), stroke: new ol.style.Stroke({ color: '#fff', width: 3 }) }) }),
-      new ol.style.Style({ text: new ol.style.Text({ text: '!', font: '800 15px DM Sans', fill: new ol.style.Fill({ color: '#fff' }) }) }),
-    ],
-    selectedPoint: [new ol.style.Style({ image: new ol.style.Circle({ radius: 18, fill: new ol.style.Fill({ color: '#f6d34b' }), stroke: new ol.style.Stroke({ color: '#6d1e18', width: 2 }) }) }), new ol.style.Style({ text: new ol.style.Text({ text: '!', font: '800 16px DM Sans', fill: new ol.style.Fill({ color: '#6d1e18' }) }) })],
-    area: [
-      new ol.style.Style({ fill: new ol.style.Fill({ color: '#c73f3655' }), stroke: new ol.style.Stroke({ color: '#c73f36', width: 4 }) }),
-      new ol.style.Style({ text: new ol.style.Text({ text: '!  NË RREZIK', font: '800 11px DM Sans', fill: new ol.style.Fill({ color: '#fff' }), backgroundFill: new ol.style.Fill({ color: '#ad3029' }), padding: [6, 9, 6, 9], overflow: true }) }),
-    ],
-    selectedArea: [
-      new ol.style.Style({ fill: new ol.style.Fill({ color: '#c73f3677' }), stroke: new ol.style.Stroke({ color: '#f6d34b', width: 5 }) }),
-      new ol.style.Style({ text: new ol.style.Text({ text: '!  NË RREZIK', font: '800 11px DM Sans', fill: new ol.style.Fill({ color: '#fff' }), backgroundFill: new ol.style.Fill({ color: '#ad3029' }), padding: [6, 9, 6, 9], overflow: true }) }),
-    ],
-    line: new ol.style.Style({ stroke: new ol.style.Stroke({ color: '#c73f36', width: 5 }) }),
-    selectedLine: new ol.style.Style({ stroke: new ol.style.Stroke({ color: '#f6d34b', width: 7 }) }),
-  };
+  const flamingoMarker = new ol.style.Style({
+    text: new ol.style.Text({ text: '🦩', font: '20px sans-serif', offsetY: -4 }),
+  });
 
   for (const group of manifest.groups) {
     const source = new ol.source.Vector();
@@ -228,10 +214,12 @@
       if (!feature.get('searchVisible')) return null;
       const kind = feature.getGeometry()?.getType() || '';
       const selected = feature.getId() === selectedId;
-      const active = feature.get('hasActiveIssue') ? dangerAppearance : statusAppearances[feature.get('statusLevel')] || appearance;
-      if (kind.includes('Polygon')) return selected ? active.selectedArea : active.area;
-      if (kind.includes('LineString')) return selected ? active.selectedLine : active.line;
-      return selected ? active.selectedPoint : active.point;
+      const active = statusAppearances[feature.get('statusLevel')] || appearance;
+      const base = kind.includes('Polygon') ? (selected ? active.selectedArea : active.area)
+        : kind.includes('LineString') ? (selected ? active.selectedLine : active.line)
+        : (selected ? active.selectedPoint : active.point);
+      if (!feature.get('hasFlamingos')) return base;
+      return [...(Array.isArray(base) ? base : [base]), flamingoMarker];
     } });
     groupStates.push({ group, source, layer });
     for (const file of group.files || []) {
@@ -249,6 +237,7 @@
           if (records.some((record) => record.id === id)) continue;
           feature.setId(id);
           feature.set('searchVisible', true);
+          if (properties.hasFlamingos) feature.set('hasFlamingos', true);
           source.addFeature(feature);
           records.push({ id, group, feature, properties, sourceFile: file });
         }
@@ -296,15 +285,13 @@
       }
       for (const record of records) {
         record.issues = issuesByArea.get(record.id) || [];
-        if (record.issues.some((issue) => ['ongoing', 'verification', 'paused'].includes(issue.status))) record.feature.set('hasActiveIssue', true);
       }
-      document.getElementById('danger-count').textContent = String(records.filter((record) => record.feature.get('hasActiveIssue')).length);
     }
   } catch { /* regjistri i çështjeve është shtesë */ }
 
   const map = new ol.Map({
     target: mapElement,
-    layers: [baseLayer, ...environmentalLayers.map((item) => item.layer), labelsLayer, ...[...groupStates].sort((a, b) => ({ parqe: 0, mbrojtura: 0, rezervate: 0, projekte: 0.5, flora: 1, fauna: 2 }[a.group.id] ?? 1) - ({ parqe: 0, mbrojtura: 0, rezervate: 0, projekte: 0.5, flora: 1, fauna: 2 }[b.group.id] ?? 1)).map((state) => state.layer)],
+    layers: [baseLayer, ...environmentalLayers.map((item) => item.layer), labelsLayer, ...[...groupStates].sort((a, b) => ({ lumenj: -0.5, parqe: 0, mbrojtura: 0, rezervate: 0, projekte: 0.5, shtigje: 0.7, flora: 1, fauna: 2 }[a.group.id] ?? 1) - ({ lumenj: -0.5, parqe: 0, mbrojtura: 0, rezervate: 0, projekte: 0.5, shtigje: 0.7, flora: 1, fauna: 2 }[b.group.id] ?? 1)).map((state) => state.layer)],
     view: new ol.View({ center: ol.proj.fromLonLat([20.2, 41.2]), zoom: 7.2, minZoom: 5 }),
   });
   const previewElement = document.getElementById('point-preview');
@@ -471,7 +458,7 @@
     const checkbox = make('input');
     checkbox.type = 'checkbox';
     checkbox.value = group.id;
-    checkbox.checked = true;
+    checkbox.checked = activeGroups.has(group.id);
     const isArea = ['parqe', 'mbrojtura', 'rezervate', 'projekte'].includes(group.id);
     const dot = make('i', isArea ? 'key-dot key-area' : 'key-dot');
     dot.style.backgroundColor = group.color || '#4d6a59';
@@ -502,16 +489,9 @@
     photoOnly = event.target.checked;
     updateFilters();
   });
-  document.getElementById('danger-only').addEventListener('change', (event) => {
-    dangerOnly = event.target.checked;
-    document.getElementById('danger-label').textContent = dangerOnly ? 'Në rrezik' : 'Të gjitha';
-    updateFilters();
-    if (dangerOnly) focusVisible();
-  });
   const matches = (record) => activeGroups.has(record.group.id)
     && (activeCountries.size === 2 || (record.properties.countryCodes || []).some((country) => activeCountries.has(country)))
     && (!photoOnly || Boolean(record.properties.image))
-    && (!dangerOnly || record.feature.get('hasActiveIssue'))
     && [record.properties.name, record.properties.location, record.properties.categoryLabel, record.properties.summary, ...(record.properties.keywords || [])]
       .join(' ').toLocaleLowerCase('sq').includes(query);
   const shownRecords = () => records.filter(matches);
@@ -623,24 +603,6 @@
     document.getElementById('place-count').textContent = String(shown.length);
     document.getElementById('result-label').textContent = `${shown.length} ${shown.length === 1 ? 'rezultat' : 'rezultate'}`;
     listElement.replaceChildren();
-    const priorityRecords = shown.filter((record) => record.issues?.some((issue) => ['ongoing', 'verification', 'paused'].includes(issue.status)));
-    if (priorityRecords.length) {
-      const priority = make('section', 'priority-places');
-      const heading = make('div', 'priority-places-heading');
-      heading.append(make('span', 'priority-alert', '!'), make('strong', '', 'VENDE NË RREZIK'), make('small', '', `${priorityRecords.length} prioritare`));
-      priority.append(heading);
-      for (const record of priorityRecords.sort((a, b) => ({ high: 0, medium: 1, low: 2 }[a.issues[0]?.priority] ?? 3) - ({ high: 0, medium: 1, low: 2 }[b.issues[0]?.priority] ?? 3))) {
-        const issue = record.issues[0];
-        const button = make('button', 'priority-place');
-        button.type = 'button';
-        const copy = make('span', 'priority-place-copy');
-        copy.append(make('strong', '', record.properties.name), make('small', '', issue.activity));
-        button.append(copy, make('span', `priority-level priority-${issue.priority}`, issue.priority === 'high' ? 'Prioritet i lartë' : issue.priority === 'low' ? 'Prioritet i ulët' : 'Prioritet mesatar'), make('b', '', '↗'));
-        button.addEventListener('click', () => selectRecord(record));
-        priority.append(button);
-      }
-      listElement.append(priority);
-    }
     if (shown.length && !shown.some((record) => expandedGroups.has(record.group.id))) expandedGroups.add(shown[0].group.id);
     for (const group of manifest.groups) {
       const groupRecords = shown.filter((record) => record.group.id === group.id);
@@ -669,6 +631,7 @@
       const dot = make('span', 'category-dot');
       dot.style.backgroundColor = record.group.color;
       top.append(dot, make('span', 'card-category', place.categoryLabel || record.group.label));
+      if (place.hasFlamingos) top.append(make('span', 'flamingo-badge', '🦩'));
       if (record.status) {
         const statusDot = make('span', 'health-dot');
         statusDot.style.backgroundColor = STATUS_COLORS[record.status.status] || '#898781';
@@ -733,7 +696,9 @@
     const photo = imageFigure(place.image);
     if (photo) detailContent.append(photo);
     const heading = make('div', 'record-heading');
-    heading.append(make('p', 'record-kicker', place.categoryLabel || record.group.label), make('h2', '', place.name || 'Pa emër'), make('p', 'record-intro', place.summary || ''));
+    const kicker = make('p', 'record-kicker', place.categoryLabel || record.group.label);
+    if (place.hasFlamingos) kicker.append(make('span', 'flamingo-badge', '🦩'));
+    heading.append(kicker, make('h2', '', place.name || 'Pa emër'), make('p', 'record-intro', place.summary || ''));
     detailContent.append(heading);
     const facts = make('div', 'record-facts');
     const addFact = (label, value) => {
@@ -770,12 +735,9 @@
             activeCountries.add('AL');
             activeCountries.add('XK');
             photoOnly = false;
-            dangerOnly = false;
             query = '';
             search.value = '';
             document.getElementById('with-photo').checked = false;
-            document.getElementById('danger-only').checked = false;
-            document.getElementById('danger-label').textContent = 'Të gjitha';
             countryOptions.querySelectorAll('input').forEach((country) => { country.checked = true; });
             scopeOptions.querySelectorAll('input').forEach((scope) => { scope.checked = activeGroups.has(scope.value); });
             updateFilters();

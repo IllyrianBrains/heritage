@@ -165,7 +165,7 @@ flowchart LR
 ```
 
 - **Regjistro datën** kur kalon afati.
-- Nëse duhet, kërko ndihmë nga organizatat: [Organizata & rrjete](../rekomandime/organizata.md).
+- Nëse duhet, kërko ndihmë nga organizatat: [Organizata & rrjete](../raportimi/organizata.md).
 
 !!! note "Refuzimi është vetë një fakt"
     Kur merr përgjigje ose refuzim, shtoje te regjistri i rastit. Një refuzim i pajustifikuar mund ta përdorësh.

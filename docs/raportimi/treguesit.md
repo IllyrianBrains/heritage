@@ -1,6 +1,6 @@
 # Treguesit
 
-Një **tregues** është një matje e përcaktuar qartë që mund të përsëritet me kalimin e kohës: ka njësi, burim të dhënash, periudhë dhe, shpesh, objektiv. Raportet ndërkombëtare mbështeten në lista të miratuara treguesish, që shtetet i plotësojnë me të dhëna kombëtare.
+Një **tregues** është një matje e përcaktuar qartë që mund të përsëritet me kalimin e kohës: ka njësi, burim të dhënash, periudhë dhe, shpesh, objektiv. Raportet ndërkombëtare mbështeten në lista të miratuara treguesish, që shtetet i plotësojnë me të dhëna kombëtare. Për si të lidhësh një tregues me kontributin tënd, shih [Si të raportosh ndërkombëtarisht](udhezuesi.md#4-lidhe-me-nje-tregues-kur-ka-kuptim).
 
 ## Çfarë e bën një tregues të mirë
 
@@ -112,7 +112,7 @@ flowchart LR
 | Numri i specieve të vëzhguara | GBIF, iNaturalist | Pasqyron përpjekjen e vëzhgimit, jo bollëkun |
 | Zjarre aktive | [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov) | Sinjalizime orientuese |
 
-Për metodën: [Satelitë & monitorim](../rekomandime/monitorim.md).
+Për metodën: [Satelitë & monitorim](profili/terreni/monitorim.md).
 
 !!! warning "Mos e paraqit si tregues zyrtar"
     Kur llogarit diçka vetë, shëno që është **vlerësim i komunitetit**, me metodën, burimin dhe kufizimet. Treguesit zyrtarë kanë metodologji të miratuar.

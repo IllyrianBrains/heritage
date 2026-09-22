@@ -38,5 +38,5 @@ flowchart LR
 
 ## Shih edhe
 
-- [Verifikim & arkivim](../rekomandime/verifikim.md) para publikimit.
+- [Raportuesi](../raportimi/profili/raportuesi/index.md) para publikimit.
 - [Siguria e aktivistëve](siguria.md) për mbrojtjen e burimeve.

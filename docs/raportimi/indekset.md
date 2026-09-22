@@ -1,6 +1,6 @@
 # Indekset
 
-Një **indeks** përmbledh shumë matje në një vlerë të vetme, zakonisht të normalizuar (p.sh. 0 deri 1, ose 0 deri 100). Indekset janë të dobishme për krahasime dhe tituj raportesh, por fshehin detajet. Lexoji gjithmonë bashkë me treguesit nga të cilët vijnë.
+Një **indeks** përmbledh shumë matje në një vlerë të vetme, zakonisht të normalizuar (p.sh. 0 deri 1, ose 0 deri 100). Indekset janë të dobishme për krahasime dhe tituj raportesh, por fshehin detajet. Lexoji gjithmonë bashkë me treguesit nga të cilët vijnë. Për si të përdoret kjo në një kontribut, shih [Si të raportosh ndërkombëtarisht](udhezuesi.md).
 
 ## Katër grupet
 
@@ -35,7 +35,7 @@ Një **indeks** përmbledh shumë matje në një vlerë të vetme, zakonisht të
 
 === "Satelitët"
 
-    Llogariten nga imazhe, jo nga statistika kombëtare, dhe janë më afër punës së komunitetit. Shih [Satelitë & monitorim](../rekomandime/monitorim.md).
+    Llogariten nga imazhe, jo nga statistika kombëtare, dhe janë më afër punës së komunitetit. Shih [Satelitë & monitorim](profili/terreni/monitorim.md).
 
     | Indeksi | Çfarë tregon | Përdorim |
     |---|---|---|

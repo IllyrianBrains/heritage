@@ -1,6 +1,6 @@
 # Rrjeti
 
-Pika e takimit për ekspertët, organizatat dhe nismat që dokumentojnë natyrën, punojnë me komunitetet dhe publikojnë të dhëna të ripërdorshme.
+Pika e takimit për organizatat dhe nismat që dokumentojnë natyrën, punojnë me komunitetet dhe publikojnë të dhëna të ripërdorshme.
 
 [Bashkohu me rrjetin](kontribuo.md#bashkepuno-me-rrjetin){ .md-button .md-button--primary }
 
@@ -28,16 +28,7 @@ Pika e takimit për ekspertët, organizatat dhe nismat që dokumentojnë natyrë
 
 </div>
 
-Organizata të tjera të dobishme në rajon: [Organizata & rrjete](../rekomandime/organizata.md).
-
-## Ekspertët
-
-| Emri | Roli dhe organizata | Fushat | Profili |
-|---|---|---|---|
-| **Besjana Guri** | Drejtuese, Qendra LUMI | Lumenjtë, komunitetet, aktivizmi | [LinkedIn](https://www.linkedin.com/in/besjana-guri-0049a230/) |
-| **Gëzim Shuli** | Drejtor Ekzekutiv, AlbNatyra | Biodiversiteti, monitorimi, edukimi | [LinkedIn](https://www.linkedin.com/in/gezim-shuli-6308b1156/) |
-| **Oljam Dervishi** | Drejtues, RESU | Lumenjtë, komunitetet, inxhinieria | [LinkedIn](https://www.linkedin.com/in/oljam-dervishi/) |
-| **Doren Calliku** | Kontribues i pavarur | Të dhënat e hapura, teknologjia, bashkëpunimi | [LinkedIn](https://www.linkedin.com/in/pomodoren/) |
+Organizata të tjera të dobishme në rajon: [Organizata & rrjete](../raportimi/organizata.md).
 
 ## Si funksionon rrjeti
 
@@ -49,4 +40,4 @@ Organizata të tjera të dobishme në rajon: [Organizata & rrjete](../rekomandim
 
 </div>
 
-Lista përditësohet kur një ekspert ose organizatë pranon të publikojë profilin dhe kontributin e vet. Shih [si të bashkohesh](kontribuo.md#bashkepuno-me-rrjetin).
+Lista përditësohet kur një organizatë pranon të publikojë profilin dhe kontributin e vet. Shih [si të bashkohesh](kontribuo.md#bashkepuno-me-rrjetin).

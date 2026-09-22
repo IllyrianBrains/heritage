@@ -1,6 +1,6 @@
 # Siguria dixhitale
 
-Mbrojtësit e mjedisit përballen me presion, përgjim dhe ndonjëherë me kërcënime. Këto mjete ulin rrezikun; nuk e eliminojnë. Për sigurinë e plotë: [Siguria e aktivistëve](../aktivizmi/siguria.md).
+Mbrojtësit e mjedisit përballen me presion, përgjim dhe ndonjëherë me kërcënime. Këto mjete ulin rrezikun; nuk e eliminojnë. Të përbashkëta për të tria [profilet](profili/index.md). Për sigurinë e plotë: [Siguria e aktivistëve](../aktivizmi/siguria.md).
 
 *Versioni i parë: shtator 2026*
 
@@ -18,35 +18,55 @@ Mbrojtësit e mjedisit përballen me presion, përgjim dhe ndonjëherë me kërc
 
 ## Mjetet
 
-### Signal
+<div class="ib-tool-card" markdown>
+
+### ![](../assets/tools/signal.png){: .ib-tool-logo }Signal
 
 <span class="ib-pill">falas</span> <span class="ib-pill">kod i hapur</span> · [signal.org](https://signal.org)
 
 Mesazhe dhe thirrje të enkriptuara skaj-më-skaj. Aktivizo **mesazhet që zhduken** për grupet e ndjeshme dhe **kyçjen e ekranit**. Kërkon numër telefoni; përdor një **emër përdoruesi** dhe fshih numrin nga kontaktet.
 
-### Element (Matrix)
+</div>
+
+<div class="ib-tool-card" markdown>
+
+### ![](../assets/tools/element.png){: .ib-tool-logo }Element (Matrix)
 
 <span class="ib-pill">kod i hapur</span> · [element.io](https://element.io)
 
 Alternativë e federuar e mesazheve të enkriptuara për organizata që duan serverin e vet.
 
-### Bitwarden
+</div>
+
+<div class="ib-tool-card" markdown>
+
+### ![](../assets/tools/bitwarden.png){: .ib-tool-logo }Bitwarden
 
 <span class="ib-pill">falas</span> <span class="ib-pill">kod i hapur</span> · [bitwarden.com](https://bitwarden.com)
 
 Menaxher fjalëkalimesh. Çdo llogari me fjalëkalim unik dhe **verifikim me dy hapa**. Aktivizo hyrjen me çelës fizik ose aplikacion autentikimi, jo SMS.
 
-### Cryptomator dhe VeraCrypt
+</div>
+
+<div class="ib-tool-card" markdown>
+
+### ![](../assets/tools/cryptomator.png){: .ib-tool-logo }![](../assets/tools/veracrypt.png){: .ib-tool-logo }Cryptomator dhe VeraCrypt
 
 <span class="ib-pill">falas</span> <span class="ib-pill">kod i hapur</span> · [cryptomator.org](https://cryptomator.org) · [veracrypt.io](https://veracrypt.io)
 
 Enkriptim i dosjeve të dëshmisë, sidomos kur ruhen në cloud (Cryptomator) ose në disqe të jashtëm (VeraCrypt).
 
-### Tor Browser dhe OnionShare
+</div>
+
+<div class="ib-tool-card" markdown>
+
+### ![](../assets/tools/tor.png){: .ib-tool-logo }![](../assets/tools/onionshare.png){: .ib-tool-logo }Tor Browser dhe OnionShare
 
 <span class="ib-pill">falas</span> <span class="ib-pill">kod i hapur</span> · [torproject.org](https://www.torproject.org) · [onionshare.org](https://onionshare.org)
 
 Tor fsheh vendndodhjen tënde gjatë shfletimit; OnionShare dërgon skedarë pa ndërmjetës. Përdori kur burimi duhet të mbetet anonim.
+
+</div>
 
 ## Minimumi për çdo organizatë
 
